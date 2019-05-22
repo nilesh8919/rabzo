@@ -1,0 +1,15 @@
+ALTER TABLE `mt_merchant` ADD `adhar_number` VARCHAR(255) NULL AFTER `gst_number`;
+ALTER TABLE `mt_merchant` ADD `pan_number` VARCHAR(255) NULL AFTER `adhar_number`;
+ALTER TABLE `mt_merchant` ADD `fssi_number` VARCHAR(255) NULL AFTER `pan_number`;
+ALTER TABLE `mt_merchant` CHANGE `last_login` `last_login` DATETIME NULL DEFAULT '0000-00-00 00:00:00';
+ALTER TABLE `mt_merchant` CHANGE `last_login` `last_login` DATETIME NULL;
+ALTER TABLE `mt_merchant` CHANGE `sponsored_expiration` `sponsored_expiration` DATE NULL;
+ALTER TABLE `mt_merchant` CHANGE `membership_purchase_date` `membership_purchase_date` DATETIME NULL;
+
+ALTER TABLE `mt_merchant_payment_provider` CHANGE `id` `id` INT(11) NOT NULL AUTO_INCREMENT;
+
+
+
+
+
+ALTER TABLE `mt_item` CHANGE `two_flavors` `two_flavors` INT(2) NULL;
