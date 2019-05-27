@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Merchant;
 
 use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Input;
 use App\Http\Requests;
 use App\Module;

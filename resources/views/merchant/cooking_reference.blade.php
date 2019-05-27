@@ -192,7 +192,7 @@ $(document).ready(function(){
                    url: '{{url("create_cooking_reference")}}',
                    data:fd,
                    async:false,
-                    type: 'GET',
+                    type: 'POST',
                     processData: false,
                     contentType: false,
 

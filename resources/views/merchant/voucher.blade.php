@@ -334,25 +334,7 @@ function delete_voucher($id){
                             </div>
                           </div>
                        </div>
-                    <div class="form-group">
-                         <div class="row">
-						  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
-                              Applicant to merchant:
-							 </div>
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-                              <div class="form-group">
-                            
-							 <select  class="form-control" name="merchant_id" id="merchant_id" required="true" >
-							   <option  value="" >-Select-</option>
-							 @foreach($merchant_data as $mdata)
-							 
-							   <option value="{{$mdata->id}}" >{{$mdata->restaurant_name}}</option>
-							   @endforeach
-							 </select>
-                              </div>
-                            </div>
-                          </div>
-                       </div>  
+                   
                  	
   <div class="form-group">
                          <div class="row">

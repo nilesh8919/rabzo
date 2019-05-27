@@ -26,22 +26,22 @@
                     
                 </li>
 			    <li> <a href="{{url('merchant_info')}}"><i class="fa fa-cutlery"></i> <span class="nav-label"></span>Merchant Info</a> </li>
-                <li> <a href="#"><i class="fa fa-cog"></i> <span class="nav-label"></span>Settings</a> </li>
-                 <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Order Status</a> </li>
-                  <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Food Category</a> </li>
-                   <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Size</a> </li>
+              <!--  <li> <a href="#"><i class="fa fa-cog"></i> <span class="nav-label"></span>Settings</a> </li>-->
+               <!--  <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Order Status</a> </li>
+                  <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Food Category</a> </li>-->
+                   <li> <a href="{{url('manage_sizes')}}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Size</a> </li>
 
-             <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Add On Category</a> </li>
-             <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Add On Item</a> </li>
-                 <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Ingredients</a> </li>
+            <!-- <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Add On Category</a> </li>
+             <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Add On Item</a> </li>-->
+                 <li> <a href="{{url('manage_ingredients')}}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Ingredients</a> </li>
                  <li> <a href="{{url('cooking_reference')}}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Cooking Reference</a> </li>
 
                 <li> <a href="{{ url('item_listing') }}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Food Item</a> </li>
                 <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Invoice</a> </li>
              <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Loyalty Points Settings</a> </li>
-        <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Delivery Charges Rate</a> </li>
-          <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Minimum Order Table</a> </li>
-         <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Offers</a> </li>
+        <li> <a href="{{ url('manage_shipping') }}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Delivery Charges Rate</a> </li>
+       <!--   <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Minimum Order Table</a> </li>-->
+         <li> <a href="{{ url('manage_offers') }}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Offers</a> </li>
            <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Gallery Settings</a> </li>
            <li> <a href="{{url('manage_voucher')}}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Voucher</a> </li>
 
@@ -57,7 +57,7 @@
                 </li>
 
         <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Customer Reviews</a> </li>
-         <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Sociel Settings</a> </li>
+         <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Social Settings</a> </li>
             </ul>
 
         </div>

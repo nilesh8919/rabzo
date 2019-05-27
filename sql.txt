@@ -13,3 +13,6 @@ ALTER TABLE `mt_merchant_payment_provider` CHANGE `id` `id` INT(11) NOT NULL AUT
 
 
 ALTER TABLE `mt_item` CHANGE `two_flavors` `two_flavors` INT(2) NULL;
+
+
+ALTER TABLE `mt_shipping_rate` ADD `order_total` VARCHAR(255) NULL AFTER `id`;

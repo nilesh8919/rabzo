@@ -214,6 +214,9 @@
 			                </table>
 			              
 			            </div>
+						  <div class="col-lg-12 col-md-12" style="padding: 0px;">
+						 <center> <button onClick="getCheckout()" type="button">Checkout</button></center>
+						  </div>
 			        </div>	
 				    <!--right div end-->
 				</div>
@@ -222,6 +225,10 @@
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 	<script type="text/javascript">
+	function getCheckout()
+	{
+		window.location.href="{{ url('checkout') }}";
+	}
 	$(document).ready(function(){
 		var wrap = $("#wrap");
 

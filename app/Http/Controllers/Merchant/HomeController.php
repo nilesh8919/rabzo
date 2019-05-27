@@ -17,6 +17,12 @@ class HomeController extends Controller
      */
     public function __construct() {
        // $this->middleware('auth:admin');
+	  // echo Auth::id();exit;
+	  
+	   if(empty(Auth::id()))
+	   {
+		  return view('merchant.login');
+	   }
     }
 
     /**

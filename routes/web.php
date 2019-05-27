@@ -18,6 +18,7 @@ Route::post('/get_merchant_data','IndexController@get_merchant_data');
 Route::get('/get_merchant_available_location','IndexController@get_merchant_available_location');
 Route::get('/get_item_price','IndexController@get_item_price');
 Route::get('/get_merchant_available_restaurant','IndexController@get_merchant_available_restaurant');
+Route::get('/checkout','CheckoutController@index');
 /* Route::get('/', function () {
     return view('welcome');
 }); */
@@ -130,6 +131,18 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::post('create_cooking_reference','Merchant\CookingReferenceController@create');
 		Route::get('delete_cooking_reference','Merchant\CookingReferenceController@delete_cooking_reference');
 		Route::get('merchant_info','Merchant\ProfileController@merchant_info');
+		Route::post('update_merchant_profile','Merchant\ProfileController@update_merchant_profile');
+		Route::get('manage_sizes','Merchant\SizeController@manage_sizes');
+		Route::post('create_sizes','Merchant\SizeController@create');
+		Route::get('delete_sizes','Merchant\SizeController@delete_sizes');
+		Route::get('manage_ingredients','Merchant\IngredientsController@manage_ingredients');
+		Route::post('create_ingredients','Merchant\IngredientsController@create');
+		Route::get('delete_ingredients','Merchant\IngredientsController@delete_ingredients');
+		Route::get('manage_offers','Merchant\OffersController@index');
+		Route::post('create_offers','Merchant\OffersController@create');
+		Route::get('delete_offers','Merchant\OffersController@delete_offers');
+			Route::get('manage_shipping','Merchant\shippingController@index');
+		Route::post('create_shipping','Merchant\shippingController@create');
 //});
  
  	
