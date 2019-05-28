@@ -37,6 +37,21 @@ class ShippingController extends Controller
    
      public function create(Request $request)
        {
+		  
+		  
+		   if(Option :: where('option_name','free_delivery_above_price')->where('merchant_id',Auth::id())->count() == 0)
+		   {
+			    Option :: insert([
+				'option_value' => $request->free_delivery_above_price,
+				'option_name' => 'free_delivery_above_price',
+				'merchant_id'=>Auth::id()
+				]);
+		   }else{
+		       Option :: where('option_name','free_delivery_above_price')
+			   ->where('merchant_id',Auth::id())
+			   ->update(['option_value' => $request->free_delivery_above_price]);
+		   }
+         
 		    ShippingRate  :: where('merchant_id', '=', Auth::id())->delete();
 		   
 			 for($i=0;$i<count($request->distance_from);$i++)
@@ -48,8 +63,8 @@ class ShippingController extends Controller
 				 $add->shipping_units= $request->shipping_units[$i];
 				 $add->distance_price= $request->distance_price[$i];
 				   $add->merchant_id= Auth::id();
-				  $add->date_created= date('Y-m-d H:i:s');
-				  $add->date_modified= date('Y-m-d H:i:s');
+				 // $add->date_created= date('Y-m-d H:i:s');
+				 // $add->date_modified= date('Y-m-d H:i:s');
 				  $add->save();
 			 }
         
@@ -57,7 +72,7 @@ class ShippingController extends Controller
 			   $res =array('flag'=>true,'msg'=>'Data added successfully','url'=>'/manage_shipping');
 		  
 		  Session::flash('flash_message', $res['msg']);
-           return response()->json($res);
+           return redirect('manage_shipping');
        }
    
 		public function delete_offers(Request $request)

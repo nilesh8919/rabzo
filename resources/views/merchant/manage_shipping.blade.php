@@ -47,13 +47,17 @@
                         </div>
                         
                         <div class="ibox-content">
-
+ <?php if(Session::has('flash_message')): ?>
+                                   <div id="flashmsg" class="alert alert-success" role="alert" style="">
+                                   <?php echo e(Session::get('flash_message')); ?>
+                                  </div> 
+                              <?php endif; ?>
                             <form class="form-horizontal" action="{{ url('create_shipping') }}" method="post">
                                 <div class="col-lg-12 col-md-12">
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Free delivery above Sub Total Order</label>
                                         <div class="col-lg-5">
-                                            <input type="text" placeholder="" class="form-control">
+                                            <input type="text" name="free_delivery_above_price" placeholder="" class="form-control" required />
                                         </div>
                                         <div class="col-lg-1">
                                             <i class="fa fa-inr"></i> 
@@ -67,41 +71,44 @@
                                         
                                     </div>-->
                                 </div>
-                               
-                                <div class="col-lg-12 col-md-12">
+                               <div id="charge_line">
+                                <div class="col-lg-12 col-md-12" >
 								<h4>Table Rates</h4>
-                                    <div class="col-lg-5 col-md-5">
-                                        <h4>Distance</h4>
-                                        <div class="col-lg-6 col-md-6" style="padding: 0;">
-                                            <input type="text" placeholder="From" class="form-control" name="distance_from">
-                                        </div>
-                                        <div class="col-lg-6 col-md-6">
-                                            <input type="text" placeholder="To" class="form-control" name="distance_to">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2">
-                                        <h4>Units</h4>
-                                        <div class="col-lg-12 col-md-12" style="padding: 0;">
-                                            <input type="text" placeholder="Units" class="form-control" name="shipping_units">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2">
-                                        <h4>Price</h4>
-                                        <div class="col-lg-12 col-md-12" style="padding: 0;">
-                                            <input type="text" placeholder="Price" class="form-control" name="distance_price">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-2">
-                                        <h4>Action</h4>
-                                        <div class="col-lg-12 col-md-12" style="padding: 0;">
-                                        <a href="javascript:;" class="shipping-remove" data-id="1"><i class="fa fa-times"></i></a>
-                                        </div>
-                                    </div>
+								<table class="table" id="tr1">
+								   <tr>
+								     <th colspan="2">Distance</th>
+								     <th>Unit</th>
+								     <th>Price</th>
+								     <th>Action</th>
+								   </tr>
+								    <tr>
+								     <td>  <input type="text" placeholder="From" class="form-control" name="distance_from[]"></td>
+								     <td><input type="text" placeholder="To" class="form-control" name="distance_to[]"></td>
+								     <td><select class="form-control" name="shipping_units[]">
+									     <option value="Miles">Miles</option>
+									     <option value="Kilometeres">Kilometeres</option>
+									 </select>
+									 
+									</td>
+								     <td><input type="text" placeholder="Price" class="form-control" name="distance_price[]"></td>
+								     <td></td>
+								    
+								   </tr>
+								</table>
+                                    
                                 </div>
+							</div>	
+							<div class="col-lg-12 col-md-12">
+							<br />
+								  <div class="col-lg-2 col-md-2">
+								   <button class="btn btn-sm btn-white" id="btnAdd" style="float: left;" type="button">Add More</button>
+								  </div>
+							</div>
+								
                                 <div class="col-lg-11 col-md-11" style="margin-top: 20px;position: relative;right: 12px;">
                                     <div class="form-group">
                                         <div class="col-lg-offset-2 col-lg-10">
-                                            <button class="btn btn-sm btn-white" style="float: right;" type="submit">Submit</button>
+                                            <button class="btn btn-sm btn-success" style="float: right;" type="submit">Submit</button>
                                         </div>
                                     </div>
                                 </div>
@@ -160,8 +167,19 @@
 
 <script>
  
-
+function removeTr($val)
+	{
+		$("#tr_"+$val).remove();
+	}
 $(document).ready(function(){
+	var i=0;
+	$("#btnAdd").click(function(){
+		i = i+1;
+	      var div1 ='<tr id="tr_'+i+'"><td> <input type="text" placeholder="From" class="form-control"   name="distance_from"></td><td><input type="text" placeholder="To" class="form-control" name="distance_to"></td><td><input type="text" placeholder="Units" class="form-control" name="shipping_units"></td><td><input type="text" placeholder="Price" class="form-control" name="shipping_units"></td><td><a href="javascript:;" onClick="removeTr('+i+')" class="shipping-remove" data-id="1"><i class="fa fa-times"></i></a></td></tr>';
+		  
+		  $("#tr1").append(div1);
+	})
+	
 	
 	$.datepicker.setDefaults({
           dateFormat: 'yy-mm-dd',
