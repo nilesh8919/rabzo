@@ -130,7 +130,7 @@ input[type=radio]
                                     <div class="form-group">
                                         <label class="control-label">Third Step Image</label>
                                         <div class="" style="margin-top: 10px;">
-                                            <input type="file" class="form-control" id="" name=""  name="third_step_image" value="<?php echo $results['third_step_image'][0]; ?>" />
+                                            <input type="file" class="form-control" id=""  name="third_step_image" value="<?php echo $results['third_step_image'][0]; ?>" />
  <div id="imagePreview"><span id='span_1' class="pip">
             <img class="imageThumb" src="public/uploadimages/<?php echo $results['third_step_image'][0]; ?>" </span></div>
 

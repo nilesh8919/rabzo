@@ -44,101 +44,32 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <style type="text/css">
-		* {
-		  box-sizing: border-box;
-		}
+	.clear{clear: both;}
 
-		body {
-		  margin: 0;
-		}
+	.wrap {width: 100%; /*border: 1px solid #ccc;*/ height: 579px;overflow: auto;position: relative;margin-top: 77px;}
+    .top-header {position: fixed;top: 0;left: 0;width: 100%;height: 60px;}
+    .top-header .menu-icon {position: absolute;top: 0;right: 0;padding: 18px 20px;}
+    .fix-search .top-header {background: #eee;}
+    .search {position: absolute;top: 33px;left: 0px; right: 114px;margin: 0 auto;width: 685px;/*border: 1px solid;*/}
+    .search input {width: 100%;border: 1px solid #ccc;padding: 8px;font-size: 15px;transition: width 0.2s;
+      -webkit-appearance: none;height: 38px;}
+    .fix-search .search {position: fixed;top: 0px;width: 50%;margin: 0 auto;}
+    .fix-search .search input {/*width: 250px;*//*width: 450px;*/position: relative;/*left: 110px;*/}
+    .top {height: 250px;/*padding-top: 40px;*/}
+    .hero {width: 200px;height: 100px;background: #ccc;margin: 0 auto;}
+    main {padding: 0 20px;display: flex;flex-wrap: wrap;justify-content: space-between;}
+    main div {width: 125px;height: 80px;background: #ccc;margin: 0 0 20px 0;}
+    .clear{clear: both;}
+    /*======ribbon css======*/
+    .collapse{position: static;z-index: 99;}
+   
+    .cart{position: absolute;}
 
-		.wrap {
-		  width: 100%;
-		  /*border: 1px solid #ccc;*/
-		  height: 579px;
-		  overflow: auto;
-		  position: relative;
-		      margin-top: 77px;
-		}
-
-		.top-header {
-		  position: fixed;
-		  top: 0;
-		  left: 0;
-		  width: 100%;
-		  height: 60px;
-		}
-		.top-header .menu-icon {
-		  position: absolute;
-		  top: 0;
-		  right: 0;
-		  padding: 18px 20px;
-		}
-		.fix-search .top-header {
-		  background: #eee;
-		}
-
-		.search {
-		  /*position: absolute;
-		  top: 155px;
-		  left: 20px;
-		  right: 20px;*/
-		      position: absolute;
-		    top: 188px;
-		    left: 0px;
-		    right: 214px;
-		    margin: 0 auto;
-		    width: 583px;
-		    /*border: 1px solid;*/
-		}
-		.search input {
-		  width: 100%;
-		  border: 1px solid #ccc;
-		  padding: 8px;
-		  font-size: 15px;
-		  transition: width 0.2s;
-		  -webkit-appearance: none;
-		      height: 38px;
-		}
-		.fix-search .search {
-		  position: fixed;
-		  top: 0px;
-		  width: 50%;
-		  margin: 0 auto;
-		}
-		.fix-search .search input {
-		  /*width: 250px;*/
-		  /*width: 450px;*/
-	    position: relative;
-	    /*left: 110px;*/
-		}
-
-		.top {
-		  height: 250px;
-		  /*padding-top: 40px;*/
-		}
-
-		.hero {
-		  width: 200px;
-		  height: 100px;
-		  background: #ccc;
-		  margin: 0 auto;
-		}
-
-		main {
-		  padding: 0 20px;
-		  display: flex;
-		  flex-wrap: wrap;
-		  justify-content: space-between;
-		}
-		main div {
-		  width: 125px;
-		  height: 80px;
-		  background: #ccc;
-		  margin: 0 0 20px 0;
-		}
-		.clear{clear: both;}
-		.cuisine_ul{padding: 0;}
+    .ribbon {margin: 0 0 0 -20px;padding: 5px 0;width: calc(100% + 20px);background-color: #e91e63;box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);position: relative;}
+    .header {margin: 0;padding: 0.3em 1em 0.3em;border-top: dashed 1px #fafafa;border-bottom: dashed 1px #fafafa;
+      color: #fafafa;font-size: 1.6em;vertical-align: middle;}
+    .header::before {content: "";position: absolute;top: 100%;left: 0;border-bottom: solid 15px transparent;border-right: solid 20px #c2185b;}
+    .cuisine_ul{padding: 0;}
     .cuisine_ul li{list-style-type: none;padding: 6px 11px;border: 1px solid #d8d6d670;background: #cccccc42;}
     .cuisine_ul li a{color: #000;}
 	</style>

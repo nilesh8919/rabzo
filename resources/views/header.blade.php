@@ -71,7 +71,7 @@
 					              </a> 
 					            </li>
 
-					            <li class="mega-menu" style="position: relative;left: 400px;"> 
+					            <li class="mega-menu" style="position: relative;left: 411px;"> 
 					              <a class="level-top navigation_a" href="{{url('restaurant')}}">
 					                <span>Restaurant</span>
 					              </a> 

@@ -23,19 +23,29 @@
           </div>
         </div>
         
-        <div class="col-lg-12 col-md-12" style="position: absolute;z-index: 999;top: 316px;">
+        <div class="col-lg-12 col-md-12" style="position: absolute;z-index: 999;top: 260px;">
           <div class="col-lg-3 col-md-3" style="margin-left: 27px;"></div>
           <div class="col-lg-8 col-md-8">
-		  
-            <input type="text" style="width:300px" id="location" placeholder="Search Location" class="form-control search_input_banner" name="" style="">
-            <input type="text" style="width:300px" id="categories" placeholder="Search Restaurent /Dishes " class="form-control search_input_banner" name="" style="">
-            <input type="submit" onClick="get_restaurant()" class="btn btn-checkout search_find_button" name="" style="">
+		        <div class="col-lg-3 col-md-3" style="padding: 0px;">
+              <input type="text" style="width:220px;border-right: 1px solid #ccc;" id="location" placeholder="Search Location" class="form-control search_input_banner1" name="" style=""><i class="fa fa-crosshairs" aria-hidden="true" style="position: absolute;font-size: 23px;top: 26px;z-index: 99;right: 10px;"></i>
+            </div>
+            <div class="col-lg-4 col-md-4" style="padding: 0px;">
+              <input type="text" style="width:100%;border-radius: 0;" id="categories" placeholder="Search Restaurent /Dishes " class="form-control search_input_banner2" name="" style="border-radius: 0;"><i class="fa fa-search" aria-hidden="true" style="position: absolute;font-size: 23px;top: 26px;z-index: 99;right: 10px;"></i>
+            </div>
+            <div class="col-lg-3 col-md-3" style="padding: 0px;">
+              <input type="submit" onClick="get_restaurant()" class="btn btn-checkout search_find_button" name="" style="">
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  
+  <style type="text/css">
+    .bestsell-pro .slider-items-products .owl-buttons .owl-prev {left: 61px;top: 82px;}
+    .bestsell-pro .slider-items-products .owl-buttons .owl-prev a:before{font-size: 55px;}
+    .bestsell-pro .slider-items-products .owl-buttons .owl-next a:before{font-size: 55px;}
+    .bestsell-pro .slider-items-products .owl-buttons .owl-next{left: 971px;top: 80px;}
+  </style>
   <script>
   function get_restaurant()
   {
@@ -68,7 +78,7 @@
   </script>
   <!-- end Slider -->
 
-  <div class="col-lg-12 col-md-12" style="background: #fbeb20;">
+  <div class="col-lg-12 col-md-12" style="background: #bbbbbb38;">
     <!-- <img src="images/process.gif"> -->
     <div class="col-lg-4 col-md-4">
       <center>
@@ -97,11 +107,12 @@
     .bestsell-pro .block-content{padding: 14px 10px;}
     .best_deals_single_slider{margin: 0px;}
     .testi-slider{padding: 0px;margin-bottom: 0px;border:none;}
-    .avatar img{width: 100%;margin-bottom: 0px;border-radius: 0px;}
+    .avatar img{width: 100%;margin-bottom: 0px;border-radius: 0px;height: 245px;}
     .avatar{margin-bottom: 0px;}
     .testi-slider .carousel-indicators{bottom: -11px;}
+    .index_restaurant_slider{height: 220px;}
   </style>
-  <section class="bestsell-pro">
+  <section class="bestsell-pro" style="clear: both;">
     <div class="container">
       <div class="slider-items-products">
         <div class="bestsell-block">
@@ -149,11 +160,11 @@
               <!-- <a href="#" class="view_more_bnt">View All</a>  -->
             </div>
             <div class="slider-items slider-width-col4 products-grid block-content">
-			@foreach($results['review'] as $key=>$row)
+			@foreach($results['featured'] as $key=>$row)
               <div class="item">
                 <div class="item-inner">
                   <div class="item-img">
-                    <div class="item-img-info"> <a class="product-image" title="Retis lapen casen" href="#"> <img alt="Retis lapen casen" src="uploads/{{$row->images}} "> </a>
+                    <div class="item-img-info"> <a class="product-image index_restaurant_slider" title="Retis lapen casen" href="#"> <img alt="Retis lapen casen" src="uploads/{{$row->images}} "> </a>
                       <div class="sale-label new-top-left">sale</div>
                       <div class="box-hover">
                         <ul class="add-to-links">
@@ -166,7 +177,7 @@
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title="Retis lapen casen" href="{{url('restaurant_details')}}/{{$row->restaurant_slug}}">{{$row->restaurant_name}}123 </a> </div>
+                      <div class="item-title"> <a title="Retis lapen casen" href="{{url('restaurant_details')}}/{{$row->restaurant_slug}}">{{$row->restaurant_name}} </a> </div>
                       <div class="rating">
                         <div class="ratings">
                           <div class="rating-box">
@@ -210,69 +221,22 @@
           <div class="slider-items slider-width-col6"> 
             
             <!-- Item -->
-			@foreach($resuults['merchant_logo'] as $logo)
+			@foreach($results['merchant_logo'] as $logo)
             <div class="item"> 
               <a href="#">
-                <img src="uploads/{{$logo->logo}}" alt="Image"> 
+                <img src="uploads/logo/{{$logo->logo}}" alt="Image"> 
               </a> 
             </div>
 			@endforeach
             <!-- End Item --> 
             
             <!-- Item -->
-            <div class="item"> 
+          <!--  <div class="item"> 
               <a href="#">
-                <img src="rabzo_web/images/b-logo3.png" alt="Image"> 
+                <img src="html/images/b-logo3.png" alt="Image"> 
               </a> 
-            </div>
-            <!-- End Item --> 
-            
-            <!-- Item -->
-            <div class="item"> 
-              <a href="#">
-                <img src="rabzo_web/images/b-logo2.png" alt="Image"> 
-              </a> 
-            </div>
-            <!-- End Item --> 
-            
-            <!-- Item -->
-            <div class="item"> 
-              <a href="#">
-                <img src="rabzo_web/images/b-logo4.png" alt="Image"> 
-              </a> 
-            </div>
-            <!-- End Item --> 
-            
-            <!-- Item -->
-            <div class="item"> 
-              <a href="#">
-                <img src="rabzo_web/images/b-logo5.png" alt="Image"> 
-              </a> 
-            </div>
-            <!-- End Item --> 
-            
-            <!-- Item -->
-            <div class="item"> 
-              <a href="#">
-                <img src="rabzo_web/images/b-logo6.png" alt="Image"> 
-              </a> 
-            </div>
-            <!-- End Item --> 
-            
-            <!-- Item -->
-            <div class="item"> 
-              <a href="#">
-                <img src="rabzo_web/images/b-logo2.png" alt="Image"> 
-              </a> 
-            </div>
-            <!-- End Item --> 
-            
-            <!-- Item -->
-            <div class="item"> 
-              <a href="#">
-                <img src="rabzo_web/images/b-logo4.png" alt="Image"> 
-              </a> 
-            </div>
+            </div>-->
+         
             <!-- End Item --> 
             
           </div>
