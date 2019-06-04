@@ -166,7 +166,7 @@
                   </div>
                   <div class="item-info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title="Retis lapen casen" href="{{url('restaurant_details')}}/{{$row->restaurant_slug}}">{{$row->restaurant_name}}123 </a> </div>
+                      <div class="item-title"> <a title="Retis lapen casen" href="{{url('restaurant_details')}}/{{$row->restaurant_slug}}">{{$row->restaurant_name}} </a> </div>
                       <div class="rating">
                         <div class="ratings">
                           <div class="rating-box">
