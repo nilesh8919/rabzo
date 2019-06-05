@@ -1,7 +1,9 @@
+  	<?php   if(Auth::id() > 0){ ?>
   <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
                 <li class="nav-header">
+			
                     <div class="dropdown profile-element"> <a href="{{url('home')}}" ><span>
                         <?php  $merchant_img = (new \App\Helpers\AppHelper)->get_merchant_image() ?>
                             <img alt="image" class="img-circle" src="uploads/{{$merchant_img->images}}" style="width:40px" />
@@ -17,12 +19,13 @@
                             <li><a href="{{url('logout')}}">Logout</a></li>
                         </ul>
                     </div>
+	 
                 <!--    <div class="logo-element">
                         IN+
                     </div>-->
                 </li>
 				 <li>
-                    <a href="{{url('home')}}"><i class="fa fa-home"></i> <span class="nav-label">Dashboard</span></a>
+                    <a href="{{url('merchant_home')}}"><i class="fa fa-home"></i> <span class="nav-label">Dashboard</span></a>
                     
                 </li>
 			    <li> <a href="{{url('merchant_info')}}"><i class="fa fa-cutlery"></i> <span class="nav-label"></span>Merchant Info</a> </li>
@@ -62,3 +65,4 @@
 
         </div>
     </nav>
+	  <?php } ?>

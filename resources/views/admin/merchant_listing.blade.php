@@ -90,6 +90,9 @@
 							  <i class="clip-remove"></i>Edit</a> |
 							  <a onclick="delete_merchant({{ $row->id }})" style="text-decoration:none; cursor: pointer; cursor: hand;">
 							  <i class="clip-remove"></i>Delete</a> 
+							  |
+							  <a onclick="merchant_login({{ $row->id }})" style="text-decoration:none; cursor: pointer; cursor: hand;">
+							  <i class="clip-remove"></i>Merchant Autologin</a> 
 							   </td>
                              </tr> 
                               <?php  $i++;?>
@@ -248,6 +251,25 @@ function delete_merchant($id){
 	   }
 
     }
+	function merchant_login($id)
+	{
+		 $.ajax({
+                   url: '{{url("merchantAutoLogin")}}',
+                   data:{'id':$id},
+                    type: 'POST',
+					dataType: 'json',
+                 
+              success:function(response){
+				  if(response.ResponseCode == '200')
+				  {
+					   window.location.href="{{ url('merchant_home') }}";
+				  }else{
+					  alert('unable to login');
+				  }
+                
+             },
+         });
+	}
 	function get_data_by_id($id)
  {
 	 //alert('hi')
