@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2019 at 06:16 PM
--- Server version: 10.1.24-MariaDB
--- PHP Version: 7.1.6
+-- Generation Time: Jun 06, 2019 at 06:44 PM
+-- Server version: 10.1.10-MariaDB
+-- PHP Version: 7.0.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -44,8 +42,8 @@ CREATE TABLE `banners` (
 --
 
 INSERT INTO `banners` (`id`, `bannername`, `line1`, `line2`, `bannertext`, `status`, `updated_at`, `created_at`) VALUES
-(48, '1557257093_slide-img1.jpg', 'test', 'test', '<p>test</p>', 'Active', '2019-05-07 13:54:54', '2019-05-07 13:54:54'),
-(49, '1557257111_slide-img2.jpg', 'dsfs', 'df', '<p>sd</p>', 'Active', '2019-05-07 13:55:12', '2019-05-07 13:55:12');
+(50, '1559580526_banner2.png', 'dffdg', 'gddg', NULL, 'Active', '2019-06-03 11:18:46', '2019-06-03 11:18:46'),
+(51, '1559580549_tasty-hamburger-composition_23-2147695638.jpg', 'wrter', 'yty', NULL, 'Active', '2019-06-03 11:19:09', '2019-06-03 11:19:09');
 
 -- --------------------------------------------------------
 
@@ -175,7 +173,7 @@ CREATE TABLE `mt_admin_user` (
 --
 
 INSERT INTO `mt_admin_user` (`admin_id`, `username`, `password`, `first_name`, `last_name`, `role`, `date_created`, `date_modified`, `ip_address`, `user_lang`, `email_address`, `lost_password_code`, `session_token`, `last_login`, `user_access`) VALUES
-(1, 'eccentric', '8c7ef17df3ef399e1c4c272577dc1c80', '', '', '', '2018-12-06 02:35:26', '0000-00-00 00:00:00', '203.192.219.86', 0, '', '', '74161092983837ec5754f503cfaaee0929fd48974e7', '2019-03-19 11:04:52', '[\"autologin\",\"dashboard\",\"merchant\",\"sponsoredMerchantList\",\"packages\",\"Cuisine\",\"dishes\",\"OrderStatus\",\"incomingorders\",\"settings\",\"themesettings\",\"managelocation\",\"commisionsettings\",\"voucher\",\"invoice\",\"merchantcommission\",\"withdrawal\",\"incomingwithdrawal\",\"withdrawalsettings\",\"emailsettings\",\"emailtpl\",\"notisettings\",\"emailogs\",\"cronjobs\",\"customPage\",\"Ratings\",\"ContactSettings\",\"SocialSettings\",\"ManageCurrency\",\"ManageLanguage\",\"Seo\",\"addons\",\"addonexport\",\"mobileapp\",\"pointsprogram\",\"merchantapp\",\"analytics\",\"customerlist\",\"subscriberlist\",\"reviews\",\"bankdeposit\",\"paymentgatewaysettings\",\"paymentgateway\",\"paypalSettings\",\"cardpaymentsettings\",\"stripeSettings\",\"mercadopagoSettings\",\"sisowsettings\",\"payumonenysettings\",\"obdsettings\",\"payserasettings\",\"payondelivery\",\"barclay\",\"epaybg\",\"authorize\",\"braintree\",\"razor\",\"mollie\",\"ipay88\",\"moneris\",\"sms\",\"smsSettings\",\"smsPackage\",\"smstransaction\",\"smslogs\",\"fax\",\"faxtransaction\",\"faxpackage\",\"faxlogs\",\"faxsettings\",\"reports\",\"rptMerchantReg\",\"rptMerchantPayment\",\"rptMerchanteSales\",\"rptmerchantsalesummary\",\"rptbookingsummary\",\"userList\",\"voguepay\",\"printermodule\"]');
+(1, 'eccentric', '8c7ef17df3ef399e1c4c272577dc1c80', '', '', '', '2018-12-06 02:35:26', '0000-00-00 00:00:00', '203.192.219.86', 0, '', '', '74161092983837ec5754f503cfaaee0929fd48974e7', '2019-03-19 11:04:52', '["autologin","dashboard","merchant","sponsoredMerchantList","packages","Cuisine","dishes","OrderStatus","incomingorders","settings","themesettings","managelocation","commisionsettings","voucher","invoice","merchantcommission","withdrawal","incomingwithdrawal","withdrawalsettings","emailsettings","emailtpl","notisettings","emailogs","cronjobs","customPage","Ratings","ContactSettings","SocialSettings","ManageCurrency","ManageLanguage","Seo","addons","addonexport","mobileapp","pointsprogram","merchantapp","analytics","customerlist","subscriberlist","reviews","bankdeposit","paymentgatewaysettings","paymentgateway","paypalSettings","cardpaymentsettings","stripeSettings","mercadopagoSettings","sisowsettings","payumonenysettings","obdsettings","payserasettings","payondelivery","barclay","epaybg","authorize","braintree","razor","mollie","ipay88","moneris","sms","smsSettings","smsPackage","smstransaction","smslogs","fax","faxtransaction","faxpackage","faxlogs","faxsettings","reports","rptMerchantReg","rptMerchantPayment","rptMerchanteSales","rptmerchantsalesummary","rptbookingsummary","userList","voguepay","printermodule"]');
 
 -- --------------------------------------------------------
 
@@ -320,7 +318,7 @@ INSERT INTO `mt_category` (`id`, `category_name`, `category_description`, `photo
 (2, 'Italian', 'italian', '', 'publish', 0, '2018-12-06 14:27:28', '', '203.192.219.86', 1, '', '', NULL, NULL, 0, 'NIL'),
 (3, 'maxican', 'maxican', '', 'publish', 0, '2018-12-06 14:27:43', '', '203.192.219.86', 1, '', '', NULL, NULL, 0, 'NIL'),
 (4, 'Vegetarian food', 'Varhadi Vyanjan is pure Vegetarian  restaurant', '1544170574-Varhadi-Vyanjan-Nagpur-3-296x420.jpg', 'publish', 0, '2018-12-07 13:46:16', '', '203.192.219.81', 1, '', '', NULL, NULL, 0, 'NIL'),
-(6, 'Non Vegetarian', 'food not suitable for vegetarians containing meat. the non-veg fare has more to it than just chicken\\\' (of a person) having a diet that includes meat.', '1544177175-929b5413ee195892da67bdaf154510fa_1530076699.jpg', 'publish', 0, '2018-12-07 15:36:17', '2018-12-07 15:36:46', '203.192.219.81', 1, '', '', NULL, NULL, 0, 'NIL');
+(6, 'Non Vegetarian', 'food not suitable for vegetarians containing meat. the non-veg fare has more to it than just chicken\\'' (of a person) having a diet that includes meat.', '1544177175-929b5413ee195892da67bdaf154510fa_1530076699.jpg', 'publish', 0, '2018-12-07 15:36:17', '2018-12-07 15:36:46', '203.192.219.81', 1, '', '', NULL, NULL, 0, 'NIL');
 
 -- --------------------------------------------------------
 
@@ -748,30 +746,30 @@ CREATE TABLE `mt_item` (
 --
 
 INSERT INTO `mt_item` (`id`, `merchant_id`, `item_name`, `item_description`, `status`, `category`, `price`, `addon_item`, `cooking_ref`, `discount`, `multi_option`, `multi_option_value`, `photo`, `sequence`, `is_featured`, `date_created`, `date_modified`, `ip_address`, `ingredients`, `spicydish`, `two_flavors`, `two_flavors_position`, `require_addon`, `dish`, `item_name_trans`, `item_description_trans`, `non_taxable`, `not_available`, `gallery_photo`, `points_earned`, `points_disabled`) VALUES
-(1, 17, 'Chicken Tikka', 'Chicken tikka masala is a dish of chunks of roasted marinated chicken in a spiced curry sauce. The sauce is usually creamy and orange-coloured. There are multiple claims to its place of origin such as the Indian subcontinent and the United Kingdom. It is among the United Kingdom\'s ', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '[\"1\"]', '30', '', '', '1544086829-Hyderabadi-Dum-Biryani-1.jpg', 0, '', '2018-12-06 14:32:28', '0000-00-00 00:00:00', '203.192.219.86', '[\"1\"]', 0, 0, '', '', '', NULL, NULL, 1, 1, '1544086848-shutterstock_277542194.jpg', 0, 1),
-(2, 0, 'Bhendi Masala', 'Bhendi Masala', 'publish', '4', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '1544171187-Varhadi-Vyanjan-Nagpur-1.jpg', 1, '', '2018-12-07 13:55:49', '2018-12-07 13:57:28', '203.192.219.81', '', 0, 2, '', '', '', NULL, NULL, 1, 1, '[\"1544171123-bhendimasala.jpg\",\"1544171243-bhindi-masala-step-by-step-recipe.jpg\"]', 0, 1),
-(3, 4, 'Kadai paneer', 'Kadai paneer', 'publish', '4', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 2, '', '2018-12-07 13:58:12', '2018-12-07 13:58:53', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544171275-kadai-paneer-recipe-1-500x500.jpg\",\"1544171330-kadaipaneer.jpg\"]', 0, 1),
-(4, 4, 'Matar Paneer', 'Mutter paneer', 'publish', '4', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 4, '', '2018-12-07 14:00:42', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544171410-Matar-Paneer-Recipe-Step-By-Step-Instructions.jpg\",\"1544171419-mutter-paneer.jpg\"]', 0, 1),
-(5, 4, 'Mix Veg', 'Mix Veg', 'publish', '4', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 6, '', '2018-12-07 14:02:24', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544171493-mix-veg.jpg\",\"1544171536-mxveg2.jpg\"]', 0, 1),
-(6, 4, 'Veg kholapuri', '', 'publish', '4', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 7, '', '2018-12-07 14:04:14', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544171592-veg_kholapuri.jpg\",\"1544171632-veg_kholapuri2.jpg\"]', 0, 1),
-(7, 4, 'Masala rice', 'Masala rice', 'publish', '4', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 5, '', '2018-12-07 14:05:51', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544171695-masala-rice.png\",\"1544171730-masalarice.jpg\"]', 0, 1),
-(8, 4, 'Veg Pulao', '', 'publish', '4', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 8, '', '2018-12-07 14:07:57', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544171804-vegetable-pulav-recipe.jpg\",\"1544171853-vegpulaoo.jpg\"]', 0, 1),
-(9, 4, 'Veg Anda Curry', '', 'publish', '4', '{\"14\":\"90\",\"13\":\"170\"}', '', '', '', '', '', '', 9, '', '2018-12-07 14:12:52', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544172143-veg-anda-curry.jpg\",\"1544172154-vegandacurry.jpg\"]', 0, 1),
-(10, 4, 'Kopta Curry', 'Kopta Curry', 'publish', '4', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 3, '', '2018-12-07 14:15:25', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544172224-MalaiKoftaCurry-1.jpg\",\"1544172299-koptacurry.jpg\",\"1544172305-477292-1-eng-GB_lamb-kofta-curry-470x540.jpg\"]', 0, 1),
-(11, 17, 'chicken curry', '<span style=\"color:rgb(51,55,61);font-family:\'-apple-system\', BlinkMacSystemFont, \'Segoe UI\', Roboto, Helvetica, Arial, sans-serif, \'Apple Color Emoji\', \'Segoe UI Emoji\', \'Segoe UI Symbol\';\">Costly, Online Payment facility not available, Taste is good ,on same cost you would get better meal than shankar saoji. last one it uses saoji masala it makes you stomach upset</span>', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:44:07', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544177632-malvani-chicken-curry_620x330_81514354104.jpg\"]', 0, 1),
-(12, 5, 'Mutton Curry', 'Mutton Curry', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:45:18', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544177697-download.jpg\",\"1544177704-shankar-saoji-bhojnalay-wadi-nagpur-restaurants-kms7h3k0wb.jpg\"]', 0, 1),
-(13, 5, 'Egg Curry', 'Egg Curry', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:46:34', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544177772-punjabi-egg-curry-anda-curry.jpg\",\"1544177780-vegandacurry.jpg\"]', 0, 1),
-(14, 5, 'Khura', 'Goat Leg called as Khura in marathi langiage', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:47:32', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544177849-mutton.jpg\"]', 0, 1),
-(15, 5, 'Crab', 'Crab', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:48:17', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544177895-4QNlZ.jpg\"]', 0, 1),
-(16, 5, 'Muglai Chicken', '', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:49:45', '2018-12-07 15:50:48', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544177974-DYXrH.jpg\"]', 0, 1),
-(17, 5, 'Chicken Biryani', 'Chicken Biryani', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:55:37', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544178332-download-(1).jpg\",\"1544178333-7e20d8583a374b1490b859b8223f373e.png\"]', 0, 1),
-(18, 5, 'Mutton Biryani', 'Mutton Biryani', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:56:23', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544178380-mutton-biryani-620.jpg\",\"1544178381-mutton-biryani2.jpg\"]', 0, 1),
-(19, 5, 'Egg Biryani', 'Egg Biryani', 'publish', '6', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:57:15', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544178419-1-12.jpg\",\"1544178419-Egg-Biryani.jpg\"]', 0, 1),
-(20, 5, 'Veg Biryani', '', 'publish', '5', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:58:11', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544178475-download-(2).jpg\",\"1544178475-vegetable-biryani-recipe.jpg\"]', 0, 1),
-(21, 5, 'Patwadi', '', 'publish', '5', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:59:58', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544178588-patwai1.jpg\",\"1544178588-patwadi.jpg\"]', 0, 1),
-(22, 5, 'Paneer Butter masala', 'Paneer Butter masala', 'publish', '5', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 16:01:39', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '[\"1544178684-pbm.jpg\",\"1544178685-pbm2.jpg\"]', 0, 1),
-(23, 5, 'Dal Fry', 'Dal Fry', 'publish', '5', 'a:2:{s:2:\"38\";i:60;s:2:\"40\";i:120;}', '{\"5\":[\"1\"]}', '', '', '{\"2\":[\"multiple\"],\"3\":[\"one\"],\"4\":[\"one\"],\"5\":[\"one\"]}', '{\"2\":[\"\"],\"3\":[\"\"],\"4\":[\"\"],\"5\":[\"\"]}', '', 0, '', '2018-12-07 16:03:09', '2018-12-07 16:42:38', '203.192.219.81', '', 0, 0, '{\"2\":[\"\"],\"3\":[\"\"],\"4\":[\"\"],\"5\":[\"\"]}', '', '', NULL, NULL, 1, 1, '[\"1544178776-Dal-Fry_11.jpg\",\"1544178779-Dal-Fry1.jpg\"]', 0, 1),
-(24, 16, 'sdfs', '<p>sdfs</p>', 'publish', NULL, 'a:2:{i:38;s:2:\"10\";i:39;s:2:\"20\";}', NULL, NULL, '100', NULL, NULL, '1556901938_download.jpg', 0, '', '2019-05-03 16:45:38', '2019-05-03 16:45:38', '::1', NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, 0, 1);
+(1, 17, 'Chicken Tikka', 'Chicken tikka masala is a dish of chunks of roasted marinated chicken in a spiced curry sauce. The sauce is usually creamy and orange-coloured. There are multiple claims to its place of origin such as the Indian subcontinent and the United Kingdom. It is among the United Kingdom''s ', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '["1"]', '30', '', '', '1544086829-Hyderabadi-Dum-Biryani-1.jpg', 0, '', '2018-12-06 14:32:28', '0000-00-00 00:00:00', '203.192.219.86', '["1"]', 0, 0, '', '', '', NULL, NULL, 1, 1, '1544086848-shutterstock_277542194.jpg', 0, 1),
+(2, 0, 'Bhendi Masala', 'Bhendi Masala', 'publish', '4', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '1544171187-Varhadi-Vyanjan-Nagpur-1.jpg', 1, '', '2018-12-07 13:55:49', '2018-12-07 13:57:28', '203.192.219.81', '', 0, 2, '', '', '', NULL, NULL, 1, 1, '["1544171123-bhendimasala.jpg","1544171243-bhindi-masala-step-by-step-recipe.jpg"]', 0, 1),
+(3, 4, 'Kadai paneer', 'Kadai paneer', 'publish', '4', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 2, '', '2018-12-07 13:58:12', '2018-12-07 13:58:53', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544171275-kadai-paneer-recipe-1-500x500.jpg","1544171330-kadaipaneer.jpg"]', 0, 1),
+(4, 4, 'Matar Paneer', 'Mutter paneer', 'publish', '4', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 4, '', '2018-12-07 14:00:42', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544171410-Matar-Paneer-Recipe-Step-By-Step-Instructions.jpg","1544171419-mutter-paneer.jpg"]', 0, 1),
+(5, 4, 'Mix Veg', 'Mix Veg', 'publish', '4', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 6, '', '2018-12-07 14:02:24', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544171493-mix-veg.jpg","1544171536-mxveg2.jpg"]', 0, 1),
+(6, 4, 'Veg kholapuri', '', 'publish', '4', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 7, '', '2018-12-07 14:04:14', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544171592-veg_kholapuri.jpg","1544171632-veg_kholapuri2.jpg"]', 0, 1),
+(7, 4, 'Masala rice', 'Masala rice', 'publish', '4', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 5, '', '2018-12-07 14:05:51', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544171695-masala-rice.png","1544171730-masalarice.jpg"]', 0, 1),
+(8, 4, 'Veg Pulao', '', 'publish', '4', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 8, '', '2018-12-07 14:07:57', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544171804-vegetable-pulav-recipe.jpg","1544171853-vegpulaoo.jpg"]', 0, 1),
+(9, 4, 'Veg Anda Curry', '', 'publish', '4', '{"14":"90","13":"170"}', '', '', '', '', '', '', 9, '', '2018-12-07 14:12:52', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544172143-veg-anda-curry.jpg","1544172154-vegandacurry.jpg"]', 0, 1),
+(10, 4, 'Kopta Curry', 'Kopta Curry', 'publish', '4', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 3, '', '2018-12-07 14:15:25', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544172224-MalaiKoftaCurry-1.jpg","1544172299-koptacurry.jpg","1544172305-477292-1-eng-GB_lamb-kofta-curry-470x540.jpg"]', 0, 1),
+(11, 17, 'chicken curry', '<span style="color:rgb(51,55,61);font-family:''-apple-system'', BlinkMacSystemFont, ''Segoe UI'', Roboto, Helvetica, Arial, sans-serif, ''Apple Color Emoji'', ''Segoe UI Emoji'', ''Segoe UI Symbol'';">Costly, Online Payment facility not available, Taste is good ,on same cost you would get better meal than shankar saoji. last one it uses saoji masala it makes you stomach upset</span>', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:44:07', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544177632-malvani-chicken-curry_620x330_81514354104.jpg"]', 0, 1),
+(12, 5, 'Mutton Curry', 'Mutton Curry', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:45:18', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544177697-download.jpg","1544177704-shankar-saoji-bhojnalay-wadi-nagpur-restaurants-kms7h3k0wb.jpg"]', 0, 1),
+(13, 5, 'Egg Curry', 'Egg Curry', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:46:34', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544177772-punjabi-egg-curry-anda-curry.jpg","1544177780-vegandacurry.jpg"]', 0, 1),
+(14, 5, 'Khura', 'Goat Leg called as Khura in marathi langiage', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:47:32', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544177849-mutton.jpg"]', 0, 1),
+(15, 5, 'Crab', 'Crab', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:48:17', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544177895-4QNlZ.jpg"]', 0, 1),
+(16, 5, 'Muglai Chicken', '', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:49:45', '2018-12-07 15:50:48', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544177974-DYXrH.jpg"]', 0, 1),
+(17, 5, 'Chicken Biryani', 'Chicken Biryani', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:55:37', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544178332-download-(1).jpg","1544178333-7e20d8583a374b1490b859b8223f373e.png"]', 0, 1),
+(18, 5, 'Mutton Biryani', 'Mutton Biryani', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:56:23', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544178380-mutton-biryani-620.jpg","1544178381-mutton-biryani2.jpg"]', 0, 1),
+(19, 5, 'Egg Biryani', 'Egg Biryani', 'publish', '6', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:57:15', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544178419-1-12.jpg","1544178419-Egg-Biryani.jpg"]', 0, 1),
+(20, 5, 'Veg Biryani', '', 'publish', '5', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:58:11', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544178475-download-(2).jpg","1544178475-vegetable-biryani-recipe.jpg"]', 0, 1),
+(21, 5, 'Patwadi', '', 'publish', '5', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 15:59:58', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544178588-patwai1.jpg","1544178588-patwadi.jpg"]', 0, 1),
+(22, 5, 'Paneer Butter masala', 'Paneer Butter masala', 'publish', '5', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '', '', '', '', '', '', 0, '', '2018-12-07 16:01:39', '0000-00-00 00:00:00', '203.192.219.81', '', 0, 0, '', '', '', NULL, NULL, 1, 1, '["1544178684-pbm.jpg","1544178685-pbm2.jpg"]', 0, 1),
+(23, 5, 'Dal Fry', 'Dal Fry', 'publish', '5', 'a:2:{s:2:"38";i:60;s:2:"40";i:120;}', '{"5":["1"]}', '', '', '{"2":["multiple"],"3":["one"],"4":["one"],"5":["one"]}', '{"2":[""],"3":[""],"4":[""],"5":[""]}', '', 0, '', '2018-12-07 16:03:09', '2018-12-07 16:42:38', '203.192.219.81', '', 0, 0, '{"2":[""],"3":[""],"4":[""],"5":[""]}', '', '', NULL, NULL, 1, 1, '["1544178776-Dal-Fry_11.jpg","1544178779-Dal-Fry1.jpg"]', 0, 1),
+(24, 16, 'sdfs', '<p>sdfs</p>', 'publish', NULL, 'a:2:{i:38;s:2:"10";i:39;s:2:"20";}', NULL, NULL, '100', NULL, NULL, '1556901938_download.jpg', 0, '', '2019-05-03 16:45:38', '2019-05-03 16:45:38', '::1', NULL, 1, 1, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -917,7 +915,7 @@ INSERT INTO `mt_location_countries` (`country_id`, `shortcode`, `country_name`, 
 (50, 'CD', 'Congo The Democratic Republic Of The', 242),
 (51, 'CK', 'Cook Islands', 682),
 (52, 'CR', 'Costa Rica', 506),
-(53, 'CI', 'Cote D\'Ivoire (Ivory Coast)', 225),
+(53, 'CI', 'Cote D''Ivoire (Ivory Coast)', 225),
 (54, 'HR', 'Croatia (Hrvatska)', 385),
 (55, 'CU', 'Cuba', 53),
 (56, 'CY', 'Cyprus', 357),
@@ -1230,24 +1228,9 @@ CREATE TABLE `mt_merchant` (
 --
 
 INSERT INTO `mt_merchant` (`id`, `restaurant_slug`, `restaurant_name`, `owner_name`, `restaurant_phone`, `contact_name`, `contact_phone`, `contact_email`, `country_code`, `address`, `street`, `city`, `state`, `post_code`, `gst_number`, `adhar_number`, `pan_number`, `fssi_number`, `cuisine`, `service`, `free_delivery`, `delivery_estimation`, `username`, `password`, `activation_key`, `activation_token`, `status`, `date_created`, `date_modified`, `date_activated`, `last_login`, `ip_address`, `package_id`, `package_price`, `membership_expired`, `payment_steps`, `is_featured`, `is_ready`, `is_sponsored`, `sponsored_expiration`, `lost_password_code`, `user_lang`, `membership_purchase_date`, `sort_featured`, `is_commission`, `percent_commision`, `abn`, `session_token`, `commision_type`, `mobile_session_token`, `merchant_key`, `latitude`, `lontitude`, `delivery_charges`, `minimum_order`, `delivery_minimum_order`, `delivery_maximum_order`, `pickup_minimum_order`, `pickup_maximum_order`, `country_name`, `country_id`, `state_id`, `city_id`, `area_id`, `logo`, `merchant_type`, `invoice_terms`, `source`) VALUES
-(1, 'rabzo-kitchen', 'Rabzo Kitchen', NULL, '9860749070', 'prstik', '+919860749070', 'connect@eisys.in', 'IN', NULL, 'plot no 5, fiske layout, ramkrishna nagar,, behind niwara society, gorewada road,', 'nagpur', 'Maharashtra', '440013', NULL, NULL, NULL, NULL, '[\"0\"]', '2', 2, '', 'pratik', 'f398860b5fc24a8725f0358b0f68ad7a', '322003', '648b2e0ca73bb8655f6659b0e7bcf9b4', 'active', '2018-12-06 02:55:08', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '203.192.219.86', 2, 1000.00000, '2019-12-06', '2', 1, 1, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '', 'percentage', '', '', '21.1149', '79.0375', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '', 1, 7, 'NIL'),
-(2, 'neivedhyam', 'neivedhyam', NULL, '9665401016', 'roshani', '+919665401016', 'connect@eisys.in', 'IN', NULL, 'nagpur', 'Saoner', 'maharastra', '440013', NULL, NULL, NULL, NULL, '[\"0\"]', '2', 2, '', 'coonect@eisys.in', '25f9e794323b453885f5181f1b624d0b', '134242', '21fbd123c0fb57fb215a0c3fbada1e2c', 'pending', '2018-12-06 03:04:58', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '203.192.219.86', 1, 600.00000, '2019-12-06', '2', 1, 1, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '', 'percentage', '', '', '21.1228', '79.0625', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '', 1, 7, 'NIL'),
-(3, 'rabzo-kitchen1', 'Rabzo Kitchen', NULL, '9860749070', 'ashwin', '+919860749070', 'connect@eisys.in', 'IN', NULL, 'plot no 5, fiske layout, ramkrishna nagar,, behind niwara society, gorewada road,', 'Kamathi', 'Maharashtra', '440013', NULL, NULL, NULL, NULL, '[\"1\",\"3\",\"6\"]', '1', 2, '', 'pratik', 'f398860b5fc24a8725f0358b0f68ad7a', '133142', 'd2197bbb0dc7b2f90f1d0e14b1a153ba', 'pending', '2018-12-06 14:14:32', '2018-12-08 18:07:11', '0000-00-00 00:00:00', '2018-12-06 14:26:21', '::1', 1, 600.00000, '2019-12-06', '3', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '71807368835bba59d0ba59b789b0e8b2a7826e020d5', 'percentage', '', '', '21.1850462', '79.0701547', 20.00000, 300.00000, 300.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544087049-logo1.png', 1, 7, 'NIL'),
-(4, 'varhadi-vyanjan', 'Varhadi Vyanjan', NULL, '075074 65351', 'Atul Narale and Sunil Ubgade', '9850301819', 'varhad_viyanjan@gmail.com', 'IN', NULL, '82, Cement Rd, P&T Colony, Kotwal Nagar, Pratap Nagar', 'Nagpur', 'Maharashtra', '440022', NULL, NULL, NULL, NULL, '[\"20\"]', '1', 2, '', 'ensivoso', 'e10adc3949ba59abbe56e057f20f883e', '', '', 'active', '2018-12-07 13:19:23', '2019-03-19 11:05:17', '0000-00-00 00:00:00', '2019-03-19 11:05:44', '::1', 1, 600.00000, '2019-12-12', '1', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '27652523078837ec5754f503cfaaee0929fd48974e7', 'fixed', '', '', '21.118123', '79.056797', 0.00000, 80.00000, 80.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544272377-product-500x500.jpeg', 1, 1, 'NIL'),
-(5, 'shankar-saoji-bhojanalay', 'Shankar Saoji Bhojanalay', NULL, '+91 8999859866', 'Shankar', '+91 8999859866', 'Shankar@gmail.com', 'IN', NULL, 'Near Gajanan Mandir, Trimurti Nagar, Near Pratap Nagar, Nagpur', 'Nagpur', 'Maharashtra', '440022', NULL, NULL, NULL, NULL, '[\"3\",\"20\",\"21\",\"22\",\"23\"]', '1', 2, '', 'shankar@gmail.com', 'e36746428c0084e5444890f46c97b6b8', '', '', 'active', '2018-12-07 14:57:54', '2018-12-07 16:23:36', '0000-00-00 00:00:00', '2018-12-08 17:59:20', '203.192.219.81', 1, 600.00000, '2020-12-28', '1', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '74787214383837ec5754f503cfaaee0929fd48974e7', 'fixed', '', '', '21.112513', '79.040049', 0.00000, 100.00000, 100.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544272253-10247chicken_kassa.jpg', 1, 1, 'NIL'),
-(6, 'nawabs', 'Nawabs', NULL, '9874563210', 'Rajesh', '0123456789', 'nawabs@gmail.com', 'IN', NULL, 'Civil Lines Nagpur', 'Nagpur', 'MAHARASHTRA', '440000', NULL, NULL, NULL, NULL, '[\"3\"]', '1', 2, '', 'pankaj@gmail.com', '7d4c8c3470b81f66a333ea469d3bad82', '', '', 'expired', '2018-12-08 16:52:47', '2018-12-08 16:53:26', '0000-00-00 00:00:00', '2018-12-08 16:55:08', '::1', 1, 600.00000, '2018-12-31', '1', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '30127412967837ec5754f503cfaaee0929fd48974e7', 'fixed', '', '', '21.1092', '79.0574', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544268357-download.jpg', 1, 1, 'NIL'),
-(7, 'veeraswami', 'Veeraswami', NULL, '0123654789', 'Pratik', '7896541563', 'pratik@gmail.com', 'IN', NULL, 'Sadar', 'Nagpur', 'MAHARASHTRA', '440015', NULL, NULL, NULL, NULL, '[\"21\"]', '1', 2, '', 'pratik@gmail.com', '0cb2b62754dfd12b6ed0161d4b447df7', '', '', 'expired', '2018-12-08 17:44:47', '2018-12-08 17:45:01', '0000-00-00 00:00:00', '2018-12-08 17:45:31', '::1', 1, 600.00000, '2018-12-31', '1', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '27856149012837ec5754f503cfaaee0929fd48974e7', 'fixed', '', '', '21.1080', '79.0723', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544271456-veeraswamy-nagpur-dosa.jpg', 1, 1, 'NIL'),
-(8, 'goli-vada-pav', 'Goli Vada Pav', NULL, '1234567890', 'Ashwin', '7854120369', 'connect@eisys.in', 'IN', NULL, 'Sadar', 'Nagpur', 'MAHARASHTRA', '440012', NULL, NULL, NULL, NULL, '[\"11\"]', '1', 2, '', 'abcd', 'fcea920f7412b5da7be0cf42b8c93759', '', '', 'expired', '2018-12-08 18:09:51', '2018-12-08 18:10:04', '0000-00-00 00:00:00', '2018-12-08 18:10:12', '::1', 1, 600.00000, '2018-12-31', '1', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '36329854303837ec5754f503cfaaee0929fd48974e7', 'fixed', '', '', '21.1263', '79.0516', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544272998-depositphotos_170884776-stock-photo-vada-pav-food.jpg', 1, 1, 'NIL'),
-(9, 'anna', 'Anna', NULL, '745896412', 'Sahil', 'Sahil', 'sahil@gmail.com', 'IN', NULL, 'Bajaj Nagar', 'Nagpur', 'MAHARASHTRA', '440011', NULL, NULL, NULL, NULL, '[\"3\"]', '1', 2, '', 'sahil@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '', '', 'expired', '2018-12-08 18:15:37', '2018-12-08 18:15:49', '0000-00-00 00:00:00', '2018-12-08 18:16:02', '::1', 1, 600.00000, '2018-12-31', '1', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '38963034923837ec5754f503cfaaee0929fd48974e7', 'fixed', '', '', '21.1096', '79.0977', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544273178-authentic-eid-al-fitr-chicken-biryani-2-size-3.jpg', 1, 1, 'NIL'),
-(10, 'rahul-chinese', 'Rahul Chinese', NULL, '8888812365', 'Rahul', '8888814789', 'rahul@gmail.com', 'IN', NULL, 'Ramdaspeth', 'Nagpur', 'MAHARASHTRA', '440025', NULL, NULL, NULL, NULL, '[\"16\"]', '1', 2, '', 'rahul@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '', '', 'expired', '2018-12-08 18:25:54', '2018-12-08 18:26:14', '0000-00-00 00:00:00', '2018-12-08 18:26:25', '::1', 1, 600.00000, '2018-12-31', '1', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '49810985498837ec5754f503cfaaee0929fd48974e7', 'fixed', '', '', '21.1070', '79.0553', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544273993-hqdefault.jpg', 1, 1, 'NIL'),
-(11, 'sweet-mart', 'Sweet Mart', NULL, '8877459623', 'Vikram', '88996541716', 'vikram@gmail.com', 'IN', NULL, 'Dharampeth', 'Nagpur', 'MAHARASHTRA', '440011', NULL, NULL, NULL, NULL, '[\"3\"]', '1', 2, '', 'vikram@gmail.com', 'fcea920f7412b5da7be0cf42b8c93759', '', '', 'expired', '2018-12-08 18:47:03', '2018-12-08 18:47:15', '0000-00-00 00:00:00', '2018-12-08 18:47:32', '::1', 1, 600.00000, '2018-12-31', '1', 2, 2, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '72907814949837ec5754f503cfaaee0929fd48974e7', 'fixed', '', '', '21.1150', '79.0601', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1544275062-gajar-halwa-recipe-step-by-step-instructions.jpg', 1, 1, 'NIL'),
-(15, 'pawan-saoji', 'Pawan Saoji Bhojnaylay', NULL, '9579658009', 'Girish Bhau', '', 'pawan@saoji.com', 'IN', NULL, ' hingna road near MIDC ', 'nagpur', 'Maharashtra', '440022', NULL, NULL, NULL, NULL, '[\"1\"]', '', 2, '', '', '827ccb0eea8a706c4c34a16891f84e7b', '', '', 'active', '2019-04-18 18:52:53', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '2019-04-20 17:48:35', '157.49.239.190', 0, 0.00000, '0000-00-00', '1', 1, 1, 1, '0000-00-00', '', 0, '0000-00-00 00:00:00', 0, 1, 0.00000, '', '', 'percentage', '', '', '21.1149', '79.0375', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '/images5cb87a2dc5c38.png', 1, 7, 'NIL'),
-(16, 'test5', 'test5', 'dvd', 'xvxv', '', 'vdf', 'vd', 'IN', 'fbd', NULL, 'bd', 'bdb', 'db', 'fd', 'db', 'dfb', 'db', NULL, '2', 2, '', 'test', '098f6bcd4621d373cade4e832627b4f6', 'ZRW1JE', '', 'Active', '2019-05-02 17:45:15', '2019-05-02 17:45:15', '2019-05-02 17:45:15', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery,Offline credit card payment', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '123', '123', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '', 1, 7, 'NIL'),
-(17, 'test4', 'test4', 'dvd', 'xvxv', '', 'vdf', 'vd', 'IN', 'fbd', NULL, 'nagpur', 'bdb', 'db', 'fd', 'db', 'dfb', 'db', NULL, '2', 2, '', 'test', '098f6bcd4621d373cade4e832627b4f6', 'H50Z5Q', '', 'Active', '2019-05-02 17:48:09', '2019-05-02 17:48:09', '2019-05-02 17:48:09', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery,Offline credit card payment', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '123', '123', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '', 1, 7, 'NIL'),
-(18, 'test3', 'test3', 'dvd', 'xvxv', '', 'vdf', 'vd', 'IN', 'fbd', NULL, 'Nagpur', 'bdb', 'db', 'fd', 'db', 'dfb', 'db', NULL, '2', 2, '', 'test', '098f6bcd4621d373cade4e832627b4f6', 'SG4CEP', '', 'Active', '2019-05-02 17:48:46', '2019-05-02 17:48:46', '2019-05-02 17:48:46', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery,Offline credit card payment', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '123', '123', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '', 1, 7, 'NIL'),
-(19, 'test2', 'test2', 'dvd', 'xvxv', '', 'vdf', 'vd', 'IN', 'fbd', NULL, 'Saoner', 'bdb', 'db', 'fd', 'db', 'dfb', 'db', NULL, '2', 2, '', 'test', '098f6bcd4621d373cade4e832627b4f6', 'B1JOQI', '', 'Active', '2019-05-02 17:48:51', '2019-05-02 17:48:51', '2019-05-02 17:48:51', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery,Offline credit card payment', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '123', '123', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '', 1, 7, 'NIL'),
-(20, 'test1', 'test1', 'dvd', 'xvxv', '', 'vdf', 'vd', 'IN', 'fbd', NULL, 'nagpur', 'bdb', 'db', 'fd', 'db', 'dfb', 'db', NULL, '2', 2, '', 'test', '098f6bcd4621d373cade4e832627b4f6', '12NVK8', '', 'Active', '2019-05-02 17:49:37', '2019-05-02 17:49:37', '2019-05-02 17:49:37', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery,Offline credit card payment', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '123', '123', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '', 1, 7, 'NIL'),
-(21, 'sfs', 'dfsdfsfs', 'sfs', 'fsf', '', 'fsf', 'rgd@gmail.com', 'YE', 'ry', NULL, 'tu', 'tyut', 'ut', 'yt', 'tt', 't', 'yt', NULL, '1', 2, '', 'test', 'e10adc3949ba59abbe56e057f20f883e', 'K05LEQ', '', 'Active', '2019-05-20 18:30:09', '2019-05-20 18:52:25', '2019-05-20 18:30:09', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '123456', '123456', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1558377009_download (1).jpg', 1, 7, 'NIL');
+(1, 'khana hai khayenge', 'Haldiram', 'Pankaj Chaure', '9874563210', '', '7896541239', 'panlaj@gmail.com', 'IN', 'Plot no 22, Gajanandham, Near Sahakar Nagar, Khamla Road, Nagpur', NULL, 'Nagpur', 'Maharashtra', '440025', 'GST789546122', '1234567890', 'PCMKL1254M', '5464PNK34', '2,3', 'null', 2, '', 'haldiram', 'e110d2051765e6cbf7b19df6085a2dce', 'VZ5A4J', '', 'Active', '2019-06-06 15:56:09', '2019-06-06 15:56:09', '2019-06-06 15:56:09', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery,Paytm', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '20.0000', '10.0000', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1559836569_b-logo1.png', 1, 7, 'NIL'),
+(2, 'Khao Dil se', 'Dwarka', 'Dwarka Owner', '785412369', '', '1234567890', 'dwarka@gmail.com', 'IN', 'Plot No 16 Prashnat Nagar Awshthi Chauk Jafar Nagar', NULL, 'Nagpur', 'Maharashtra', '441111', '456879', '8796541', 'APY123654', '123546', '1,4', 'null', 2, '', 'dwarka', 'ab280dbe10f20d872402a0a6fefdae1a', 'OZW5F3', '', 'Active', '2019-06-06 16:20:06', '2019-06-06 16:20:06', '2019-06-06 16:20:06', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery,Paytm', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '10.0000', '20.0000', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1559838006_b-logo2 (1).png', 1, 7, 'NIL'),
+(3, 'Anna Raskala', 'Anna Hotel', 'Anna Reddy', '547965412', '', '8888898745', 'anna@gmail.com', 'IN', 'Plot no 17 Narala Digori Nagpur', NULL, 'Nagpur', 'MAHARASHTRA', '440015', '78787878787', '89898989898', '212121212121', '5555555555', '5,7', 'null', 2, '', 'anna', 'a70f9e38ff015afaa9ab0aacabee2e13', '0OWRJT', '', 'Active', '2019-06-06 16:25:14', '2019-06-06 16:28:54', '2019-06-06 16:25:14', NULL, '::1', NULL, NULL, NULL, 'Cash on delivery,Pay on delivery,Rupay,Paytm', 1, 1, 1, NULL, '', 0, NULL, 0, 1, 0.00000, '', '', 'percentage', '', '', '20.0000', '20.0000', 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, 0.00000, '', 0, 0, 0, 0, '1559838314_6.jpg', 1, 7, 'NIL');
 
 -- --------------------------------------------------------
 
@@ -1263,17 +1246,6 @@ CREATE TABLE `mt_merchant_categories` (
   `datetime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `source` varchar(25) NOT NULL DEFAULT 'NIL'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mt_merchant_categories`
---
-
-INSERT INTO `mt_merchant_categories` (`id`, `merchant_id`, `category_id`, `item_id`, `datetime`, `source`) VALUES
-(10, 17, 4, 25, '2019-05-04 16:35:00', 'web'),
-(11, 17, 6, 0, '2019-04-27 10:11:50', 'web'),
-(12, 4, 4, 0, '2019-04-27 10:09:38', 'web'),
-(13, 5, 6, 0, '2019-04-27 10:09:49', 'web'),
-(14, 2, 4, 24, '2019-05-04 16:35:04', 'web');
 
 -- --------------------------------------------------------
 
@@ -1313,8 +1285,12 @@ CREATE TABLE `mt_merchant_cuisine` (
 --
 
 INSERT INTO `mt_merchant_cuisine` (`id`, `merchant_id`, `cuisine_id`, `datetime`, `source`) VALUES
-(2, 15, 1, '2019-04-21 13:03:59', 'android'),
-(3, 15, 2, '2019-04-21 13:04:10', 'android');
+(1, 1, 2, '2019-06-06 15:56:09', 'NIL'),
+(2, 1, 3, '2019-06-06 15:56:09', 'NIL'),
+(3, 2, 1, '2019-06-06 16:20:06', 'NIL'),
+(4, 2, 4, '2019-06-06 16:20:06', 'NIL'),
+(10, 3, 7, '2019-06-06 16:28:54', 'NIL'),
+(9, 3, 5, '2019-06-06 16:28:54', 'NIL');
 
 -- --------------------------------------------------------
 
@@ -1335,19 +1311,18 @@ CREATE TABLE `mt_merchant_images` (
 --
 
 INSERT INTO `mt_merchant_images` (`id`, `merchant_id`, `images`, `datetime`, `source`) VALUES
-(1, 16, 'download (8).jpg', '2019-05-02 17:45:15', 'NIL'),
-(2, 16, 'download.jpg', '2019-05-02 17:45:15', 'NIL'),
-(3, 17, 'download (8).jpg', '2019-05-02 17:48:09', 'NIL'),
-(4, 17, 'download.jpg', '2019-05-02 17:48:09', 'NIL'),
-(5, 18, 'download (8).jpg', '2019-05-02 17:48:46', 'NIL'),
-(6, 18, 'download.jpg', '2019-05-02 17:48:46', 'NIL'),
-(7, 19, 'download (8).jpg', '2019-05-02 17:48:51', 'NIL'),
-(8, 19, 'download.jpg', '2019-05-02 17:48:51', 'NIL'),
-(9, 20, 'download (8).jpg', '2019-05-02 17:49:37', 'NIL'),
-(10, 20, 'download.jpg', '2019-05-02 17:49:37', 'NIL'),
-(13, 21, 'download (8).jpg', '2019-05-20 18:52:25', 'NIL'),
-(14, 21, 'download.jpg', '2019-05-20 18:52:25', 'NIL'),
-(15, 15, 'download (8).jpg', '2019-05-02 17:45:15', 'NIL');
+(1, 1, 'food.jpg', '2019-06-06 15:56:09', 'NIL'),
+(2, 1, 'food1.jpg', '2019-06-06 15:56:09', 'NIL'),
+(3, 1, 'food3.jpg', '2019-06-06 15:56:09', 'NIL'),
+(4, 1, 'food4.jpg', '2019-06-06 15:56:09', 'NIL'),
+(5, 2, 'food1.jpg', '2019-06-06 16:20:06', 'NIL'),
+(6, 2, 'food3.jpg', '2019-06-06 16:20:06', 'NIL'),
+(7, 2, 'food4.jpg', '2019-06-06 16:20:06', 'NIL'),
+(18, 3, '7.jpg', '2019-06-06 16:26:29', 'NIL'),
+(17, 3, '5.jpg', '2019-06-06 16:26:29', 'NIL'),
+(16, 3, '4.jpg', '2019-06-06 16:26:29', 'NIL'),
+(15, 3, '2.jpg', '2019-06-06 16:26:29', 'NIL'),
+(14, 3, '1.jpg', '2019-06-06 16:26:29', 'NIL');
 
 -- --------------------------------------------------------
 
@@ -1429,9 +1404,14 @@ CREATE TABLE `mt_merchant_payment_provider` (
 --
 
 INSERT INTO `mt_merchant_payment_provider` (`id`, `merchant_id`, `payment_provider_name`) VALUES
-(1, 20, 'Cash on delivery'),
-(2, 20, 'Offline credit card payment'),
-(4, 21, 'Cash on delivery');
+(1, 1, 'Cash on delivery'),
+(2, 1, 'Paytm'),
+(3, 2, 'Cash on delivery'),
+(4, 2, 'Paytm'),
+(13, 3, 'Cash on delivery'),
+(14, 3, 'Pay on delivery'),
+(15, 3, 'Rupay'),
+(16, 3, 'Paytm');
 
 -- --------------------------------------------------------
 
@@ -1443,19 +1423,6 @@ CREATE TABLE `mt_merchant_services` (
   `id` int(11) NOT NULL,
   `services_name` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `mt_merchant_services`
---
-
-INSERT INTO `mt_merchant_services` (`id`, `services_name`) VALUES
-(1, 'Delivery & Pickup'),
-(2, 'Delivery Only'),
-(3, 'Pickup Only'),
-(4, 'Delivery / Pickup / Dinein'),
-(5, 'Delivery & Dinein'),
-(6, 'Pickup & Dinein'),
-(7, 'Dinein Only');
 
 -- --------------------------------------------------------
 
@@ -1655,7 +1622,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (82, 0, 'merchant_invoice_tpl_content_en', 'hi [restaurant_name]\n\nyour invoice is now ready\nInvoice number : [invoice_number]\nTerms : [terms]\nPeriod : [period]\n\nYou can donwload your invoice below\n[invoice_link]\n\nRegards\n - [sitename]'),
 (83, 0, 'admin_decimal_place', '2'),
 (84, 0, 'installation_done', '1'),
-(85, 0, 'paymentgateway', '[\\\"cod\\\",\\\"ocr\\\",\\\"pyr\\\",\\\"pyp\\\",\\\"stp\\\",\\\"mcd\\\",\\\"ide\\\",\\\"payu\\\",\\\"pys\\\",\\\"bcy\\\",\\\"epy\\\",\\\"atz\\\",\\\"obd\\\",\\\"btr\\\",\\\"rzr\\\",\\\"vog\\\"]'),
+(85, 0, 'paymentgateway', '[\\"cod\\",\\"ocr\\",\\"pyr\\",\\"pyp\\",\\"stp\\",\\"mcd\\",\\"ide\\",\\"payu\\",\\"pys\\",\\"bcy\\",\\"epy\\",\\"atz\\",\\"obd\\",\\"btr\\",\\"rzr\\",\\"vog\\"]'),
 (86, 0, 'wd_paypal_minimum', ''),
 (87, 0, 'wd_bank_minimum', ''),
 (88, 0, 'wd_days_process', ''),
@@ -1665,7 +1632,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (92, 0, 'wd_paypal_mode_pass', ''),
 (93, 0, 'wd_paypal_mode_signature', ''),
 (94, 0, 'wd_bank_deposit', ''),
-(95, 0, 'wd_template_payout', '<p>Hi {merchant-name},</p>\r\n<br/>\r\n<p>We\\\'re just letting you know that we got your request to pay out {payout-amount} via {payment-method} to {account}</p>\r\n<br/> \r\n	\r\n<p>\r\nYou can cancel this request any time before {cancel-date} here:<br/>\r\n{cancel-link}\r\n</p>\r\n\r\n<p>\r\nWe will complete this request on the {process-date} (or the next business day), but it can take up to 7 days to appear in your account. A second confirmation email will be sent at this time.\r\n</p>\r\n\r\n<br/>\r\n<p> Kind Regards</p>'),
+(95, 0, 'wd_template_payout', '<p>Hi {merchant-name},</p>\r\n<br/>\r\n<p>We\\''re just letting you know that we got your request to pay out {payout-amount} via {payment-method} to {account}</p>\r\n<br/> \r\n	\r\n<p>\r\nYou can cancel this request any time before {cancel-date} here:<br/>\r\n{cancel-link}\r\n</p>\r\n\r\n<p>\r\nWe will complete this request on the {process-date} (or the next business day), but it can take up to 7 days to appear in your account. A second confirmation email will be sent at this time.\r\n</p>\r\n\r\n<br/>\r\n<p> Kind Regards</p>'),
 (96, 0, 'wd_template_process', '<p>Hi {merchant-name},</p>\r\n<br/>\r\n<p>We just processed your request for {payout-amount} via {payment-method}.</p>\r\n<p>Your payment was sent to {acoount}</p>\r\n<br/> \r\n\r\n<p>Happy Spending!</p>\r\n\r\n<br/>\r\n<p> Kind Regards</p>'),
 (97, 0, 'wd_enabled_paypal', ''),
 (98, 0, 'wd_payout_disabled', ''),
@@ -1699,7 +1666,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (126, 0, 'theme_list_style', 'gridview'),
 (127, 0, 'enabled_search_map', 'yes'),
 (128, 0, 'theme_menu_colapse', ''),
-(129, 0, 'theme_top_menu', '[\\\"browse\\\",\\\"resto_signup\\\",\\\"contact\\\",\\\"signup\\\"]'),
+(129, 0, 'theme_top_menu', '[\\"browse\\",\\"resto_signup\\",\\"contact\\",\\"signup\\"]'),
 (130, 0, 'show_language', ''),
 (131, 0, 'theme_promo_tab', ''),
 (132, 0, 'merchant_tbl_book_disabled', ''),
@@ -1840,10 +1807,10 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (267, 3, 'merchant_minimum_order', '300'),
 (268, 3, 'merchant_tax', ''),
 (269, 3, 'merchant_delivery_charges', '20'),
-(270, 3, 'stores_open_day', '[\\\"monday\\\",\\\"tuesday\\\",\\\"wednesday\\\",\\\"thursday\\\",\\\"friday\\\",\\\"saturday\\\",\\\"sunday\\\"]'),
-(271, 3, 'stores_open_starts', '{\\\"monday\\\":\\\"8:00\\\",\\\"tuesday\\\":\\\"8:00\\\",\\\"wednesday\\\":\\\"8:00\\\",\\\"thursday\\\":\\\"8:00\\\",\\\"friday\\\":\\\"8:00\\\",\\\"saturday\\\":\\\"8:00\\\",\\\"sunday\\\":\\\"8:00\\\"}'),
-(272, 3, 'stores_open_ends', '{\\\"monday\\\":\\\"16:00\\\",\\\"tuesday\\\":\\\"16:00\\\",\\\"wednesday\\\":\\\"16:00\\\",\\\"thursday\\\":\\\"16:00\\\",\\\"friday\\\":\\\"16:00\\\",\\\"saturday\\\":\\\"16:00\\\",\\\"sunday\\\":\\\"16:00\\\"}'),
-(273, 3, 'stores_open_custom_text', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(270, 3, 'stores_open_day', '[\\"monday\\",\\"tuesday\\",\\"wednesday\\",\\"thursday\\",\\"friday\\",\\"saturday\\",\\"sunday\\"]'),
+(271, 3, 'stores_open_starts', '{\\"monday\\":\\"8:00\\",\\"tuesday\\":\\"8:00\\",\\"wednesday\\":\\"8:00\\",\\"thursday\\":\\"8:00\\",\\"friday\\":\\"8:00\\",\\"saturday\\":\\"8:00\\",\\"sunday\\":\\"8:00\\"}'),
+(272, 3, 'stores_open_ends', '{\\"monday\\":\\"16:00\\",\\"tuesday\\":\\"16:00\\",\\"wednesday\\":\\"16:00\\",\\"thursday\\":\\"16:00\\",\\"friday\\":\\"16:00\\",\\"saturday\\":\\"16:00\\",\\"sunday\\":\\"16:00\\"}'),
+(273, 3, 'stores_open_custom_text', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (274, 3, 'merchant_photo', '1544087049-logo1.png'),
 (275, 3, 'merchant_delivery_estimation', '60 min'),
 (276, 3, 'merchant_delivery_miles', '10'),
@@ -1859,7 +1826,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (286, 3, 'merchant_maximum_order', ''),
 (287, 3, 'merchant_packaging_charge', '10'),
 (288, 3, 'merchant_close_msg_holiday', ''),
-(289, 3, 'merchant_holiday', '[\\\"\\\"]'),
+(289, 3, 'merchant_holiday', '[\\"\\"]'),
 (290, 3, 'merchant_activated_menu', '3'),
 (291, 3, 'spicydish', ''),
 (292, 3, 'merchant_required_delivery_time', ''),
@@ -1872,8 +1839,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (299, 3, 'merchant_maximum_order_pickup', ''),
 (300, 3, 'merchant_disabled_ordering', ''),
 (301, 3, 'merchant_tax_charges', ''),
-(302, 3, 'stores_open_pm_start', '{\\\"monday\\\":\\\"4:00 PM\\\",\\\"tuesday\\\":\\\"4:00 PM\\\",\\\"wednesday\\\":\\\"4:00 PM\\\",\\\"thursday\\\":\\\"4:00 PM\\\",\\\"friday\\\":\\\"4:00 PM\\\",\\\"saturday\\\":\\\"4:00 PM\\\",\\\"sunday\\\":\\\"4:00 PM\\\"}'),
-(303, 3, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"10:00 PM\\\",\\\"tuesday\\\":\\\"10:00 PM\\\",\\\"wednesday\\\":\\\"10:00 PM\\\",\\\"thursday\\\":\\\"10:00 PM\\\",\\\"friday\\\":\\\"10:00 PM\\\",\\\"saturday\\\":\\\"12:00 AM\\\",\\\"sunday\\\":\\\"12:00 AM\\\"}'),
+(302, 3, 'stores_open_pm_start', '{\\"monday\\":\\"4:00 PM\\",\\"tuesday\\":\\"4:00 PM\\",\\"wednesday\\":\\"4:00 PM\\",\\"thursday\\":\\"4:00 PM\\",\\"friday\\":\\"4:00 PM\\",\\"saturday\\":\\"4:00 PM\\",\\"sunday\\":\\"4:00 PM\\"}'),
+(303, 3, 'stores_open_pm_ends', '{\\"monday\\":\\"10:00 PM\\",\\"tuesday\\":\\"10:00 PM\\",\\"wednesday\\":\\"10:00 PM\\",\\"thursday\\":\\"10:00 PM\\",\\"friday\\":\\"10:00 PM\\",\\"saturday\\":\\"12:00 AM\\",\\"sunday\\":\\"12:00 AM\\"}'),
 (304, 3, 'food_option_not_available', ''),
 (305, 3, 'order_verification', ''),
 (306, 3, 'order_sms_code_waiting', ''),
@@ -1886,9 +1853,9 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (313, 3, 'merchant_maximum_order_dinein', ''),
 (314, 3, 'food_viewing_private', ''),
 (315, 3, 'merchant_tax_number', ''),
-(316, 3, 'merchant_gallery', '[\\\"1544090341-Hyderabadi-Dum-Biryani-1.jpg\\\",\\\"1544090342-shutterstock_277542194.jpg\\\"]'),
+(316, 3, 'merchant_gallery', '[\\"1544090341-Hyderabadi-Dum-Biryani-1.jpg\\",\\"1544090342-shutterstock_277542194.jpg\\"]'),
 (317, 3, 'gallery_disabled', ''),
-(318, 3, 'payment_provider', '[\\\"1\\\"]'),
+(318, 3, 'payment_provider', '[\\"1\\"]'),
 (319, 3, 'merchant_payondeliver_enabled', 'yes'),
 (320, 4, 'merchant_switch_master_cod', ''),
 (321, 4, 'merchant_switch_master_ccr', ''),
@@ -1914,9 +1881,9 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (341, 4, 'merchant_tax', ''),
 (342, 4, 'merchant_delivery_charges', ''),
 (343, 4, 'stores_open_day', ''),
-(344, 4, 'stores_open_starts', '{\\\"monday\\\":\\\"18:00\\\",\\\"tuesday\\\":\\\"18:00\\\",\\\"wednesday\\\":\\\"18:00\\\",\\\"thursday\\\":\\\"18:00\\\",\\\"friday\\\":\\\"18:00\\\",\\\"saturday\\\":\\\"18:00\\\",\\\"sunday\\\":\\\"18:00\\\"}'),
-(345, 4, 'stores_open_ends', '{\\\"monday\\\":\\\"22:30\\\",\\\"tuesday\\\":\\\"22:30\\\",\\\"wednesday\\\":\\\"22:30\\\",\\\"thursday\\\":\\\"22:30\\\",\\\"friday\\\":\\\"22:30\\\",\\\"saturday\\\":\\\"22:30\\\",\\\"sunday\\\":\\\"22:30\\\"}'),
-(346, 4, 'stores_open_custom_text', '{\\\"monday\\\":\\\"all day\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(344, 4, 'stores_open_starts', '{\\"monday\\":\\"18:00\\",\\"tuesday\\":\\"18:00\\",\\"wednesday\\":\\"18:00\\",\\"thursday\\":\\"18:00\\",\\"friday\\":\\"18:00\\",\\"saturday\\":\\"18:00\\",\\"sunday\\":\\"18:00\\"}'),
+(345, 4, 'stores_open_ends', '{\\"monday\\":\\"22:30\\",\\"tuesday\\":\\"22:30\\",\\"wednesday\\":\\"22:30\\",\\"thursday\\":\\"22:30\\",\\"friday\\":\\"22:30\\",\\"saturday\\":\\"22:30\\",\\"sunday\\":\\"22:30\\"}'),
+(346, 4, 'stores_open_custom_text', '{\\"monday\\":\\"all day\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (348, 4, 'merchant_delivery_estimation', ''),
 (349, 4, 'merchant_delivery_miles', ''),
 (350, 4, 'merchant_photo_bg', '1544170219-varhadi-vyanjan-pratap-nagar-nagpur-restaurants-mq9mpl.jpg'),
@@ -1931,7 +1898,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (359, 4, 'merchant_maximum_order', ''),
 (360, 4, 'merchant_packaging_charge', ''),
 (361, 4, 'merchant_close_msg_holiday', ''),
-(362, 4, 'merchant_holiday', '[\\\"\\\"]'),
+(362, 4, 'merchant_holiday', '[\\"\\"]'),
 (363, 4, 'merchant_activated_menu', ''),
 (364, 4, 'spicydish', ''),
 (365, 4, 'merchant_required_delivery_time', ''),
@@ -1944,8 +1911,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (372, 4, 'merchant_maximum_order_pickup', ''),
 (373, 4, 'merchant_disabled_ordering', ''),
 (374, 4, 'merchant_tax_charges', ''),
-(375, 4, 'stores_open_pm_start', '{\\\"monday\\\":\\\"6:00 PM\\\",\\\"tuesday\\\":\\\"6:00 PM\\\",\\\"wednesday\\\":\\\"6:00 PM\\\",\\\"thursday\\\":\\\"6:00 PM\\\",\\\"friday\\\":\\\"6:00 PM\\\",\\\"saturday\\\":\\\"6:00 PM\\\",\\\"sunday\\\":\\\"6:00 PM\\\"}'),
-(376, 4, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"10:30 PM\\\",\\\"tuesday\\\":\\\"10:30 PM\\\",\\\"wednesday\\\":\\\"10:30 PM\\\",\\\"thursday\\\":\\\"10:30 PM\\\",\\\"friday\\\":\\\"10:30 PM\\\",\\\"saturday\\\":\\\"10:30 PM\\\",\\\"sunday\\\":\\\"10:30 PM\\\"}'),
+(375, 4, 'stores_open_pm_start', '{\\"monday\\":\\"6:00 PM\\",\\"tuesday\\":\\"6:00 PM\\",\\"wednesday\\":\\"6:00 PM\\",\\"thursday\\":\\"6:00 PM\\",\\"friday\\":\\"6:00 PM\\",\\"saturday\\":\\"6:00 PM\\",\\"sunday\\":\\"6:00 PM\\"}'),
+(376, 4, 'stores_open_pm_ends', '{\\"monday\\":\\"10:30 PM\\",\\"tuesday\\":\\"10:30 PM\\",\\"wednesday\\":\\"10:30 PM\\",\\"thursday\\":\\"10:30 PM\\",\\"friday\\":\\"10:30 PM\\",\\"saturday\\":\\"10:30 PM\\",\\"sunday\\":\\"10:30 PM\\"}'),
 (377, 4, 'food_option_not_available', ''),
 (378, 4, 'order_verification', ''),
 (379, 4, 'order_sms_code_waiting', ''),
@@ -1958,9 +1925,9 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (386, 4, 'merchant_maximum_order_dinein', ''),
 (387, 4, 'food_viewing_private', ''),
 (388, 4, 'merchant_tax_number', ''),
-(389, 4, 'merchant_gallery', '[\\\"1544172513-477292-1-eng-GB_lamb-kofta-curry-470x540.jpg\\\",\\\"1544172520-1499895456-greek-salad-delish.jpg\\\",\\\"1544172525-baingan.jpg\\\",\\\"1544172530-bhendimasala.jpg\\\",\\\"1544172536-kadaipaneer.jpg\\\",\\\"1544172543-punjabi-egg-curry-anda-curry.jpg\\\",\\\"1544172549-mix-veg.jpg\\\",\\\"1544172559-mutter-paneer.jpg\\\",\\\"1544172574-masala-rice.png\\\"]'),
+(389, 4, 'merchant_gallery', '[\\"1544172513-477292-1-eng-GB_lamb-kofta-curry-470x540.jpg\\",\\"1544172520-1499895456-greek-salad-delish.jpg\\",\\"1544172525-baingan.jpg\\",\\"1544172530-bhendimasala.jpg\\",\\"1544172536-kadaipaneer.jpg\\",\\"1544172543-punjabi-egg-curry-anda-curry.jpg\\",\\"1544172549-mix-veg.jpg\\",\\"1544172559-mutter-paneer.jpg\\",\\"1544172574-masala-rice.png\\"]'),
 (390, 4, 'gallery_disabled', ''),
-(391, 4, 'merchant_information', '<p tabindex=\\\"0\\\" aria-label=\\\"No Alcohol Available\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">No Alcohol Available</p></p><p tabindex=\\\"0\\\" aria-label=\\\"Table Reservation Not Required\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">Table Reservation Not Required</p></p><p tabindex=\\\"0\\\" aria-label=\\\"Table booking recommended\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">Table booking recommended</p></p><p tabindex=\\\"0\\\" aria-label=\\\"Outdoor Seating\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">Outdoor Seating</p></p><p tabindex=\\\"0\\\" aria-label=\\\"Table reservation required\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">Table reservation required</p></p>'),
+(391, 4, 'merchant_information', '<p tabindex=\\"0\\" aria-label=\\"No Alcohol Available\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">No Alcohol Available</p></p><p tabindex=\\"0\\" aria-label=\\"Table Reservation Not Required\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">Table Reservation Not Required</p></p><p tabindex=\\"0\\" aria-label=\\"Table booking recommended\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">Table booking recommended</p></p><p tabindex=\\"0\\" aria-label=\\"Outdoor Seating\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">Outdoor Seating</p></p><p tabindex=\\"0\\" aria-label=\\"Table reservation required\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">Table reservation required</p></p>'),
 (392, 5, 'merchant_switch_master_cod', ''),
 (393, 5, 'merchant_switch_master_ccr', ''),
 (394, 5, 'merchant_switch_master_pyr', ''),
@@ -1981,14 +1948,14 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (409, 5, 'merchant_switch_master_btr', ''),
 (410, 5, 'merchant_switch_master_rzr', ''),
 (411, 5, 'merchant_switch_master_vog', ''),
-(412, 5, 'merchant_information', '<p tabindex=\\\"0\\\" aria-label=\\\"Table reservation required\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">Table reservation required</p></p><p tabindex=\\\"0\\\" aria-label=\\\"Free Parking\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">Free Parking</p></p><p tabindex=\\\"0\\\" aria-label=\\\"Table Reservation Not Required\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">Table Reservation Not Required</p></p><p tabindex=\\\"0\\\" aria-label=\\\"Table booking recommended\\\" class=\\\"res-info-feature clearfix mb5\\\" style=\\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\\"><p class=\\\"res-info-feature-text\\\" style=\\\"box-sizing: inherit; line-height: 12px !important;\\\">Table booking recommended</p></p>'),
+(412, 5, 'merchant_information', '<p tabindex=\\"0\\" aria-label=\\"Table reservation required\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">Table reservation required</p></p><p tabindex=\\"0\\" aria-label=\\"Free Parking\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">Free Parking</p></p><p tabindex=\\"0\\" aria-label=\\"Table Reservation Not Required\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">Table Reservation Not Required</p></p><p tabindex=\\"0\\" aria-label=\\"Table booking recommended\\" class=\\"res-info-feature clearfix mb5\\" style=\\"box-sizing: inherit; outline: 0px; margin-bottom: 5px; color: rgb(51, 55, 61); font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;, &quot;Segoe UI Symbol&quot;;\\"><p class=\\"res-info-feature-text\\" style=\\"box-sizing: inherit; line-height: 12px !important;\\">Table booking recommended</p></p>'),
 (413, 5, 'merchant_minimum_order', '100'),
 (414, 5, 'merchant_tax', ''),
 (415, 5, 'merchant_delivery_charges', ''),
-(416, 5, 'stores_open_day', '[\\\"monday\\\",\\\"tuesday\\\",\\\"wednesday\\\",\\\"thursday\\\",\\\"friday\\\",\\\"saturday\\\",\\\"sunday\\\"]'),
-(417, 5, 'stores_open_starts', '{\\\"monday\\\":\\\"12:00\\\",\\\"tuesday\\\":\\\"12:00\\\",\\\"wednesday\\\":\\\"12:00\\\",\\\"thursday\\\":\\\"12:00\\\",\\\"friday\\\":\\\"12:00\\\",\\\"saturday\\\":\\\"12:00\\\",\\\"sunday\\\":\\\"12:00\\\"}'),
-(418, 5, 'stores_open_ends', '{\\\"monday\\\":\\\"23:55\\\",\\\"tuesday\\\":\\\"23:55\\\",\\\"wednesday\\\":\\\"23:55\\\",\\\"thursday\\\":\\\"23:55\\\",\\\"friday\\\":\\\"23:55\\\",\\\"saturday\\\":\\\"23:55\\\",\\\"sunday\\\":\\\"23:55\\\"}'),
-(419, 5, 'stores_open_custom_text', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(416, 5, 'stores_open_day', '[\\"monday\\",\\"tuesday\\",\\"wednesday\\",\\"thursday\\",\\"friday\\",\\"saturday\\",\\"sunday\\"]'),
+(417, 5, 'stores_open_starts', '{\\"monday\\":\\"12:00\\",\\"tuesday\\":\\"12:00\\",\\"wednesday\\":\\"12:00\\",\\"thursday\\":\\"12:00\\",\\"friday\\":\\"12:00\\",\\"saturday\\":\\"12:00\\",\\"sunday\\":\\"12:00\\"}'),
+(418, 5, 'stores_open_ends', '{\\"monday\\":\\"23:55\\",\\"tuesday\\":\\"23:55\\",\\"wednesday\\":\\"23:55\\",\\"thursday\\":\\"23:55\\",\\"friday\\":\\"23:55\\",\\"saturday\\":\\"23:55\\",\\"sunday\\":\\"23:55\\"}'),
+(419, 5, 'stores_open_custom_text', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (421, 5, 'merchant_delivery_estimation', '30'),
 (422, 5, 'merchant_delivery_miles', '25'),
 (423, 5, 'merchant_photo_bg', '1544175644-shankar-saoji-bhojanalay-trimurti-nagar-nagpur-restaurants-1shw0ek.jpg'),
@@ -2003,7 +1970,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (432, 5, 'merchant_maximum_order', ''),
 (433, 5, 'merchant_packaging_charge', ''),
 (434, 5, 'merchant_close_msg_holiday', ''),
-(435, 5, 'merchant_holiday', '[\\\"\\\"]'),
+(435, 5, 'merchant_holiday', '[\\"\\"]'),
 (436, 5, 'merchant_activated_menu', '3'),
 (437, 5, 'spicydish', ''),
 (438, 5, 'merchant_required_delivery_time', 'yes'),
@@ -2016,8 +1983,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (445, 5, 'merchant_maximum_order_pickup', ''),
 (446, 5, 'merchant_disabled_ordering', ''),
 (447, 5, 'merchant_tax_charges', ''),
-(448, 5, 'stores_open_pm_start', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
-(449, 5, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(448, 5, 'stores_open_pm_start', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
+(449, 5, 'stores_open_pm_ends', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (450, 5, 'food_option_not_available', ''),
 (451, 5, 'order_verification', '2'),
 (452, 5, 'order_sms_code_waiting', ''),
@@ -2030,7 +1997,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (459, 5, 'merchant_maximum_order_dinein', '100'),
 (460, 5, 'food_viewing_private', ''),
 (461, 5, 'merchant_tax_number', ''),
-(462, 5, 'merchant_gallery', '[\\\"1544176132-shankar-saoji-bhojanalay-trimurti-nagar-nagpur-restaurants-1shw0ek.jpg\\\",\\\"1544176146-shankar-saoji-bhojanalay-trimurti-nagar-nagpur-restaurants-31xiw9s.jpg\\\",\\\"1544176323-4QNlZ.jpg\\\",\\\"1544176327-929b5413ee195892da67bdaf154510fa_1530076699.jpg\\\",\\\"1544176330-41330a24a3d68b7fa5b0bd3d0a0bbe09_1522869249.jpg\\\",\\\"1544176338-download.jpg\\\",\\\"1544176344-DYXrH.jpg\\\",\\\"1544176348-images-(1).jpg\\\",\\\"1544176353-shankar-saoji-bhojnalay-wadi-nagpur-restaurants-56g0a5mhsm.jpg\\\",\\\"1544176359-shankar-saoji-bhojnalay-wadi-nagpur-restaurants-kms7h3k0wb.jpg\\\",\\\"1544176365-YJtfE.jpg\\\",\\\"1544176373-shankar-saoji-bhojnalay-wadi-nagpur-restaurants-kms7h3k0wb.jpg\\\",\\\"1544176388-YJtfE.jpg\\\"]'),
+(462, 5, 'merchant_gallery', '[\\"1544176132-shankar-saoji-bhojanalay-trimurti-nagar-nagpur-restaurants-1shw0ek.jpg\\",\\"1544176146-shankar-saoji-bhojanalay-trimurti-nagar-nagpur-restaurants-31xiw9s.jpg\\",\\"1544176323-4QNlZ.jpg\\",\\"1544176327-929b5413ee195892da67bdaf154510fa_1530076699.jpg\\",\\"1544176330-41330a24a3d68b7fa5b0bd3d0a0bbe09_1522869249.jpg\\",\\"1544176338-download.jpg\\",\\"1544176344-DYXrH.jpg\\",\\"1544176348-images-(1).jpg\\",\\"1544176353-shankar-saoji-bhojnalay-wadi-nagpur-restaurants-56g0a5mhsm.jpg\\",\\"1544176359-shankar-saoji-bhojnalay-wadi-nagpur-restaurants-kms7h3k0wb.jpg\\",\\"1544176365-YJtfE.jpg\\",\\"1544176373-shankar-saoji-bhojnalay-wadi-nagpur-restaurants-kms7h3k0wb.jpg\\",\\"1544176388-YJtfE.jpg\\"]'),
 (463, 5, 'gallery_disabled', ''),
 (464, 6, 'merchant_switch_master_cod', '1'),
 (465, 6, 'merchant_switch_master_ccr', ''),
@@ -2056,9 +2023,9 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (485, 6, 'merchant_tax', ''),
 (486, 6, 'merchant_delivery_charges', ''),
 (487, 6, 'stores_open_day', ''),
-(488, 6, 'stores_open_starts', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(489, 6, 'stores_open_ends', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(490, 6, 'stores_open_custom_text', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(488, 6, 'stores_open_starts', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(489, 6, 'stores_open_ends', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(490, 6, 'stores_open_custom_text', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (491, 6, 'merchant_photo', '1544268357-download.jpg'),
 (492, 6, 'merchant_delivery_estimation', ''),
 (493, 6, 'merchant_delivery_miles', ''),
@@ -2074,7 +2041,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (503, 6, 'merchant_maximum_order', ''),
 (504, 6, 'merchant_packaging_charge', ''),
 (505, 6, 'merchant_close_msg_holiday', ''),
-(506, 6, 'merchant_holiday', '[\\\"\\\"]'),
+(506, 6, 'merchant_holiday', '[\\"\\"]'),
 (507, 6, 'merchant_activated_menu', ''),
 (508, 6, 'spicydish', ''),
 (509, 6, 'merchant_required_delivery_time', ''),
@@ -2087,8 +2054,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (516, 6, 'merchant_maximum_order_pickup', ''),
 (517, 6, 'merchant_disabled_ordering', ''),
 (518, 6, 'merchant_tax_charges', ''),
-(519, 6, 'stores_open_pm_start', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
-(520, 6, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(519, 6, 'stores_open_pm_start', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
+(520, 6, 'stores_open_pm_ends', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (521, 6, 'food_option_not_available', ''),
 (522, 6, 'order_verification', ''),
 (523, 6, 'order_sms_code_waiting', ''),
@@ -2125,9 +2092,9 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (554, 7, 'merchant_tax', ''),
 (555, 7, 'merchant_delivery_charges', ''),
 (556, 7, 'stores_open_day', ''),
-(557, 7, 'stores_open_starts', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(558, 7, 'stores_open_ends', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(559, 7, 'stores_open_custom_text', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(557, 7, 'stores_open_starts', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(558, 7, 'stores_open_ends', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(559, 7, 'stores_open_custom_text', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (560, 7, 'merchant_photo', '1544271456-veeraswamy-nagpur-dosa.jpg'),
 (561, 7, 'merchant_delivery_estimation', ''),
 (562, 7, 'merchant_delivery_miles', ''),
@@ -2143,7 +2110,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (572, 7, 'merchant_maximum_order', ''),
 (573, 7, 'merchant_packaging_charge', ''),
 (574, 7, 'merchant_close_msg_holiday', ''),
-(575, 7, 'merchant_holiday', '[\\\"\\\"]'),
+(575, 7, 'merchant_holiday', '[\\"\\"]'),
 (576, 7, 'merchant_activated_menu', ''),
 (577, 7, 'spicydish', ''),
 (578, 7, 'merchant_required_delivery_time', ''),
@@ -2156,8 +2123,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (585, 7, 'merchant_maximum_order_pickup', ''),
 (586, 7, 'merchant_disabled_ordering', ''),
 (587, 7, 'merchant_tax_charges', ''),
-(588, 7, 'stores_open_pm_start', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
-(589, 7, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(588, 7, 'stores_open_pm_start', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
+(589, 7, 'stores_open_pm_ends', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (590, 7, 'food_option_not_available', ''),
 (591, 7, 'order_verification', ''),
 (592, 7, 'order_sms_code_waiting', ''),
@@ -2196,9 +2163,9 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (625, 8, 'merchant_tax', ''),
 (626, 8, 'merchant_delivery_charges', ''),
 (627, 8, 'stores_open_day', ''),
-(628, 8, 'stores_open_starts', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(629, 8, 'stores_open_ends', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(630, 8, 'stores_open_custom_text', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(628, 8, 'stores_open_starts', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(629, 8, 'stores_open_ends', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(630, 8, 'stores_open_custom_text', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (631, 8, 'merchant_photo', '1544272998-depositphotos_170884776-stock-photo-vada-pav-food.jpg'),
 (632, 8, 'merchant_delivery_estimation', ''),
 (633, 8, 'merchant_delivery_miles', ''),
@@ -2214,7 +2181,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (643, 8, 'merchant_maximum_order', ''),
 (644, 8, 'merchant_packaging_charge', ''),
 (645, 8, 'merchant_close_msg_holiday', ''),
-(646, 8, 'merchant_holiday', '[\\\"\\\"]'),
+(646, 8, 'merchant_holiday', '[\\"\\"]'),
 (647, 8, 'merchant_activated_menu', ''),
 (648, 8, 'spicydish', ''),
 (649, 8, 'merchant_required_delivery_time', ''),
@@ -2227,8 +2194,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (656, 8, 'merchant_maximum_order_pickup', ''),
 (657, 8, 'merchant_disabled_ordering', ''),
 (658, 8, 'merchant_tax_charges', ''),
-(659, 8, 'stores_open_pm_start', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
-(660, 8, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(659, 8, 'stores_open_pm_start', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
+(660, 8, 'stores_open_pm_ends', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (661, 8, 'food_option_not_available', ''),
 (662, 8, 'order_verification', ''),
 (663, 8, 'order_sms_code_waiting', ''),
@@ -2265,9 +2232,9 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (694, 9, 'merchant_tax', ''),
 (695, 9, 'merchant_delivery_charges', ''),
 (696, 9, 'stores_open_day', ''),
-(697, 9, 'stores_open_starts', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(698, 9, 'stores_open_ends', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(699, 9, 'stores_open_custom_text', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(697, 9, 'stores_open_starts', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(698, 9, 'stores_open_ends', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(699, 9, 'stores_open_custom_text', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (700, 9, 'merchant_photo', '1544273178-authentic-eid-al-fitr-chicken-biryani-2-size-3.jpg'),
 (701, 9, 'merchant_delivery_estimation', ''),
 (702, 9, 'merchant_delivery_miles', ''),
@@ -2283,7 +2250,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (712, 9, 'merchant_maximum_order', ''),
 (713, 9, 'merchant_packaging_charge', ''),
 (714, 9, 'merchant_close_msg_holiday', ''),
-(715, 9, 'merchant_holiday', '[\\\"\\\"]'),
+(715, 9, 'merchant_holiday', '[\\"\\"]'),
 (716, 9, 'merchant_activated_menu', ''),
 (717, 9, 'spicydish', ''),
 (718, 9, 'merchant_required_delivery_time', ''),
@@ -2296,8 +2263,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (725, 9, 'merchant_maximum_order_pickup', ''),
 (726, 9, 'merchant_disabled_ordering', ''),
 (727, 9, 'merchant_tax_charges', ''),
-(728, 9, 'stores_open_pm_start', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
-(729, 9, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(728, 9, 'stores_open_pm_start', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
+(729, 9, 'stores_open_pm_ends', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (730, 9, 'food_option_not_available', ''),
 (731, 9, 'order_verification', ''),
 (732, 9, 'order_sms_code_waiting', ''),
@@ -2311,8 +2278,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (740, 9, 'food_viewing_private', ''),
 (741, 9, 'merchant_tax_number', ''),
 (742, 10, 'merchant_switch_master_cod', '1'),
-(743, 10, 'merchant_switch_master_ccr', '');
-INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VALUES
+(743, 10, 'merchant_switch_master_ccr', ''),
 (744, 10, 'merchant_switch_master_pyr', ''),
 (745, 10, 'merchant_latitude', ''),
 (746, 10, 'merchant_longtitude', ''),
@@ -2335,9 +2301,10 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (763, 10, 'merchant_tax', ''),
 (764, 10, 'merchant_delivery_charges', ''),
 (765, 10, 'stores_open_day', ''),
-(766, 10, 'stores_open_starts', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(767, 10, 'stores_open_ends', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(768, 10, 'stores_open_custom_text', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(766, 10, 'stores_open_starts', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}');
+INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VALUES
+(767, 10, 'stores_open_ends', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(768, 10, 'stores_open_custom_text', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (769, 10, 'merchant_photo', '1544273993-hqdefault.jpg'),
 (770, 10, 'merchant_delivery_estimation', ''),
 (771, 10, 'merchant_delivery_miles', ''),
@@ -2353,7 +2320,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (781, 10, 'merchant_maximum_order', ''),
 (782, 10, 'merchant_packaging_charge', ''),
 (783, 10, 'merchant_close_msg_holiday', ''),
-(784, 10, 'merchant_holiday', '[\\\"\\\"]'),
+(784, 10, 'merchant_holiday', '[\\"\\"]'),
 (785, 10, 'merchant_activated_menu', ''),
 (786, 10, 'spicydish', ''),
 (787, 10, 'merchant_required_delivery_time', ''),
@@ -2366,8 +2333,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (794, 10, 'merchant_maximum_order_pickup', ''),
 (795, 10, 'merchant_disabled_ordering', ''),
 (796, 10, 'merchant_tax_charges', ''),
-(797, 10, 'stores_open_pm_start', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
-(798, 10, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(797, 10, 'stores_open_pm_start', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
+(798, 10, 'stores_open_pm_ends', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (799, 10, 'food_option_not_available', ''),
 (800, 10, 'order_verification', ''),
 (801, 10, 'order_sms_code_waiting', ''),
@@ -2404,9 +2371,9 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (832, 11, 'merchant_tax', ''),
 (833, 11, 'merchant_delivery_charges', ''),
 (834, 11, 'stores_open_day', ''),
-(835, 11, 'stores_open_starts', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(836, 11, 'stores_open_ends', '{\\\"monday\\\":false,\\\"tuesday\\\":false,\\\"wednesday\\\":false,\\\"thursday\\\":false,\\\"friday\\\":false,\\\"saturday\\\":false,\\\"sunday\\\":false}'),
-(837, 11, 'stores_open_custom_text', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(835, 11, 'stores_open_starts', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(836, 11, 'stores_open_ends', '{\\"monday\\":false,\\"tuesday\\":false,\\"wednesday\\":false,\\"thursday\\":false,\\"friday\\":false,\\"saturday\\":false,\\"sunday\\":false}'),
+(837, 11, 'stores_open_custom_text', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (838, 11, 'merchant_photo', '1544275062-gajar-halwa-recipe-step-by-step-instructions.jpg'),
 (839, 11, 'merchant_delivery_estimation', ''),
 (840, 11, 'merchant_delivery_miles', ''),
@@ -2422,7 +2389,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (850, 11, 'merchant_maximum_order', ''),
 (851, 11, 'merchant_packaging_charge', ''),
 (852, 11, 'merchant_close_msg_holiday', ''),
-(853, 11, 'merchant_holiday', '[\\\"\\\"]'),
+(853, 11, 'merchant_holiday', '[\\"\\"]'),
 (854, 11, 'merchant_activated_menu', ''),
 (855, 11, 'spicydish', ''),
 (856, 11, 'merchant_required_delivery_time', ''),
@@ -2435,8 +2402,8 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (863, 11, 'merchant_maximum_order_pickup', ''),
 (864, 11, 'merchant_disabled_ordering', ''),
 (865, 11, 'merchant_tax_charges', ''),
-(866, 11, 'stores_open_pm_start', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
-(867, 11, 'stores_open_pm_ends', '{\\\"monday\\\":\\\"\\\",\\\"tuesday\\\":\\\"\\\",\\\"wednesday\\\":\\\"\\\",\\\"thursday\\\":\\\"\\\",\\\"friday\\\":\\\"\\\",\\\"saturday\\\":\\\"\\\",\\\"sunday\\\":\\\"\\\"}'),
+(866, 11, 'stores_open_pm_start', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
+(867, 11, 'stores_open_pm_ends', '{\\"monday\\":\\"\\",\\"tuesday\\":\\"\\",\\"wednesday\\":\\"\\",\\"thursday\\":\\"\\",\\"friday\\":\\"\\",\\"saturday\\":\\"\\",\\"sunday\\":\\"\\"}'),
 (868, 11, 'food_option_not_available', ''),
 (869, 11, 'order_verification', ''),
 (870, 11, 'order_sms_code_waiting', ''),
@@ -2454,7 +2421,7 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (882, 0, 'map_latitude', ''),
 (883, 0, 'map_longitude', ''),
 (884, 0, 'contact_email_receiver', ''),
-(885, 0, 'contact_field', '[\\\"name\\\",\\\"email\\\",\\\"phone\\\",\\\"country\\\",\\\"message\\\"]'),
+(885, 0, 'contact_field', '[\\"name\\",\\"email\\",\\"phone\\",\\"country\\",\\"message\\"]'),
 (886, 0, 'fb_flag', ''),
 (887, 0, 'fb_app_id', ''),
 (888, 0, 'fb_app_secret', ''),
@@ -2493,14 +2460,14 @@ INSERT INTO `mt_option` (`id`, `merchant_id`, `option_name`, `option_value`) VAL
 (921, 0, 'admin_payu_mode', 'Sandbox'),
 (922, 0, 'admin_payu_key', 'test'),
 (923, 0, 'admin_payu_salt', 'test2'),
-(924, 0, 'first_step_image', '1557255936_jeans.png'),
-(925, 0, 'first_step_heading', 'sfsfsdf'),
+(924, 0, 'first_step_image', '1559580647_1.gif'),
+(925, 0, 'first_step_heading', 'Coose Your Meal'),
 (926, 0, 'first_step_content', 'sdf'),
-(927, 0, 'second_step_image', '1557254534_download.jpg'),
-(928, 0, 'second_step_heading', 'dfd'),
+(927, 0, 'second_step_image', '1559580647_2.gif'),
+(928, 0, 'second_step_heading', 'We''ll cook it for you'),
 (929, 0, 'second_step_content', 'sdfs'),
-(930, 0, 'third_step_image', NULL),
-(931, 0, 'third_step_image', NULL),
+(930, 0, 'third_step_image', '1559580647_3.gif'),
+(931, 0, 'third_step_image', '1559580647_3.gif'),
 (932, 0, 'third_step_content', 'fsfs');
 
 -- --------------------------------------------------------
@@ -2611,6 +2578,14 @@ CREATE TABLE `mt_order_details` (
   `ingredients` text,
   `non_taxable` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `mt_order_details`
+--
+
+INSERT INTO `mt_order_details` (`id`, `order_id`, `client_id`, `item_id`, `item_name`, `order_notes`, `normal_price`, `discounted_price`, `size`, `qty`, `cooking_ref`, `addon`, `ingredients`, `non_taxable`) VALUES
+(1, 1, 0, 1, 'ghfh', NULL, 0.0000, 0.0000, '1', 0, '', NULL, NULL, 1),
+(2, 1, 0, 2, 'ghfh', NULL, 0.0000, 0.0000, '1', 0, '', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -3112,12 +3087,12 @@ CREATE TABLE `mt_subcategory_item` (
 --
 
 INSERT INTO `mt_subcategory_item` (`sub_item_id`, `merchant_id`, `sub_item_name`, `item_description`, `category`, `price`, `photo`, `sequence`, `status`, `date_created`, `date_modified`, `ip_address`, `sub_item_name_trans`, `item_description_trans`) VALUES
-(1, 5, 'papad', 'Moong Papad', '[\"5\"]', '20', '1544179127-download-(3).jpg', 0, 'publish', '2018-12-07 16:08:48', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
-(2, 5, 'Masala papad', 'Masala papad', '[\"5\"]', '30', '1544179267-masala_papad-1.jpg', 0, 'publish', '2018-12-07 16:11:10', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
-(3, 5, 'Boil Nuts', 'Boil Nuts', '[\"5\"]', '60', '1544179324-hqdefault.jpg', 0, 'publish', '2018-12-07 16:12:06', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
-(4, 5, 'Chicken Tikka', 'Chicken Tikka', '[\"4\"]', '100', '1544179366-Tandoori-Chicken-Tikka-with-Lemon-and-Sage_ExtraLarge1000_ID-2483976.jpg', 0, 'publish', '2018-12-07 16:12:49', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
-(5, 5, 'manchow soup', 'manchow soup', '[\"3\"]', '90', '1544179425-homemade-chicken-manchow-soup.1024x1024-4.jpg', 0, 'publish', '2018-12-07 16:13:48', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
-(6, 5, 'Tomato soup', 'Tomato soup', '[\"3\"]', '80', '1544179469-tomato-soup-recipes-480x270.jpg', 0, 'publish', '2018-12-07 16:14:31', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL);
+(1, 5, 'papad', 'Moong Papad', '["5"]', '20', '1544179127-download-(3).jpg', 0, 'publish', '2018-12-07 16:08:48', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
+(2, 5, 'Masala papad', 'Masala papad', '["5"]', '30', '1544179267-masala_papad-1.jpg', 0, 'publish', '2018-12-07 16:11:10', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
+(3, 5, 'Boil Nuts', 'Boil Nuts', '["5"]', '60', '1544179324-hqdefault.jpg', 0, 'publish', '2018-12-07 16:12:06', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
+(4, 5, 'Chicken Tikka', 'Chicken Tikka', '["4"]', '100', '1544179366-Tandoori-Chicken-Tikka-with-Lemon-and-Sage_ExtraLarge1000_ID-2483976.jpg', 0, 'publish', '2018-12-07 16:12:49', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
+(5, 5, 'manchow soup', 'manchow soup', '["3"]', '90', '1544179425-homemade-chicken-manchow-soup.1024x1024-4.jpg', 0, 'publish', '2018-12-07 16:13:48', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL),
+(6, 5, 'Tomato soup', 'Tomato soup', '["3"]', '80', '1544179469-tomato-soup-recipes-480x270.jpg', 0, 'publish', '2018-12-07 16:14:31', '0000-00-00 00:00:00', '203.192.219.81', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -4046,7 +4021,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `banners`
 --
 ALTER TABLE `banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 --
 -- AUTO_INCREMENT for table `faqs`
 --
@@ -4211,12 +4186,12 @@ ALTER TABLE `mt_location_states`
 -- AUTO_INCREMENT for table `mt_merchant`
 --
 ALTER TABLE `mt_merchant`
-  MODIFY `id` int(14) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(14) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `mt_merchant_categories`
 --
 ALTER TABLE `mt_merchant_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `mt_merchant_cc`
 --
@@ -4226,12 +4201,12 @@ ALTER TABLE `mt_merchant_cc`
 -- AUTO_INCREMENT for table `mt_merchant_cuisine`
 --
 ALTER TABLE `mt_merchant_cuisine`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `mt_merchant_images`
 --
 ALTER TABLE `mt_merchant_images`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `mt_merchant_meta`
 --
@@ -4241,7 +4216,7 @@ ALTER TABLE `mt_merchant_meta`
 -- AUTO_INCREMENT for table `mt_merchant_payment_provider`
 --
 ALTER TABLE `mt_merchant_payment_provider`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `mt_merchant_user`
 --
@@ -4286,7 +4261,7 @@ ALTER TABLE `mt_order_delivery_address`
 -- AUTO_INCREMENT for table `mt_order_details`
 --
 ALTER TABLE `mt_order_details`
-  MODIFY `id` int(14) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(14) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `mt_order_history`
 --
@@ -4431,8 +4406,7 @@ ALTER TABLE `sub_modules`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
-
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
