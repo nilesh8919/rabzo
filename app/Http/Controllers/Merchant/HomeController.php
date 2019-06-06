@@ -17,12 +17,13 @@ class HomeController extends Controller
      */
     public function __construct() {
        // $this->middleware('auth:admin');
-	  // echo Auth::id();exit;
-	  
-	   if(empty(Auth::id()))
+	  //echo Auth::id();exit;
+	 //  Session::put('user_id',  Auth::id());
+	
+	  /* if(empty(Session::get('user_id')))
 	   {
-		  return view('merchant.login');
-	   }
+		 return redirect()->action('Merchant\LoginController@merchant_login');
+	   }*/
     }
 
     /**
@@ -32,6 +33,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+		if(empty(Auth::id()))
+	   {
+		 return redirect()->action('Merchant\LoginController@merchant_login');
+	   }
 		 // $this->modules = $this->get_modules();
 		// print_r($this->modules);exit;
 		
@@ -39,7 +44,7 @@ class HomeController extends Controller
     }
 	  public function logout(Request $request){
 
-        
+       // $request->session()->flush();
         Auth::logout();
         auth()->logout();
          Session::forget('email');

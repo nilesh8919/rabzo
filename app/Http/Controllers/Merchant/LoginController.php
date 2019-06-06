@@ -13,6 +13,10 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
+	protected function merchant_login(Request $request)
+	{
+		return view('merchant.login');
+	}
 	protected function attemptLogin(Request $request)
 	{
 		$user = \App\Merchant::whereUsername($request->username)

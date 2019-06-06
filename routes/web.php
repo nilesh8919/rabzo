@@ -25,9 +25,11 @@ Route::get('/checkout','CheckoutController@index');
 Route::get('/admin', function () {
     return view('admin.login');
 });
+/*
 Route::get('/merchant', function () {
     return view('merchant.login');
-});
+});*/
+Route::get('merchant','Merchant\LoginController@merchant_login');
 // admin routes
 //Route::post('submit_login','AuthenticateController@submit_login');
 
@@ -100,6 +102,8 @@ Route::group(['middleware' => 'auth'], function(){
 			Route::post('store_paytm','Admin\PaymentGatewayController@store_paytm');
 			Route::post('store_cms','Admin\CmsController@store_cms');
 			Route::get('store_cms_success','Admin\CmsController@store_cms_success');
+			Route::get('manage_orders','Admin\OrderController@index');
+			Route::post('merchantAutoLogin','Admin\MerchantController@merchantAutoLogin');
 			
 		
 			//Merchant routes

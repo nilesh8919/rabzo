@@ -15,13 +15,12 @@ class SizeController extends Controller
 {
     public function __construct()
     {
-      //  $this->middleware('auth');
-		
+     
 	 }
    
     public function manage_sizes(Request $request)
       {
-         
+          //dd(Auth::id());
 				$data =Size :: join('mt_merchant','mt_merchant.id','=','mt_size.merchant_id')
 				->select('mt_size.*','mt_merchant.restaurant_name')
 				->where('mt_size.merchant_id',Auth::id())

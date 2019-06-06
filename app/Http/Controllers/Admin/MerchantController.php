@@ -528,4 +528,21 @@ class MerchantController extends Controller
 			$data = MerchantImages :: where('id',$request->id)->delete();
 			  return response()->json("image removed");
 		}
+			protected function merchantAutoLogin(Request $request)
+		{
+			//echo $request->id;exit;
+			$user = \App\Merchant::where('id',$request->id)->first();
+         // $user->login_from ='admin';
+	//if  (Auth::attempt(['username' => $request->username, 'password' => md5($request->password)])) {
+			if ($user) {
+				Auth::login($user);
+				 $data['ResponseCode'] = "200";
+			   $data['ResponseMessage'] = "Successfully login";
+				
+			}else{
+				 $data['ResponseCode'] = "400";
+			   $data['ResponseMessage'] = "Invalid credentials";
+			}
+		   return response()->json($data);
+		}
 }
