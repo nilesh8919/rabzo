@@ -6,7 +6,7 @@
     .top-header {position: fixed;top: 0;left: 0;width: 100%;height: 60px;}
     .top-header .menu-icon {position: absolute;top: 0;right: 0;padding: 18px 20px;}
     .fix-search .top-header {background: #eee;}
-    .search {position: absolute;top: 33px;left: 0px; right: 114px;margin: 0 auto;width: 685px;/*border: 1px solid;*/}
+    .search {position: absolute;top: 189px;left: 0px; right: 213px;margin: 0 auto;width: 590px;/*border: 1px solid;*/}
     .search input {width: 100%;border: 1px solid #ccc;padding: 8px;font-size: 15px;transition: width 0.2s;
       -webkit-appearance: none;height: 38px;}
     .fix-search .search {position: fixed;top: 0px;width: 50%;margin: 0 auto;}
@@ -31,11 +31,11 @@
 	</style>
 		<div class="search">
 			  		<div class="col-lg-12 col-md-12" id="search_navbar" style="position: sticky;top: 0;z-index: 99;padding: 15px 0px;">
-		                <div class="col-lg-6 col-md-6" style="padding-right: 0px;">
+		                <div class="col-lg-4 col-md-4" style="padding-right: 0px;">
 		                  <input type="text" id="location" placeholder="Search location" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['location'])){ echo $_GET['location']; } ?>">
 		                  <i class="fa fa-search" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
 		                </div>
-		                <div class="col-lg-4 col-md-4" style="padding-right: 0px;">
+		                <div class="col-lg-6 col-md-6" style="padding-right: 0px;">
 		                  <input type="text" id="category" placeholder="Search for" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['category'])){ echo $_GET['category']; } ?>">
 		                  <i class="fa fa-map-marker" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
 		                </div>

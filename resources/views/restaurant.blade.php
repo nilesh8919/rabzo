@@ -10,7 +10,7 @@
     .top-header {position: fixed;top: 0;left: 0;width: 100%;height: 60px;}
     .top-header .menu-icon {position: absolute;top: 0;right: 0;padding: 18px 20px;}
     .fix-search .top-header {background: #eee;}
-    .search {position: absolute;left: 0px; right: 114px;margin: 0 auto;width: 685px;/*border: 1px solid;*/}
+    .search {position: absolute;left: 0px; right: 114px;margin: 0 auto;width: 700px;/*border: 1px solid;*/    top: -14px;}
     .search input {width: 100%;border: 1px solid #ccc;padding: 8px;font-size: 15px;transition: width 0.2s;
       -webkit-appearance: none;height: 38px;}
     .fix-search .search {position: fixed;top: 0px;width: 50%;margin: 0 auto;}
@@ -42,11 +42,11 @@
       <div class="row" style="margin-top: 50px;">
         <div class="col-lg-12 col-md-12">
           <div class="col-lg-2 col-md-2" style="background: #fff;padding: 0px;position: sticky;top: 0;z-index: 99;">
-            <div class="col-lg-12 col-md-12" style="border-bottom: 1px solid #a09c9c6e;background: #ccc;">
+            <!-- <div class="col-lg-12 col-md-12" style="border-bottom: 1px solid #a09c9c6e;background: #ccc;">
               <h4>Filters</h4>
-            </div>
-            <div class="col-lg-12 col-md-12" style="border-bottom: 1px solid #ccc;background: #ccc;">
-              <h4>Category</h4>
+            </div> -->
+            <div class="col-lg-12 col-md-12" style="background: #3a126c;">
+              <h4 style="color: #fff;">Category</h4>
             </div>
             <div class="col-lg-12 col-md-12" style="padding-top: 10px;">
              @foreach($results['category'] as $cat)
@@ -58,10 +58,10 @@
 				          @endforeach 
              
             </div>
-            <div class="col-lg-12 col-md-12" style="border-bottom: 1px solid #ccc;">
-              <h4>Cuisine</h4>
+            <div class="col-lg-12 col-md-12" style="background: #3a126c;">
+              <h4 style="color: #fff;">Cuisine</h4>
             </div>
-            <div class="col-lg-12 col-md-12" style="padding: 10px 0;">
+            <div class="col-lg-12 col-md-12" style="padding: 0;">
                <ul class="cuisine_ul">
 							@foreach($results['cuisine'] as $cu)
 				                <li><a href="javascript:void(0)" onClick="getMerchant(<?php echo $cu->id ?>)"><i class="fa fa-caret-right"></i> {{$cu->cuisine_name}}</a></li>
@@ -73,12 +73,12 @@
             <div class="col-lg-12 col-md-12" style="padding: 0px;">
               <!--search div-->
               <div class="search">
-            <div class="col-lg-12 col-md-12" id="search_navbar" style="position: sticky;top: 0;z-index: 99;padding: 15px 0px;">
-                    <div class="col-lg-6 col-md-6" style="padding-right: 0px;">
+            <div class="col-lg-12 col-md-12" id="search_navbar" style="position: sticky;top: 0;z-index: 99;padding: 0px 0px;">
+                    <div class="col-lg-4 col-md-4" style="padding-right: 0px;">
                       <input type="text" id="location" placeholder="Search location" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['location'])){ echo $_GET['location']; } ?>">
                       <i class="fa fa-search" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
                     </div>
-                    <div class="col-lg-4 col-md-4" style="padding-right: 0px;">
+                    <div class="col-lg-6 col-md-6" style="padding-right: 0px;">
                       <input type="text" id="category" placeholder="Search for" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['category'])){ echo $_GET['category']; } ?>">
                       <i class="fa fa-map-marker" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
                     </div>
@@ -108,7 +108,7 @@
 
           <div class="col-lg-3 col-md-3" style="background: #fff;padding: 0;">
             <div class="col-lg-12 col-md-12" style="padding: 0px;">
-              <h4 style="background: #ccc;margin: 0;padding: 14px;font-size: 20px;font-weight: 600;">Featured Restaurant</h4>
+              <h4 style="background: #3a126c;color:#fff;margin: 0;padding: 14px;font-size: 20px;font-weight: 600;">Featured Restaurant</h4>
 		 
 		  @foreach($results['featured'] as $row)
               <div class="col-lg-6 col-md-6" style="margin-top:15px;">
