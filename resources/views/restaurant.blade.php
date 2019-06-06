@@ -37,7 +37,7 @@
   <!-- Slider -->
   <!-- bestsell Slider -->
   <section class="clear" style="background: #f9f7f754;">
-  <input type="hidden" " />
+  <input type="hidden"/>
     <div class="container">
       <div class="row" style="margin-top: 50px;">
         <div class="col-lg-12 col-md-12">
@@ -50,7 +50,7 @@
             </div>
             <div class="col-lg-12 col-md-12" style="padding-top: 10px;">
              @foreach($results['category'] as $cat)
-				            <label class="col-lg-6 col-md-6" style="padding: 0;">
+				            <label class="col-lg-12 col-md-12" style="padding: 0;">
 				             	<input id="" name="" onClick="getMerchant()" class="food_categories" type="checkbox" value="{{$cat->id}}">
 				             	<span></span>
 								{{$cat->category_name}}
@@ -69,24 +69,26 @@
 				            </ul>
             </div>
           </div>
-          <div class="col-lg-7 col-md-7" style="padding: 0px;">
+          <div class="col-lg-7 col-md-7" style="padding: 0px;" >
             <div class="col-lg-12 col-md-12" style="padding: 0px;">
               <!--search div-->
               <div class="search">
-            <div class="col-lg-12 col-md-12" id="search_navbar" style="position: sticky;top: 0;z-index: 99;padding: 0px 0px;">
-                    <div class="col-lg-4 col-md-4" style="padding-right: 0px;">
-                      <input type="text" id="location" placeholder="Search location" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['location'])){ echo $_GET['location']; } ?>">
-                      <i class="fa fa-search" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
-                    </div>
-                    <div class="col-lg-6 col-md-6" style="padding-right: 0px;">
-                      <input type="text" id="category" placeholder="Search for" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['category'])){ echo $_GET['category']; } ?>">
-                      <i class="fa fa-map-marker" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
-                    </div>
-                    <div class="col-lg-2 col-md-2" style="padding:0px;">
-                      <input type="button" placeholder="Search for" class="btn btn-default" name="" value="Search" style="background: #3a126c;color: #fff;border-radius: 0;border: none;padding: 6PX 20px;">
-                    </div>
-                </div>
-          </div>
+                <div class="col-lg-12 col-md-12" id="search_navbar" style="position: sticky;top: 0;z-index: 99;padding: 15px 0px;">
+                  <div class="col-lg-4 col-md-4" style="padding-right: 0px;">
+                    <input type="text" id="location" placeholder="Search location" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['location'])){ echo $_GET['location']; } ?>">
+                    <i class="fa fa-search" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
+                  </div>
+                  <div class="col-lg-6 col-md-6" style="padding-right: 0px;">
+                    <input type="text" id="category" placeholder="Search for" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['category'])){ echo $_GET['category']; } ?>">
+                    <i class="fa fa-map-marker" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
+                  </div>
+                  <div class="col-lg-2 col-md-2" style="padding:0px;">
+                    <input type="button" placeholder="Search for" class="btn btn-default" name="" value="Search" style="background: #3a126c;color: #fff;border-radius: 0;border: none;padding: 6PX 20px;">
+                  </div>
+              </div>
+              </div>
+              <div id="contents" style="margin-top:60px;">
+              </div>
               <!-- <div class="col-lg-12 col-md-12" id="search_navbar" style="background: #fff;position: sticky;top: 0;z-index: 99;padding: 15px 0px 0px;">
                 <div class="col-lg-6 col-md-6" style="padding-right: 0px;">
                   <input type="text" id="location" value="<?php if(isset($_GET['location'])){ echo $_GET['location']; } ?>" placeholder="Search Location" class="form-control" name="" style="border: 1px solid #ccc;color: ;border-radius: 0;" />
@@ -103,8 +105,8 @@
             </div>
            
           </div>
-          <!-- <div class="col-lg-9 col-md-9" style="padding: 0px;" id="contents">
-          </div> -->
+           <!-- <div class="col-lg-9 col-md-9" style="padding: 0px;" id="contents">
+          </div>  -->
 
           <div class="col-lg-3 col-md-3" style="background: #fff;padding: 0;">
             <div class="col-lg-12 col-md-12" style="padding: 0px;">
@@ -158,6 +160,7 @@
 }*/
 $(document).ready(function(){
 	getMerchant();
+  //alert('hi')
 })
 
 function getMerchant($id='')

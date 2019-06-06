@@ -84,9 +84,10 @@ error_reporting(0);
 		  ->groupBy('mt_merchant_images.merchant_id')->get();
 		 // print_r($data['featured']);exit;
 		  
-		    $data['merchant']  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
+		    $data['merchant']  = Merchant :: leftjoin('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
 			  ->select('mt_merchant.*','mt_merchant_images.images')
 		 ->groupBy('mt_merchant_images.merchant_id')->get();
+		// print_r($data['merchant']);exit;
 		  foreach( $data['merchant'] as $key=>$value)
 		  {
 			  $current_date = date('Y-m-d');
@@ -214,7 +215,7 @@ error_reporting(0);
 			   }
 			    if(!empty($request->food_categories)){
 					//print_r($request->food_categories);exit;
-				 $qry->whereIn('mt_merchant_cuisine.food_categories',$request->food_categories);
+				 $qry->whereIn('mt_merchant_cuisine.cuisine_id',$request->food_categories);
 			   }
 		 $qry->groupBy('mt_merchant_images.merchant_id');
 		 
