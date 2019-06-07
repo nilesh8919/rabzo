@@ -129,8 +129,9 @@
 			                    <tr>
 			                      <td>Name</td>
 			                      <td>Qty</td>
-			                      <td>Description</td>
+			                 <td>Size</td>
 			                      <td>Price</td>
+			                      <td></td>
 			                    </tr>
 			                  </thead>
 			                  <tbody id="orderedProductsTblBody">
@@ -139,13 +140,14 @@
 			                    <tr>
 			                      <td colspan="4" align="right" id="cart_total">
 			                      </td>
+								  <td></td>
 			                    </tr>
 			                  </tfoot>
 			                </table>
 			              
 			            </div>
 						  <div class="col-lg-12 col-md-12" style="padding: 0px;">
-						 <center> <button onClick="getCheckout()" type="button">Checkout</button></center>
+						 <center> <button class="btn btn-sucess" onClick="getCheckout()" type="button">Checkout</button></center>
 						  </div>
 			        </div>	
 				    <!--right div end-->
@@ -182,7 +184,7 @@
 
 		//create array that will hold all ordered products
 	    var shoppingCart = [];
-
+displayShoppingCart();
 	    //this function manipulates DOM and displays content of our shopping cart
 	    function displayShoppingCart(){
 	        var orderedProductsTblBody=document.getElementById("orderedProductsTblBody");
@@ -190,28 +192,42 @@
 	        while(orderedProductsTblBody.rows.length>0) {
 	            orderedProductsTblBody.deleteRow(0);
 	        }
-
+ 
+		   $.ajax({
+				type:"get",
+				url:"{{url('get_cart')}}",
+			  data:{'shoppingCart':shoppingCart},
+			  dataType:'json',
+			  success:function(res){
+				 var shoppingCart = res;
+				 console.log(res);
 	        //variable to hold total price of shopping cart
-	        var cart_total_price=0;
-	        //iterate over array of objects
-	        for(var product in shoppingCart){
-	            //add new row      
-	            var row=orderedProductsTblBody.insertRow();
-	            //create three cells for product properties 
-	            var cellName = row.insertCell(0);
-	            var cellQty = row.insertCell(1);
-	            var cellDescription = row.insertCell(2);
-	            var cellPrice = row.insertCell(3);
-	            // cellPrice.align="right";
-	            //fill cells with values from current product object of our array
-	            cellName.innerHTML = shoppingCart[product].Name;
-	            cellQty.innerHTML = shoppingCart[product].Qty;
-	            cellDescription.innerHTML = shoppingCart[product].Description;
-	            cellPrice.innerHTML = shoppingCart[product].Price;
-	            cart_total_price+=shoppingCart[product].Price;
-	        }
-	        //fill total cost of our shopping cart 
-	        document.getElementById("cart_total").innerHTML=cart_total_price;
+						var cart_total_price=0;
+						//iterate over array of objects
+						for(var product in shoppingCart){
+							//add new row      
+							var row=orderedProductsTblBody.insertRow();
+							//create three cells for product properties 
+							var cellName = row.insertCell(0);
+							var cellQty = row.insertCell(1);
+							var cellSize = row.insertCell(2);
+							var cellPrice = row.insertCell(3);
+							var cellRemove = row.insertCell(4);
+							// cellPrice.align="right";
+							//fill cells with values from current product object of our array
+							cellName.innerHTML = shoppingCart[product].Name;
+							cellQty.innerHTML = shoppingCart[product].Qty;
+							cellSize.innerHTML = shoppingCart[product].size;
+							cellPrice.innerHTML = shoppingCart[product].Price;
+							cellRemove.innerHTML = '<a href="#"><i class="fa fa-times"></i></a>';
+							cart_total_price+=parseFloat(shoppingCart[product].Price);
+						}
+						//fill total cost of our shopping cart 
+						document.getElementById("cart_total").innerHTML=cart_total_price;
+				 
+			  }
+			})
+		   
 	    }
 
 
@@ -250,7 +266,7 @@
 				  var div1 ='';
 				  $.each(res, function(key,val){
 				// alert(val.item_name)
-				  div1 += '<div class="col-lg-3 col-md-3" style="padding: 0px;"><div class="" style="padding: 0px 10px 0px 0px;"><center><img src="{{ asset('uploads/merchant_item_cat_images/')}}/'+val.photo+'" class="image" style="height: 93px;width: 100%;"></center><h3 id="item_name_'+val.id+'" class="restaurant_details_div_title" style="text-align: left; font-size:12px;top: 0px;background: #fff;color: #000;padding-left: 5px;">'+val.item_name+'</h3><p style="width: 74px;background:#fff;float: left;padding: 2px 7px;"><i class="fa fa-inr" aria-hidden="true"></i> 220.00</p><input type="button" data-toggle="modal" data-target="#myModal" onclick="selectSizes('+val.id+')"  value="Add"  style="width: 58px;float: left;padding: 2px 0px;border:none;background:#3a126c;color: #fff;" /></div></div>';
+				  div1 += '<div class="col-lg-3 col-md-3" style="padding: 0px;"><div class="" style="padding: 0px 10px 0px 0px;"><center><img src="{{ asset('uploads/merchant_item_cat_images/')}}/'+val.photo+'" class="image" style="height: 93px;width: 100%;"></center><h3 id="item_name_'+val.id+'" class="restaurant_details_div_title" style="text-align: left; font-size:12px;top: 0px;background: #fff;color: #000;padding-left: 5px;">'+val.item_name+'</h3><input type="button" data-toggle="modal" data-target="#myModal" onclick="selectSizes('+val.id+')"  value="Add"  style="width: 58px;float: left;padding: 2px 0px;border:none;background:#3a126c;color: #fff;" /></div></div>';
 				  });
 				  //alert(div1)
 				   $("#contents").html(div1);
@@ -305,8 +321,20 @@
 	       singleProduct.Price=parseFloat(price);
 	       //Add newly created product to our shopping cart 
 	       shoppingCart.push(singleProduct);
+		   
+		   $.ajax({
+				type:"post",
+				url:"{{url('add_to_cart')}}",
+			  data:{'shoppingCart':shoppingCart},
+			  success:function(res){
+				 // alert('hi')
+				 displayShoppingCart();
+				 
+			  }
+			})
+		   
 	       //call display function to show on screen
-	       displayShoppingCart();
+	       
 		  $(".close").trigger('click');
 		  }else{
 			  alert('Please check any price')

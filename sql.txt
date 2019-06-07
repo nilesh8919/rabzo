@@ -16,3 +16,5 @@ ALTER TABLE `mt_item` CHANGE `two_flavors` `two_flavors` INT(2) NULL;
 
 
 ALTER TABLE `mt_shipping_rate` ADD `order_total` VARCHAR(255) NULL AFTER `id`;
+
+INSERT INTO `sub_modules` (`id`, `module_id`, `sub_module_name`, `status`, `sub_module_routes`, `icons`, `created_at`, `updated_at`) VALUES ('0', '1', 'Manage footer', 'active', '/manage_cms', '', '2019-03-28 15:06:53', '0000-00-00 00:00:00');

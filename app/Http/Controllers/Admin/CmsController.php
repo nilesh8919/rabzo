@@ -271,6 +271,13 @@ if(isset($request->third_step_content)){
          }
            return response()->json(array('flag'=>true));
 }
+  public function manage_footer(Request $request)
+  {
+	   return view('admin.manage_footer',[
+              //  'banner'=> $banner,
+				
+                 ]);
+  }
   public function store_cms_success(Request $request)
        {
           Session::flash('flash_message', 'Faqs Added Successfully');

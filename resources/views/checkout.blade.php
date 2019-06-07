@@ -1,232 +1,55 @@
 	@include('header')
-	<style>
-		 <style type="text/css">
+	<style type="text/css">
     .step_first_no{float:left;background: #ccc;width: 50px;text-align: center;height: 50px;font-family: sans-serif;padding-top: 6px;}
     .dahed_vertical_line{float:left;border: 1px dashed #ccc;float: left;width: 84%;position: relative;top: 44px;}
-    .checkout_login_btn{color: #fff;background: #3a126c;border-radius: 0;border: 0;padding: 70px 63px;font-size: 17px;}
-    .checkout_signup_btn{color: #fff;background: #525154;border-radius: 0;border: 0;padding: 70px 63px;font-size: 17px;}
+    .checkout_login_btn{background: #078222;border: 0;padding: 15px 100px;font-size: 18px;position: relative;left: 130px;border-radius: 60px;color: #fff;}
+    .checkout_signup_btn{background: #bf3106;border: 0;padding: 15px 100px;font-size: 18px;position: relative;border-radius: 60px;color: #fff;}
 
     /*========slide code css start======*/
-    .slide_div {
-      margin: 0;
-      border: 0;
-      padding: 0;
-      width: 100%;
-      height: 400px;
-    }
-    .container1 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: 0;
-      border: 0 none;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      background: #BAEFBA;
-      overflow: hidden;
-      text-align: center;
-    }
-    .container1:before {
-      display: inline-block;
-      content: '';
-      height: 100%;
-      margin-right: -0.25rem;
-      vertical-align: middle;
-    }
-    .container1 h2 {
-      display: inline-block;
-      color: #fff;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-size: 50px;
-      font-weight: 100;
-      line-height: 1em;
-      margin-left: 50px;
-      vertical-align: middle;
-    }
-    .container1 .page_slide {
-      -moz-transition: visibility linear, -moz-transform 0.8s ease-out;
-      -o-transition: visibility linear, -o-transform 0.8s ease-out;
-      -webkit-transition: visibility linear, -webkit-transform 0.8s ease-out;
-      transition: visibility linear, transform 0.8s ease-out;
-      -moz-box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.35);
-      -webkit-box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.35);
-      box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.35);
-      -moz-transform: translateX(0);
-      -ms-transform: translateX(0);
-      -webkit-transform: translateX(0);
-      transform: translateX(0);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      visibility: visible;
-      text-align: center;
-    }
-    .container1 .page_slide:before {
-      display: inline-block;
-      content: '';
-      height: 100%;
-      margin-right: -0.25rem;
-      vertical-align: middle;
-    }
-    .container1 .page_slide.hidden1 {
-      -moz-transition: visibility 0.8s linear, -moz-transform 0.8s ease-in;
-      -o-transition: visibility 0.8s linear, -o-transform 0.8s ease-in;
-      -webkit-transition: visibility 0.8s linear, -webkit-transform 0.8s ease-in;
-      transition: visibility 0.8s linear, transform 0.8s ease-in;
-      -moz-transform: translateX(100%);
-      -ms-transform: translateX(100%);
-      -webkit-transform: translateX(100%);
-      transform: translateX(100%);
-      visibility: hidden;
-    }
-    .container1 .page_slide#page1 {
-      /*background-color: #fff;*/
-          background: url(images/back1.jpg);
-          background-position: center;
-    }
-    .container1 .page_slide#page2 {
-      background-color: #fff;
-    }
-    .container1 .page_slide#page3 {
-      background-color: #DDBEF8;
-    }
-    .container1 .page_slide#page4 {
-      background-color: #5C14BC;
-    }
-    .change-page {
-      position: absolute;
-      display: inline-block;
-      right: 0;
-      left: 0;
-      margin: 0 auto;
-      border: 0 none;
-      padding: 0;
-      text-align: center;
-      list-style: none;
-    }
-    .change-page li {
-      display: inline-block;
-    }
-    .change-page li:first-child {
-      margin-right: 20px;
-    }
-    .change-page li a {
-      display: block;
-      padding: 15px;
-      font-family: Helvetica, Arial, sans-serif;
-      font-size: 11px;
-      line-height: 1em;
-      color: #fff;
-      text-decoration: none;
-      text-transform: uppercase;
-      background: black;
-    }
-    .change-page li a:hover {
-      color: black;
-      background: darkgray;
-    }
+    .slide_div {margin: 0;border: 0;padding: 0;width: 100%;height: 400px;}
+    .container1 {position: absolute;top: 0;left: 0;margin: 0;border: 0 none;padding: 0;width: 100%;height: 100%;background: #BAEFBA;overflow: hidden;text-align: center;}
+    .container1:before {display: inline-block;content: '';height: 100%;margin-right: -0.25rem;vertical-align: middle;}
+    .container1 h2 {display: inline-block;color: #fff;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 50px;font-weight: 100;line-height: 1em;margin-left: 50px;vertical-align: middle;}
+    .container1 .page_slide {-moz-transition: visibility linear, -moz-transform 0.8s ease-out;-o-transition:visibility linear, -o-transform 0.8s ease-out;-webkit-transition: visibility linear, -webkit-transform 0.8s ease-out;transition: visibility linear, transform 0.8s ease-out;-moz-box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.35);-webkit-box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.35);box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.35);-moz-transform: translateX(0);-ms-transform: translateX(0);-webkit-transform: translateX(0);transform: translateX(0);position: absolute;top: 0;left: 0;width: 100%;height: 100%;visibility: visible;text-align: center;}
+    .container1 .page_slide:before {display: inline-block;content: '';height: 100%;margin-right: -0.25rem;vertical-align: middle;}
+    .container1 .page_slide.hidden1 {-moz-transition: visibility 0.8s linear, -moz-transform 0.8s ease-in;-o-transition: visibility 0.8s linear, -o-transform 0.8s ease-in;-webkit-transition: visibility 0.8s linear, -webkit-transform 0.8s ease-in;transition: visibility 0.8s linear, transform 0.8s ease-in;-moz-transform: translateX(100%);-ms-transform: translateX(100%); -webkit-transform: translateX(100%);transform: translateX(100%);visibility: hidden;}
+    .container1 .page_slide#page1 {background: url(images/back1.jpg);background-position: center;}
+    .container1 .page_slide#page2 {background-color: #fff;}
+    .container1 .page_slide#page3 {background-color: #DDBEF8;}
+    .container1 .page_slide#page4 {background-color: #5C14BC;}
+    .change-page {position: absolute;display: inline-block;right: 0;left: 0;margin: 0 auto;border: 0 none;padding: 0;text-align: center;list-style: none;}
+    .change-page li {display: inline-block;}
+    .change-page li:first-child {margin-right: 20px;}
+    .change-page li a {display: block;padding: 15px;font-family: Helvetica, Arial, sans-serif;font-size: 11px;line-height: 1em;color: #fff;text-decoration: none;text-transform: uppercase;background: black;}
+    .change-page li a:hover {color: black;background: darkgray;}
 
     /*========new address slide down panel========*/
-    #panel, #flip {
-      padding: 5px;
-      text-align: center;
-     /* background-color: #e5eecc;
-      border: solid 1px #c3c3c3;*/
-    }
-
-    #panel {
-      /*padding: 50px;*/
-      display: none;
-    }
+    #panel, #flip {padding: 5px;text-align: center; /* background-color: #e5eecc;border: solid 1px #c3c3c3;*/}
+    #panel {/*padding: 50px;*/display: none;}
 
   </style>
-	</style>
 	
 
 		
-			<div class="container" style="margin-top: -47px;">
-				<div class="col-lg-12 col-md-12" style="background: #e9ecee;">
+  <div class="col-lg-12 col-md-12" style="background: #e9ecee;">
     <div class="container">
       <div class="col-lg-12 col-md-12">
-        <div class="col-lg-8 col-md-8" style="margin: 40px 0px;">
+        <div class="col-lg-8 col-md-8" style="margin: 40px 0px 20px;">
           <!--login div start-->
-          <div class="col-lg-12 col-md-12" style="padding:0;">
-            <!--toggle slide code start-->
-            <div class="slide_div" style="">
-              <div class="container1">
-                <h2>background</h2>
-                <div id="page1" data-id="1" class="page_slide" style="padding: 55px 0px;">
-                  <!--login signup-->
-                  <div class="col-lg-6 col-md-6" style="padding-top: 50px;padding-bottom: 50px;">
-                    <!-- <div class="col-lg-12 col-md-12" style="padding:0;">
-                      <h1 class="step_first_no">1</h1><span class="dahed_vertical_line"></span>
-                    </div> -->
-                    <div class="col-lg-12 col-md-12" style="padding: 0;position: relative;top: 16px;">
-                      <button class="btn btn-default checkout_login_btn" id="login_btn">Login</button>
-                      <button class="btn btn-default checkout_signup_btn" id="signup_btn">Signup</button>
-                    </div> 
-                  </div>
-                  <!--login start-->
-                  <div class="col-lg-6 col-md-6" id="login_div" style="background: #fff;padding-top: 66px;width: 48%;margin-left: 15px;">
-                    <!-- <label>Enter Your Register Mobile No.</label> -->
-                    <input type="text" name="" class="form-control" placeholder="Enter Your Register No" style="border-radius: 0;height: 50px;">
-                    <input type="text" id="enter_otp" name="" class="form-control" placeholder="Enter OTP" style="border-radius: 0;height: 50px;">
-                    <input type="button" class="btn btn-success" value="Login" id="login_btn_id" name="" style="border-radius: 0;border: 0;    padding: 14px 152px;margin: 10px 0;">
-                  </div>
-                  <!--signup start-->
-                  <div class="col-lg-6 col-md-6" id="signup_div" style="background: #fff;padding-top: 22px;width: 48%;margin-left: 15px;">
-                    <!-- <label>Enter Your Register Mobile No.</label> -->
-                    <input type="text" name="" class="form-control" placeholder="Enter Your Name" style="border-radius: 0;height: 50px;">
-                    <input type="email" id="signup" name="" class="form-control" placeholder="Enter Your Mail Id" style="border-radius: 0;height: 50px;margin-top: 10px;">
-                    <input type="text" id="signup" name="" class="form-control" placeholder="Enter Your Phone No" style="border-radius: 0;height: 50px;margin-top: 10px;">
-                    <input type="email" id="signup" name="" class="form-control" placeholder="Enter Password" style="border-radius: 0;height: 50px;margin-top: 10px;">
-                    <input type="button" class="btn btn-success" value="Signup" id="signup_btn_id" name="" style="border-radius: 0;border: 0;padding: 14px 152px;margin: 10px 0;">
-                  </div>
-                </div>
-                <div id="page2" data-id="2" class="page_slide">
-                  <!--adress div start-->
-                  <div class="col-lg-12 col-md-12">
-                    <div class="col-lg-5 col-md-5" style="border: 1px dashed #000;margin-top: 90px;margin-left: 50px;"><i class="fa fa-home" aria-hidden="true" style="font-size: 25px;float: left;position: relative;bottom: 14px;"></i>
-                      <p style="color: #000;font-size: 15px;letter-spacing: 1px;font-family: sans-serif;line-height: 28px;padding: 40px 10px;">Plot no 36, Jaibadrinath Society, Near Bhende Layout, Khamla Road, Nagpur - 440025</p>
-                    </div>
-                    <div class="col-lg-5 col-md-5" style="margin-top: 90px;margin-left: 30px;">
-                      <button class="btn btn-default" id="flip" style="background: transparent;color: #000;padding-left: 67px;padding-right: 67px;"><i class="fa fa-plus" aria-hidden="true"></i> Add New Address</button>
-                      <div id="panel">
-                        <textarea class="form-control" placeholder="Enter Your New Address" rows="6" style="border: 1px dashed #000;"></textarea>
-                      </div>
-                    </div>
-                  </div>
-                  <!--address div end-->
-                </div>
-                <div id="page3" data-id="3" class="page_slide">
-                  <h2>page 3</h2>
-                </div>
-                <!-- <div id="page4" data-id="4" class="page_slide">
-                  <h2>page 4</h2>
-                </div> -->
-              </div>
-              <ul class="change-page">
-                <!-- <li>
-                  <a id="button-0" href="#" title="button-0" class="button hide-all" data-page-id="0">hide all</a>
-                </li> -->
-                <li>
-                  <a id="button-1" href="#" title="button-1" class="button" data-page-id="1">Login</a>
-                </li>
-                <li>
-                  <a id="button-2" href="#" title="button-2" class="button" data-page-id="2">Address</a>
-                </li>
-                <li>
-                  <a id="button-3" href="#" title="button-3" class="button" data-page-id="3">Payment</a>
-                </li>
-                <!-- <li>
-                  <a id="button-4" href="#" title="button-4" class="button" data-page-id="4">page 4</a>
-                </li> -->
-              </ul>
-            </div>
-            <!--toggle slide code end-->
+          <div class="col-lg-12 col-md-12" style="padding:0;background: url(images/back1.jpg);background-position: center;background-size: contain;padding: 0px 0px 48px;">
+              <center><img src="images/rabzo_logo_circle.png" style="width: 200px;"></center>
+              <!-- <div class="col-lg-3 col-md-3"></div> -->
+			  <?php if(count(Session::get('users')) == '0'){ ?>
+              <div class="col-lg-6 col-md-6" style="padding: 0;position: relative;top: 16px;">
+                <button class="btn btn-default checkout_login_btn" data-toggle="modal" data-target="#loginsignup">Login</button>
+              </div> 
+              <div class="col-lg-6 col-md-6" style="padding: 0;position: relative;top: 16px;">
+                
+                <button class="btn btn-default checkout_signup_btn">Signup</button>
+              </div> 
+			  <?php }else{ ?>
+			
+			   <?php } ?>
           </div>
           <!--login div end-->
 
@@ -245,41 +68,58 @@
             </div>
           </div>
           <table class="table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th style="text-align: center;">Qty</th>
-                <th style="text-align: center;">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Tandoori Chicken</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;"> <i class="fa fa-inr"></i> 200</td>
-              </tr>
-              <tr>
-                <td>Chicken Biryani</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;"> <i class="fa fa-inr"></i> 100</td>
-              </tr>
-              <tr>
-                <th></th>
-                <th style="text-align: center;">Total</th>
-                <th style="text-align: center;"> <i class="fa fa-inr"></i> 300</th>
-              </tr>
-            </tbody>
+             <thead>
+			                    <tr>
+			                      <td>Name</td>
+			                      <td>Qty</td>
+			                 <td>Size</td>
+			                      <td>Price</td>
+			                      <td></td>
+			                    </tr>
+			                  </thead>
+			                  <tbody id="orderedProductsTblBody">
+			                  </tbody>
+			                  <tfoot>
+			                    <tr>
+			                      <td colspan="4" align="right" id="cart_total">
+			                      </td>
+								  <td></td>
+			                    </tr>
+			                  </tfoot>
           </table>
         </div>
       </div>
     </div>
   </div>
-			</div>
-			
+		<style type="text/css">
+  @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {width: 360px;margin: auto;}
+.form {position: relative;z-index: 1;background: #FFFFFF;max-width: 360px;padding: 45px;text-align: center;}
+.form input {font-family: "Roboto", sans-serif;outline: 0;background: #f2f2f2;width: 100%;border: 0;margin: 0 0 15px;
+  padding: 15px;box-sizing: border-box;font-size: 14px;}
+.form button {font-family: "Roboto", sans-serif;text-transform: uppercase;outline: 0; background: #4CAF50;width: 100%;border: 0;padding: 15px;color: #FFFFFF;font-size: 14px;-webkit-transition: all 0.3 ease;transition: all 0.3 ease;
+  cursor: pointer;}
+.form button:hover,.form button:active,.form button:focus {background: #43A047;}
+.form .message {margin: 15px 0 0;color: #b3b3b3;font-size: 12px;}
+.form .message a {color: #4CAF50;text-decoration: none;}
+.form .register-form {display: none;}
+.containerlogin {position: relative;z-index: 1;max-width: 300px;margin: 0 auto;}
+.containerlogin:before, .containerlogin:after {content: "";display: block;clear: both;}
+.containerlogin .info {margin: 50px auto;text-align: center;}
+.containerlogin .info h1 {margin: 0 0 15px;padding: 0;font-size: 36px;font-weight: 300;color: #1a1a1a;}
+.containerlogin .info span {color: #4d4d4d;font-size: 12px;}
+.containerlogin .info span a {color: #000000;text-decoration: none;}
+.containerlogin .info span .fa {color: #EF3B3A;}
+.addresmodel_address_div{border: 1px dashed #000;margin-top: 72px;margin-left: 00px;    margin-bottom: 50px;background: #fff;box-shadow: 0px 0px 15px;}
+.addresmodel_address_div i{font-size: 25px;float: left;position: relative;bottom: 14px;}
+.addresmodel_address_div p{color: #000;font-size: 15px;letter-spacing: 1px;font-family: sans-serif;line-height: 28px;padding: 40px 10px;}
+.new_address_btn{background: transparent;color: #000;padding-left: 30px;padding-right: 30px;}
+</style>
+	
 			
 	@include('footer')
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-
+ 
 	<script type="text/javascript">
 	function getCheckout()
 	{
@@ -297,85 +137,247 @@
 		  }
 		  
 		});
-		getItems()
+		//getItems()
 	})
 		
 	</script>
 
-	<!--shoping cart-->
+ <!-- Modal -->
+  <div class="modal fade" id="loginsignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title" id="myModalLabel">Modal 1</h4>
+        </div>
+        
+        <div class="modal-body">
+          <!--login signup code start-->
+          <div class="login-page">
+            <div class="form">
+              <form class="register-form" id="register-form" method="post">
+                <input type="text" placeholder="name" name="name" />
+				 <input type="text" placeholder="email address" name="email_address" />
+                <input type="password" placeholder="password" name="password" />
+               
+                <button>create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+              </form>
+              <form class="login-form" id="login-form" method="post">
+                <input type="text" placeholder="username" name="email_address" />
+                <input type="password" placeholder="password" name="password" />
+                <button id="">login</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+              </form>
+            </div>
+          </div>
+          <!--login sign up code end-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="addressmodelbtn">Sign In Now</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+    
+    <!--Address Modal -->
+  <div class="modal fade" id="AddressModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title" id="myModalLabel">Modal 2</h4>
+        </div>
+        
+        <div class="modal-body">
+          <!--address code start-->
+          <div class="col-lg-12 col-md-12">
+            <div class="col-lg-6 col-md-6 addresmodel_address_div"><i class="fa fa-home" aria-hidden="true"></i>
+              <p style="">Plot no 36, Jaibadrinath Society, Near Bhende Layout, Khamla Road, Nagpur - 440025</p>
+            </div>
+            <div class="col-lg-5 col-md-5" style="margin-top: 90px;margin-left: 30px;">
+              <button class="btn btn-default new_address_btn" id="flip"><i class="fa fa-plus" aria-hidden="true"></i> Add New Address</button>
+              <div id="panel">
+                <textarea class="form-control" placeholder="Enter Your New Address" rows="6" style="border: 1px dashed #000;"></textarea>
+              </div>
+            </div>
+          </div>
+          <!--address up code end-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="paymentmodelbtn">Submit</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+          </form>
+      </div>
+    </div>
+  </div>
 
-  	
- <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
- <!--checkout end-->
+  <!--payment model-->
+  <div class="modal fade" id="PaymentModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+         
+          <h4 class="modal-title" id="myModalLabel">Modal 2</h4>
+        </div>
+        
+        <div class="modal-body">
+          <h3>Payment Model</h3>
+        </div>
+        <div class="modal-footer">
+          <!-- <button type="button" class="btn btn-primary" id="paymentmodelbtn">Sign In Now</button> -->
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+          </form>
+      </div>
+    </div>
+  </div>
+<!--model script-->
   <script type="text/javascript">
-    function showPage(pid) {
-      $(".page_slide").addClass("hidden1").filter("[data-id='" + pid + "']").removeClass("hidden1");
-      return this;
-    }
-
-    $(".button").on("click", function(evt) {
-      evt.preventDefault();
-      evt.stopPropagation();
-      var $this = $(this);
-      showPage($this.attr("data-page-id"));
-      return;
+    //set button id on click to hide first modal
+    $("#addressmodelbtn").on( "click", function() {
+            $('#loginsignup').modal('hide');  
+    });
+    //trigger next modal
+    $("#addressmodelbtn").on( "click", function() {
+            $('#AddressModel').modal('show');  
     });
 
-    showPage(1);
+    $("#paymentmodelbtn").on( "click", function() {
+            $('#AddressModel').modal('hide');  
+    });
+    //trigger next modal
+    $("#paymentmodelbtn").on( "click", function() {
+            $('#PaymentModel').modal('show');  
+    });
   </script>
-  <script> 
+
+
+
+<!--login sign up script start-->
+  <script type="text/javascript">
+    $('.message a').click(function(){
+       $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+    });
+  </script>
+<!--login soign up script end-->
+<script> 
     $(document).ready(function(){
       $("#flip").click(function(){
         $("#panel").slideDown("slow");
       });
     });
+	
+		    var shoppingCart = [];
+displayShoppingCart();
+	    //this function manipulates DOM and displays content of our shopping cart
+	    function displayShoppingCart(){
+	        var orderedProductsTblBody=document.getElementById("orderedProductsTblBody");
+	        //ensure we delete all previously added rows from ordered products table
+	        while(orderedProductsTblBody.rows.length>0) {
+	            orderedProductsTblBody.deleteRow(0);
+	        }
+ 
+		   $.ajax({
+				type:"get",
+				url:"{{url('get_cart')}}",
+			  data:{'shoppingCart':shoppingCart},
+			  dataType:'json',
+			  success:function(res){
+				 var shoppingCart = res;
+				 console.log(res);
+	        //variable to hold total price of shopping cart
+						var cart_total_price=0;
+						//iterate over array of objects
+						for(var product in shoppingCart){
+							//add new row      
+							var row=orderedProductsTblBody.insertRow();
+							//create three cells for product properties 
+							var cellName = row.insertCell(0);
+							var cellQty = row.insertCell(1);
+							var cellSize = row.insertCell(2);
+							var cellPrice = row.insertCell(3);
+							var cellRemove = row.insertCell(4);
+							// cellPrice.align="right";
+							//fill cells with values from current product object of our array
+							cellName.innerHTML = shoppingCart[product].Name;
+							cellQty.innerHTML = shoppingCart[product].Qty;
+							cellSize.innerHTML = shoppingCart[product].size;
+							cellPrice.innerHTML = '<span style="text-align:right">'+shoppingCart[product].Price+'</span>';
+							cellRemove.innerHTML = '<a href="#"><i class="fa fa-times"></i></a>';
+							cart_total_price+=parseFloat(shoppingCart[product].Price);
+						}
+						//fill total cost of our shopping cart 
+						document.getElementById("cart_total").innerHTML=cart_total_price;
+				 
+			  }
+			})
+		   
+	    }
+		
+		
+  $("#register-form").submit(function(e){
+
+     e.preventDefault();
+       var form=$("#register-form")[0];
+        var fd =new FormData(form);
+
+          $.ajax({
+                   url: '{{url("create_register")}}',
+                   data:fd,
+                   async:false,
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+
+            success:function(response){
+               if(response.ResponseCode== '200')
+                           {
+ 
+                             window.location ='{{url("checkout")}}' ;
+                           }else 
+                           {
+                             alert("Unable to add");
+                           }
+            },
+             });       
+ });
+ $("#login-form").submit(function(e){
+
+     e.preventDefault();
+       var form=$("#login-form")[0];
+        var fd =new FormData(form);
+
+          $.ajax({
+                   url: '{{url("create_login")}}',
+                   data:fd,
+                   async:false,
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+            success:function(response){
+               if(response.ResponseCode== '200')
+                           {
+                             
+                             window.location ='{{url("checkout")}}' ;
+                           }else 
+                           {
+                             alert("Unable to add");
+                           }
+            },
+             });       
+ });
   </script>
-  
-  
-<script type="text/javascript">
-  $(document).ready(function(){
-    $('#login_div').hide();
-    $('#login_btn').click(function(){
-      $('#login_div').show();
-      $('#signup_div').hide();
-    })
-
-    $('#enter_otp').hide();
-    $('#login_btn_id').click(function(){
-      $('#enter_otp').show();
-    })
-
-    $('#signup_div').hide();
-    $('#signup_btn').click(function(){
-      $('#signup_div').show();
-      $('#login_div').hide();
-    })
-  });
-</script>
-
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-sm">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-	<form method="post">
-	<input type="hidden" name="item_name" id="item_name" />
-	<input type="hidden" name="item_id" id="item_id" />
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" id="modal_title">Add Dish</h4>
-      </div>
-      <div class="modal-body">
-        <p id="sizes">
-		
-		
-		</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="AddtoCart()">Add</button>
-      </div>
-	  </form>
-    </div>
-
-  </div>
-</div>
+  <?php if(count(Session::get('users')) > '0'){ ?>
+   
+     <script>
+			  $(document).ready(function(){
+				//  alert('hi')
+				  $("#AddressModel").modal('show');
+			  })
+			  
+			  </script>
+   <?php  } ?>

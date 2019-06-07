@@ -78,9 +78,16 @@
 					            </li>
 					            
 					            <li class="mega-menu" style="float: right;"> 
+								 <?php if(count(Session::get('users')) == '0'){ ?>
 					              <a class="level-top navigation_a" href="$">
 					                <span>Login & Signup</span>
 					              </a> 
+								 <?php }else{ ?>
+								 <a class="level-top navigation_a" href="{{url('client_logout')}}">
+					                <span>Logout</span>
+					              </a> 
+								 
+								 <?php }?>
 					            </li>
 					          </ul>
 					        </div>
