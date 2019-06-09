@@ -1152,7 +1152,7 @@ nav {
 }
 #nav > li > a > span {
 	display: inline-block;
-	padding: 0 18px 0px 16px; border-right:1px solid rgba(255,255,255,0.3);
+	padding: 0 18px 0px 16px; 
 }
 #nav > li:last-child a > span {
 	border-right:0px solid #ddd;
@@ -7541,7 +7541,7 @@ address {
 .bestsell-pro .home-block-inner {
 	border-width: 0 !important;
 	float: left;
-	width: 24.3%;
+	width: 100%;
 }
 .bestsell-pro .block-content {
 	border-left: 1px solid #e5e5e5;
@@ -7560,7 +7560,7 @@ address {
 	font-size: 26px;
 	font-weight: 600;
 	line-height: 28px;
-	padding: 25px 25px 22px 25px;
+	padding: 20px 25px 22px 25px;
 	position: relative;
 	text-transform: uppercase;
 	background: #e31837;

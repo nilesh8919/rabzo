@@ -1,26 +1,24 @@
 @include('styles')
 @include('header')
   <!-- Slider -->
-  <div id="thm-slideshow" class="thm-slideshow">
+  <div id="" class="">
     <div class="">
       <div class="row">
         <div class="col-md-12">
-          <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container'>
+          <img src='public/uploadimages/index_banner.png' alt="slide-img"  style="width: 100%;" />
+          
+          <!-- <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container'>
             <div id='rev_slider_4' class='rev_slider fullwidthabanner'>
               <ul>
-@foreach($results['banner'] as $row)
+                @foreach($results['banner'] as $row)
                 <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb=''public/uploadimages/{{$row->bannername}}'>
                   <img src='public/uploadimages/{{$row->bannername}}' alt="slide-img" data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
                   
                 </li>
-@endforeach
-               <!-- <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='rabzo_web/images/slide-img2.jpg'>
-                  <img src='rabzo_web/images/slide-img2.jpg' alt="slide-img" data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' />
-                  
-                </li>-->
+                @endforeach
               </ul>
             </div>
-          </div>
+          </div> -->
         </div>
         
         <div class="col-lg-12 col-md-12" style="position: absolute;z-index: 999;top: 260px;">
@@ -104,6 +102,7 @@
   </div>
   <!-- bestsell Slider -->
   <style type="text/css">
+    .clear{clear: both;}
     .bestsell-pro .block-content{padding: 14px 10px;}
     .best_deals_single_slider{margin: 0px;}
     .testi-slider{padding: 0px;margin-bottom: 0px;border:none;}
@@ -111,7 +110,16 @@
     .avatar{margin-bottom: 0px;}
     .testi-slider .carousel-indicators{bottom: -11px;}
     .index_restaurant_slider{height: 220px;}
+    /*======slick slider css======*/
+    .slick-next:before, .slick-prev:before{color: #000!important;font-size: 30px!important;}
+    .slick-initialized .slick-slide{margin: 10px;}
+    .slick-next{right: 10px!important;}
+    .slick-prev{left: 0!important;z-index: 9;}
+    .index_bestseller_heading{width: 80%;float: left;}
+    .index_viewall_btn{width: 233px;font-size: 16px;display: -webkit-box;text-align: right;position: relative;padding-left: 156px;right: 0;top: 1px;margin: 0px;}
   </style>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css">
   <section class="bestsell-pro" style="clear: both;">
     <div class="container">
       <div class="slider-items-products">
@@ -119,29 +127,37 @@
           <div id="bestsell-slider" class="product-flexslider hidden-buttons">
             <div class="home-block-inner">
               <div class="block-title">
-                <h2>Best Sellers </h2>
+                <h2 class="index_bestseller_heading">Best Sellers </h2>
+                <h3 class="index_viewall_btn">View All</h3>
               </div>
-              <div class="pretext best_deals_single_slider">
+              <div class="slide">
+                <div><img src="uploads/merchant_item_cat_images/chicken_curry.jpg" style="width: 100%;height: 240px;"></div>
+                <div><img src="uploads/merchant_item_cat_images/food3.jpg" style="width: 100%;height: 240px;"></div>
+                <div><img src="uploads/merchant_item_cat_images/5.jpg" style="width: 100%;height: 240px;"></div>
+                <div><img src="uploads/merchant_item_cat_images/samosa.jpg" style="width: 100%;height: 240px;"></div>
+                <div><img src="uploads/merchant_item_cat_images/1.jpg" style="width: 100%;height: 240px;"></div>
+              </div>
+              <!-- <div class="pretext best_deals_single_slider">
                 <a title="Retis lapen casen" href="#"> 
                   <div class="testi-slider">
                     <div>
                       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
-						@foreach($results['sell_items'] as $key=>$row)
+						            @foreach($results['sell_items'] as $key=>$row)
 						
-						@if($key == '0')
+						            @if($key == '0')
                           <div class="item active">
                             <div class="avatar">
                               <img src="uploads/merchant_item_cat_images /{{$row->image_name}}" alt="slide3">
                             </div>
                           </div>
-						  @else
+						              @else
                           <div class="item">
                             <div class="avatar">
                               <img src="uploads/merchant_item_cat_images /{{$row->image_name}}" alt="slide3">
                             </div>
                           </div>
-						  @endif
+						              @endif
                          @endforeach
                         </div>
                         <ol class="carousel-indicators">
@@ -155,12 +171,14 @@
                     </div>
                   </div> 
                 </a>
-              <!-- <div class="offer-text">Save upto 25% Today!</div> -->
-              </div>
+             
+              </div> -->
               <!-- <a href="#" class="view_more_bnt">View All</a>  -->
             </div>
-            <div class="slider-items slider-width-col4 products-grid block-content">
-			@foreach($results['featured'] as $key=>$row)
+            
+            <!--<div class="slider-items slider-width-col4 products-grid block-content">
+              
+			        @foreach($results['featured'] as $key=>$row)
               <div class="item">
                 <div class="item-inner">
                   <div class="item-img">
@@ -188,22 +206,22 @@
                       </div>
                       <div class="item-content">
                         <div class="item-price">
-                         <!-- <div class="price-box"> <span class="regular-price"> <span class="price">$88.00</span> </span> </div>-->
+                         
                         </div>
                         <div class="action">
-                       <!--   <button class="button btn-cart" type="button" title="" data-original-title="Atailsdd to Cart"><span>Add to Cart</span> </button>-->
+                       
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-               @endforeach
+               @endforeach 
              
              
-              <!-- End Item --> 
               
-            </div>
+              
+            </div>-->
           </div>
         </div>
       </div>
@@ -247,3 +265,17 @@
  
   <!-- Footer -->
 @include('footer')
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js"></script>
+
+  <script>
+$(function() {   
+ $('.slide').slick({
+     slidesToShow: 4,
+     slidesToScroll: 1,
+     autoplay: true,
+     autoplaySpeed: 2000,
+  });
+});
+</script>
