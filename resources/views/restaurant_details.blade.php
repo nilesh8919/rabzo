@@ -119,34 +119,33 @@
 			            <div class="col-lg-12 col-md-12" style="background: #3a126c;color: #fff;border-bottom: 1px solid #ccc;">
 			              	<h4>Billing Cart</h4>
 			            </div>
-			            <div class="col-lg-12 col-md-12" style="padding: 0px;min-height: 70vh;">
+			            <div class="col-lg-12 col-md-12" style="padding: 0px;min-height: 60vh;">
 			             
-			                <img src="{{ asset('public/images/empty-cart.png') }}" style="position: absolute;padding: 98px;">
+			                <img id="empty_cart" src="{{ asset('public/images/empty-cart.png') }}" style="position: absolute;padding: 98px;">
 			              
 			                <table class="table" style="width: 100%;position: relative;border: none;" cellpadding="4" cellspacing="4" border="1" id="orderedProductsTbl">
 			                  
 			                  <thead>
 			                    <tr>
 			                      <td>Name</td>
-			                      <td>Qty</td>
+			                     
 			                 <td>Size</td>
+							  <td><center>Qty</center></td>
 			                      <td>Price</td>
-			                      <td></td>
+			                    
 			                    </tr>
 			                  </thead>
 			                  <tbody id="orderedProductsTblBody">
 			                  </tbody>
-			                  <tfoot>
-			                    <tr>
-			                      <td colspan="4" align="right" id="cart_total">
-			                      </td>
-								  <td></td>
-			                    </tr>
-			                  </tfoot>
+			                 
 			                </table>
 			              
 			            </div>
-						  <div class="col-lg-12 col-md-12" style="padding: 0px;">
+						 <div class="col-lg-12 col-md-12" style="padding: 0px;">
+						 <div class="col-lg-6 col-md-6"> <b>Subtotal</b></div>
+						 <div class="col-lg-6 col-md-6"  style="font-weight:bold"><div  style="float:right;margin-right:20px" id="cart_total"></div> </div>
+						  </div>
+						  <div class="col-lg-12 col-md-12" style="margin-top: 40px;">
 						 <center> <button class="btn btn-sucess" onClick="getCheckout()" type="button">Checkout</button></center>
 						  </div>
 			        </div>	
@@ -200,30 +199,35 @@ displayShoppingCart();
 			  dataType:'json',
 			  success:function(res){
 				 var shoppingCart = res;
+				// alert(shoppingCart.length)
+				
 				 console.log(res);
 	        //variable to hold total price of shopping cart
 						var cart_total_price=0;
 						//iterate over array of objects
 						for(var product in shoppingCart){
 							//add new row      
+							$("#empty_cart").hide();
 							var row=orderedProductsTblBody.insertRow();
 							//create three cells for product properties 
 							var cellName = row.insertCell(0);
-							var cellQty = row.insertCell(1);
-							var cellSize = row.insertCell(2);
+							var cellSize = row.insertCell(1);
+							var cellQty = row.insertCell(2);
+							
 							var cellPrice = row.insertCell(3);
-							var cellRemove = row.insertCell(4);
 							// cellPrice.align="right";
 							//fill cells with values from current product object of our array
 							cellName.innerHTML = shoppingCart[product].Name;
-							cellQty.innerHTML = shoppingCart[product].Qty;
 							cellSize.innerHTML = shoppingCart[product].size;
-							cellPrice.innerHTML = shoppingCart[product].Price;
-							cellRemove.innerHTML = '<a href="#"><i class="fa fa-times"></i></a>';
-							cart_total_price+=parseFloat(shoppingCart[product].Price);
+							
+							cellQty.innerHTML = '<div class="input-group"><span class="input-group-btn"> <button type="button" class="btn btn-default btn-number" disabled="disabled" data-type="minus" data-field="quant[1]"><span class="glyphicon glyphicon-minus"></span> </button></span> <input type="text" name="quant[1]" class="form-control input-number" style="width:60px" value="'+shoppingCart[product].Qty+'" min="1" max="10"><span  style="margin-left: 0px"> <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="quant[1]"> <span class="glyphicon glyphicon-plus"></span>  </button></span> </div>';
+							//cellQty.innerHTML = shoppingCart[product].Qty;
+							var total_price = shoppingCart[product].Qty * shoppingCart[product].Price;
+							cellPrice.innerHTML = '<i class="fa fa-inr"></i> '+total_price;
+							cart_total_price+=parseFloat(total_price);
 						}
 						//fill total cost of our shopping cart 
-						document.getElementById("cart_total").innerHTML=cart_total_price;
+						document.getElementById("cart_total").innerHTML='<i class="fa fa-inr"></i> '+cart_total_price;
 				 
 			  }
 			})

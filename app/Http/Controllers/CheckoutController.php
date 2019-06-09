@@ -79,7 +79,7 @@ error_reporting(0);
 		  if($this->idExists($data_arr['item_id'], $cart_data))
 			 {
 				// unset($cart_data[0]);
-				if($data_arr['item_id'] == $row['item_id']){
+				if($data_arr['item_id'] == $row['item_id'] && $data_arr['size'] == $row['size'] ){
 					Session::forget('cart.' . $key);
 					// echo "hi";exit;
 					
