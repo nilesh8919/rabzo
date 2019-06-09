@@ -19,6 +19,12 @@ Route::get('/get_merchant_available_location','IndexController@get_merchant_avai
 Route::get('/get_item_price','IndexController@get_item_price');
 Route::get('/get_merchant_available_restaurant','IndexController@get_merchant_available_restaurant');
 Route::get('/checkout','CheckoutController@index');
+Route::post('/add_to_cart','CheckoutController@add_to_cart');
+Route::get('/get_cart','CheckoutController@get_cart');
+Route::post('/create_register','CheckoutController@create_register');
+Route::get('/client_logout','CheckoutController@client_logout');
+Route::post('/create_login','CheckoutController@create_login');
+Route::get('/client_address','CheckoutController@client_address');
 /* Route::get('/', function () {
     return view('welcome');
 }); */
@@ -147,6 +153,7 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('delete_offers','Merchant\OffersController@delete_offers');
 			Route::get('manage_shipping','Merchant\shippingController@index');
 		Route::post('create_shipping','Merchant\shippingController@create');
+		Route::get('manage_footer','Admin\cmsController@manage_footer');
 //});
  
  	

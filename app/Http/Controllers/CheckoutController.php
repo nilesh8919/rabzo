@@ -22,6 +22,7 @@ use App\Cuisine;
 use App\Offer;
 use App\Item;
 use App\Size;
+use App\Client;
 
 class CheckoutController extends Controller
 {
@@ -35,7 +36,8 @@ class CheckoutController extends Controller
 	{
 error_reporting(0);
             
-     
+     $user_data = Session::get('users');
+	// print_r(Session::get('users')['id']);exit;
 		    $data['merchant_logo']  = Merchant :: select('logo')->where('logo','!=','')->where('status','active')->get();
 			
 			
@@ -45,176 +47,145 @@ error_reporting(0);
 				
                  ]);
 	}
-	public function restaurant(Request $request)
-	{
-          error_reporting(0);
-           
 	
-		    $data['category']  = Categories :: where('status','publish')->get();
-		    $data['cuisine']  = Cuisine :: get();
-			$data['featured']  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
-			->select('mt_merchant.*','mt_merchant_images.images')
-			  ->where('is_featured','=','1')->where('status','active')
-		  ->groupBy('mt_merchant_images.merchant_id')->get();
-		 // print_r($data['featured']);exit;
-		  
-		    $data['merchant']  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
-			  ->select('mt_merchant.*','mt_merchant_images.images')
-		 ->groupBy('mt_merchant_images.merchant_id')->get();
-		  foreach( $data['merchant'] as $key=>$value)
-		  {
-			  $current_date = date('Y-m-d');
-			  $offers =Offer :: where('status','active')
-			  ->where('merchant_id','=',$value->id)
-			  ->first();
-			  if($offers->valid_from >= $current_date ){
-                			  $data['merchant'][$key]->offers =$offers;
-			  }else if($offers->valid_to <= $current_date){
-				  	  $data['merchant'][$key]['offers'] =$offers;
-			  }
-		  }
-	//print_r($data['merchant']);exit;
-              return view('restaurant',[
-                'results'=> $data,
-				
-                 ]);
-	}
-	
-	public function restaurant_details(Request $request)
-	{
-
-      error_reporting(0);
-              $data['category']  = Categories :: where('status','publish')->get();
-		    $data['cuisine']  = Cuisine :: get();
-        $data['website_contact_email'] = Option :: where('option_name','website_contact_email')->pluck('option_value');
-        
-          $data['merchant']  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
-			  ->select('mt_merchant.*','mt_merchant_images.images')->where('restaurant_slug',$request->name)
-		 ->groupBy('mt_merchant_images.merchant_id')->first();
-	
-              return view('restaurant_details',[
-                'results'=> $data,
-				
-                 ]);
-	}
-   public function get_item_data(Request $request)
-	{
-		
-		  $this->validate($request, [
-           "merchant_id" => 'required',
-         
-        ]);
-			 $qry  = Item :: where('mt_item.status','publish')
-			 ->join('mt_merchant','mt_merchant.id','=','mt_item.merchant_id')
-			 ->leftjoin('mt_merchant_categories','mt_merchant_categories.merchant_id','=','mt_merchant.id')
-			 ->leftjoin('mt_category','mt_category.id','=','mt_merchant_categories.category_id')
-			 ->leftjoin('mt_merchant_cuisine','mt_merchant_cuisine.merchant_id','=','mt_item.merchant_id')
-			 ->select('mt_item.*')
-			 ->where('mt_item.merchant_id',$request->merchant_id);
-			 if(!empty($request->location)){
-			     $qry->where('mt_merchant.city', 'LIKE', '%' . $request->location . '%');
-			     //$qry->where('city',$request->location);
-			  }
-			   if(!empty($request->category)){
-			     $qry->where('mt_category.category_name', 'LIKE', '%' . $request->category . '%');
-			  }
-			  if(!empty($request->cuisine)){
-			     $qry->where('mt_merchant_cuisine.cuisine_id',$request->cuisine);
-			   }
-			    if(!empty($request->food_categories)){
-					//print_r($request->food_categories);exit;
-				 $qry->whereIn('mt_merchant_categories.category_id',$request->food_categories);
-			   }
-			    $qry->groupBy('mt_item.id');
-			 $data = $qry->get();
-			 foreach($data as $key=>$value)
-			 {
-				 $data1 =unserialize($value->price);
-				$data_arr=array();
-				foreach($data1 as $key1=>$value1)
-				{
-					$size= Size :: where(['status'=>'published','id'=>$key1])->first();
-					$data_arr[]=array(
-					   "size_name" =>$size->size_name,
-					   "price" =>$value1
-					);
-				}
-				 
-				 $data[$key]->prices =$data_arr;
-			 }
-		return response()->json($data);
-	}
- public function get_item_price(Request $request)
-	{
-		
-		  $this->validate($request, [
-           "item_id" => 'required',
-         
-        ]);
-			 $data  = Item :: where('status','publish')->where('id',$request->item_id)->first();
-			 $data1 =unserialize($data->price);
-				$data_arr=array();
-				foreach($data1 as $key1=>$value1)
-				{
-					$size= Size :: where(['status'=>'published','id'=>$key1])->first();
-					$data_arr[]=array(
-					   "size_name" =>$size->size_name,
-					   "price" =>$value1
-					);
-				}
-				 $prices =$data_arr;
+    public function add_to_cart(Request $request)
+   {
+	  
+	   //print_r($request->shoppingCart);exit;
+	   $data =$request->shoppingCart;
+	   $data_arr =array();
+	  // $data1 =array();
+	   foreach($data  as $row)
+	   {
+			   $data_arr=array(
+				 'item_id' =>$row['item_id'],
+				 'Name' =>$row['Name'],
+				 'size' =>$row['size'],
+				 'Qty' =>$row['Qty'],
+				 'Description' =>$row['Description'],
+				 'Price' =>$row['Price'],
+				 'unit_price' =>$row['Price'],
+			   );
 			
-		return response()->json($prices);
-	}
-	public function get_merchant_data(Request $request)
-	{
-
-		  
-			 $qry  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
-			 ->leftjoin('mt_merchant_categories','mt_merchant_categories.merchant_id','=','mt_merchant.id')
-			 ->leftjoin('mt_category','mt_category.id','=','mt_merchant_categories.category_id')
-			 ->leftjoin('mt_merchant_cuisine','mt_merchant_cuisine.merchant_id','=','mt_merchant.id')
-			  ->select('mt_merchant.*','mt_merchant_images.images');
-			  $qry->where('mt_merchant.status','active');
-			  if(!empty($request->location)){
-			     $qry->where('mt_merchant.city', 'LIKE', '%' . $request->location . '%');
-			     //$qry->where('city',$request->location);
-			  }
-			   if(!empty($request->category)){
-			     $qry->where('mt_category.category_name', 'LIKE', '%' . $request->category . '%');
-			  }
-			  if(!empty($request->cuisine)){
-			     $qry->where('mt_merchant_cuisine.cuisine_id',$request->cuisine);
-			   }
-			    if(!empty($request->food_categories)){
-					//print_r($request->food_categories);exit;
-				 $qry->whereIn('mt_merchant_cuisine.food_categories',$request->food_categories);
-			   }
-		 $qry->groupBy('mt_merchant_images.merchant_id');
+	   }
+	   if(count(Session::get('cart')) == 0)
+	   {
+		   Session::put('cart', []);
+	   }
+	   if(count(Session::get('cart')) > 0)
+	   {
+		  $cart_data =Session::get('cart');
+		  foreach($cart_data as $key=>$row){
+		  if($this->idExists($data_arr['item_id'], $cart_data))
+			 {
+				// unset($cart_data[0]);
+				if($data_arr['item_id'] == $row['item_id'] && $data_arr['size'] == $row['size'] ){
+					Session::forget('cart.' . $key);
+					// echo "hi";exit;
+					
+					$cart_data[$key]['Qty'] = $row['Qty'] + 1;
+					//$cart_data[$key]['Price'] = $row['Qty'] * $row['unit_price'];
+					 Session :: push('cart', $cart_data[$key]);
+				}
+			 }else{
+				
+				   Session :: push('cart', $data_arr);
+			 }
+		  }	
 		 
-		 $data=$qry->get();
-		  
-		return response()->json($data);
-	}
-	public function get_merchant_available_location(Request $request)
-	{
-		 $data  = Merchant :: select(DB::raw('DISTINCT city'))->get();
-		/* echo $data[0]->city;exit;
-		 $d1=array();
-		 foreach($data as $row)
-		 {
-			 $d1['name'] =$row->city;
-		 }
-		 print_r($d1);exit;*/
-		return response()->json($data);
-   }
-   public function get_merchant_available_restaurant(Request $request)
-	{
-		 $data1  = Cuisine :: select(DB::raw('DISTINCT cuisine_name'))->get();
-		 $data2  = Merchant :: select(DB::raw('DISTINCT restaurant_name AS cuisine_name'))->get();
-		
-		 $data3 = $data1->union($data2);
-		return response()->json($data3);
+		  //  Session :: push('cart', $data_arr);
+	   }else{
+		    Session :: push('cart', $data_arr);
+	   }
+	  
+	  
+	//   Session::put('cart', $request->shoppingCart);
+	   
+	   
+	   
+	  // print_r($cart_data);exit;
    }
    
+function idExists($needle='', $haystack=array()){
+    //now go through each internal array
+    foreach ($haystack as $item) {
+        if ($item['item_id']===$needle) {
+            return true;
+        }
+    }
+    return false;
+}
+   
+   public function get_cart(Request $request)
+   {
+	   //print_r($request->shoppingCart);exit;
+	  // Session::flush();
+	    $cart_data = Session::get('cart');
+		
+	  // print_r($cart_data);exit;
+	   return response()->json($cart_data);
+   }
+	 public function client_address(Request $request)
+	 {
+		 $qry = Client :: where(['client_id'=>Session::get('users')['id']])->get;
+		  return response()->json($qry);
+	 }
+	 public function create_login(Request $request)
+	 {
+		 $qry = Client :: where(['email_address'=>$request->email_address,'password'=>md5($request->password)]);
+		 
+		 if($qry->count() > 0)
+		 {
+			  $users = $qry->first();
+			 
+			 $data_arr =array(
+			  "id" =>$users->id,
+			  "name" =>$users->name,
+			  "email_address" =>$users->email_address,
+			);
+			Session :: put('users', $data_arr);
+			 $data['ResponseCode'] = "200";
+		     $data['ResponseMessage'] = "Login successfully";
+		 }else{
+			 $data['ResponseCode'] = "400";
+		   $data['ResponseMessage'] = "invalid credeintials";
+			 
+		 }
+		 return response()->json($data);
+	 }
+	 public function create_register(Request $request)
+	 {
+			$this->validate($request,[
+			'name'=>'required',
+			'email_address'=>'required',
+			 
+		  ]);
+			$new = new Client();
+			$new->first_name = $request->name;
+			$new->email_address = $request->email_address;
+			$new->password = md5($request->password);
+			$new->save();
+			$last_id =$new->id;
+			$data_arr =array(
+			  "id" =>$last_id,
+			  "name" =>$request->name,
+			  "email_address" =>$request->email_address,
+			);
+			Session :: put('users', $data_arr);
+			
+			if(isset($last_id)){
+				 $data['ResponseCode'] = "200";
+		        $data['ResponseMessage'] = "Registered";
+		 	}else{
+			 $data['ResponseCode'] = "400";
+		   $data['ResponseMessage'] = "Unable to add";
+		}
+		return response()->json($data);
+	}
+	public function client_logout()
+   {
+	   Session::flush();
+	   return redirect('/');
+   }
+	
 }

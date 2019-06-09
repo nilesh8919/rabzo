@@ -78,9 +78,20 @@
 					            </li>
 					            
 					            <li class="mega-menu" style="float: right;"> 
+<<<<<<< HEAD
 					              <a class="level-top navigation_a" href="" data-toggle="modal" data-target="#myModal">
+=======
+								 <?php if(count(Session::get('users')) == '0'){ ?>
+					              <a class="level-top navigation_a" href="$">
+>>>>>>> af6868d600bd644ade628b266725a3b87a5c58a0
 					                <span>Login & Signup</span>
 					              </a> 
+								 <?php }else{ ?>
+								 <a class="level-top navigation_a" href="{{url('client_logout')}}">
+					                <span>Logout</span>
+					              </a> 
+								 
+								 <?php }?>
 					            </li>
 					          </ul>
 					        </div>
