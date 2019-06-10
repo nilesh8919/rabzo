@@ -131,7 +131,10 @@
                 <h3 class="index_viewall_btn">View All</h3>
               </div>
               <div class="slide">
-                <div><img src="uploads/merchant_item_cat_images/chicken_curry.jpg" style="width: 100%;height: 240px;"></div>
+                <div>
+                  <img src="uploads/merchant_item_cat_images/chicken_curry.jpg" style="width: 100%;height: 240px;">
+                  <h4>Dwarka</h4>
+                </div>
                 <div><img src="uploads/merchant_item_cat_images/food3.jpg" style="width: 100%;height: 240px;"></div>
                 <div><img src="uploads/merchant_item_cat_images/5.jpg" style="width: 100%;height: 240px;"></div>
                 <div><img src="uploads/merchant_item_cat_images/samosa.jpg" style="width: 100%;height: 240px;"></div>
