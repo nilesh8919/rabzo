@@ -20,15 +20,17 @@
             </div>
           </div> -->
         </div>
-        
+        <style type="text/css">
+          .easy-autocomplete{position: absolute;}
+        </style>
         <div class="col-lg-12 col-md-12" style="position: absolute;z-index: 999;top: 260px;">
           <div class="col-lg-3 col-md-3" style="margin-left: 27px;"></div>
           <div class="col-lg-8 col-md-8">
 		        <div class="col-lg-3 col-md-3" style="padding: 0px;">
-              <input type="text" style="width:220px;border-right: 1px solid #ccc;" id="location" placeholder="Search Location" class="form-control search_input_banner1" name="" style=""><i class="fa fa-crosshairs" aria-hidden="true" style="position: absolute;font-size: 23px;top: 26px;z-index: 99;right: 10px;"></i>
+              <input type="text" style="width:220px;border-right: 1px solid #ccc;" id="location" placeholder="Search Location" class="form-control search_input_banner1" name="" style=""><i class="fa fa-crosshairs" aria-hidden="true" style="position: absolute;font-size: 23px;top: 17px;z-index: 99;right: 10px;"></i>
             </div>
             <div class="col-lg-4 col-md-4" style="padding: 0px;">
-              <input type="text" style="width:100%;border-radius: 0;" id="categories" placeholder="Search Restaurent /Dishes " class="form-control search_input_banner2" name="" style="border-radius: 0;"><i class="fa fa-search" aria-hidden="true" style="position: absolute;font-size: 23px;top: 26px;z-index: 99;right: 10px;"></i>
+              <input type="text" style="width:283px;border-radius: 0;" id="categories" placeholder="Search Restaurent /Dishes " class="form-control search_input_banner2" name="" style="border-radius: 0;"><i class="fa fa-search" aria-hidden="true" style="position: absolute;font-size: 23px;top: 17px;z-index: 99;right: 10px;"></i>
             </div>
             <div class="col-lg-3 col-md-3" style="padding: 0px;">
               <input type="submit" onClick="get_restaurant()" class="btn btn-checkout search_find_button" name="" style="">
@@ -112,11 +114,17 @@
     .index_restaurant_slider{height: 220px;}
     /*======slick slider css======*/
     .slick-next:before, .slick-prev:before{color: #000!important;font-size: 30px!important;}
-    .slick-initialized .slick-slide{margin: 10px;}
+    .slick-initialized .slick-slide{}
     .slick-next{right: 10px!important;}
     .slick-prev{left: 0!important;z-index: 9;}
     .index_bestseller_heading{width: 80%;float: left;}
     .index_viewall_btn{width: 233px;font-size: 16px;display: -webkit-box;text-align: right;position: relative;padding-left: 156px;right: 0;top: 1px;margin: 0px;}
+    .index_product_slider_img{width: 100%;height: 200px;}
+    .index_product_slider_details{}{}
+    .distance_class{width: 140px; float: left;}
+    .cost_class{width: 140px; float: left;}
+    .index_product_slider{border: 1px solid #ccc;padding: 12px;}
+    .index_slider_rating_span{position: relative;float: right;right: 12px;top: -19px;padding: 10px;width: 40px;height: 40px;background: orange;font-size: 16px;font-weight: 600;text-align: center;box-shadow: 0px 0px 8px;}
   </style>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css">
@@ -131,14 +139,56 @@
                 <h3 class="index_viewall_btn">View All</h3>
               </div>
               <div class="slide">
-                <div>
-                  <img src="uploads/merchant_item_cat_images/chicken_curry.jpg" style="width: 100%;height: 240px;">
-                  <h4>Dwarka</h4>
+                <div class="index_product_slider">
+                  <img src="uploads/merchant_item_cat_images/chicken_curry.jpg" class="index_product_slider_img">
+                  <span class="index_slider_rating_span">4.5</span>
+                  <div class="index_product_slider_details">
+                    <h4>Dwarka Restaurant</h4>
+                    <p>Dharampeth, Nagpur</p>
+                    <p class="distance_class">Distance - 30 Min</p>
+                    <p class="cost_class">Cost for two - 250</p>
+                  </div>
                 </div>
-                <div><img src="uploads/merchant_item_cat_images/food3.jpg" style="width: 100%;height: 240px;"></div>
-                <div><img src="uploads/merchant_item_cat_images/5.jpg" style="width: 100%;height: 240px;"></div>
-                <div><img src="uploads/merchant_item_cat_images/samosa.jpg" style="width: 100%;height: 240px;"></div>
-                <div><img src="uploads/merchant_item_cat_images/1.jpg" style="width: 100%;height: 240px;"></div>
+                <div class="index_product_slider">
+                  <img src="uploads/merchant_item_cat_images/food3.jpg" class="index_product_slider_img">
+                  <span class="index_slider_rating_span">5</span>
+                  <div class="index_product_slider_details">
+                    <h4>Dwarka Restaurant</h4>
+                    <p>Dharampeth, Nagpur</p>
+                    <p class="distance_class">Distance - 30 Min</p>
+                    <p class="cost_class">Cost for two - 250</p>
+                  </div>
+                </div>
+                <div class="index_product_slider">
+                  <img src="uploads/merchant_item_cat_images/5.jpg" class="index_product_slider_img">
+                  <span class="index_slider_rating_span">3.2</span>
+                  <div class="index_product_slider_details">
+                    <h4>Dwarka Restaurant</h4>
+                    <p>Dharampeth, Nagpur</p>
+                    <p class="distance_class">Distance - 30 Min</p>
+                    <p class="cost_class">Cost for two - 250</p>
+                  </div>
+                </div>
+                <div class="index_product_slider">
+                  <img src="uploads/merchant_item_cat_images/samosa.jpg" class="index_product_slider_img">
+                  <span class="index_slider_rating_span">3</span>
+                  <div class="index_product_slider_details">
+                    <h4>Dwarka Restaurant</h4>
+                    <p>Dharampeth, Nagpur</p>
+                    <p class="distance_class">Distance - 30 Min</p>
+                    <p class="cost_class">Cost for two - 250</p>
+                  </div>
+                </div>
+                <div class="index_product_slider">
+                  <img src="uploads/merchant_item_cat_images/1.jpg" class="index_product_slider_img">
+                  <span class="index_slider_rating_span">2.5</span>
+                  <div class="index_product_slider_details">
+                    <h4>Dwarka Restaurant</h4>
+                    <p>Dharampeth, Nagpur</p>
+                    <p class="distance_class">Distance - 30 Min</p>
+                    <p class="cost_class">Cost for two - 250</p>
+                  </div>
+                </div>
               </div>
               <!-- <div class="pretext best_deals_single_slider">
                 <a title="Retis lapen casen" href="#"> 
@@ -245,7 +295,7 @@
 			@foreach($results['merchant_logo'] as $logo)
             <div class="item"> 
               <a href="#">
-                <img src="uploads/logo/{{$logo->logo}}" alt="Image"> 
+                <img src="uploads/logo/{{$logo->logo}}" alt="Image" style="height: 96px;width: 110px;"> 
               </a> 
             </div>
 			@endforeach
