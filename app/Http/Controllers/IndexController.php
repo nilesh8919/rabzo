@@ -48,7 +48,7 @@ error_reporting(0);
          $data['second_step_content'] =   Option :: where('option_name','second_step_content')->pluck('option_value');
           $data['third_step_heading'] =  Option :: where('option_name','third_step_heading')->pluck('option_value');
         $data['third_step_content'] =   Option :: where('option_name','third_step_content')->pluck('option_value');
-          $data['banner']  =Banner :: orderby('id','desc')->get();
+          $data['banner']  =Banner :: limit('1')->get();
 		  
           $data['review']  =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
 		  ->join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')

@@ -5,8 +5,9 @@
     <div class="">
       <div class="row">
         <div class="col-md-12">
-          <img src='public/uploadimages/index_banner.png' alt="slide-img"  style="width: 100%;" />
-          
+		  @foreach($results['banner'] as $row)
+          <img src='public/uploadimages/{{$row->bannername}}' alt="slide-img"  style="width: 100%;" />
+           @endforeach
           <!-- <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container'>
             <div id='rev_slider_4' class='rev_slider fullwidthabanner'>
               <ul>
