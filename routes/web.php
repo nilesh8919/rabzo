@@ -24,7 +24,11 @@ Route::get('/get_cart','CheckoutController@get_cart');
 Route::post('/create_register','CheckoutController@create_register');
 Route::get('/client_logout','CheckoutController@client_logout');
 Route::post('/create_login','CheckoutController@create_login');
+Route::post('/create_delivery_address','CheckoutController@create_delivery_address');
 Route::get('/client_address','CheckoutController@client_address');
+Route::post('/save_order','OrderController@save_order');
+Route::get('/partners_with_us','IndexController@partners_with_us');
+Route::post('/register_restaurant','RestaurantController@register_restaurant');
 /* Route::get('/', function () {
     return view('welcome');
 }); */
@@ -110,6 +114,25 @@ Route::group(['middleware' => 'auth'], function(){
 			Route::get('store_cms_success','Admin\CmsController@store_cms_success');
 			Route::get('manage_orders','Admin\OrderController@index');
 			Route::post('merchantAutoLogin','Admin\MerchantController@merchantAutoLogin');
+		
+			Route::get('website_settings','Admin\SettingController@website_settings');
+			Route::post('add_email_settings','Admin\SettingController@add_email_settings');
+			Route::post('add_smtp_settings','Admin\SettingController@add_smtp_settings');
+			Route::post('add_social_settings','Admin\SettingController@add_social_settings');
+			
+				Route::get('manage_delivery_boy','Admin\DeliveryBoyController@index');
+			Route::get('add_new_delivery_boy','Admin\DeliveryBoyController@add_new_delivery_boy');
+			Route::post('save_delivery_boy','Admin\DeliveryBoyController@save_delivery_boy');
+			Route::get('get_delivery_boy_by_id','Admin\DeliveryBoyController@get_delivery_boy_by_id');
+			Route::get('delete_delivery_boy','Admin\DeliveryBoyController@delete_delivery_boy');
+			Route::get('manage_admin','Admin\ManageAdminController@index');
+			Route::get('add_new_admin','Admin\ManageAdminController@add_new_admin');
+			Route::post('save_new_admin','Admin\ManageAdminController@save_new_admin');
+			Route::get('get_admin_by_id','Admin\ManageAdminController@get_admin_by_id');
+			Route::get('manage_emailtemplate','Admin\EmailTemplatesController@index');
+			Route::get('database_backup','Admin\BackupController@database_backup');
+			Route::get('image_backup','Admin\BackupController@image_backup');
+			Route::get('get_database_backup','Admin\BackupController@get_database_backup');
 			
 		
 			//Merchant routes
@@ -151,9 +174,9 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('manage_offers','Merchant\OffersController@index');
 		Route::post('create_offers','Merchant\OffersController@create');
 		Route::get('delete_offers','Merchant\OffersController@delete_offers');
-			Route::get('manage_shipping','Merchant\shippingController@index');
-		Route::post('create_shipping','Merchant\shippingController@create');
-		Route::get('manage_footer','Admin\cmsController@manage_footer');
+			Route::get('manage_shipping','Merchant\ShippingController@index');
+		Route::post('create_shipping','Merchant\ShippingController@create');
+		Route::get('manage_footer','Admin\CmsController@manage_footer');
 //});
  
  	

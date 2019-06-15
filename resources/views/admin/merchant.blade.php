@@ -123,25 +123,25 @@ input[type=radio]
 												<div class="form-group">
                                                     <label class="col-lg-4 control-label">GST Number </label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="gst_number" value="{{$merchant_data->gst_number}}"> 
+                                                        <input type="text" class="form-control" name="merchant_gst_number" value="{{$merchant_data->merchant_gst_number}}"> 
                                                     </div>
                                                 </div>
 												<div class="form-group">
                                                     <label class="col-lg-4 control-label">Adhar Number</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="adhar_number" value="{{$merchant_data->adhar_number}}"> 
+                                                        <input type="text" class="form-control" name="merchant_aadhar_number" value="{{$merchant_data->merchant_aadhar_number}}"> 
                                                     </div>
                                                 </div>
 												<div class="form-group">
                                                     <label class="col-lg-4 control-label">PAN Number</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="pan_number" value="{{$merchant_data->pan_number}}"> 
+                                                        <input type="text" class="form-control" name="merchant_pan_number" value="{{$merchant_data->merchant_pan_number}}"> 
                                                     </div>
                                                 </div>
 													<div class="form-group">
                                                     <label class="col-lg-4 control-label">FSSI Number</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="fssi_number" value="{{$merchant_data->fssi_number}}"> 
+                                                        <input type="text" class="form-control" name="merchant_fssi_number" value="{{$merchant_data->merchant_fssi_number}}"> 
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
@@ -185,6 +185,12 @@ input[type=radio]
                                                         <input type="text" class="form-control" name="post_code" value="{{$merchant_data->post_code}}"> 
                                                     </div>
                                                 </div>
+												  <div class="form-group">
+                                                    <label class="col-lg-4 control-label">Cost for two</label>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" name="cost_for_two" value="{{$merchant_data->cost_for_two}}"> 
+                                                    </div>
+                                                </div>
                                                    <div class="form-group">
                                                     <label class="col-lg-4 control-label">Categories</label>
                                                     <div class="col-lg-8">
@@ -209,7 +215,7 @@ input[type=radio]
                                                         </select>
                                                     </div>
                                                 </div>
-                                                <div class="form-group">
+                                               <!-- <div class="form-group">
                                                     <label class="col-lg-4 control-label">Services</label>
                                                     <div class="col-lg-8">
                                                         <select class="form-control" name="service" id="service">
@@ -218,7 +224,7 @@ input[type=radio]
                                                              @endforeach
                                                         </select> 
                                                     </div>
-                                                </div>
+                                                </div>-->
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Status</label>
                                                     <div class="col-lg-8">
@@ -463,6 +469,7 @@ input[type=radio]
                                                 <label class="col-lg-4 control-label">Logo</label>
                                                 <div class="col-lg-8">
                                                     <input type="file" name="logo"  id="logo"  class="form-control"> 
+													<input type="checkbox" value="yes" name="is_partners"  <?php if($merchant_data->is_partners == 'yes'){ echo "checked=checked"; } ?>  />Enable for our partners
 													<div id="logoPreview"></div>
 												<?php if(isset($merchant_data->logo)){ ?>
 													<span id='img_logo' class="pip12" >
@@ -471,7 +478,7 @@ input[type=radio]
 									</span>
 												<?php } ?>
                                                 </div>
-                                            </div>
+                                            </div><br />
 											
                                             <div class="form-group">
                                                 <label class="col-lg-4 control-label">Images</label>
@@ -737,6 +744,11 @@ $(document).ready(function(){
 			  fd.append('membership_expired', $("input[name=membership_expired]").val());
 			  fd.append('username', $("input[name=username]").val());
 			  fd.append('password', $("input[name=password]").val());
+			  fd.append('is_partners', $("input[name=is_partners]").val());
+			  fd.append('merchant_pan_number', $("input[name=merchant_pan_number]").val());
+			  fd.append('merchant_aadhar_number', $("input[name=merchant_aadhar_number]").val());
+			  fd.append('merchant_fssi_number', $("input[name=merchant_fssi_number]").val());
+			  fd.append('merchant_gst_number', $("input[name=merchant_gst_number]").val());
 			  
 						var data1 = new Array();
 			$("input[name='payment_type']:checked").each(function(i) {

@@ -1,5 +1,5 @@
 	@include('header')
-	<style type="text/css">
+		<style type="text/css">
   @import url(https://fonts.googleapis.com/css?family=Monda);
     .clearfix:after, .checkout-step section:after {clear: both;content: ".";display: block;height: 0;visibility: hidden;}
 
@@ -29,7 +29,7 @@
     .checkout-step section .cart img {border: 1px solid black;width: 150px;}
     .checkout-step section .total {height: 50px;width: 100%;}
     .checkout-step.active {opacity: 1;cursor: default;background: #fff;}
-    /*.checkout-step.active:hover {background: #eee;}*/
+  
     .checkout-step.active h3 {border-bottom: 1px solid #aaa;padding-bottom: 5px;}
     .checkout-step.active section {min-height: 100px;height: auto;}
 
@@ -37,7 +37,7 @@
     .clear{clear: both;}
 
     @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-    /*=======login and sigup toggle css start=======*/
+   
     .login-page {width: 360px;margin: auto;}
     .form {position: relative;z-index: 1;background: #FFFFFF;max-width: 360px;padding: 45px;text-align: center;}
     .form input {font-family: "Roboto", sans-serif;outline: 0;background: #f2f2f2;width: 100%;border: 0;margin: 0 0 15px;
@@ -60,138 +60,7 @@
     .addresmodel_address_div p{color: #000;font-size: 15px;letter-spacing: 1px;font-family: sans-serif;line-height: 28px;padding: 40px 10px;}
     .new_address_btn{background: transparent;color: #000;padding-left: 30px;padding-right: 30px;}
     .delivery_address_map{width: 100%;height: 300px;margin-top: 20px;}
-    /*=======login and sigup toggle css end=======*/
-    
-
-  </style>
-	
-
-		
-  <div class="col-lg-12 col-md-12" style="background: #e9ecee;">
-    <div class="container">
-      <div class="col-lg-12 col-md-12">
-        <div class="col-lg-8 col-md-8" style="margin: 40px 0px 20px;">
-          <!--login div start-->
-          <div class="col-lg-12 col-md-12" style="">
-            <!--checkout section start-->
-            <div class="checkout-page">
-              <!-- <div class="checkout-header">
-                <h2>
-                Nation Subscription  
-                  <div class="secure">
-                    <img src='http://cdn1.iconfinder.com/data/icons/Isloo_icons_by_IconFinder/128/lock.png'>
-                  </div>
-                </h2>    
-              </div> -->
-              <div class="checkout-step active">
-                <h3>
-                  <span class="stepNum">1</span>
-                    My Accounts
-                </h3>
-                <section>
-                    <div class="cart">
-                      <div class="col-lg-12 col-md-12" style="position: relative;top: 50px;">
-                        <div class="col-lg-3 col-md-3">
-                          <button class="btn btn-default" data-toggle="modal" data-target="#loginModel" style="background: #69d67cf2;border-radius: 0;box-shadow: none;border: none;">
-                            <p style="margin: 0;">Have an account?</p><span style="font-size: 16px;font-weight: 600;">Login</span>
-                          </button>
-                        </div>
-                        <div class="col-lg-3 col-md-3">
-                          <button class="btn btn-success" data-toggle="modal" data-target="#signupModel" style="background: transparent;border-radius: 0;box-shadow: none;border: 1px solid #e84405;color: #000;"><p style="margin: 0;">Create Your Account</p><span style="font-size: 16px;font-weight: 600;">Signup</span></button>
-                        </div>
-                        <div class="clear"></div>
-                      </div>
-                    </div>
-                    <div class="total"></div>
-                    <button class="nextStep">Continue →</button>
-                </section>
-              </div>
-              <div class="checkout-step">  
-                <h3>
-                    <span class="stepNum">2</span>
-                    Delivery Address
-                </h3>
-                <section>
-                    <div class="col-lg-5 col-md-5" style="border: 1px solid #ccc;padding: 30px 30px;">
-                      <p style="line-height: 22px;">Plot No 36 Jaibadrinath Society, Near Bhnede Layout, Khamla Road, Nagpur - 440025</p>
-                    </div>
-                    <div class="col-lg-5 col-md-5" style="padding: 68px;padding-top: 10px;">
-                      <button style="font-size: 15px;width: 220px;padding: 12px;border: none;box-shadow: none" data-toggle="modal" data-target="#addnewaddressModel">Add New Address</button>
-                    </div>
-                    <button class="nextStep">Continue →</button>
-                </section>
-              </div>
-            <div class="checkout-step">   
-                <h3>
-                    <span class="stepNum">3</span>
-                    Payment Method
-                </h3>
-                <section>
-                  <h3>Choose your Payment Mode</h3>
-                <button class="nextStep">Continue →</button>
-                </section>
-              </div>
-            <!-- <div class="checkout-step ">
-                <h3>      
-                    <span class="stepNum">4</span>
-                    Confirmation and Receipt
-                </h3>
-                <section>
-                    <button class="reset">Restart</button>
-                </section>
-            </div> -->
-          </div>
-            <!--checkout section end-->
-          </div>
-          <!--login div end-->
-
-          <!--address div start-->
-
-          <!--address div end-->
-        </div>
-        <div class="col-lg-4 col-md-4" style="background: #fff;margin: 40px 0px;">
-          <div class="col-lg-12 col-md-12" style="padding: 0;">
-            <div class="col-lg-4 col-md-4" style="padding: 0;">
-              <img src="images/food.jpg" style="width: 100px;margin-top: 13px;">
-            </div>
-            <div class="col-lg-8 col-md-8" style="padding: 0;">
-              <h3>Haldiram</h3>
-              <p>Wardha Road</p>
-            </div>
-          </div>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Item</th>
-                <th style="text-align: center;">Qty</th>
-                <th style="text-align: center;">Price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Tandoori Chicken</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;"> <i class="fa fa-inr"></i> 200</td>
-              </tr>
-              <tr>
-                <td>Chicken Biryani</td>
-                <td style="text-align: center;">1</td>
-                <td style="text-align: center;"> <i class="fa fa-inr"></i> 100</td>
-              </tr>
-              <tr>
-                <th></th>
-                <th style="text-align: center;">Total</th>
-                <th style="text-align: center;"> <i class="fa fa-inr"></i> 300</th>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
- 
-		<style type="text/css">
-  @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+   @import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {width: 360px;margin: auto;}
 .form {position: relative;z-index: 1;background: #FFFFFF;max-width: 360px;padding: 45px;text-align: center;}
@@ -214,17 +83,351 @@
 .addresmodel_address_div i{font-size: 25px;float: left;position: relative;bottom: 14px;}
 .addresmodel_address_div p{color: #000;font-size: 15px;letter-spacing: 1px;font-family: sans-serif;line-height: 28px;padding: 40px 10px;}
 .new_address_btn{background: transparent;color: #000;padding-left: 30px;padding-right: 30px;}
-</style>
+  </style>
+		
+  <div class="col-lg-12 col-md-12" style="background: #e9ecee;">
+    <div class="container">
+      <div class="col-lg-12 col-md-12">
+        <div class="col-lg-8 col-md-8" style="margin: 40px 0px 20px;">
+          <!--login div start-->
+          <div class="col-lg-12 col-md-12" style="">
+            <!--checkout section start-->
+            <div class="checkout-page">
+              <!-- <div class="checkout-header">
+                <h2>
+                Nation Subscription  
+                  <div class="secure">
+                    <img src='http://cdn1.iconfinder.com/data/icons/Isloo_icons_by_IconFinder/128/lock.png'>
+                  </div>
+                </h2>    
+              </div> -->
+              <div class="checkout-step active" id="id1">
+                <h3>
+                  <span class="stepNum">1</span>
+                    My Accounts
+                </h3>
+                <section>
+                    <div class="cart">
+                      <div class="col-lg-12 col-md-12" style="position: relative;top: 50px;">
+                        <div class="col-lg-3 col-md-3">
+                          <button class="btn btn-default" data-toggle="modal" data-target="#loginModel" style="background: #69d67cf2;border-radius: 0;box-shadow: none;border: none;">
+                            <p style="margin: 0;">Have an account?</p><span style="font-size: 16px;font-weight: 600;">Login</span>
+                          </button>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                          <button class="btn btn-success" data-toggle="modal" data-target="#signupModel" style="background: transparent;border-radius: 0;box-shadow: none;border: 1px solid #e84405;color: #000;"><p style="margin: 0;">Create Your Account</p><span style="font-size: 16px;font-weight: 600;">Signup</span></button>
+                        </div>
+                        <div class="clear"></div>
+                      </div>
+                    </div>
+                    <div class="total"></div>
+                    <button class="nextStep">Continue →</button>
+                </section>
+              </div>
+              <div class="checkout-step" id="id2">  
+                <h3>
+                    <span class="stepNum">2</span>
+                    Delivery Address
+                </h3>
+                <section>
+                    <div class="col-lg-5 col-md-5" style="border: 1px solid #ccc;padding: 30px 30px;">
+                      <p style="line-height: 22px;" id="div_address">
+					  <?php if(isset($deliveryAddress)){
+						  echo $deliveryAddress['street'].', '.$deliveryAddress['city'].', '.$deliveryAddress['zipcode'];
+					  }?>
+					  
+					  </p>
+                    </div>
+                    <div class="col-lg-5 col-md-5" style="padding: 68px;padding-top: 10px;">
+                      <button style="font-size: 15px;width: 220px;padding: 12px;border: none;box-shadow: none" data-toggle="modal" data-target="#addnewaddressModel">Add New Address</button>
+                    </div>
+                    <button class="nextStep" id="nextStep1" >Next</button>
+                </section>
+              </div>
+            <div class="checkout-step" id="id3">   
+                <h3>
+                    <span class="stepNum">3</span>
+                    Payment Method
+                </h3>
+                <section>
+                  <h4>Choose your Payment Mode</h4>
+				  <div class="col-lg-12 col-md-12" style="padding: 68px;padding-top: 10px;">
+				  
+				  <input type="radio"  id="pod" name="payment_mode" value="Pay on delivery"  />
+				  <label for="pod"> Pay on delivery </label><br /><br />
+				  <input type="radio" id="online" name="payment_mode" value="Pay Online" />
+<label for="online">	 Pay Online</label>	 <br />
+				  </div>
+                <button  style="margin-left:600px" onClick="confirmOrder()" >Confirm Order</button>
+				
+                </section>
+              </div>
+			  <div id="success_msg" style="color:green"></div>
+				<div id="error_msg" style="color:red"></div>
+            <!-- <div class="checkout-step ">
+                <h3>      
+                    <span class="stepNum">4</span>
+                    Confirmation and Receipt
+                </h3>
+                <section>
+                    <button class="reset">Restart</button>
+                </section>
+            </div> -->
+          </div>
+            <!--checkout section end-->
+          </div>
+          <!--login div end-->
+
+          <!--address div start-->
+
+          <!--address div end-->
+        </div>
+        <div class="col-lg-4 col-md-4" style="background: #fff;margin: 40px 0px;">
+          <div class="col-lg-12 col-md-12" style="padding: 0;">
+            <div class="col-lg-4 col-md-4" style="padding: 0;">
+              <img src="{{ asset('uploads/').'/'.$merchant->images }}" style="width: 100px;margin-top: 13px;">
+            </div>
+            <div class="col-lg-8 col-md-8" style="padding: 0;">
+              <h3>{{$merchant->restaurant_name}}</h3>
+              <p>{{$merchant->address}}, {{$merchant->city}}</p>
+            </div>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th style="text-align: center;">Qty</th>
+                <th style="text-align: center;">Price</th>
+                <th style="text-align: center;">Total</th>
+              </tr>
+            </thead>
+            <tbody>
+			<?php 
+			$sub_total=0;
+			foreach($cart_data as $row){ 
+			$sub_total += $row['Qty']*$row['Price'];
+			?>
+              <tr>
+                <td><?php echo $row['Name'] ?></td>
+                <td style="text-align: center;"><?php echo $row['Qty'] ?></td>
+                <td style="text-align: center;"> <i class="fa fa-inr"></i> <?php echo $row['Price'] ?></td>
+                <td style="text-align: center;"> <i class="fa fa-inr"></i> <?php echo $row['Qty']*$row['Price'] ?></td>
+              </tr>
+            <!--  <tr>
+                <td>Chicken Biryani</td>
+                <td style="text-align: center;">1</td>
+                <td style="text-align: center;"> <i class="fa fa-inr"></i> 100</td>
+              </tr>-->
+              <tr>
+                <th colspan="2"></th>
+                <th style="text-align: center;">Total</th>
+                <th style="text-align: center;"> <i class="fa fa-inr"></i><span id="sub_total"> <?php echo $sub_total; ?></span></th>
+              </tr>
+			   <tr>
+                <th colspan="2"></th>
+                <th style="text-align: center;">Grand Total</th>
+                <th style="text-align: center;"> <i class="fa fa-inr"></i><span id="grand_total"> <?php echo $sub_total; ?></span></th>
+              </tr>
+			<?php } ?>
+            </tbody>
+          </table>
+		  <center> 
+        </div>
+      </div>
+    </div>
+  </div>
+ 
+	<div class="modal fade" role="dialog" id="signupModel">
+    <div class="modal-dialog" style="width: 380px;">
+      <div class="modal-content">
+       <div class="modal-body">
+          <!--login signup code start-->
+          <div class="login-page">
+            <div class="form">
+            
+                <form class="register-form1" id="register-form" method="post">
+                <input type="text" placeholder="name" name="name" required />
+				 <input type="text" placeholder="email address" name="email_address" required />
+                <input type="password" placeholder="password" name="password" required />
+               
+                <button type="submit" id="signup1" onClick="signup1()">create</button>
+                <p class="message">Already registered? <a href="#">Sign In</a></p>
+              </form>
+            </div>
+          </div>
+          <!--login sign up code end-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      
+      </div>
+    </div>
+  </div>
 	
-			
+		 <div class="modal fade" role="dialog" id="loginModel">
+    <div class="modal-dialog" style="width: 380px;">
+      <div class="modal-content">
+       <div class="modal-body">
+          <!--login signup code start-->
+          <div class="login-page">
+            <div class="form">
+            
+              <form class="login-form" id="login-form" method="post">
+                <input type="text" placeholder="email address" name="email_address" />
+                <input type="password" placeholder="password" name="password" />
+                <button type="submit" id="">login</button>
+                <p class="message">Not registered? <a href="#">Create an account</a></p>
+              </form>
+            </div>
+          </div>
+          <!--login sign up code end-->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      
+      </div>
+    </div>
+  </div>	
+  
+    <div class="modal fade" role="dialog" id="addnewaddressModel">
+    <div class="modal-dialog" style="width: 380px;">
+      <div class="modal-content">
+        <div class="modal-body">
+          <!--login signup code start-->
+          <div class="col-lg-12 col-md-12">
+            
+             <form id="frm_address" method="post">
+              <input type="text" class="form-control" placeholder="Location" name="location_name"><i class="fa fa-crosshairs" aria-hidden="true" style="position: absolute;float: right;right: 28px;top: 6px;font-size: 19px;"></i>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238129.60363191523!2d78.93242195217401!3d21.161348396232462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1559929983223!5m2!1sen!2sin" class="delivery_address_map" frameborder="0" style="border:0" allowfullscreen></iframe>
+      
+	 
+			  <h4>Other Address</h4>			 
+			 Address: 
+              <input type="text" class="form-control" placeholder="Address" name="street" style="margin-top: 0px;">
+             City: <input type="text" class="form-control" placeholder="City" name="city" style="margin-top: 0px;">
+             Zipcode: <input type="text" class="form-control" placeholder="Zipcode" name="zipcode" style="margin-top: 0px;">
+              <input type="submit" class="btn btn-success" value="Submit" style="margin-top: 20px;">
+       </form>    
+            
+          </div>
+          <!--login sign up code end-->
+          <div class="clear"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      
+      </div>
+    </div>
+  </div>
 	@include('footer')
  
+
 	<script type="text/javascript">
-	function getCheckout()
+	
+	<?php if(count(Session::get('users')) > '0'){ ?>
+   
+ $("#id1").removeClass('active');
+ $("#id2").addClass('checkout-step active');
+			 
+			  
+			
+   <?php  } ?>
+   $("#nextStep1").click(function(){
+	      $("#id2").removeClass('active');
+        $("#id3").addClass('checkout-step active');
+   })
+   
+function getCheckout()
 	{
+		alert('hi')
 		window.location.href="{{ url('checkout') }}";
 	}
-	$(document).ready(function(){
+/*	$("#signup1").click(function(){
+		alert('hu')
+	})*/
+	  $("#register-form").submit(function(e){
+
+     e.preventDefault();
+       var form=$("#register-form")[0];
+        var fd =new FormData(form);
+
+          $.ajax({
+                   url: '{{url("create_register")}}',
+                   data:fd,
+                   async:false,
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+
+            success:function(response){
+               if(response.ResponseCode== '200')
+                           {
+ 
+                             window.location ='{{url("checkout")}}?id={{$merchant->id}}' ;
+                           }else 
+                           {
+                             alert("Unable to add");
+                           }
+            },
+             });      
+ });
+ 
+ $("#login-form").submit(function(e){
+
+     e.preventDefault();
+       var form=$("#login-form")[0];
+        var fd =new FormData(form);
+
+          $.ajax({
+                   url: '{{url("create_login")}}',
+                   data:fd,
+                   async:false,
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+            success:function(response){
+               if(response.ResponseCode== '200')
+                           {
+                             
+                             window.location ='{{url("checkout")}}?id={{$merchant->id}}' ;
+                           }else 
+                           {
+                             alert("invalid credentials");
+                           }
+            },
+             });       
+ });
+ $("#frm_address").submit(function(e){
+
+     e.preventDefault();
+       var form=$("#frm_address")[0];
+        var fd =new FormData(form);
+
+          $.ajax({
+                   url: '{{url("create_delivery_address")}}',
+                   data:fd,
+                   async:false,
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+            success:function(response){
+               if(response.ResponseCode== '200')
+                           {
+								 var ad = response.address.street+", "+response.address.city+", "+response.address.zipcode;
+							   $("#div_address").html(ad);
+							   $("#addnewaddressModel").modal('hide');
+                           }else 
+                           {
+                           
+                           }
+            },
+             });       
+ });
+ 
+ $(document).ready(function(){
 		var wrap = $("#wrap");
 
 		wrap.on("scroll", function(e) {
@@ -237,11 +440,83 @@
 		  
 		});
 		//getItems()
+		  $("#flip").click(function(){
+        $("#panel").slideDown("slow");
+       });
 	})
+	
+	(function () {
+        var checkoutStep;
+
+        checkoutStep = $(".checkout-step");
+
+        $(".nextStep").on("click", function (e) {
+          var nextStep;
+          nextStep = $(this).parent().parent().next();
+          checkoutStep.removeClass("active");
+          return $(nextStep).addClass("active");
+        });
+
+        $(".reset").on("click", function (e) {
+          checkoutStep.removeClass("active");
+          return checkoutStep.first().addClass("active");
+        });
+
+    }).call(this);
+	
+	 $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
+	 $("#flip").click(function(){
+        $("#panel").slideDown("slow");
+      });
+	  
+	  function confirmOrder()
+	  {
 		
+		  var pmode = $("input[name='payment_mode']:checked").val();
+		  var merchant_id = <?php echo $merchant->id; ?>;
+		  var sub_total=$("#sub_total").text();
+		 // var sub_total=$("#sub_total").text();
+		 //alert(merchant_id);
+		 
+            if(pmode){
+               $.ajax({
+					   url: '{{url("save_order")}}',
+					    data:{
+							"pmode" :pmode,
+							"merchant_id" :merchant_id,
+							"sub_total" :sub_total,
+							"tax" :0,
+							"taxable_total" :sub_total,
+							"total_w_tax" :sub_total,
+							"delivery_charge" :0,
+							
+						},
+                      type: "POST",
+					success:function(response){
+				   if(response.ResponseCode== '200')
+							   {
+								   //alert('hi')
+								   $('#success_msg').fadeIn().delay(5000).fadeOut();
+									$("#success_msg").html('Order placed successsfully please wait for merchant confirmation');
+							   }else 
+							   {
+								   $('#error_msg').fadeIn().delay(5000).fadeOut();
+							      $("#error_msg").html('Order placed successsfully please wait for merchant confirmation');
+							   }
+				},
+				 }); 
+				 
+			   
+            }else{
+				
+			}
+	  }
 	</script>
+   
+
 
  <!-- Modal -->
+ <!--
   <div class="modal fade" id="loginsignup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -251,15 +526,15 @@
         </div>
         
         <div class="modal-body">
-          <!--login signup code start-->
+        
           <div class="login-page">
             <div class="form">
               <form class="register-form" id="register-form" method="post">
-                <input type="text" placeholder="name" name="name" />
-				 <input type="text" placeholder="email address" name="email_address" />
-                <input type="password" placeholder="password" name="password" />
+                <input type="text" placeholder="name" name="name" required />
+				 <input type="text" placeholder="email address" name="email_address" required />
+                <input type="password" placeholder="password" name="password" required />
                
-                <button>create</button>
+                <button type="submit ">create</button>
                 <p class="message">Already registered? <a href="#">Sign In</a></p>
               </form>
               <form class="login-form" id="login-form" method="post">
@@ -270,7 +545,7 @@
               </form>
             </div>
           </div>
-          <!--login sign up code end-->
+        
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" id="addressmodelbtn">Sign In Now</button>
@@ -279,7 +554,7 @@
       
       </div>
     </div>
-  </div>
+  </div>-->
     
     <!--Address Modal -->
   <div class="modal fade" id="AddressModel" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -309,7 +584,7 @@
           <button type="button" class="btn btn-primary" id="paymentmodelbtn">Submit</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
-          </form>
+         
       </div>
     </div>
   </div>
@@ -336,239 +611,16 @@
   </div>
 <!--model script-->
    <!--login sign up script start-->
-  <script type="text/javascript">
-    $('.message a').click(function(){
-       $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-    });
-  </script>
-<!--login soign up script end-->
-<script> 
-    $(document).ready(function(){
-      $("#flip").click(function(){
-        $("#panel").slideDown("slow");
-      });
-    });
-  </script>
-
-  <!--checkout script start-->
-  <script type="text/javascript">
-    (function () {
-        var checkoutStep;
-
-        checkoutStep = $(".checkout-step");
-
-        $(".nextStep").on("click", function (e) {
-          var nextStep;
-          nextStep = $(this).parent().parent().next();
-          checkoutStep.removeClass("active");
-          return $(nextStep).addClass("active");
-        });
-
-        $(".reset").on("click", function (e) {
-          checkoutStep.removeClass("active");
-          return checkoutStep.first().addClass("active");
-        });
-
-    }).call(this);
-  </script>
-
-
-<!--login sign up script start-->
-  <script type="text/javascript">
-    $('.message a').click(function(){
-       $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-    });
-  </script>
-<!--login soign up script end-->
-<script> 
-    $(document).ready(function(){
-      $("#flip").click(function(){
-        $("#panel").slideDown("slow");
-      });
-    });
-	
-		    var shoppingCart = [];
-displayShoppingCart();
-	    //this function manipulates DOM and displays content of our shopping cart
-	    function displayShoppingCart(){
-	        var orderedProductsTblBody=document.getElementById("orderedProductsTblBody");
-	        //ensure we delete all previously added rows from ordered products table
-	        while(orderedProductsTblBody.rows.length>0) {
-	            orderedProductsTblBody.deleteRow(0);
-	        }
  
-		   $.ajax({
-				type:"get",
-				url:"{{url('get_cart')}}",
-			  data:{'shoppingCart':shoppingCart},
-			  dataType:'json',
-			  success:function(res){
-				 var shoppingCart = res;
-				 console.log(res);
-	        //variable to hold total price of shopping cart
-						var cart_total_price=0;
-						//iterate over array of objects
-						for(var product in shoppingCart){
-							//add new row      
-							var row=orderedProductsTblBody.insertRow();
-							//create three cells for product properties 
-							var cellName = row.insertCell(0);
-							var cellQty = row.insertCell(1);
-							var cellSize = row.insertCell(2);
-							var cellPrice = row.insertCell(3);
-							var cellRemove = row.insertCell(4);
-							// cellPrice.align="right";
-							//fill cells with values from current product object of our array
-							cellName.innerHTML = shoppingCart[product].Name;
-							cellQty.innerHTML = shoppingCart[product].Qty;
-							cellSize.innerHTML = shoppingCart[product].size;
-							cellPrice.innerHTML = '<span style="text-align:right">'+shoppingCart[product].Price+'</span>';
-							cellRemove.innerHTML = '<a href="#"><i class="fa fa-times"></i></a>';
-							cart_total_price+=parseFloat(shoppingCart[product].Price);
-						}
-						//fill total cost of our shopping cart 
-						document.getElementById("cart_total").innerHTML=cart_total_price;
-				 
-			  }
-			})
-		   
-	    }
-		
-		
-  $("#register-form").submit(function(e){
-
-     e.preventDefault();
-       var form=$("#register-form")[0];
-        var fd =new FormData(form);
-
-          $.ajax({
-                   url: '{{url("create_register")}}',
-                   data:fd,
-                   async:false,
-                    type: 'POST',
-                    processData: false,
-                    contentType: false,
-
-            success:function(response){
-               if(response.ResponseCode== '200')
-                           {
- 
-                             window.location ='{{url("checkout")}}' ;
-                           }else 
-                           {
-                             alert("Unable to add");
-                           }
-            },
-             });       
- });
- $("#login-form").submit(function(e){
-
-     e.preventDefault();
-       var form=$("#login-form")[0];
-        var fd =new FormData(form);
-
-          $.ajax({
-                   url: '{{url("create_login")}}',
-                   data:fd,
-                   async:false,
-                    type: 'POST',
-                    processData: false,
-                    contentType: false,
-            success:function(response){
-               if(response.ResponseCode== '200')
-                           {
-                             
-                             window.location ='{{url("checkout")}}' ;
-                           }else 
-                           {
-                             alert("Unable to add");
-                           }
-            },
-             });       
- });
-  </script>
-  <?php if(count(Session::get('users')) > '0'){ ?>
-   
-     <script>
-			  $(document).ready(function(){
-				//  alert('hi')
-				  $("#AddressModel").modal('show');
-			  })
-			  
-			  </script>
-   <?php  } ?>
-   
-   <script type="text/javascript" src="https://fgnass.github.com/spin.js/dist/spin.min.js"></script>  
-
 
  <!--login Modal -->
-  <div class="modal fade" role="dialog" id="loginModel">
-    <div class="modal-dialog" style="width: 380px;">
-      <div class="modal-content">
-        <!-- <div class="modal-header">
-         
-          <h4 class="modal-title" id="myModalLabel">Modal 1</h4>
-        </div> -->
-        
-        <div class="modal-body">
-          <!--login signup code start-->
-          <div class="login-page">
-            <div class="form">
-              <form class="register-form">
-                <input type="text" placeholder="name"/>
-                <input type="password" placeholder="password"/>
-                <input type="text" placeholder="email address"/>
-                <button>create</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
-              </form>
-              <form class="login-form">
-                <input type="text" placeholder="username"/>
-                <input type="password" placeholder="password"/>
-                <button id="">login</button>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
-              </form>
-            </div>
-          </div>
-          <!--login sign up code end-->
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      
-      </div>
-    </div>
-  </div>
+ 
+  
+    
+  
+  
   <!--new address Modal -->
-  <div class="modal fade" role="dialog" id="addnewaddressModel">
-    <div class="modal-dialog" style="width: 380px;">
-      <div class="modal-content">
-        <div class="modal-body">
-          <!--login signup code start-->
-          <div class="col-lg-12 col-md-12">
-            
-            <form class="">
-              <input type="text" class="form-control" placeholder="Location" name=""><i class="fa fa-crosshairs" aria-hidden="true" style="position: absolute;float: right;right: 28px;top: 6px;font-size: 19px;"></i>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238129.60363191523!2d78.93242195217401!3d21.161348396232462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1559929983223!5m2!1sen!2sin" class="delivery_address_map" frameborder="0" style="border:0" allowfullscreen></iframe>
-              <input type="text" class="form-control" placeholder="Address 1" name="" style="margin-top: 20px;">
-              <input type="text" class="form-control" placeholder="Address 2" name="" style="margin-top: 20px;">
-              <input type="button" class="btn btn-success" value="Submimt" style="margin-top: 20px;">
-            </form>
-            
-          </div>
-          <!--login sign up code end-->
-          <div class="clear"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      
-      </div>
-    </div>
-  </div>
+
   
   <!--login sign up script start-->
-  <script type="text/javascript">
-    $('.message a').click(function(){
-       $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
-    });
-  </script
+  

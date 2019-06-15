@@ -47,7 +47,7 @@
                 <li><a href="#" title="Search Terms">Search Terms</a> </li>
                 <li><a href="#" title="Advanced Search">Advanced Search</a> </li>
                 <li><a href="#" title="Contact Us">Privacy Policy</a> </li>
-                <li><a href="#" title="Suppliers">Suppliers</a> </li>
+                <li><a href="{{ url('partners_with_us') }}" title="Suppliers">Partners with us</a> </li>
                 <li class=" last"><a href="#" title="Our stores" class="link-rss">Our stores</a> </li>
               </ul>
             </div>

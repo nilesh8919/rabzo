@@ -202,7 +202,7 @@ function getMerchant($id='')
 				  if(val.offer > 0){
 				 div1 +='<div class="ribbon"> <h2 class="header">Save '+val.offer+' %</h2> </div>';
 				  }
-				 div1 +='</div> <img src="uploads/'+val.images+'" class="image" style="height: 194px;width: 100%;"> <a href="{{url('restaurant_details')}}/'+val.restaurant_slug+'?location='+location+'&category='+category+'"><h3 class="restaurant_details_div_title" style="top: 0px;background: #fff;color: #000;">'+val.restaurant_name+'</h3></a> </div> </div> </div>';
+				 div1 +='</div> <img src="uploads/'+val.images+'" class="image" style="height: 194px;width: 100%;"> <a href="{{url('restaurant_details')}}/'+val.restaurant_name+'?location='+location+'&category='+category+'"><h3 class="restaurant_details_div_title" style="top: 0px;background: #fff;color: #000;">'+val.restaurant_name+'</h3></a> </div> </div> </div>';
 				  });
 				  //alert(div1)
 				   $("#contents").html(div1);

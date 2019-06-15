@@ -158,7 +158,8 @@
 	<script type="text/javascript">
 	function getCheckout()
 	{
-		window.location.href="{{ url('checkout') }}";
+		
+		window.location.href="{{ url('checkout') }}?id={{$results['merchant']->id}}";
 	}
 	$(document).ready(function(){
 		var wrap = $("#wrap");
@@ -270,7 +271,7 @@ displayShoppingCart();
 				  var div1 ='';
 				  $.each(res, function(key,val){
 				// alert(val.item_name)
-				  div1 += '<div class="col-lg-3 col-md-3" style="padding: 0px;"><div class="" style="padding: 0px 10px 0px 0px;"><center><img src="{{ asset('uploads/merchant_item_cat_images/')}}/'+val.photo+'" class="image" style="height: 93px;width: 100%;"></center><h3 id="item_name_'+val.id+'" class="restaurant_details_div_title" style="text-align: left; font-size:12px;top: 0px;background: #fff;color: #000;padding-left: 5px;">'+val.item_name+'</h3><input type="button" data-toggle="modal" data-target="#myModal" onclick="selectSizes('+val.id+')"  value="Add"  style="width: 58px;float: left;padding: 2px 0px;border:none;background:#3a126c;color: #fff;" /></div></div>';
+				  div1 += '<div class="col-lg-3 col-md-3" style="padding: 0px;"><div class="" style="padding: 0px 10px 0px 0px;"><center><img src="{{ asset('uploads/merchant_item_cat_images/')}}/'+val.photo+'" class="image" style="height: 93px;width: 100%;"></center><h3 id="item_name_'+val.id+'" class="restaurant_details_div_title" style="text-align: left; font-size:12px;top: 0px;background: #fff;color: #000;padding-left: 5px;">'+val.item_name+'</h3><input type="button" data-toggle="modal" data-target="#sizes" onclick="selectSizes('+val.id+')"  value="Add"  style="width: 58px;float: left;padding: 2px 0px;border:none;background:#3a126c;color: #fff;" /></div></div>';
 				  });
 				  //alert(div1)
 				   $("#contents").html(div1);
@@ -298,10 +299,10 @@ displayShoppingCart();
 				  $.each(res, function(key,val){
 				// alert(val.item_name)
 				var size_id =val.size_name+'_'+val.price;
-				  div2 += '<input name="size" type="radio"  value="'+size_id+'" /> '+val.size_name+' ₹ '+val.price+'<br>';
+				  div2 += '<input name="size" id="sizes_'+size_id+'" type="radio"  value="'+size_id+'" /> <label for="sizes_'+size_id+'">'+val.size_name+' ₹ '+val.price+'</label><br>';
 				  });
 				  //alert(div1)
-				   $("#sizes").html(div2);
+				   $("#sizes_price").html(div2);
 				   
 				 
 			  }
@@ -348,7 +349,7 @@ displayShoppingCart();
 		
 </script>
 
-<div id="myModal" class="modal fade" role="dialog">
+<div id="sizes" class="modal fade" role="dialog">
   <div class="modal-dialog modal-sm">
 
     <!-- Modal content-->
@@ -361,7 +362,7 @@ displayShoppingCart();
         <h4 class="modal-title" id="modal_title">Add Dish</h4>
       </div>
       <div class="modal-body">
-        <p id="sizes">
+        <p id="sizes_price">
 		
 		
 		</p>

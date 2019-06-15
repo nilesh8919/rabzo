@@ -3,6 +3,7 @@ namespace App\Helpers;
 use App\Module;
 use App\MerchantImages;
 use Auth;
+use DB;
 class AppHelper
 {
       public function get_modules()
@@ -37,5 +38,36 @@ class AppHelper
         return $lists=array();
       }
     }
-	
+	public static function add_keys_values($key,$value)
+		{
+			 $d1 = DB :: table('mt_option')->where(['option_name'=>$key])->first();
+				   if(isset($d1))
+				   {
+					    $data= DB :: table('mt_option')->where(['option_name'=>$key])
+				        ->update([
+					      'option_value' => $value
+					   ]);
+				   }else{
+					   $data=  DB :: table('mt_option')
+				        ->insert([
+					      'option_value' => $value,
+					      'option_name' => $key,
+					    
+					   ]);
+				   }
+				   return $data;
+		}
+	public static function get_values_from_keys($key)
+		{
+		
+			 $data1 = DB :: table('mt_option')->where('option_name',$key)->first();
+			 if(isset($data1))
+			 {
+				 return $data1->option_value;
+			 }else{
+				  return '';
+			 }
+				
+				  
+		}
 }

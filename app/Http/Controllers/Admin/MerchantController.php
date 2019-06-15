@@ -140,7 +140,7 @@ class MerchantController extends Controller
 			   }else{
 				   $logo_file_name ='';
 			   }
-			  
+			
 			    $add = Merchant::find($request->id);
                $add->restaurant_slug= $request->restaurant_slug;
               $add->restaurant_name= $request->restaurant_name;
@@ -171,7 +171,9 @@ class MerchantController extends Controller
               $add->lontitude= $request->lontitude;
 			  if(!empty($logo_file_name)){
 				   $add->logo= $logo_file_name;
+				   
 			  }
+			  
               $add->lontitude= $request->lontitude;
             // $add->date_activated= date('Y-m-d H:i:s');
 			//  $add->membership_expired= $request->membership_expired;
@@ -253,8 +255,30 @@ class MerchantController extends Controller
 						 $new2->save();
 				  }
 			  }
-			  
-			  
+			   if(isset($request->is_partners)){
+					  $is_partners ='yes';
+				  }else{
+						$is_partners ='no';
+				  }
+				  if($is_partners){
+					 $this->add_merchant_values($last_id,'is_partners',$is_partners);
+				  }
+				  // print_r($_POST);exit;
+			  if($request->merchant_pan_number){
+			     $this->add_merchant_values($last_id,'merchant_pan_number',$request->merchant_pan_number);
+			  }
+			  if($request->merchant_aadhar_number){
+			     $this->add_merchant_values($last_id,'merchant_aadhar_number',$request->merchant_aadhar_number);
+			  }
+			  if($request->merchant_fssi_number){
+			     $this->add_merchant_values($last_id,'merchant_fssi_number',$request->merchant_fssi_number);
+			  }
+			  if($request->merchant_gst_number){
+			     $this->add_merchant_values($last_id,'merchant_gst_number',$request->merchant_gst_number);
+			  }
+			  if($request->cost_for_two){
+			     $this->add_merchant_values($last_id,'cost_for_two',$request->cost_for_two);
+			  }
 			  $res =array('flag'=>true,'msg'=>'Data updated successfully');
 		  }else{
 			  
@@ -280,10 +304,10 @@ class MerchantController extends Controller
               $add->restaurant_phone= $request->restaurant_phone;
               $add->contact_phone= $request->contact_phone;
               $add->contact_email= $request->contact_email;
-              $add->gst_number= $request->gst_number;
-              $add->adhar_number= $request->adhar_number;
-              $add->pan_number= $request->pan_number;
-              $add->fssi_number= $request->fssi_number;
+           //   $add->gst_number= $request->gst_number;
+             // $add->adhar_number= $request->adhar_number;
+            //  $add->pan_number= $request->pan_number;
+             // $add->fssi_number= $request->fssi_number;
               $add->country_code= $request->country_code;
               $add->address= $request->address;
               $add->city= $request->city;
@@ -376,7 +400,34 @@ class MerchantController extends Controller
 						 $new2->save();
 				  }
 			  }
+			  if(!empty($logo_file_name)){
+				   $add->logo= $logo_file_name;
+				 
+					 if(isset($request->is_partners)){
+					  $is_partners ='yes';
+				  }else{
+						$is_partners ='no';
+				  }
+				  if($is_partners){
+					 $this->add_merchant_values($last_id,'is_partners',$is_partners);
+				  }
+			  }
 			  
+			  if($request->merchant_pan_number){
+			     $this->add_merchant_values($last_id,'merchant_pan_number',$request->merchant_pan_number);
+			  }
+			  if($request->merchant_aadhar_number){
+			     $this->add_merchant_values($last_id,'merchant_aadhar_number',$request->merchant_aadhar_number);
+			  }
+			  if($request->merchant_fssi_number){
+			     $this->add_merchant_values($last_id,'merchant_fssi_number',$request->merchant_fssi_number);
+			  }
+			  if($request->merchant_gst_number){
+			     $this->add_merchant_values($last_id,'merchant_gst_number',$request->merchant_gst_number);
+			  }
+			  if($request->cost_for_two){
+			     $this->add_merchant_values($last_id,'cost_for_two',$request->cost_for_two);
+			  }
 			  $res =array('flag'=>true,'msg'=>'Data inserted successfully');
 			
 		  }
@@ -483,6 +534,7 @@ class MerchantController extends Controller
             $services_data =DB::table('mt_merchant_services')->get();
             $package_data =DB::table('mt_packages')->get();
             $merchant_data =DB::table('mt_merchant')->where('id',$request->id)->first();
+            $merchant_meta_data =DB::table('mt_merchant_meta')->where('merchant_id',$request->id)->get();
             $merchant_cuisine_data =DB::table('mt_merchant_cuisine')->where('merchant_id',$request->id)->get();
             $merchant_categories_data =DB::table('mt_merchant_categories')->where('merchant_id',$request->id)->get();
             $merchant_image_data =DB::table('mt_merchant_images')->where('merchant_id',$request->id)->get();
@@ -503,7 +555,12 @@ class MerchantController extends Controller
 			{
 				$arr3[] =$row->payment_provider_name;
 			}
-			//print_r($arr2);exit;
+			foreach($merchant_meta_data as $row)
+			{
+				$m_key = $row->merchant_key;
+				$merchant_data->$m_key = $row->merchant_value;
+			}
+			//print_r($merchant_data);exit;
               return view('admin.merchant',[
                
                 'id'=>$request->id,
@@ -513,6 +570,7 @@ class MerchantController extends Controller
                 'package_data'=> $package_data,
                 'categories_data'=> $categories_data,
                 'merchant_data'=> $merchant_data,
+                'merchant_meta_data'=> $merchant_meta_data,
                 'merchant_cuisine_data'=> $arr1,
                 'merchant_categories_data'=> $arr2,
                 'merchant_image_data'=> $merchant_image_data,
@@ -544,5 +602,23 @@ class MerchantController extends Controller
 			   $data['ResponseMessage'] = "Invalid credentials";
 			}
 		   return response()->json($data);
+		}
+		public function add_merchant_values($merchant_id,$key,$value)
+		{
+			 $d1 = DB :: table('mt_merchant_meta')->where(['merchant_key'=>$key,'merchant_id'=>$merchant_id])->first();
+				   if(isset($d1))
+				   {
+					     DB :: table('mt_merchant_meta')->where(['merchant_key'=>$key,'merchant_id'=>$merchant_id])
+				        ->update([
+					      'merchant_value' => $value
+					   ]);
+				   }else{
+					     DB :: table('mt_merchant_meta')
+				        ->insert([
+					      'merchant_value' => $value,
+					      'merchant_key' => $key,
+					      'merchant_id' => $merchant_id,
+					   ]);
+				   }
 		}
 }

@@ -52,6 +52,8 @@ return [
             'prefix' => '',
             'strict' => false,
             'engine' => null,
+			'dump_command_path' =>'E:\xampp\mysql\bin'
+			
         ],
 
         'pgsql' => [

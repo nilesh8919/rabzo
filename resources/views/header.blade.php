@@ -79,10 +79,9 @@
 					            
 					            <li class="mega-menu" style="float: right;"> 
 
-					              <a class="level-top navigation_a" href="" data-toggle="modal" data-target="#myModal">
-
+					            
 								 <?php if(count(Session::get('users')) == '0'){ ?>
-					              <a class="level-top navigation_a" href="$">
+					              <a class="level-top navigation_a" href="" data-toggle="modal" data-target="#myModal">
 
 					                <span>Login & Signup</span>
 					              </a> 
@@ -138,17 +137,17 @@
         <!--login signup code start-->
           <div class="login-page">
             <div class="form">
-              <form class="register-form">
-                <input type="text" placeholder="name"/>
-                <input type="password" placeholder="password"/>
-                <input type="text" placeholder="email address"/>
-                <button>create</button>
+              <form class="register-form" id="main_register_form" method="post">
+                <input type="text" placeholder="name" name="name" required />
+                <input type="text" placeholder="email address" name="email_address" required />
+                <input type="password" placeholder="password" name="password" required />
+                <button type="submit">create</button>
                 <p class="message">Already registered? <a href="#">Sign In</a></p>
               </form>
-              <form class="login-form">
-                <input type="text" placeholder="username"/>
-                <input type="password" placeholder="password"/>
-                <button id="">login</button>
+              <form class="login-form" id="main_login_form" method="post">
+                <input type="text" placeholder="email" name="email_address" required />
+                <input type="password" placeholder="password" name="password" required />
+                <button type="submit">login</button>
                 <p class="message">Not registered? <a href="#">Create an account</a></p>
               </form>
             </div>
@@ -168,5 +167,58 @@
     $('.message a').click(function(){
        $('form').animate({height: "toggle", opacity: "toggle"}, "slow");
     });
+	
+	 $("#main_register_form").submit(function(e){
+
+     e.preventDefault();
+       var form=$("#main_register_form")[0];
+        var fd =new FormData(form);
+
+          $.ajax({
+                   url: '{{url("create_register")}}',
+                   data:fd,
+                   async:false,
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+
+            success:function(response){
+               if(response.ResponseCode== '200')
+                           {
+ 
+                             window.location ='{{url("/")}}' ;
+                           }else 
+                           {
+                             alert("Unable to add");
+                           }
+            },
+             });      
+ });
+ 
+ $("#main_login_form").submit(function(e){
+
+     e.preventDefault();
+       var form=$("#main_login_form")[0];
+        var fd =new FormData(form);
+
+          $.ajax({
+                   url: '{{url("create_login")}}',
+                   data:fd,
+                   async:false,
+                    type: 'POST',
+                    processData: false,
+                    contentType: false,
+            success:function(response){
+               if(response.ResponseCode== '200')
+                           {
+                             
+                             window.location ='{{url("/")}}' ;
+                           }else 
+                           {
+                             alert("invalid credentials");
+                           }
+            },
+             });       
+ });
   </script>
 <!--login soign up script end-->

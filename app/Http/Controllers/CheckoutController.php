@@ -23,6 +23,7 @@ use App\Offer;
 use App\Item;
 use App\Size;
 use App\Client;
+use App\OrderDeliveryAddress;
 
 class CheckoutController extends Controller
 {
@@ -37,13 +38,19 @@ class CheckoutController extends Controller
 error_reporting(0);
             
      $user_data = Session::get('users');
+	 $cart_data =Session::get('cart');
+	 $address = Session::get('user_address');
+
 	// print_r(Session::get('users')['id']);exit;
-		    $data['merchant_logo']  = Merchant :: select('logo')->where('logo','!=','')->where('status','active')->get();
+		    $merchant  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
+		    ->select('mt_merchant.*','mt_merchant_images.images')
+			->where('mt_merchant.id',$request->id)->first();
 			
-			
-	///print_r($data['review']);exit;
+
               return view('checkout',[
-                'results'=> $data,
+                'merchant'=> $merchant,
+                'cart_data'=> $cart_data,
+                'deliveryAddress'=> $address,
 				
                  ]);
 	}
@@ -139,8 +146,8 @@ function idExists($needle='', $haystack=array()){
 			  $users = $qry->first();
 			 
 			 $data_arr =array(
-			  "id" =>$users->id,
-			  "name" =>$users->name,
+			  "id" =>$users->client_id,
+			  "name" =>$users->first_name,
 			  "email_address" =>$users->email_address,
 			);
 			Session :: put('users', $data_arr);
@@ -153,6 +160,7 @@ function idExists($needle='', $haystack=array()){
 		 }
 		 return response()->json($data);
 	 }
+	 
 	 public function create_register(Request $request)
 	 {
 			$this->validate($request,[
@@ -182,6 +190,52 @@ function idExists($needle='', $haystack=array()){
 		}
 		return response()->json($data);
 	}
+	public function create_delivery_address(Request $request)
+	 {
+		 $user_data = Session::get('users');
+		 
+		 
+		  $data_arr =array(
+			  "street" =>$request->street,
+			  "city" =>$request->city,
+			  "zipcode" =>$request->zipcode,
+			  "location_name" =>$request->location_name,
+			
+			);
+			Session :: put('user_address', $data_arr);
+		// print_r($user_data);exit;
+		/*OrderDeliveryAddress :: where('client_id',$user_data['id'])->delete();
+		$new = new OrderDeliveryAddress();
+		if(isset($request->street)){
+			$new->street = $request->street;
+			$new->city = $request->city;
+			$new->zipcode = $request->zipcode;
+		
+		}
+			$new->client_id = $user_data['id'];
+			if(isset($request->location_name)){
+			$new->location_name = $request->location_name; }
+			$new->save();
+			$last_id =$new->id;
+			$data_arr =array(
+			  "id" =>$last_id,
+			  "street" =>$request->street,
+			  "city" =>$request->city,
+			  "zipcode" =>$request->zipcode,
+			  "location_name" =>$request->location_name,
+			);
+			*/
+			$address = Session::get('user_address');
+			if(isset($user_data)){
+				 $data['ResponseCode'] = "200";
+		        $data['ResponseMessage'] = "Registered";
+		        $data['address'] = $address;
+		 	}else{
+			 $data['ResponseCode'] = "400";
+		   $data['ResponseMessage'] = "Unable to add";
+			}
+			return response()->json($data);
+	 }
 	public function client_logout()
    {
 	   Session::flush();

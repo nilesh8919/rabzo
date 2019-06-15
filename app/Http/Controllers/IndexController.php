@@ -49,16 +49,21 @@ error_reporting(0);
           $data['third_step_heading'] =  Option :: where('option_name','third_step_heading')->pluck('option_value');
         $data['third_step_content'] =   Option :: where('option_name','third_step_content')->pluck('option_value');
           $data['banner']  =Banner :: orderby('id','desc')->get();
-        /*  $data['review']  =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
+		  
+          $data['review']  =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
 		  ->join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
 		  ->select('mt_merchant.restaurant_name','mt_merchant.restaurant_slug','mt_merchant_images.images','mt_review.*')
 		  //->where('rating','>','4')->orderBy('mt_review.id','desc')->limit('4')->get();
-		 ->where('rating','>','4')->groupBy('mt_merchant_images.merchant_id')->orderBy('mt_review.id','desc')->limit('4')->get();*/
-		 
+		 ->where('rating','>','4')->where('mt_review.status','=','publish')->where('mt_merchant.status','Active')->groupBy('mt_merchant_images.merchant_id')->orderBy('mt_review.rating','desc')->limit('8')->get();
+		// print_r($data['review']);exit;
+		
 		    $data['featured']  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
-		    ->select('mt_merchant.*','mt_merchant_images.images')
+		    ->select('mt_merchant.*','mt_merchant_images.images')->where('is_featured','1')
 		->groupBy('mt_merchant_images.merchant_id')->get();
-		    $data['merchant_logo']  =DB :: table('mt_merchant')->select('logo')->where('logo','!=','')->where('status','Active')->get();
+		//print_r(count($data['featured']));exit;
+		    $data['merchant_logo']  =DB :: table('mt_merchant')
+			->join('mt_merchant_meta','mt_merchant_meta.merchant_id','=','mt_merchant.id')
+			->select('logo','mt_merchant.restaurant_name','mt_merchant_meta.merchant_key')->where('mt_merchant_meta.merchant_key','=','is_partners')->where('mt_merchant_meta.merchant_value','=','yes')->where('status','Active')->limit('8')->get();
 			//dd($data['merchant_logo']);
 			
 			$data['sell_items']  = DB :: table('mt_order_details')->join('mt_item','mt_item.id','=','mt_order_details.item_id')
@@ -116,7 +121,7 @@ error_reporting(0);
         $data['website_contact_email'] = Option :: where('option_name','website_contact_email')->pluck('option_value');
         
           $data['merchant']  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
-			  ->select('mt_merchant.*','mt_merchant_images.images')->where('restaurant_slug',$request->name)
+			  ->select('mt_merchant.*','mt_merchant_images.images')->where('restaurant_name',$request->name)
 		 ->groupBy('mt_merchant_images.merchant_id')->first();
 	
               return view('restaurant_details',[
@@ -236,6 +241,7 @@ error_reporting(0);
 		return response()->json($data);
    }
   
+  
    public function get_merchant_available_restaurant(Request $request)
 	{
 		 $data1  = Cuisine :: select(DB::raw('DISTINCT cuisine_name'))->get();
@@ -245,5 +251,11 @@ error_reporting(0);
 		return response()->json($data3);
    }
    
-   
+    public function partners_with_us(Request $request)
+   {
+	         return view('partners_with_us',[
+              //  'results'=> $data,
+				
+                 ]);
+   }
 }

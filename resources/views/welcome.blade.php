@@ -139,17 +139,38 @@
                 <h3 class="index_viewall_btn">View All</h3>
               </div>
               <div class="slide">
+			  <?php if(count($results['review']) > 0){
+				  foreach($results['review'] as $row){
+				  ?>
+				  <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}">
                 <div class="index_product_slider">
-                  <img src="uploads/merchant_item_cat_images/chicken_curry.jpg" class="index_product_slider_img">
+                  <img src="uploads/{{$row->images}} " class="index_product_slider_img">
                   <span class="index_slider_rating_span">4.5</span>
                   <div class="index_product_slider_details">
-                    <h4>Dwarka Restaurant</h4>
-                    <p>Dharampeth, Nagpur</p>
+                    <h4><?php echo $row->restaurant_name; ?></h4>
+                    <p><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
                     <p class="distance_class">Distance - 30 Min</p>
                     <p class="cost_class">Cost for two - 250</p>
                   </div>
                 </div>
-                <div class="index_product_slider">
+				</a>
+			  <?php } }else{ 
+			   foreach($results['featured'] as $row){
+			  
+			  ?>
+				     <div class="index_product_slider" >
+                  <img src="uploads/{{$row->images}} " class="index_product_slider_img">
+                  <span class="index_slider_rating_span">4.5</span>
+                  <div class="index_product_slider_details">
+                     <h4><?php echo $row->restaurant_name; ?></h4>
+                    <p><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
+                    <p class="distance_class">Distance - 30 Min</p>
+                    <p class="cost_class">Cost for two - 250</p>
+                  </div>
+                </div>
+				  
+			   <?php } } ?>
+             <!--   <div class="index_product_slider">
                   <img src="uploads/merchant_item_cat_images/food3.jpg" class="index_product_slider_img">
                   <span class="index_slider_rating_span">5</span>
                   <div class="index_product_slider_details">
@@ -188,7 +209,7 @@
                     <p class="distance_class">Distance - 30 Min</p>
                     <p class="cost_class">Cost for two - 250</p>
                   </div>
-                </div>
+                </div>-->
               </div>
               <!-- <div class="pretext best_deals_single_slider">
                 <a title="Retis lapen casen" href="#"> 
@@ -294,7 +315,7 @@
             <!-- Item -->
 			@foreach($results['merchant_logo'] as $logo)
             <div class="item"> 
-              <a href="#">
+              <a href="#" title="{{$logo->restaurant_name}}">
                 <img src="uploads/logo/{{$logo->logo}}" alt="Image" style="height: 96px;width: 110px;"> 
               </a> 
             </div>

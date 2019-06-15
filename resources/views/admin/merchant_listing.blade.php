@@ -52,9 +52,8 @@
                                   <th>City</th>
                                   <th>Country</th>
                                   <th>Contact</th>
-                                  <th>Package</th>
-                                  <th>Activation Code</th>
-                                 
+                                  <th>Email</th>
+                               
                                 
                                   <th>Status</th>
                                   <th>Action</th>
@@ -70,8 +69,7 @@
                                   <td> {{ $row->city}}</td>
                                   <td> {{ $row->country_code}}</td>
                                   <td> {{ $row->contact_phone}}</td>
-                                  <td> {{ $row->package_name}}</td>
-                                  <td> {{ $row->activation_key}}</td>
+                                  <td> {{ $row->contact_email}}</td>
                                  <!-- <td> 
 								<?php if($row->is_commission == 1)
 								{
@@ -91,8 +89,10 @@
 							  <a onclick="delete_merchant({{ $row->id }})" style="text-decoration:none; cursor: pointer; cursor: hand;">
 							  <i class="clip-remove"></i>Delete</a> 
 							  |
+							  <?php if($row->status == 'Active'){ ?>
 							  <a onclick="merchant_login({{ $row->id }})" style="text-decoration:none; cursor: pointer; cursor: hand;">
 							  <i class="clip-remove"></i>Merchant Autologin</a> 
+							  <?php } ?>
 							   </td>
                              </tr> 
                               <?php  $i++;?>
