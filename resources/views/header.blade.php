@@ -66,12 +66,12 @@
 					              <a class="level-top" href="{{url('/')}}" style="padding: 0px 0px 0px 0px;">
 					                    <span>
 <?php if(!empty($website_logo[0])){ ?>
-<img src="{{ asset('public/uploadimages/').'/'.$website_logo[0] }}" style="width: 205px;"> <?php } ?>
+<img src="{{ asset('public/uploadimages/').'/'.$website_logo[0] }}" style="width: 144px;"> <?php } ?>
 </span>
 					              </a> 
 					            </li>
 
-					            <li class="mega-menu" style="position: relative;left: 411px;"> 
+					            <li class="mega-menu" style="position: relative;left: 458px;"> 
 					              <a class="level-top navigation_a" href="{{url('restaurant')}}">
 					                <span>Restaurant</span>
 					              </a> 
