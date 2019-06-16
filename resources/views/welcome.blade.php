@@ -146,12 +146,16 @@
 				  <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}">
                 <div class="index_product_slider">
                   <img src="uploads/{{$row->images}} " class="index_product_slider_img">
-                  <span class="index_slider_rating_span">4.5</span>
+				  <?php if(isset($row->avg_rating) ){?>
+                  <span class="index_slider_rating_span"><?php echo $row->avg_rating; ?></span>
+				  	<?php } ?>
                   <div class="index_product_slider_details">
                     <h4 style="font-weight: 600;"><?php echo $row->restaurant_name; ?></h4>
                     <p><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
                     <p class="distance_class">Distance - 30 Min</p>
-                    <p class="cost_class">Cost for two - 250</p>
+					<?php if(isset($row->cost_for_two) ){?>
+                    <p class="cost_class">Cost for two - <?php echo $row->cost_for_two; ?></p>
+					<?php } ?>
                   </div>
                 </div>
 				</a>
@@ -161,12 +165,14 @@
 			  ?>
 				     <div class="index_product_slider" >
                   <img src="uploads/{{$row->images}} " class="index_product_slider_img">
-                  <span class="index_slider_rating_span">4.5</span>
+                
                   <div class="index_product_slider_details">
                      <h4 style="font-weight: 600;"><?php echo $row->restaurant_name; ?></h4>
                     <p><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
                     <p class="distance_class">Distance - 30 Min</p>
-                    <p class="cost_class">Cost for two - 250</p>
+                   <?php if(isset($row->cost_for_two) ){?>
+                    <p class="cost_class">Cost for two - <?php echo $row->cost_for_two; ?></p>
+					<?php } ?>
                   </div>
                 </div>
 				  

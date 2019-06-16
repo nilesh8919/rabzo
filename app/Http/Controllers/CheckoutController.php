@@ -57,81 +57,76 @@ error_reporting(0);
 	
     public function add_to_cart(Request $request)
    {
-	  
+	  // Session::flush();
 	   //print_r($request->shoppingCart);exit;
 	   $data =$request->shoppingCart;
-	   $data_arr =array();
-	  // $data1 =array();
-	   foreach($data  as $row)
-	   {
+	  
 			   $data_arr=array(
-				 'item_id' =>$row['item_id'],
-				 'Name' =>$row['Name'],
-				 'size' =>$row['size'],
-				 'Qty' =>$row['Qty'],
-				 'Description' =>$row['Description'],
-				 'Price' =>$row['Price'],
-				 'unit_price' =>$row['Price'],
+				 'item_id' =>$data['item_id'],
+				 'Name' =>$data['Name'],
+				 'size' =>$data['size'],
+				 'Qty' =>$data['Qty'],
+				 'Description' =>$data['Description'],
+				 'Price' =>$data['Price'],
+				 'unit_price' =>$data['Price'],
 			   );
-			
-	   }
+			//print_r($data_arr);
+	 
 	   if(count(Session::get('cart')) == 0)
 	   {
 		   Session::put('cart', []);
 	   }
 	   if(count(Session::get('cart')) > 0)
 	   {
+		  
 		  $cart_data =Session::get('cart');
-		  foreach($cart_data as $key=>$row){
-		  if($this->idExists($data_arr['item_id'], $cart_data))
-			 {
-				// unset($cart_data[0]);
-				if($data_arr['item_id'] == $row['item_id'] && $data_arr['size'] == $row['size'] ){
-					Session::forget('cart.' . $key);
-					// echo "hi";exit;
-					
-					$cart_data[$key]['Qty'] = $row['Qty'] + 1;
+		 /* foreach($cart_data as $key=>$row){
+			 // if($data_arr['item_id'] === $row['item_id'] && $data_arr['size'] === $row['size'] ){
+				 if(idExists($data_arr['item_id'], $haystack=array()){
+						//echo "hi";exit;
+						$qty = $cart_data[$key]['Qty'];
+						unset($cart_data[$key]['Qty']);
+					$qty  = $row['Qty'] + 1;
+					$cart_data[$key]['Qty'] = $qty;
 					//$cart_data[$key]['Price'] = $row['Qty'] * $row['unit_price'];
-					 Session :: push('cart', $cart_data[$key]);
+					// Session :: push('cart', $cart_data[$key]);
+				}else{
+					Session :: push('cart', $data_arr);
 				}
-			 }else{
-				
+		  }*/
+		   if(!$this->idExists($data_arr['item_id'],$data_arr['size'], $cart_data))
+			   {
 				   Session :: push('cart', $data_arr);
-			 }
-		  }	
-		 
+			   }
+		  
 		  //  Session :: push('cart', $data_arr);
 	   }else{
 		    Session :: push('cart', $data_arr);
 	   }
 	  
-	  
-	//   Session::put('cart', $request->shoppingCart);
-	   
-	   
-	   
+	    
 	  // print_r($cart_data);exit;
    }
-   
-function idExists($needle='', $haystack=array()){
+   public function get_cart(Request $request)
+   {
+	   //print_r($request->shoppingCart);exit;
+	  //Session::flush();
+	    $cart_data = Session::get('cart');
+		
+	  // print_r($cart_data);exit;
+	   return response()->json($cart_data);
+   }
+public function idExists($needle='',$size='', $haystack=array()){
     //now go through each internal array
     foreach ($haystack as $item) {
-        if ($item['item_id']===$needle) {
+        if ($item['item_id']===$needle && $item['size']===$size) {
             return true;
         }
     }
     return false;
 }
    
-   public function get_cart(Request $request)
-   {
-	   //print_r($request->shoppingCart);exit;
-	  // Session::flush();
-	    $cart_data = Session::get('cart');
-		
-	  // print_r($cart_data);exit;
-	   return response()->json($cart_data);
-   }
+   
 	 public function client_address(Request $request)
 	 {
 		 $qry = Client :: where(['client_id'=>Session::get('users')['id']])->get;

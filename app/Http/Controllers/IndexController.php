@@ -50,13 +50,31 @@ error_reporting(0);
         $data['third_step_content'] =   Option :: where('option_name','third_step_content')->pluck('option_value');
           $data['banner']  =Banner :: limit('1')->get();
 		  
-          $data['review']  =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
+        /*  $data['review']  =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
 		  ->join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
 		  ->select('mt_merchant.restaurant_name','mt_merchant.restaurant_slug','mt_merchant_images.images','mt_review.*')
-		  //->where('rating','>','4')->orderBy('mt_review.id','desc')->limit('4')->get();
-		 ->where('rating','>','4')->where('mt_review.status','=','publish')->where('mt_merchant.status','Active')->groupBy('mt_merchant_images.merchant_id')->orderBy('mt_review.rating','desc')->limit('8')->get();
+		  
+		 ->where('rating','>','4')->where('mt_review.status','=','publish')->where('mt_merchant.status','Active')
+		 ->groupBy('mt_merchant_images.merchant_id')->orderBy('mt_review.rating','desc')->limit('8')->get();*/
+		 
 		// print_r($data['review']);exit;
+		 $review =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
+		  ->select(DB::raw('SUM(rating) as rating'),'merchant_id',DB::raw('count(merchant_id) as cnt'),'mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city')
+		  ->where('mt_review.status','=','publish')
+		 ->groupBy('mt_review.merchant_id')->orderBy('rating','desc')->limit('8')->get();
+	foreach($review as $key=>$r_data)
+	{
+		$d1 = DB :: table('mt_merchant_images')->where('merchant_id',$r_data->merchant_id)->first();
 		
+		$d2 = DB :: table('mt_merchant_meta')->where('merchant_id',$r_data->merchant_id)->select('mt_merchant_meta.merchant_value')->where('mt_merchant_meta.merchant_key','=','cost_for_two')->first();
+		$review[$key]->images =$d1->images;
+		$review[$key]->cost_for_two =$d2->merchant_value;
+		if($r_data->rating > 0){
+		$review[$key]->avg_rating =$r_data->rating / $r_data->cnt; }
+		
+	}
+	//	print_r($review);exit;
+		$data['review'] =$review;
 		    $data['featured']  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
 		    ->select('mt_merchant.*','mt_merchant_images.images')->where('is_featured','1')
 		->groupBy('mt_merchant_images.merchant_id')->get();
@@ -214,6 +232,7 @@ error_reporting(0);
 			  }
 			   if(!empty($request->category)){
 			     $qry->where('mt_category.category_name', 'LIKE', '%' . $request->category . '%');
+				 $qry->orWhere('mt_merchant.restaurant_name', 'LIKE', '%' . $request->category . '%');
 			  }
 			  if(!empty($request->cuisine)){
 			     $qry->where('mt_merchant_cuisine.cuisine_id',$request->cuisine);

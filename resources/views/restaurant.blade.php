@@ -117,7 +117,7 @@
               <div class="col-lg-6 col-md-6" style="">
                 <img src="{{ asset('uploads/').'/'.$row->images }}" style="width: 100%;border-radius: 4px;margin-bottom: 10px;height: 84px;" />
                 <p style="font-weight: 600;margin: 0px;">{{$row->restaurant_name}}</p>
-                <p>Dhrampeth, Nagpur</p>
+                <p><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
               </div>
 		          @endforeach
             

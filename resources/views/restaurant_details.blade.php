@@ -146,7 +146,7 @@
 						 <div class="col-lg-6 col-md-6"  style="font-weight:bold"><div  style="float:right;margin-right:20px" id="cart_total"></div> </div>
 						  </div>
 						  <div class="col-lg-12 col-md-12" style="margin-top: 40px;">
-						 <center> <button class="btn btn-sucess" onClick="getCheckout()" type="button">Checkout</button></center>
+						 <center> <button class="btn btn-sucess" id="checkout" style="display:none" onClick="getCheckout()" type="button">Checkout</button></center>
 						  </div>
 			        </div>	
 				    <!--right div end-->
@@ -196,7 +196,7 @@ displayShoppingCart();
 		   $.ajax({
 				type:"get",
 				url:"{{url('get_cart')}}",
-			  data:{'shoppingCart':shoppingCart},
+			  data:{},
 			  dataType:'json',
 			  success:function(res){
 				 var shoppingCart = res;
@@ -209,6 +209,7 @@ displayShoppingCart();
 						for(var product in shoppingCart){
 							//add new row      
 							$("#empty_cart").hide();
+							$("#checkout").show();
 							var row=orderedProductsTblBody.insertRow();
 							//create three cells for product properties 
 							var cellName = row.insertCell(0);
@@ -330,7 +331,7 @@ displayShoppingCart();
 		   $.ajax({
 				type:"post",
 				url:"{{url('add_to_cart')}}",
-			  data:{'shoppingCart':shoppingCart},
+			  data:{'shoppingCart':singleProduct},
 			  success:function(res){
 				 // alert('hi')
 				 displayShoppingCart();
