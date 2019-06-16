@@ -1,13 +1,16 @@
   <nav class="navbar-default navbar-static-side" role="navigation">
         <div class="sidebar-collapse">
             <ul class="nav metismenu" id="side-menu">
-                <li class="nav-header">
-                    <div class="dropdown profile-element"> <a href="{{url('home')}}" ><span>
-                            <img alt="image" class="img-circle" src="admintemplate/img/profile_small.jpg" />
+                <li class="nav-header" style="padding:10px !important;">
+                    <div class="dropdown profile-element"> <a href="{{url('home')}}" ><span style="margin-left:20px">
+                           <!-- <img alt="image" class="img-circle" src="public/images/rabzo_logo.png" style="width:120px" />-->
                              </span></a>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams</strong>
-                             </span> <span class="text-muted text-xs block">Admin <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold" style="margin-left:20px">Admin</strong>
+                             </span> 
+							<!-- <span class="text-muted text-xs block">Admin <b class="caret"></b></span> -->
+							 
+							 </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
                             <li><a href="profile.html">Profile</a></li>
                             <li><a href="contacts.html">Contacts</a></li>

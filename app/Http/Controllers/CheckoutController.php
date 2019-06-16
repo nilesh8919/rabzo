@@ -172,6 +172,7 @@ function idExists($needle='', $haystack=array()){
 			$new->first_name = $request->name;
 			$new->email_address = $request->email_address;
 			$new->password = md5($request->password);
+			$new->date_created =date('Y-m-d H:i:s');
 			$new->save();
 			$last_id =$new->id;
 			$data_arr =array(

@@ -133,6 +133,7 @@ Route::group(['middleware' => 'auth'], function(){
 			Route::get('database_backup','Admin\BackupController@database_backup');
 			Route::get('image_backup','Admin\BackupController@image_backup');
 			Route::get('get_database_backup','Admin\BackupController@get_database_backup');
+			Route::get('manage_users','Admin\UserManagementController@index');
 			
 		
 			//Merchant routes
