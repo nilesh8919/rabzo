@@ -124,7 +124,7 @@
     .index_product_slider_details{}{}
     .distance_class{width: 140px; float: left;}
     .cost_class{width: 140px; float: left;}
-    .index_product_slider{border: 1px solid #ccc;padding: 12px;}
+    .index_product_slider{border: 1px solid #ccc;padding: 12px; height: 340px;}
     .index_slider_rating_span{position: relative;float: right;right: 12px;top: -19px;padding: 10px;width: 40px;height: 40px;background: orange;font-size: 16px;font-weight: 600;text-align: center;box-shadow: 0px 0px 8px;}
   </style>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css">
@@ -137,13 +137,13 @@
             <div class="home-block-inner">
               <div class="block-title">
                 <h2 class="index_bestseller_heading">Best Sellers </h2>
-                <h3 class="index_viewall_btn">View All</h3>
+                <a href="{{url('restaurant')}}" style="color: #fff;"><h3 class="index_viewall_btn">View All</h3></a>
               </div>
               <div class="slide">
 			  <?php if(count($results['review']) > 0){
 				  foreach($results['review'] as $row){
 				  ?>
-				  <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}">
+				  <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}" style="color: #000;">
                 <div class="index_product_slider">
                   <img src="uploads/{{$row->images}} " class="index_product_slider_img">
 				  <?php if(isset($row->avg_rating) ){?>
@@ -163,6 +163,7 @@
 			   foreach($results['featured'] as $row){
 			  
 			  ?>
+        <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}" style="color: #000;">
 				     <div class="index_product_slider" >
                   <img src="uploads/{{$row->images}} " class="index_product_slider_img">
                 
@@ -175,7 +176,7 @@
 					<?php } ?>
                   </div>
                 </div>
-				  
+				  </a>
 			   <?php } } ?>
              <!--   <div class="index_product_slider">
                   <img src="uploads/merchant_item_cat_images/food3.jpg" class="index_product_slider_img">

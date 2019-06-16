@@ -6817,17 +6817,17 @@ button.button.submit:before {
 .newsletter-wrap {
 	display:block;
 	width: 100%;
-background:#fbeb20;
-overflow:hidden;
-padding:25px 75px;
-margin-top:-150px;
-text-align:center;
-border-bottom: 4px #887e06 solid;
+	background:#fbeb20;
+	overflow:hidden;
+	padding:6px 75px;
+	margin-top:-150px;
+	text-align:center;
+	/*border-bottom: 4px #887e06 solid;*/
 }
 .newsletter-wrap h4 {
 	margin-bottom: 3px;
-display:inline-block;
-font-size:16px;
+	display:inline-block;
+	font-size:16px;
 
 }
 
@@ -12230,7 +12230,7 @@ nav .container {
 .form-control:focus{border-color: none!important; outline: 0; -webkit-box-shadow: none!important;box-shadow: none!important;}
 
 .restaurant_details_div{}
-.restaurant_details_div_title{font-size: 18px;font-family: sans-serif;padding: 10px; margin: 0;position: relative;top: -38px;text-align: center;background: #3a126ca6;color: #fff;}
+.restaurant_details_div_title{text-align: left; font-size:12px;top: 0px;color: #000;padding-left: 5px;font-family: sans-serif;padding: 10px 0px; margin: 0;position: relative;}
 .restaurant_details_div_discription{font-size: 14px;font-family: monospace;padding: 8px;margin-bottom: 0px;font-family: sans-serif;background: #fff;}
 .restaurant_details_div_address{font-size: 13px;font-family: monospace;padding: 8px;margin-bottom: 0px;font-family: sans-serif;background: #fff;}
 .restaurant_details_div_rating_distance_price{padding: 12px 0px;background: #fff;}
@@ -12264,3 +12264,10 @@ nav .container {
 .social .instagram a {content: "\f16d";font-family: FontAwesome;font-size: 18px;display: inline-block!important;
     text-align: center;padding: 0;}
 .checkout-step:first-child{margin-top: 0px!important;}
+
+/*======details review page css=======*/
+.details_star_span{position: absolute;bottom: 125px;background: #09bd09;color: #000;padding: 6px 15px;
+    font-size: 14px;font-weight: 600;right: 15px;}
+.details_offer_span{position: absolute;top: 16px;background: orange;color: #000;padding: 6px 15px;font-size: 14px;font-weight: 600;}
+
+.itemm_variation_p{margin: 180px auto;}

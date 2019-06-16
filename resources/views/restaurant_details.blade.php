@@ -2,16 +2,16 @@
 	<style>
 		.clear{clear: both;}
   
-  	.wrap {width: 100%; /*border: 1px solid #ccc;*/ height: 579px;overflow: auto;position: relative;margin-top: 77px;}
-    .top-header {position: fixed;top: 0;left: 0;width: 100%;height: 60px;}
+  	.wrap {width: 100%; /*border: 1px solid #ccc;*/ height: 579px;overflow: auto;position: relative;margin-top: 52px;}
+    .top-header {position: fixed;top: 0;left: 0;width: 100%;height: 52px;}
     .top-header .menu-icon {position: absolute;top: 0;right: 0;padding: 18px 20px;}
     .fix-search .top-header {background: #eee;}
-    .search {position: absolute;top: 189px;left: 0px; right: 213px;margin: 0 auto;width: 590px;/*border: 1px solid;*/}
+    .search {position: absolute;top: 199px;left: 0px; right: 213px;margin: 0 auto;width: 590px;/*border: 1px solid;*/}
     .search input {width: 100%;border: 1px solid #ccc;padding: 8px;font-size: 15px;transition: width 0.2s;
       -webkit-appearance: none;height: 38px;}
     .fix-search .search {position: fixed;top: 0px;width: 50%;margin: 0 auto;}
     .fix-search .search input {/*width: 250px;*//*width: 450px;*/position: relative;/*left: 110px;*/}
-    .top {height: 250px;/*padding-top: 40px;*/}
+    .top {height: 205px;/*padding-top: 40px;*/}
     .hero {width: 200px;height: 100px;background: #ccc;margin: 0 auto;}
     main {padding: 0 20px;display: flex;flex-wrap: wrap;justify-content: space-between;}
     main div {width: 125px;height: 80px;background: #ccc;margin: 0 0 20px 0;}
@@ -30,7 +30,7 @@
     .cuisine_ul li a{color: #000;}
 	</style>
 		<div class="search">
-			  		<div class="col-lg-12 col-md-12" id="search_navbar" style="position: sticky;top: 0;z-index: 99;padding: 15px 0px;">
+			  		<div class="col-lg-12 col-md-12" id="search_navbar" style="position: sticky;top: 0;z-index: 99;padding: 6px 0px;">
 		                <div class="col-lg-4 col-md-4" style="padding-right: 0px;">
 		                  <input type="text" id="location" placeholder="Search location" class="form-control" name="" style="border: 1px solid #ccc;color: #000;border-radius: 0;"  value="<?php if(isset($_GET['location'])){ echo $_GET['location']; } ?>">
 		                  <i class="fa fa-search" style="color: #fff;position: relative;float: right;top: -27px;right: 15px;font-size: 19px;"></i>
@@ -74,15 +74,15 @@
 				      </div>
 				  </div>
 			</div>
-			<div class="container" style="margin-top: -47px;">
+			<div class="container" style="">
 				<div class="col-lg-12 col-md-12">
 					<div class="col-lg-2 col-md-2" style="background: #fff;padding: 0px;position: sticky;top: 0;z-index: 99;">
 						<div class="col-lg-12 col-md-12" style="background: #3a126c;color: #fff;border-bottom: 1px solid #ccc;">
-							<h4>Category</h4>
+							<h4 style="font-size: 15px;">Category</h4>
 						</div>
 						<div class="col-lg-12 col-md-12" style="padding-top: 10px;">
 				            @foreach($results['category'] as $cat)
-				            <label class="col-lg-6 col-md-6" style="padding: 0;">
+				            <label class="col-lg-12 col-md-12" style="padding: 0;">
 				             	<input id="" name=""  onClick="getMerchant()" class="food_categories" type="checkbox" value="{{$cat->id}}">
 				             	<span></span>
 								{{$cat->category_name}}
@@ -91,7 +91,7 @@
 				           
 				        </div>
 				        <div class="col-lg-12 col-md-12" style="background: #3a126c;color: #fff;border-bottom: 1px solid #ccc;">
-				            <h4>Cuisine</h4>
+				            <h4 style="font-size: 15px;">Cuisine</h4>
 				        </div>
 				        <div class="col-lg-12 col-md-12" style="padding: 0;">
 				            <ul class="cuisine_ul">
@@ -117,7 +117,7 @@
 				    <!--right div start-->
 				    <div class="col-lg-4 col-md-4" style="background: #fff;padding: 0px;position: sticky;top: 0;z-index: 99;">
 			            <div class="col-lg-12 col-md-12" style="background: #3a126c;color: #fff;border-bottom: 1px solid #ccc;">
-			              	<h4>Billing Cart</h4>
+			              	<h4 style="font-size: 15px;">Billing Cart</h4>
 			            </div>
 			            <div class="col-lg-12 col-md-12" style="padding: 0px;min-height: 60vh;">
 			             
@@ -145,8 +145,8 @@
 						 <div class="col-lg-6 col-md-6"> <b>Subtotal</b></div>
 						 <div class="col-lg-6 col-md-6"  style="font-weight:bold"><div  style="float:right;margin-right:20px" id="cart_total"></div> </div>
 						  </div>
-						  <div class="col-lg-12 col-md-12" style="margin-top: 40px;">
-						 <center> <button class="btn btn-sucess" id="checkout" style="display:none" onClick="getCheckout()" type="button">Checkout</button></center>
+						  <div class="col-lg-12 col-md-12" style="margin-top: 40px;padding-bottom: 15px;">
+						 <center> <button class="btn btn-sucess" id="checkout" style="display:none;background: #d22121;color: #fff;" onClick="getCheckout()" type="button">Checkout</button></center>
 						  </div>
 			        </div>	
 				    <!--right div end-->
@@ -272,7 +272,7 @@ displayShoppingCart();
 				  var div1 ='';
 				  $.each(res, function(key,val){
 				// alert(val.item_name)
-				  div1 += '<div class="col-lg-3 col-md-3" style="padding: 0px;"><div class="" style="padding: 0px 10px 0px 0px;"><center><img src="{{ asset('uploads/merchant_item_cat_images/')}}/'+val.photo+'" class="image" style="height: 93px;width: 100%;"></center><h3 id="item_name_'+val.id+'" class="restaurant_details_div_title" style="text-align: left; font-size:12px;top: 0px;background: #fff;color: #000;padding-left: 5px;">'+val.item_name+'</h3><input type="button" data-toggle="modal" data-target="#sizes" onclick="selectSizes('+val.id+')"  value="Add"  style="width: 58px;float: left;padding: 2px 0px;border:none;background:#3a126c;color: #fff;" /></div></div>';
+				  div1 += '<div class="col-lg-3 col-md-3" style="padding: 0px;"><div class="" style="padding: 0px 10px 0px 0px;"><center><img src="{{ asset('uploads/merchant_item_cat_images/')}}/'+val.photo+'" class="image" style="height: 93px;width: 100%;"></center><div class="col-lg-12 col-md-12" style="padding: 4px 2px 8px;background: #fff;"><h3 id="item_name_'+val.id+'" class="restaurant_details_div_title">'+val.item_name+'</h3><input type="button" data-toggle="modal" data-target="#sizes" onclick="selectSizes('+val.id+')"  value="Add"  style="width: 58px;float: left;padding: 2px 0px;border:none;background:#3a126c;color: #fff;" /></div></div></div>';
 				  });
 				  //alert(div1)
 				   $("#contents").html(div1);
@@ -300,7 +300,7 @@ displayShoppingCart();
 				  $.each(res, function(key,val){
 				// alert(val.item_name)
 				var size_id =val.size_name+'_'+val.price;
-				  div2 += '<input name="size" id="sizes_'+size_id+'" type="radio"  value="'+size_id+'" /> <label for="sizes_'+size_id+'">'+val.size_name+' ₹ '+val.price+'</label><br>';
+				  div2 += '<input name="size" id="sizes_'+size_id+'" type="radio"  value="'+size_id+'" /> <label for="sizes_'+size_id+'" style="font-size: 15px;">'+val.size_name+' ₹ '+val.price+'</label><br>';
 				  });
 				  //alert(div1)
 				   $("#sizes_price").html(div2);
@@ -351,16 +351,16 @@ displayShoppingCart();
 </script>
 
 <div id="sizes" class="modal fade" role="dialog">
-  <div class="modal-dialog modal-sm">
+  <div class="modal-dialog modal-sm itemm_variation_p">
 
     <!-- Modal content-->
     <div class="modal-content">
 	<form method="post">
 	<input type="hidden" name="item_name" id="item_name" />
 	<input type="hidden" name="item_id" id="item_id" />
-      <div class="modal-header">
+      <div class="modal-header" style="background: #d22121;">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title" id="modal_title">Add Dish</h4>
+        <h4 class="modal-title" id="modal_title" style="color: #fff;">Add Dish</h4>
       </div>
       <div class="modal-body">
         <p id="sizes_price">
@@ -369,7 +369,7 @@ displayShoppingCart();
 		</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" onclick="AddtoCart()">Add</button>
+        <button type="button" class="btn btn-default" onclick="AddtoCart()" style="background: #4CAF50;color: #fff;border: none;">Add</button>
       </div>
 	  </form>
     </div>
