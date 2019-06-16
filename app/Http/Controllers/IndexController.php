@@ -244,10 +244,10 @@ error_reporting(0);
   
    public function get_merchant_available_restaurant(Request $request)
 	{
-		 $data1  = Cuisine :: select(DB::raw('DISTINCT cuisine_name'))->get();
-		 $data2  = Merchant :: select(DB::raw('DISTINCT restaurant_name AS cuisine_name'))->get();
+		 $data1  = Cuisine :: select(DB::raw('DISTINCT cuisine_name'));
+		 $data2  = Merchant :: select(DB::raw('DISTINCT restaurant_name AS cuisine_name'));
 		
-		 $data3 = $data1->union($data2);
+		 $data3 = $data1->union($data2)->get();
 		return response()->json($data3);
    }
    

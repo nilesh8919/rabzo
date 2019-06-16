@@ -22,3 +22,8 @@ INSERT INTO `sub_modules` (`id`, `module_id`, `sub_module_name`, `status`, `sub_
 ALTER TABLE `users` ADD `status` ENUM('active','inactive') NOT NULL DEFAULT 'active' AFTER `company_size`;
 
 ALTER TABLE `users` ADD `username` VARCHAR(255) NULL AFTER `email`;
+
+
+INSERT INTO `modules` (`id`, `modules_name`, `sequence_no`, `status`, `created_at`, `updated_at`) VALUES (NULL, 'User Management', '1', 'active', '2019-04-08 10:54:13', '0000-00-00 00:00:00');
+
+INSERT INTO `sub_modules` (`id`, `module_id`, `sub_module_name`, `status`, `sub_module_routes`, `icons`, `created_at`, `updated_at`) VALUES (NULL, '19', 'Manage User', 'active', '/manage_users', '', '2019-06-14 21:47:35', '0000-00-00 00:00:00');
