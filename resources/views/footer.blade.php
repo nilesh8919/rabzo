@@ -16,84 +16,102 @@
     </div>
     <div class="footer-inner">
       <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-xs-12 col-lg-8 col-md-8">
-            <div class="footer-column pull-left">
-              <h4>My Account</h4>
+        <div class="row" style="padding-top: 40px;">
+          <div class="col-sm-12 col-xs-12 col-lg-7 col-md-7" style="padding-right: 0px;">
+            <div class="footer-column pull-left company_links_div">
+              <h4 style="color: #fff;">Company Links</h4>
               <ul class="links">
-                <li class="first"><a title="Login" href="#">Login</a> </li>
                 <li><a title="About us" href="#">About us</a> </li>
-                <li><a title="Wishlist" href="#">Wishlist</a> </li>
-                <li><a title="Checkout" href="#">Checkout</a> </li>
-                <li><a title="FAQs" href="#">FAQs</a> </li>
-                <li class="last"><a title="Contact Us" href="#">Contact Us</a> </li>
+                <li><a title="Team" href="#">Team</a> </li>
+                <li><a title="Blog" href="#">Blog</a> </li>
+                <li><a title="Career" href="#">Career</a> </li>
               </ul>
             </div>
-            <div class="footer-column pull-left">
-              <h4>Style Advisor</h4>
+            <div class="footer-column pull-left contact_links_div">
+              <h4 style="color: #fff;">Contact Us</h4>
               <ul class="links">
-                <li class="first"><a title="Your Account" href="#">Your Account</a> </li>
-                <li><a title="Information" href="#">Information</a> </li>
-                <li><a title="Addresses" href="#">Addresses</a> </li>
-                <li><a title="Addresses" href="#">Discount</a> </li>
-                <li><a title="Orders History" href="#">Orders History</a> </li>
-                <li class="last"><a title=" Additional Information" href="#">Additional Information</a> </li>
-              </ul>
-            </div>
-            <div class="footer-column pull-left">
-              <h4>Information</h4>
-              <ul class="links">
-                <li class="first"><a href="#" title="Site Map">Site Map</a> </li>
-                <li><a href="#" title="Search Terms">Search Terms</a> </li>
-                <li><a href="#" title="Advanced Search">Advanced Search</a> </li>
-                <li><a href="#" title="Contact Us">Privacy Policy</a> </li>
+                <li class="first"><a title="Your Account" href="#">Help & Support</a> </li>
                 <li><a href="{{ url('partners_with_us') }}" title="Suppliers">Partners with us</a> </li>
-                <li class=" last"><a href="#" title="Our stores" class="link-rss">Our stores</a> </li>
+              </ul>
+            </div>
+            <div class="footer-column pull-left legal_links_div">
+              <h4 style="color: #fff;">Legal</h4>
+              <ul class="links">
+                <li class="first"><a href="#" title="Site Map">Terms & Conditions</a> </li>
+                <li><a href="#" title="Search Terms">Refund & Cancellation</a> </li>
+                <li><a href="#" title="Advanced Search">Privacy Policy</a> </li>
+                <li><a href="#" title="Contact Us">Privacy Policy</a> </li>
               </ul>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-            <div class="footer-column-last">
+          <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" style="padding: 0px;">
+            <div class="col-lg-12 col-md-12" style="padding: 0px;">
+              <div class="col-lg-6 col-md-6" style="padding: 0px;">
+                <div class="social">
+                  <h4 style="color: #fff;">Follow Us</h4>
+                  <ul class="link">
+                      <li class="fb pull-left"> <a href="#"></a> </li>
+                      <li class="instagram pull-left"> <a href="#"></a> </li>
+                      
+                      <li class="linkedin pull-left"> <a href="#"></a> </li>
+                    </ul>
+                  </div>
+                  <div style="margin-top: 20px;">
+                    <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-1.png" alt="payment1"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-2.png" alt="payment2"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-3.png" alt="payment3"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-4.png" alt="payment4"> 
+                  </div>
+              </div>
+              <div class="col-lg-6 col-md-6">
+                <h4>Follow Us</h4>
+                <div class="android_app" style="position: relative;">
+                  <img src="uploads/android-app.png" style="width: 160px;">
+                </div>
+              </div>
+            </div>
+            <!-- <div class="footer-column-last">
               
               <div class="social">
                 <h4>Follow Us</h4>
-                <ul class="link">
-                  <li class="fb pull-left"> <a href="#"></a> </li>
-                  <li class="tw pull-left"> <a href="#"></a> </li>
-                  <li class="googleplus pull-left"> <a href="#"></a> </li>
-                  <li class="rss pull-left"> <a href="#"></a> </li>
-                  <li class="pintrest pull-left"> <a href="#"></a> </li>
-                  <li class="linkedin pull-left"> <a href="#"></a> </li>
-                  <li class="youtube pull-left"> <a href="#"></a> </li>
-                </ul>
+                <div class="footer-column pull-left ">
+                  <h4>Legal</h4>
+                  <ul class="link">
+                    <li class="fb pull-left"> <a href="#"></a> </li>
+                    <li class="instagram pull-left"> <a href="#"></a> </li>
+                    
+                    <li class="linkedin pull-left"> <a href="#"></a> </li>
+                  </ul>
+                </div>
+                <div class="footer-column pull-left ">
+                  <h4>Legal</h4>
+                  <div>
+                    <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-1.png" alt="payment1"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-2.png" alt="payment2"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-3.png" alt="payment3"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-4.png" alt="payment4"> 
+                  </div>
+                </div>
               </div>
-              <div class="payment-accept">
-<h4>Payment Option</h4>
-                <div><img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-1.png" alt="payment1"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-2.png" alt="payment2"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-3.png" alt="payment3"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-4.png" alt="payment4"> </div>
+              <div class="android_app" style="position: relative;top: 11px;">
+                <img src="uploads/android-app.png" style="width: 160px;">
               </div>
-            </div>
-          </div>
+              
+            </div> -->
+          <!-- </div> -->
         </div>
       </div>
     </div>
-    <div class="footer-middle">
+    <!-- <div class="footer-middle">
       <div class="container">
         <div class="row">
           <div style="text-align:center"> 
-            <!-- <a href="#">
-              <img src="http://htmldemo.themessoft.com/freshia/version1/images/footer-logo.png" alt="logo"> 
-            </a> -->
+           
            </div>
           <address>
           <i class="fa fa-map-marker"></i> ABC Town Luton Street, New York 226688 <i class="fa fa-mobile"></i><span> +0800 567 345</span> <i class="fa fa-envelope"></i><span> support@themessoft.com</span>
           </address>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="footer-bottom">
       <div class="container">
         <div class="row">
-          <div class="col-sm-5 col-xs-12 coppyright">&copy; 2018 themessoft. All Rights Reserved.</div>
+          <div class="col-sm-5 col-xs-12 coppyright">&copy; 2019 Rabzo. All Rights Reserved.</div>
           <!-- <div class="col-sm-7 col-xs-12 company-links">
             <ul class="links">
               <li><a href="#" title="Magento Themes">Magento Themes</a> </li>

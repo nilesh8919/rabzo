@@ -148,7 +148,7 @@
                   <img src="uploads/{{$row->images}} " class="index_product_slider_img">
                   <span class="index_slider_rating_span">4.5</span>
                   <div class="index_product_slider_details">
-                    <h4><?php echo $row->restaurant_name; ?></h4>
+                    <h4 style="font-weight: 600;"><?php echo $row->restaurant_name; ?></h4>
                     <p><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
                     <p class="distance_class">Distance - 30 Min</p>
                     <p class="cost_class">Cost for two - 250</p>
@@ -163,7 +163,7 @@
                   <img src="uploads/{{$row->images}} " class="index_product_slider_img">
                   <span class="index_slider_rating_span">4.5</span>
                   <div class="index_product_slider_details">
-                     <h4><?php echo $row->restaurant_name; ?></h4>
+                     <h4 style="font-weight: 600;"><?php echo $row->restaurant_name; ?></h4>
                     <p><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
                     <p class="distance_class">Distance - 30 Min</p>
                     <p class="cost_class">Cost for two - 250</p>

@@ -6930,7 +6930,7 @@ footer a {
 footer .footer-inner {
 	margin: auto;
 	overflow: hidden;
-	margin-bottom: 30px;
+	/*margin-bottom: 30px;*/
 	font-family: 'Rubik', sans-serif;
 }
 footer .footer-inner h3 {
@@ -7421,8 +7421,8 @@ address {
 	font-size: 14px;
 	margin: auto;
 	overflow: hidden;
-	margin-bottom: 20px;
-	padding-top: 42px;
+	margin-bottom: 0px;
+	padding-top: 2px;
 }
 
 .payment-accept h4 {
@@ -12224,7 +12224,7 @@ nav .container {
 
 
 /*==========mystyle============*/
-.search_input_banner1{width: 60%;float: left;height: 56px;border-top-left-radius: 46px;border-bottom-left-radius: 46px;border: none;padding: 6px 12px 6px 35px;}
+.search_input_banner1{width: 60%;float: left;height: 56px;border-top-left-radius: 46px;border-bottom-left-radius: 46px;border: none;padding: 6px 12px 6px 26px;}
 .search_input_banner2{width: 60%;float: left;height: 56px;border: none;padding: 6px 12px 6px 35px;}
 .search_find_button{padding: 17px 40px;border: none;border-top-right-radius: 46px;border-bottom-right-radius: 46px;font-size: 16px;position: relative;}
 .form-control:focus{border-color: none!important; outline: 0; -webkit-box-shadow: none!important;box-shadow: none!important;}
@@ -12252,3 +12252,15 @@ nav .container {
 .restaurant_button:hover{background: orange;}
 
 .restaurant_button:hover span:after {opacity: 1;right: 0;}
+
+/*======search input css======*/
+.easy-autocomplete-container ul{background: #fff;border-top-left-radius: 36px;border-bottom-left-radius: 22px;padding: 26px 0px 20px 0px;list-style-type: none;border-bottom-right-radius: 22px;}
+.easy-autocomplete-container ul li{border-top: 1px solid;position: relative;padding: 10px 26px;clear: both;}
+
+/*======footer css========*/
+.company_links_div{width: 30%;}
+.contact_links_div{}
+.legal_links_div{margin-right: 0px;}
+.social .instagram a {content: "\f16d";font-family: FontAwesome;font-size: 18px;display: inline-block!important;
+    text-align: center;padding: 0;}
+.checkout-step:first-child{margin-top: 0px!important;}

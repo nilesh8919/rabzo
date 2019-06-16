@@ -29,7 +29,7 @@
     .header {margin: 0;padding: 0.3em 1em 0.3em;border-top: dashed 1px #fafafa;border-bottom: dashed 1px #fafafa;
       color: #fafafa;font-size: 1.6em;vertical-align: middle;}
     .header::before {content: "";position: absolute;top: 100%;left: 0;border-bottom: solid 15px transparent;border-right: solid 20px #c2185b;}
-    .cuisine_ul{padding: 0;}
+    .cuisine_ul{padding: 0;margin: 0px;}
     .cuisine_ul li{list-style-type: none;padding: 6px 11px;border: 1px solid #d8d6d670;background: #cccccc42;}
     .cuisine_ul li a{color: #000;}
   </style>
@@ -108,29 +108,31 @@
            <!-- <div class="col-lg-9 col-md-9" style="padding: 0px;" id="contents">
           </div>  -->
 
-          <div class="col-lg-3 col-md-3" style="background: #fff;padding: 0;">
+          <div class="col-lg-3 col-md-3" style="padding: 0;">
             <div class="col-lg-12 col-md-12" style="padding: 0px;">
               <h4 style="background: #3a126c;color:#fff;margin: 0;padding: 14px;font-size: 20px;font-weight: 600;">Featured Restaurant</h4>
-		 
-		  @foreach($results['featured'] as $row)
-              <div class="col-lg-6 col-md-6" style="margin-top:15px;">
+		        </div>
+            <div class="col-lg-12 col-md-12" style="padding:15px 0px 0px 0px;background: #fff;">
+		          @foreach($results['featured'] as $row)
+              <div class="col-lg-6 col-md-6" style="">
                 <img src="{{ asset('uploads/').'/'.$row->images }}" style="width: 100%;border-radius: 4px;margin-bottom: 10px;height: 84px;" />
-                <p>{{$row->restaurant_name}}</p>
+                <p style="font-weight: 600;margin: 0px;">{{$row->restaurant_name}}</p>
+                <p>Dhrampeth, Nagpur</p>
               </div>
-		  @endforeach
+		          @endforeach
             
             </div>
-            <div class="col-lg-12 col-md-12" style="padding: 0px;">
-              <h4 style="padding-left: 14px;font-size: 20px;font-weight: 600;">Near by Restaurant</h4>
-              <div class="col-lg-6 col-md-6" style="margin-top:15px;">
+            <div class="col-lg-12 col-md-12" style="padding: 0px;margin-top: 15px;">
+              <h4 style="background: #3a126c;color:#fff;margin: 0;padding: 14px;font-size: 20px;font-weight: 600;">Near by Restaurant</h4>
+            </div>
+            <div class="col-lg-12 col-md-12" style="padding:15px 0px 0px 0px;background: #fff;">
+              <div class="col-lg-6 col-md-6" style="">
                 <img src="images/food1.jpg" style="width: 100%;border-radius: 4px;margin-bottom: 10px;height: 84px;">
-                <p>Ethyl
-                Enjoy Live Sports Screening With Special Offers !</p>
+                <p>Enjoy Live Sports Screening With Special Offers !</p>
               </div>
-              <div class="col-lg-6 col-md-6" style="margin-top:15px;">
+              <div class="col-lg-6 col-md-6" style="">
                 <img src="images/food1.jpg" style="width: 100%;border-radius: 4px;margin-bottom: 10px;height: 84px;">
-                <p>Ethyl
-                Enjoy Live Sports Screening With Special Offers !</p>
+                <p>Enjoy Live Sports Screening With Special Offers !</p>
               </div>
             </div>
           </div>
