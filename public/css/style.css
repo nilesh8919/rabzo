@@ -1029,7 +1029,7 @@ nav {
     background: #fbeb20;
     border-bottom: none;
     letter-spacing: 0.5px;
-    border-bottom: 4px #887e06 solid;
+    /*border-bottom: 4px #887e06 solid;*/
 }
 .nav-inner .mini-cart {
 	
@@ -1148,7 +1148,7 @@ nav {
 }
 #nav > li > a {
 	display: block;
-	padding:30px 0px 23px 0px;
+	padding:20px 0px 14px 0px;
 }
 #nav > li > a > span {
 	display: inline-block;
@@ -1364,7 +1364,7 @@ ul.vertnav-top li > a > span > .cat-label {
 }
 /* horizontal + mobile menu trigger */
 #nav > li > a {
-	font-size: 14px;
+	font-size: 13px;
 	font-weight: 500;
 	position: relative;
 	letter-spacing: 1px;
