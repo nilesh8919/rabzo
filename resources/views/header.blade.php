@@ -100,7 +100,7 @@
 		<style type="text/css">
 			/*=======login and sigup toggle css start=======*/
     .login-page {width: 360px;margin: auto;}
-    .form {position: relative;z-index: 1;background: #FFFFFF;max-width: 360px;padding: 45px;text-align: center;}
+    .form {position: relative;z-index: 1;background: #FFFFFF;max-width: 360px;padding: 0px;text-align: center;}
     .form input {font-family: "Roboto", sans-serif;outline: 0;background: #f2f2f2;width: 100%;border: 0;margin: 0 0 15px;
       padding: 15px;box-sizing: border-box;font-size: 14px;}
     .form button {font-family: "Roboto", sans-serif;text-transform: uppercase;outline: 0; background: #4CAF50;width: 100%;border: 0;padding: 15px;color: #FFFFFF;font-size: 14px;-webkit-transition: all 0.3 ease;transition: all 0.3 ease;
@@ -129,33 +129,34 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" style="background: #d22121;">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <!-- <h4 class="modal-title">Modal Header</h4> -->
       </div>
       <div class="modal-body">
         <!--login signup code start-->
           <div class="login-page">
             <div class="form">
+              <img src="uploads/rabzo_circle_logo.png" style="width: 60px;">
               <form class="register-form" id="main_register_form" method="post">
-                <input type="text" placeholder="name" name="name" required />
-                <input type="text" placeholder="email address" name="email_address" required />
-                <input type="password" placeholder="password" name="password" required />
+                <input type="text" placeholder="Namme" name="name" required />
+                <input type="text" placeholder="info@gmail.com" name="email_address" required />
+                <input type="password" placeholder="Password" name="password" required />
                 <button type="submit">create</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
+                <p class="message">Already registered? <a href="#" style="color: #d22121;">Sign In</a></p>
               </form>
               <form class="login-form" id="main_login_form" method="post">
-                <input type="text" placeholder="email" name="email_address" required />
-                <input type="password" placeholder="password" name="password" required />
+                <input type="text" placeholder="info@gmail.com" name="email_address" required />
+                <input type="password" placeholder="Password" name="password" required />
                 <button type="submit">login</button>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
+                <p class="message">Not registered? <a href="#" style="color: #d22121;">Create an account</a></p>
               </form>
             </div>
           </div>
           <!--login sign up code end-->
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal" style="background: #d22121;color: #fff;border: none;">Close</button>
       </div>
     </div>
 
