@@ -17,7 +17,7 @@
     .checkout-page .checkout-header .secure {position: absolute;display: inline-block;right: 0;top: 10px;}
     .checkout-page .checkout-header .secure img {width: 45px;}
 
-    .checkout-step {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin-bottom: 10px;background: #eee;border-top: 1px solid #ddd;border-bottom: 1px solid #aaa;padding: 10px;-moz-transition: background 0.3s ease-out;-o-transition: background 0.3s ease-out;-webkit-transition: background 0.3s ease-out;transition: background 0.3s ease-out;opacity: .5;border-left: 1px solid transparent;border-right: 1px solid transparent;}
+    .checkout-step {-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;margin-bottom: 10px;/*background: #eee;border-top: 1px solid #ddd;border-bottom: 1px solid #aaa;*/padding: 10px;-moz-transition: background 0.3s ease-out;-o-transition: background 0.3s ease-out;-webkit-transition: background 0.3s ease-out;transition: background 0.3s ease-out;opacity: .5;border-left: 1px solid transparent;border-right: 1px solid transparent;}
     .checkout-step:first-child {margin-top: 10px;}
     .checkout-step h3 {margin: 0;}
     .checkout-step section {height: 0;overflow: hidden;position: relative;}
@@ -27,11 +27,11 @@
     .checkout-step section .cart .item {padding-left: 5px;font-weight: bold;font-size: .9em;}
     .checkout-step section .cart .price {display: inline-block;float: right;bottom: 10px;position: absolute;right: 0;font-size: .9em;font-weight: bold;}
     .checkout-step section .cart img {border: 1px solid black;width: 150px;}
-    .checkout-step section .total {height: 50px;width: 100%;}
+    .checkout-step section .total {/*height: 50px;*/width: 100%;}
     .checkout-step.active {opacity: 1;cursor: default;background: #fff;}
   
-    .checkout-step.active h3 {border-bottom: 1px solid #aaa;padding-bottom: 5px;}
-    .checkout-step.active section {min-height: 100px;height: auto;}
+    .checkout-step.active h3 {border-bottom: 1px solid #cccccc52;padding-bottom: 5px;}
+    .checkout-step.active section {min-height: 100px;height: auto;margin-top: 20px;}
 
     .stepNum {color: white;background: #333;padding: 5px 9px;border-radius: 50%;font-size: .6em;top: -2px;left: -3px;position: relative;display: inline-block;}
     .clear{clear: both;}
@@ -102,8 +102,8 @@
                 </h2>    
               </div> -->
               <div class="checkout-step active" id="id1">
-                <h3>
-                  <span class="stepNum">1</span>
+                <h3 style="font-size: 18px;padding: 10px 0px;">
+                  <!-- <span class="stepNum">1</span> -->
                     My Accounts
                 </h3>
                 <section>
@@ -121,32 +121,48 @@
                       </div>
                     </div>
                     <div class="total"></div>
-                    <button class="nextStep">Continue →</button>
+                    <!-- <button class="nextStep">Continue →</button> -->
                 </section>
               </div>
               <div class="checkout-step" id="id2">  
-                <h3>
-                    <span class="stepNum">2</span>
+                <h3 style="font-size: 18px;padding: 10px 0px;">
+                    <!-- <span class="stepNum">2</span> -->
                     Delivery Address
                 </h3>
                 <section>
-                    <div class="col-lg-5 col-md-5" style="border: 1px solid #ccc;padding: 30px 30px;">
-                      <p style="line-height: 22px;" id="div_address">
-					  <?php if(isset($deliveryAddress)){
-						  echo $deliveryAddress['street'].', '.$deliveryAddress['city'].', '.$deliveryAddress['zipcode'];
-					  }?>
+                  <div class="col-lg-12 col-md-12">
+                    <div class="col-lg-6 col-md-6" style="border: 1px solid #ccc;padding: 15px 20px;height: 100px;">
+                      <p style="line-height: 22px;font-size: 15px;" id="div_address">
+          					  <?php if(isset($deliveryAddress)){
+          						  echo $deliveryAddress['street'].', '.$deliveryAddress['city'].', '.$deliveryAddress['zipcode'];
+          					  }?>
 					  
-					  </p>
+					           </p>
+
                     </div>
-                    <div class="col-lg-5 col-md-5" style="padding: 68px;padding-top: 10px;">
-                      <button style="font-size: 15px;width: 220px;padding: 12px;border: none;box-shadow: none" data-toggle="modal" data-target="#addnewaddressModel">Add New Address</button>
+                    ,
+                    <div class="col-lg-6 col-md-6" style="padding: 68px;padding-top: 0px;">
+                      <button style="font-size: 15px;width: 220px;padding: 12px;border: none;bottom: 20px;    background: transparent;color: #000;border: 1px solid #ccc;box-shadow: none" data-toggle="modal" data-target="#addnewaddressModel">Add New Address</button>
                     </div>
-                    <button class="nextStep" id="nextStep1" >Next</button>
+                    <div class="col-lg-12 col-md-12">
+                      <div class="col-lg-10 col-md-10" style="margin-top: 16px;">
+                        <input type="radio" name=""><span style="margin-left: 10px;top: -2px;position: relative;">Home</span>
+                        <input type="radio" name="" style="margin-left: 10px;"><span style="margin-left: 10px;top: -2px;position: relative;">Work</span>
+                        <input type="radio" name="" style="margin-left: 10px;"><span style="margin-left: 10px;top: -2px;position: relative;">Other</span>
+                      </div>
+                      <div class="col-lg-2 col-md-2" style="margin-top: 30px;">
+                        <button class="nextStep" id="nextStep1" style="border: none;background: green;padding: 10px 15px;float: right;">Next</button>
+                      </div>
+                      
+                    </div>
+                    
+                  </div>
+                    
                 </section>
               </div>
             <div class="checkout-step" id="id3">   
-                <h3>
-                    <span class="stepNum">3</span>
+                <h3 style="font-size: 18px;padding: 10px 0px;">
+                    <!-- <span class="stepNum">3</span> -->
                     Payment Method
                 </h3>
                 <section>
@@ -246,19 +262,19 @@
             <div class="form">
             
                 <form class="register-form1" id="register-form" method="post">
-                <input type="text" placeholder="name" name="name" required />
-				 <input type="text" placeholder="email address" name="email_address" required />
-                <input type="password" placeholder="password" name="password" required />
+                <input type="text" placeholder="Name" name="name" required />
+				 <input type="text" placeholder="info@gmail.com" name="email_address" required />
+                <input type="password" placeholder="Password" name="password" required />
                
                 <button type="submit" id="signup1" onClick="signup1()">create</button>
-                <p class="message">Already registered? <a href="#">Sign In</a></p>
+                <p class="message">Already registered? <a href="#" style="color: #d22121;">Sign In</a></p>
               </form>
             </div>
           </div>
           <!--login sign up code end-->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" style="background: #d22121;color: #fff;border: none;">Close</button>
         </div>
       
       </div>
@@ -274,17 +290,17 @@
             <div class="form">
             
               <form class="login-form" id="login-form" method="post">
-                <input type="text" placeholder="email address" name="email_address" />
-                <input type="password" placeholder="password" name="password" />
+                <input type="text" placeholder="info@gmail.com" name="email_address" />
+                <input type="password" placeholder="Password" name="password" />
                 <button type="submit" id="">login</button>
-                <p class="message">Not registered? <a href="#">Create an account</a></p>
+                <p class="message">Not registered? <a href="#" style="color: #d22121;">Create an account</a></p>
               </form>
             </div>
           </div>
           <!--login sign up code end-->
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" style="background: #d22121;color: #fff;border: none;">Close</button>
         </div>
       
       </div>
@@ -292,23 +308,29 @@
   </div>	
   
     <div class="modal fade" role="dialog" id="addnewaddressModel">
-    <div class="modal-dialog" style="width: 380px;">
+    <div class="modal-dialog" style="width: 700px;">
       <div class="modal-content">
         <div class="modal-body">
           <!--login signup code start-->
           <div class="col-lg-12 col-md-12">
             
              <form id="frm_address" method="post">
-              <input type="text" class="form-control" placeholder="Location" name="location_name"><i class="fa fa-crosshairs" aria-hidden="true" style="position: absolute;float: right;right: 28px;top: 6px;font-size: 19px;"></i>
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238129.60363191523!2d78.93242195217401!3d21.161348396232462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1559929983223!5m2!1sen!2sin" class="delivery_address_map" frameborder="0" style="border:0" allowfullscreen></iframe>
+              <div class="col-lg-6 col-md-6">
+                <input type="text" class="form-control" placeholder="Location" name="location_name"><i class="fa fa-crosshairs" aria-hidden="true" style="position: absolute;float: right;right: 28px;top: 6px;font-size: 19px;"></i>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d238129.60363191523!2d78.93242195217401!3d21.161348396232462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bd4c0a5a31faf13%3A0x19b37d06d0bb3e2b!2sNagpur%2C+Maharashtra!5e0!3m2!1sen!2sin!4v1559929983223!5m2!1sen!2sin" class="delivery_address_map" frameborder="0" style="border:0" allowfullscreen></iframe>
+              </div>
+
       
-	 
-			  <h4>Other Address</h4>			 
-			 Address: 
-              <input type="text" class="form-control" placeholder="Address" name="street" style="margin-top: 0px;">
-             City: <input type="text" class="form-control" placeholder="City" name="city" style="margin-top: 0px;">
-             Zipcode: <input type="text" class="form-control" placeholder="Zipcode" name="zipcode" style="margin-top: 0px;">
+	           <div class="col-lg-6 col-md-6">
+			         <h4>Other Address</h4>			 
+			         <label>Address:</label> 
+              <input type="text" class="form-control" placeholder="Address" name="street" style="margin-top: 10px;">
+             <label style="margin-top: 10px;">City:</label> 
+             <input type="text" class="form-control" placeholder="City" name="city" style="margin-top: 5px;">
+            <label style="margin-top: 10px;"> Zipcode:</label>
+             <input type="text" class="form-control" placeholder="Zipcode" name="zipcode" style="margin-top: 5px;">
               <input type="submit" class="btn btn-success" value="Submit" style="margin-top: 20px;">
+            </div>
        </form>    
             
           </div>
