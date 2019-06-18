@@ -87,7 +87,7 @@ input[type=radio]
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Restaurant Slug</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="restaurant_slug"  value="{{$merchant_data->restaurant_slug}}" required>
+                                                        <input type="text" class="form-control" name="restaurant_slug"  value="{{$merchant_data->restaurant_slug}}" >
                                                     </div>
                                                 </div>
                                                 <div class="form-group">

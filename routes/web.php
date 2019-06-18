@@ -135,7 +135,21 @@ Route::group(['middleware' => 'auth'], function(){
 			Route::get('get_database_backup','Admin\BackupController@get_database_backup');
 			Route::get('manage_users','Admin\UserManagementController@index');
 			Route::get('manage_areas','Admin\LocationController@index');
+			Route::post('add_area_in_km','Admin\LocationController@add_area_in_km');
 			
+			//offers
+			Route::get('manage_offers_master','Admin\ManageOffersController@index');
+			Route::get('add_offers_master','Admin\ManageOffersController@add_offers_master');
+		Route::post('create_offers_master','Admin\ManageOffersController@create');
+		Route::get('delete_offers_master','Admin\ManageOffersController@delete_offers');
+		
+		 Route::get('manage_voucher_master','Admin\ManageVoucherController@manage_voucher');
+		 Route::get('add_voucher_master','Admin\ManageVoucherController@add_voucher_master');
+		Route::post('store_voucher_master','Admin\ManageVoucherController@store_voucher');
+		Route::get('store_voucher_succeess','Admin\ManageVoucherController@store_voucher_succeess');
+		Route::get('get_voucher_master_data_by_id','Admin\ManageVoucherController@get_voucher_data_by_id');
+		Route::get('delete_voucher_master','Admin\ManageVoucherController@delete_voucher');
+		Route::get('delete_voucher_master_succeess','Admin\ManageVoucherController@delete_voucher_succeess');
 		
 			//Merchant routes
 	

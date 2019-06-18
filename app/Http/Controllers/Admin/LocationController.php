@@ -35,17 +35,12 @@ class LocationController extends Controller
 				
                  ]);
       }
-	  public function add_email_settings(Request $request)
+	  public function add_area_in_km(Request $request)
 	  {
+		  Cities :: where('city_id',$request->id)->update([
+		    "area_in_km" =>$request->area_in_km
+		  ]);
 		  
-		  if(isset($request->send_email_id))
-		  {
-			 AppHelper :: add_keys_values('send_email_id',$request->owner_email_id);
-		  }
-		  if(isset($request->owner_email_id))
-		  {
-			   AppHelper :: add_keys_values('owner_email_id',$request->owner_email_id);
-		  }
 		  
 		   $res =array('flag'=>true,'msg'=>'Data updated successfully');
 		    Session::flash('flash_message', $res['msg']);

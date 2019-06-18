@@ -70,7 +70,7 @@ error_reporting(0);
 		$review[$key]->images =$d1->images;
 		$review[$key]->cost_for_two =$d2->merchant_value;
 		if($r_data->rating > 0){
-		$review[$key]->avg_rating =$r_data->rating / $r_data->cnt; }
+		$review[$key]->avg_rating =round($r_data->rating / $r_data->cnt,1); }
 		
 	}
 	//	print_r($review);exit;

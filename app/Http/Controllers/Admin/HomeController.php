@@ -30,7 +30,8 @@ class HomeController extends Controller
     public function index()
     {
 		 // $this->modules = $this->get_modules();
-		// print_r($this->modules);exit;
+		// print_r(Auth::user()->type);exit;
+		///echo Auth::type();exit;
 		
         return view('admin/home');
     }

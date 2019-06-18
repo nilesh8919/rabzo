@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Cities extends ApiModel
+class Item extends ApiModel
 {
-    public $table = 'mt_location_cities';
+    public $table = 'mt_item';
     public $timestamps = false;
 
    
