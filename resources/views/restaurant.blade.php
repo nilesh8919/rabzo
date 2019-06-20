@@ -204,7 +204,13 @@ function getMerchant($id='')
 				  if(val.offer > 0){
 				 div1 +='<div class="ribbon"> <h2 class="header">Save '+val.offer+' %</h2> </div>';
 				  }
-				 div1 +='</div> <img src="uploads/'+val.images+'" class="image" style="height: 160px;width: 100%;"> <span class="details_offer_span">50% OFF</span><span class ="details_star_span">4.5</span><a href="{{url('restaurant_details')}}/'+val.restaurant_name+'?location='+location+'&category='+category+'"><div style="background:#fff;padding: 0px 10px 10px 9px;"><h3 class="restaurant_details_div_title" style="top: 0px;color: #000;">'+val.restaurant_name+'</h3><p style="color: #000;">'+val.address+'</p><p style="color: #000;">Distance - 30 Min</p></div></a> </div> </div> </div>';
+				  if(val.offers){
+				  var offfer_per ='<span class="details_offer_span">'+val.offers.offer_percentage+'% OFF</span>';
+				  }
+				  else{
+					  var offfer_per ='';
+				  }
+				 div1 +='</div> <img src="uploads/'+val.images+'" class="image" style="height: 160px;width: 100%;"> '+offfer_per+'<span class ="details_star_span">'+val.avg_rating+'</span><a href="{{url('restaurant_details')}}/'+val.restaurant_name+'?location='+location+'&category='+category+'"><div style="background:#fff;padding: 0px 10px 10px 9px;"><h3 class="restaurant_details_div_title" style="top: 0px;color: #000;">'+val.restaurant_name+'</h3><p style="color: #000;">'+val.address+'</p><p style="color: #000;">Distance - 30 Min</p></div></a> </div> </div> </div>';
 				  });
 				  //alert(div1)
 				   $("#contents").html(div1);

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+error_reporting(0);
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -35,7 +35,7 @@ class CheckoutController extends Controller
      }
     public function index(Request $request)
 	{
-error_reporting(0);
+
             
      $user_data = Session::get('users');
 	 $cart_data =Session::get('cart');

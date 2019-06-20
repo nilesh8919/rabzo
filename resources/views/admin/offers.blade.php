@@ -68,12 +68,14 @@
                     <thead>
                     <tr>
                         <th> Sr.No</th>
+                                  <th>Merchant Name</th>
                                   <th>Offer Percentage</th>
                                   <th>Order Over</th>
                                   <th>Valid From </th>
                                   <th>Valid To</th>
-                                  <th>Applicable</th>
+                                 
                                   <th>Date Created</th>
+                                  <th>Status</th>
                                   <th>Action </th>
                                
                              
@@ -84,6 +86,7 @@
                             @foreach($results as $row)
                                  <tr>
                                   <td><?php echo $i; ?></td>
+                                  <td> {{ $row->restaurant_name}}</td>
                                   <td> {{ $row->offer_percentage}}</td>
                                   <td> {{ $row->offer_price}}</td>
                                   <td> {{ $row->valid_from}}</td>

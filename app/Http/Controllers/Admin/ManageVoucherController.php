@@ -37,7 +37,7 @@ class ManageVoucherController extends Controller
 				$data =DB::table('mt_voucher_new')->orderby('id','desc')
 				->join('mt_merchant','mt_merchant.id','=','mt_voucher_new.merchant_id')
 				->select('mt_voucher_new.*','mt_merchant.restaurant_name')
-				->where('mt_voucher_new.merchant_id',Auth::id())
+			//	->where('mt_voucher_new.merchant_id',Auth::id())
 				->get();
 			//	print_r($m_data);exit;
                   return view('admin.voucher',[

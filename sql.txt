@@ -35,3 +35,5 @@ ALTER TABLE `mt_location_cities` ADD `area_in_km` INT NULL AFTER `state_id`;
 
 
 INSERT INTO `modules` (`id`, `modules_name`, `sequence_no`, `status`, `created_at`, `updated_at`) VALUES (NULL, 'Manage City', '1', 'active', '2019-04-08 10:54:13', '0000-00-00 00:00:00');
+
+INSERT INTO `sub_modules` (`id`, `module_id`, `sub_module_name`, `status`, `sub_module_routes`, `icons`, `created_at`, `updated_at`) VALUES (NULL, '20', 'Manage Area', 'active', '/manage_areas', '', '2019-06-14 21:47:35', '0000-00-00 00:00:00');

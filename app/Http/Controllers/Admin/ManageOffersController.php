@@ -25,7 +25,7 @@ class ManageOffersController extends Controller
 	   
 	   $data =Offer :: join('mt_merchant','mt_merchant.id','=','mt_offers.merchant_id')
 				->select('mt_offers.*','mt_merchant.restaurant_name')
-				->where('mt_offers.merchant_id',Auth::id())
+				//->where('mt_offers.merchant_id',Auth::id())
 				->orderby('id','desc')
 				->get();
 			//	print_r($m_data);exit;

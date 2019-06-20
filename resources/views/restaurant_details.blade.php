@@ -59,12 +59,18 @@
 				            <p style="color: #fff;font-size: 15px;">{{$results['merchant']->city}}</p>
 				            <p style="color: #fff;font-size: 14px;">{{$results['merchant']->address}}</p>
 				            <div style="">
+							<?php 
+							list($whole, $decimal) = explode('.', $results['avg_rating']);
+							for($i=1;$i<= $results['avg_rating'];$i++){ ?>
+				              <i class="fa fa-star" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
+							<?php } if($decimal > 0){ ?>
+							<i class="fa fa-star-half-o" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
+							<?php } ?>
+				             <!-- <i class="fa fa-star" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
 				              <i class="fa fa-star" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
 				              <i class="fa fa-star" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
-				              <i class="fa fa-star" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
-				              <i class="fa fa-star" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
-				              <i class="fa fa-star-half-o" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>
-				              <span style="color: #000;border-radius: 21%;margin-left: 15px;padding: 5px;background: #fbeb20;font-weight: 600;">4.1</span>
+				              <i class="fa fa-star-half-o" aria-hidden="true" style="color: #fff;font-size: 16px;"></i>-->
+				              <span style="color: #000;border-radius: 21%;margin-left: 15px;padding: 5px;background: #fbeb20;font-weight: 600;">{{$results['avg_rating']}}</span>
 				            </div>
 				          </div>
 				          <div class="col-lg-3 col-md-3">

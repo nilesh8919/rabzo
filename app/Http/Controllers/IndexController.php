@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+error_reporting(0);
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
@@ -60,7 +60,7 @@ error_reporting(0);
 		// print_r($data['review']);exit;
 		 $review =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
 		  ->select(DB::raw('SUM(rating) as rating'),'merchant_id',DB::raw('count(merchant_id) as cnt'),'mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city')
-		  ->where('mt_review.status','=','publish')
+		  ->where('mt_review.status','=','Publish')
 		 ->groupBy('mt_review.merchant_id')->orderBy('rating','desc')->limit('8')->get();
 	foreach($review as $key=>$r_data)
 	{
@@ -102,7 +102,7 @@ error_reporting(0);
 		    $data['category']  = Categories :: where('status','publish')->get();
 		    $data['cuisine']  = Cuisine :: get();
 			$data['featured']  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
-			->select('mt_merchant.*','mt_merchant_images.images')
+			->select('mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city','mt_merchant_images.images')
 			  ->where('is_featured','=','1')->where('status','active')
 		  ->groupBy('mt_merchant_images.merchant_id')->get();
 		 // print_r($data['featured']);exit;
@@ -120,7 +120,7 @@ error_reporting(0);
 			  if($offers->valid_from >= $current_date ){
                 			  $data['merchant'][$key]->offers =$offers;
 			  }else if($offers->valid_to <= $current_date){
-				  	  $data['merchant'][$key]['offers'] =$offers;
+				  	  $data['merchant'][$key]->offers =$offers;
 			  }
 		  }
 	//print_r($data['merchant']);exit;
@@ -142,6 +142,11 @@ error_reporting(0);
 			  ->select('mt_merchant.*','mt_merchant_images.images')->where('restaurant_name',$request->name)
 		 ->groupBy('mt_merchant_images.merchant_id')->first();
 	
+	 $review =Review :: select(DB::raw('SUM(rating) as rating'),DB::raw('count(merchant_id) as cnt'))
+		  ->where('mt_review.status','=','Publish')->groupBy('merchant_id')->first();
+		 if(isset($review)){
+		 $data['avg_rating'] =round($review->rating / $review->cnt,1); }
+		
               return view('restaurant_details',[
                 'results'=> $data,
 				
@@ -219,12 +224,13 @@ error_reporting(0);
 	public function get_merchant_data(Request $request)
 	{
 
-		  
-			 $qry  = Merchant :: join('mt_merchant_images','mt_merchant_images.merchant_id','=','mt_merchant.id')
+		   $qry =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
+			 
 			 ->leftjoin('mt_merchant_categories','mt_merchant_categories.merchant_id','=','mt_merchant.id')
 			 ->leftjoin('mt_category','mt_category.id','=','mt_merchant_categories.category_id')
 			 ->leftjoin('mt_merchant_cuisine','mt_merchant_cuisine.merchant_id','=','mt_merchant.id')
-			  ->select('mt_merchant.*','mt_merchant_images.images');
+			   ->select(DB::raw('SUM(rating) as rating'),'mt_review.merchant_id',DB::raw('count(mt_review.merchant_id) as cnt'),'mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city')
+			     ->where('mt_review.status','=','Publish');
 			  $qry->where('mt_merchant.status','active');
 			  if(!empty($request->location)){
 			     $qry->where('mt_merchant.city', 'LIKE', '%' . $request->location . '%');
@@ -241,10 +247,37 @@ error_reporting(0);
 					//print_r($request->food_categories);exit;
 				 $qry->whereIn('mt_merchant_cuisine.cuisine_id',$request->food_categories);
 			   }
-		 $qry->groupBy('mt_merchant_images.merchant_id');
+			   $qry->groupBy('mt_review.merchant_id')->orderBy('rating','desc');
+		// $qry->groupBy('mt_merchant_images.merchant_id');
 		 
 		 $data=$qry->get();
-		  
+		  foreach( $data as $key=>$value)
+		  {
+			  
+			  $d1 = DB :: table('mt_merchant_images')->where('merchant_id',$value->merchant_id)->first();
+	//	print_r($d1);exit;
+				$d2 = DB :: table('mt_merchant_meta')->where('merchant_id',$value->merchant_id)->select('mt_merchant_meta.merchant_value')->where('mt_merchant_meta.merchant_key','=','cost_for_two')->first();
+				if(isset($d1)){
+				$data[$key]->images =$d1->images;
+				}
+				$data[$key]->cost_for_two =$d2->merchant_value;
+				if($value->rating > 0){
+				$data[$key]->avg_rating =round($value->rating / $value->cnt,1); }
+					  
+			  
+			  $current_date = date('Y-m-d');
+			  $offers =Offer :: where('status','Publish')
+			  ->where('merchant_id','=',$value->merchant_id)
+			  ->first();
+			  
+			  if(isset($offers)){
+				  if($offers->valid_from >= $current_date ){
+								  $data[$key]->offers =$offers;
+				  }else if($offers->valid_to <= $current_date){
+						  $data[$key]->offers =$offers;
+				  }
+			  }
+		  }
 		return response()->json($data);
 	}
 	public function get_merchant_available_location(Request $request)

@@ -45,6 +45,7 @@
                     <thead>
                     <tr>
                         <th> Sr.No</th>
+                                  <th>Merchant Name</th>
                                   <th>Voucher Name</th>
                                   <th>Type </th>
                                   <th>Discount</th>
@@ -60,6 +61,7 @@
                             @foreach($results as $row)
                                  <tr>
                                   <td><?php echo $i; ?></td>
+                                  <td> {{ $row->restaurant_name}}</td>
                                   <td> {{ $row->voucher_name}}</td>
                                   <td> {{ $row->voucher_type}}</td>
                                   <td> {{ $row->amount}}</td>

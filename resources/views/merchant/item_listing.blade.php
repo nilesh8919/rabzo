@@ -47,8 +47,8 @@
                     <thead>
                     <tr>
                         <th> Sr.No</th>
-                                  <th>Itme Name</th>
-                                  <th>Itme Desc</th>
+                                  <th>Item Name</th>
+                                  <th>Item Desc</th>
                                   <th>Photo</th>
                                
                                   <th>Date Created</th>

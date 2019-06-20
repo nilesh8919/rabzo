@@ -1,3 +1,4 @@
+<?php error_reporting(0); ?>
 @include('styles')
 @include('header')
  <style type="text/css">

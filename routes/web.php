@@ -150,6 +150,8 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('get_voucher_master_data_by_id','Admin\ManageVoucherController@get_voucher_data_by_id');
 		Route::get('delete_voucher_master','Admin\ManageVoucherController@delete_voucher');
 		Route::get('delete_voucher_master_succeess','Admin\ManageVoucherController@delete_voucher_succeess');
+		Route::get('profiles','Admin\ProfileController@profiles');
+		Route::post('update_profile','Admin\ProfileController@update_profile');
 		
 			//Merchant routes
 	
