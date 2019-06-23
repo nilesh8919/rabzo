@@ -6782,6 +6782,7 @@ button.button.submit:before {
 /*  17.  Global Messages   */
 
 #toTop {
+	display: none;
 	color: #fff;
 	text-align: center;
 	bottom: 60px;
@@ -8895,7 +8896,7 @@ header {
 
 /*========== 1 to 4 pages ==========*/
 
-nav {background: #59B210; border-bottom: 4px #4fa10b solid; margin-top:10px}
+nav {background: #fbeb20;/* border-bottom: 4px #4fa10b solid;*/ margin-top:10px}
 nav .container {padding:0px}
 
 .header-phone {display:none}
@@ -9194,6 +9195,7 @@ ul#cart-sidebar {
 	width: 30px;
 	height: 30px;
 	line-height: 38px;
+	display: none!important;
 }
 .our-features-box ul {
 
@@ -12224,10 +12226,16 @@ nav .container {
 
 
 /*==========mystyle============*/
-.search_input_banner1{width: 60%;float: left;height: 56px;border-top-left-radius: 46px;border-bottom-left-radius: 46px;border: none;padding: 6px 12px 6px 26px;}
-.search_input_banner2{width: 60%;float: left;height: 56px;border: none;padding: 6px 12px 6px 35px;}
+.banner_search_input_button{position: absolute;z-index: 999;top: 260px;}
+.left_blank_div{margin-left: 27px;}
+.search_input_banner1{width:220px;border-right: 1px solid #ccc;float: left;height: 56px;border-top-left-radius: 46px;border-bottom-left-radius: 46px;border: none;padding: 6px 12px 6px 26px;}{position: absolute;font-size: 23px;top: 17px;z-index: 99;right: 10px;}
+.find_location_icon{position: absolute;font-size: 23px;top: 17px;z-index: 99;right: 10px;}
+.search_input_banner2{width:283px;border-radius: 0;float: left;height: 56px;border: none;padding: 6px 12px 6px 35px;}
+.index_search_icon{position: absolute;font-size: 23px;top: 17px;z-index: 99;right: 10px;}
 .search_find_button{padding: 17px 40px;border: none;border-top-right-radius: 46px;border-bottom-right-radius: 46px;font-size: 16px;position: relative;}
 .form-control:focus{border-color: none!important; outline: 0; -webkit-box-shadow: none!important;box-shadow: none!important;}
+.easy-autocomplete{position: absolute;}
+
 
 .restaurant_details_div{}
 .restaurant_details_div_title{text-align: left; font-size:12px;top: 0px;color: #000;padding-left: 5px;font-family: sans-serif;padding: 10px 0px; margin: 0;position: relative;}
@@ -12271,3 +12279,38 @@ nav .container {
 .details_offer_span{position: absolute;top: 16px;background: orange;color: #000;padding: 6px 15px;font-size: 14px;font-weight: 600;}
 
 .itemm_variation_p{margin: 180px auto;}
+
+@media(min-width: 320px) and (max-width: 479px)
+{
+	.banner_search_input_button{width: 88%;position: absolute;z-index: 999;top: 0;left: 47px;}
+	.search_input_banner1{width: 116px;border-right: 1px solid #ccc;height: 38px;padding: 6px 0px 6px 6px;
+    font-size: 13px;border-radius: 0;}
+	.search_input_banner2 {width: 159px;height: 38px;padding: 6px 4px 6px 8px;font-size: 13px;}
+	.index_search_icon {font-size: 16px!important;top: 11px;right: -14px;}
+	.find_location_icon {font-size: 18px!important;top: 11px;}
+	.easy-autocomplete{position: relative;}
+	.first_location_div{width: 34%;}
+	.center_restaurant_div{width: 45.333333%;}
+	.right_side_search_btn{width: 12%;margin-left: 22px;}
+	.search_find_button{border-radius: 0px;padding: 11px 17px;font-size: 12px;}
+	.search_main_div_banner{margin-left: -14px;margin-top: 5px;width: 100%;}
+	
+	.left_blank_div{display: none;}
+	.easy-autocomplete-container ul{padding: 17px 0px 20px 0px;}
+	.process_img{width: 100px;}
+	.bestsell-pro .block-title, .related-pro .block-title{padding: 0px;}
+	.bestsell-pro .block-title h2{top: 10px;position: relative;left: 16px;width: 193px;float: left;margin: 0;}
+	.index_viewall_btn{width: 369px!important;top: -14px!important;padding-left: 248px!important;display: inherit;position: relative;}
+	.slider_a_tag{width: 100%;}
+	/*.slick-initialized .slick-slide{width: 100%!important;}*/
+	.slick-next:before, .slick-prev:before {font-size: 40px!important;color: #0c0c0c!important;}
+	.slick-prev {left: 4px!important;z-index: 99;}
+	.slick-next {right: 14px!important;}
+	.slick-slide img {display: block;width: 100%!important;height: 250px!important;}
+	.restro_slider_div {width: 100%!important;margin: 0px!important;}
+	.portfolio_slider{margin: 0px!important;border: 0px!important;}
+	.slick_slider_restro_tittle{font-size: 22px;text-align: left;padding-left: 15px;}{}
+	.slick_slider_restro_address{text-align: left;padding-left: 17px;font-size: 15px;}
+	.distance_class{text-align: left;padding-left: 17px;}
+	.slick-slider {margin-bottom: 0px!important;}
+}

@@ -1,10 +1,12 @@
 @include('styles')
 @include('header')
   <!-- Slider -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
   <div id="" class="">
     <div class="">
-      <div class="row">
-        <div class="col-md-12">
+      <div class="">
+        <div class="col-md-12" style="padding: 0px;">
 		  @foreach($results['banner'] as $row)
           <img src='public/uploadimages/{{$row->bannername}}' alt="slide-img"  style="width: 100%;" />
            @endforeach
@@ -22,18 +24,20 @@
           </div> -->
         </div>
         <style type="text/css">
-          .easy-autocomplete{position: absolute;}
+          
+          .clear{clear: both;}
         </style>
-        <div class="col-lg-12 col-md-12" style="position: absolute;z-index: 999;top: 260px;">
-          <div class="col-lg-3 col-md-3" style="margin-left: 27px;"></div>
-          <div class="col-lg-8 col-md-8">
-		        <div class="col-lg-3 col-md-3" style="padding: 0px;">
-              <input type="text" style="width:220px;border-right: 1px solid #ccc;" id="location" placeholder="Search Location" class="form-control search_input_banner1" name="" style=""><i class="fa fa-crosshairs" aria-hidden="true" style="position: absolute;font-size: 23px;top: 17px;z-index: 99;right: 10px;"></i>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 banner_search_input_button">
+          <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 left_blank_div"></div>
+          <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12 search_main_div_banner">
+		        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 first_location_div" style="padding: 0px;">
+              <input type="text" id="location" placeholder="Location" class="form-control search_input_banner1" name="" style=""><i class="fa fa-crosshairs find_location_icon" aria-hidden="true"></i>
+              <div class="clear"></div>
             </div>
-            <div class="col-lg-4 col-md-4" style="padding: 0px;">
-              <input type="text" style="width:283px;border-radius: 0;" id="categories" placeholder="Search Restaurent /Dishes " class="form-control search_input_banner2" name="" style="border-radius: 0;"><i class="fa fa-search" aria-hidden="true" style="position: absolute;font-size: 23px;top: 17px;z-index: 99;right: 10px;"></i>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 center_restaurant_div" style="padding: 0px;">
+              <input type="text" style="" id="categories" placeholder="Restaurent /Dishes " class="form-control search_input_banner2" name="" style="border-radius: 0;"><i class="fa fa-search index_search_icon" aria-hidden="true"></i>
             </div>
-            <div class="col-lg-3 col-md-3" style="padding: 0px;">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 right_side_search_btn" style="padding: 0px;">
               <input type="submit" onClick="get_restaurant()" class="btn btn-checkout search_find_button" name="" style="">
             </div>
           </div>
@@ -81,27 +85,28 @@
 
   <div class="col-lg-12 col-md-12" style="background: #bbbbbb38;">
     <!-- <img src="images/process.gif"> -->
-    <div class="col-lg-4 col-md-4">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
       <center>
-        <img src="public/uploadimages/<?php echo $results['first_step_image'][0]; ?>" />
+        <img src="public/uploadimages/<?php echo $results['first_step_image'][0]; ?>" class="process_img" />
         <p style="width: 40px;height: 40px;border-radius: 50%;background: #3a126c;color: #fff;font-size: 26px;">1</p>
         <p style="font-size: 18px;font-weight: 600;"><?php echo $results['first_step_title'][0]; ?></p>
       </center>
     </div>
-    <div class="col-lg-4 col-md-4">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
       <center>
-        <img src="public/uploadimages/<?php echo $results['second_step_image'][0]; ?>">
+        <img src="public/uploadimages/<?php echo $results['second_step_image'][0]; ?>" class="process_img">
         <p style="width: 40px;height: 40px;border-radius: 50%;background: #3a126c;color: #fff;font-size: 26px;">2</p>
         <p style="font-size: 18px;font-weight: 600;"><?php echo $results['second_step_title'][0]; ?></p>
       </center>
     </div>
-    <div class="col-lg-4 col-md-4">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
       <center>
-        <img src="public/uploadimages/<?php echo $results['third_step_image'][0]; ?>">
+        <img src="public/uploadimages/<?php echo $results['third_step_image'][0]; ?>" class="process_img">
         <p style="width: 40px;height: 40px;border-radius: 50%;background: #3a126c;color: #fff;font-size: 26px;">3</p>
         <p style="font-size: 18px;font-weight: 600;"><?php echo $results['second_step_title'][0]; ?></p>
       </center>
     </div>
+    <div class="clear"></div>
   </div>
   <!-- bestsell Slider -->
   <style type="text/css">
@@ -114,23 +119,32 @@
     .testi-slider .carousel-indicators{bottom: -11px;}
     .index_restaurant_slider{height: 220px;}
     /*======slick slider css======*/
-    .slick-next:before, .slick-prev:before{color: #000!important;font-size: 30px!important;}
+    /*.slick-next:before, .slick-prev:before{color: #000!important;font-size: 30px!important;}
     .slick-initialized .slick-slide{}
     .slick-next{right: 10px!important;}
     .slick-prev{left: 0!important;z-index: 9;}
-    .index_bestseller_heading{width: 80%;float: left;}
-    .index_viewall_btn{width: 233px;font-size: 16px;display: -webkit-box;text-align: right;position: relative;padding-left: 156px;right: 0;top: 1px;margin: 0px;}
+    
     .index_product_slider_img{width: 100%;height: 200px;}
     .index_product_slider_details{}{}
     .distance_class{width: 140px; float: left;}
     .cost_class{width: 140px; float: left;}
     .index_product_slider{border: 1px solid #ccc;padding: 12px; height: 340px;}
-    .index_slider_rating_span{position: relative;float: right;right: 12px;top: -19px;padding: 10px;width: 40px;height: 40px;background: orange;font-size: 16px;font-weight: 600;text-align: center;box-shadow: 0px 0px 8px;}
+    .index_slider_rating_span{position: relative;float: right;right: 12px;top: -19px;padding: 10px;width: 40px;height: 40px;background: orange;font-size: 16px;font-weight: 600;text-align: center;box-shadow: 0px 0px 8px;}*/
+    .portfolio_slider {margin: 20px 11px 0px 11px;max-width: 1200px;flex: 1 1 0;}
+   
+    .index_bestseller_heading{width: 80%;float: left;}
+    .index_viewall_btn{width: 233px;font-size: 16px;display: -webkit-box;text-align: right;position: relative;padding-left: 156px;right: 0;top: 1px;margin: 0px;}
+    .restro_slider_div{width: 290px;margin: 10px;}
+    .restro_slider_div img{width: 290px;height: 195px;}
+    .index_product_slider_details{padding: 0px 10px;border: 1px solid #ccc;height: 130px;}
+    .slick-prev {left: -10px;position: absolute;z-index: 99;}
+    .slick-next {right: -19px;}
+    .slick-next:before, .slick-prev:before{color: #000!important;}
   </style>
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css">
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css">
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick-theme.min.css"> -->
   <section class="bestsell-pro" style="clear: both;">
-    <div class="container">
+    <div class="container bestseller_container">
       <div class="slider-items-products">
         <div class="bestsell-block">
           <div id="bestsell-slider" class="product-flexslider hidden-buttons">
@@ -139,11 +153,56 @@
                 <h2 class="index_bestseller_heading">Best Sellers </h2>
                 <a href="{{url('restaurant')}}" style="color: #fff;"><h3 class="index_viewall_btn">View All</h3></a>
               </div>
-              <div class="slide">
+
+              <div class="gallery gallery-responsive portfolio_slider">
+                <?php if(count($results['review']) > 0){
+                  foreach($results['review'] as $row){
+                ?>
+                <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}" class="slider_a_tag" style="color: #000;">
+                  <div class="inner restro_slider_div">
+                    <img src="uploads/{{$row->images}}" class="index_product_slider_img" >
+                    <?php if(isset($row->avg_rating) ){?>
+                    <span class="index_slider_rating_span"><?php echo $row->avg_rating; ?></span>
+                    <?php } ?>
+                    <div class="index_product_slider_details">
+                      <h4 class="slick_slider_restro_tittle" style="font-weight: 600;"><?php echo $row->restaurant_name; ?></h4>
+                      <p class="slick_slider_restro_address"><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
+                      <p class="distance_class">Distance - 30 Min</p>
+                      <?php if(isset($row->cost_for_two) ){?>
+                      <p class="cost_class">Cost for two - <?php echo $row->cost_for_two; ?></p>
+                      <?php } ?>
+                    </div>
+                  </div>
+                </a>
+                <?php } }else{ 
+                  foreach($results['featured'] as $row){
+                ?>
+                <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}" class="slider_a_tag" style="color: #000;">
+                  <div class="inner restro_slider_div">
+                    <img src="uploads/{{$row->images}}" class="index_product_slider_img" >
+                    <?php if(isset($row->avg_rating) ){?>
+                    <span class="index_slider_rating_span"><?php echo $row->avg_rating; ?></span>
+                    <?php } ?>
+                    <div class="index_product_slider_details">
+                      <h4 class="slick_slider_restro_tittle" style="font-weight: 600;"><?php echo $row->restaurant_name; ?></h4>
+                      <p class="slick_slider_restro_address"><?php echo $row->address; ?>, <?php echo $row->city; ?></p>
+                      <p class="distance_class">Distance - 30 Min</p>
+                      <?php if(isset($row->cost_for_two) ){?>
+                      <p class="cost_class">Cost for two - <?php echo $row->cost_for_two; ?></p>
+                      <?php } ?>
+                    </div>
+                  </div>
+                </a>
+                <?php } } ?>
+              </div>
+              
+
+
+              <!-- <div class="slide">
 			  <?php if(count($results['review']) > 0){
 				  foreach($results['review'] as $row){
 				  ?>
-				  <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}" style="color: #000;">
+				  <a href="{{url('restaurant_details')}}/{{$row->restaurant_name}}" class="slider_a_tag" style="color: #000;">
                 <div class="index_product_slider">
                   <img src="uploads/{{$row->images}} " class="index_product_slider_img">
 				  <?php if(isset($row->avg_rating) ){?>
@@ -178,84 +237,9 @@
                 </div>
 				  </a>
 			   <?php } } ?>
-             <!--   <div class="index_product_slider">
-                  <img src="uploads/merchant_item_cat_images/food3.jpg" class="index_product_slider_img">
-                  <span class="index_slider_rating_span">5</span>
-                  <div class="index_product_slider_details">
-                    <h4>Dwarka Restaurant</h4>
-                    <p>Dharampeth, Nagpur</p>
-                    <p class="distance_class">Distance - 30 Min</p>
-                    <p class="cost_class">Cost for two - 250</p>
-                  </div>
-                </div>
-                <div class="index_product_slider">
-                  <img src="uploads/merchant_item_cat_images/5.jpg" class="index_product_slider_img">
-                  <span class="index_slider_rating_span">3.2</span>
-                  <div class="index_product_slider_details">
-                    <h4>Dwarka Restaurant</h4>
-                    <p>Dharampeth, Nagpur</p>
-                    <p class="distance_class">Distance - 30 Min</p>
-                    <p class="cost_class">Cost for two - 250</p>
-                  </div>
-                </div>
-                <div class="index_product_slider">
-                  <img src="uploads/merchant_item_cat_images/samosa.jpg" class="index_product_slider_img">
-                  <span class="index_slider_rating_span">3</span>
-                  <div class="index_product_slider_details">
-                    <h4>Dwarka Restaurant</h4>
-                    <p>Dharampeth, Nagpur</p>
-                    <p class="distance_class">Distance - 30 Min</p>
-                    <p class="cost_class">Cost for two - 250</p>
-                  </div>
-                </div>
-                <div class="index_product_slider">
-                  <img src="uploads/merchant_item_cat_images/1.jpg" class="index_product_slider_img">
-                  <span class="index_slider_rating_span">2.5</span>
-                  <div class="index_product_slider_details">
-                    <h4>Dwarka Restaurant</h4>
-                    <p>Dharampeth, Nagpur</p>
-                    <p class="distance_class">Distance - 30 Min</p>
-                    <p class="cost_class">Cost for two - 250</p>
-                  </div>
-                </div>-->
-              </div>
-              <!-- <div class="pretext best_deals_single_slider">
-                <a title="Retis lapen casen" href="#"> 
-                  <div class="testi-slider">
-                    <div>
-                      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-						            @foreach($results['sell_items'] as $key=>$row)
-						
-						            @if($key == '0')
-                          <div class="item active">
-                            <div class="avatar">
-                              <img src="uploads/merchant_item_cat_images /{{$row->image_name}}" alt="slide3">
-                            </div>
-                          </div>
-						              @else
-                          <div class="item">
-                            <div class="avatar">
-                              <img src="uploads/merchant_item_cat_images /{{$row->image_name}}" alt="slide3">
-                            </div>
-                          </div>
-						              @endif
-                         @endforeach
-                        </div>
-                        <ol class="carousel-indicators">
-                          <li class="active" data-target="#carousel-example-generic" data-slide-to="0"></li>
-                          <li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
-                          <li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
-                        </ol>
-                        <a class="left carousel-control" href="#" data-slide="prev"> <span class="sr-only">Previous</span> </a> 
-                        <a class="right carousel-control" href="#" data-slide="next"> <span class="sr-only">Next</span> </a>
-                      </div>
-                    </div>
-                  </div> 
-                </a>
              
               </div> -->
-              <!-- <a href="#" class="view_more_bnt">View All</a>  -->
+              
             </div>
             
             <!--<div class="slider-items slider-width-col4 products-grid block-content">
@@ -310,7 +294,29 @@
     </div>
   </section>
   <!-- End Bestsell Slider --> 
-  
+  <!-- <div class="gallery gallery-responsive portfolio_slider">
+                <div class="inner">
+                  <img src="https://unsplash.it/350/250?image=768" style="width: 200px;">
+                </div>
+                <div class="inner">
+                  <img src="https://unsplash.it/350/250?image=768" style="width: 200px;">
+                </div>
+                <div class="inner">
+                  <img src="https://unsplash.it/350/250?image=768" style="width: 200px;">
+                </div>
+                <div class="inner">
+                  <img src="https://unsplash.it/350/250?image=768" style="width: 200px;">
+                </div>
+                <div class="inner">
+                  <img src="https://unsplash.it/350/250?image=768" style="width: 200px;">
+                </div>
+                <div class="inner">
+                  <img src="https://unsplash.it/350/250?image=768"style="width: 200px;">
+                </div>
+                <div class="inner">
+                  <img src="https://unsplash.it/350/250?image=768" style="width: 200px;">
+                </div>
+              </div> -->
       
   <!-- Brand Logo -->
   
@@ -349,15 +355,56 @@
 @include('footer')
 
 <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.7.1/slick.min.js"></script>
+  <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
 
-  <script>
-$(function() {   
- $('.slide').slick({
-     slidesToShow: 4,
-     slidesToScroll: 1,
-     autoplay: true,
-     autoplaySpeed: 2000,
+<!-- <script>
+  $(function() {   
+   $('.slide').slick({
+       slidesToShow: 4,
+       slidesToScroll: 1,
+       // autoplay: true,
+       // autoplaySpeed: 2000,
+    });
   });
-});
-</script>
+</script> -->
+<script type="text/javascript">
+    $('.gallery-responsive').slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+        {
+          breakpoint: 1024,
+          settings: {
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    });
+
+  </script>

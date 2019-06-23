@@ -246,9 +246,9 @@ html {
 	overflow: hidden;
 }
 .mm-toggle {
-    background: none repeat scroll 0 0 #e31837;
-    color: #fff;
-    border-bottom: 4px #cf0e2b solid;
+    background: #3a126c;
+    color: #fbeb20;
+    /*border-bottom: 4px #cf0e2b solid;*/
 	float:left;
 	height:55px;
 	width:50px;
