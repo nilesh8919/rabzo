@@ -178,6 +178,7 @@ Route::group(['middleware' => 'auth'], function(){
 		Route::get('delete_item_success','Merchant\ItemController@delete_item_success');
 		Route::get('store_item_success','Merchant\ItemController@store_item_success');
 		Route::get('delete_item_image','Merchant\ItemController@delete_item_image');
+		Route::get('stock_item_status','Merchant\ItemController@stock_item_status');
 		Route::get('cooking_reference','Merchant\CookingReferenceController@cooking_reference');
 		Route::post('create_cooking_reference','Merchant\CookingReferenceController@create');
 		Route::get('delete_cooking_reference','Merchant\CookingReferenceController@delete_cooking_reference');

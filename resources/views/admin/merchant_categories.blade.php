@@ -61,7 +61,7 @@
                                   <td><?php echo $i; ?></td>
                                   <td> {{ $row->category_name}}</td>
                                   <td> {{ $row->category_description}}</td>
-                                  <td> <img src="uploads/categories/{{ $row->photo}}" /></td>
+                                  <td> <img src="uploads/categories/{{ $row->photo}}" style="width:60px" /></td>
                                    <td>
 							  <a onclick="get_categories({{ $row->id }})" data-toggle="modal" data-target="#myModal" style="text-decoration:none; cursor: pointer; cursor: hand;">
                                   <i class="clip-remove"></i>Edit</a>|
@@ -278,8 +278,8 @@ function delete_categories($id){
                            <label class="col-sm-3 control-label">
                             Spicydish<span class="symbol required"></span>
                           </label>
-                               <input type="radio"  name="spicydish" id="rdYes"  />   Yes
-                               <input type="radio"  name="spicydish" id="rdNo"  />   No
+                               <input type="radio" value="1" name="spicydish" id="rdYes"  />   Yes
+                               <input type="radio" value="0" name="spicydish" id="rdNo" checked />   No
                              </div>
 							 
 							<div class="form-group">
@@ -287,7 +287,7 @@ function delete_categories($id){
                          <label class="col-sm-6 control-label">
                             Status<span class="symbol required"></span>
                           </label>
-                             <select name="staus" class="form-control">
+                             <select name="status" class="form-control">
 							   <option selected value='Publish'>Publish</option>
 							   <option value='Pending'>Pending</option>
 							   

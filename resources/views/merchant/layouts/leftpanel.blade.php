@@ -41,11 +41,11 @@
 
                 <li> <a href="{{ url('item_listing') }}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Food Item</a> </li>
                 <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Invoice</a> </li>
-             <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Loyalty Points Settings</a> </li>
+          <!--   <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Loyalty Points Settings</a> </li>-->
         <li> <a href="{{ url('manage_shipping') }}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Delivery Charges Rate</a> </li>
        <!--   <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Minimum Order Table</a> </li>-->
          <li> <a href="{{ url('manage_offers') }}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Offers</a> </li>
-           <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Gallery Settings</a> </li>
+          <!-- <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Gallery Settings</a> </li>-->
            <li> <a href="{{url('manage_voucher')}}"><i class="fa fa-edit"></i> <span class="nav-label"></span>Voucher</a> </li>
 
              <li>
@@ -60,7 +60,7 @@
                 </li>
 
         <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Customer Reviews</a> </li>
-         <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Social Settings</a> </li>
+      <!--   <li> <a href="#"><i class="fa fa-edit"></i> <span class="nav-label"></span>Social Settings</a> </li>-->
             </ul>
 
         </div>

@@ -57,7 +57,7 @@
                                     <div class="form-group">
                                         <label class="col-lg-3 control-label">Free delivery above Sub Total Order</label>
                                         <div class="col-lg-5">
-                                            <input type="text" name="free_delivery_above_price" placeholder="" class="form-control" required />
+                                            <input type="text" name="free_delivery_above_price" placeholder="" class="form-control" required  value="{{$results['option_value']}}" />
                                         </div>
                                         <div class="col-lg-1">
                                             <i class="fa fa-inr"></i> 
@@ -81,12 +81,14 @@
 								     <th>Price</th>
 								     <th>Action</th>
 								   </tr>
+								   <?php if(count($results['shippings_rate']) == 0){ ?>
 								    <tr>
 								     <td>  <input type="text" placeholder="From" class="form-control" name="distance_from[]"></td>
 								     <td><input type="text" placeholder="To" class="form-control" name="distance_to[]"></td>
 								     <td><select class="form-control" name="shipping_units[]">
-									     <option value="Miles">Miles</option>
-									     <option value="Kilometeres">Kilometeres</option>
+									  <option value="km">Kilometeres</option>
+									   <!--  <option value="Miles">Miles</option>-->
+									    
 									 </select>
 									 
 									</td>
@@ -94,6 +96,25 @@
 								     <td></td>
 								    
 								   </tr>
+								   <?php }else{    ?>
+									      <?php $i=1; ?>
+                            @foreach($results['shippings_rate'] as $row)
+									     <tr>
+								     <td>  <input type="text" placeholder="From1" class="form-control" name="distance_from[]" value="{{$row->distance_from}}" ></td>
+								     <td><input type="text" placeholder="To" class="form-control" name="distance_to[]" value="{{ $row->distance_to}}" ></td>
+								     <td><select class="form-control" name="shipping_units[]"  >
+									  <option value="km">Kilometeres</option>
+									   <!--  <option value="Miles">Miles</option>-->
+									    
+									 </select>
+									 
+									</td>
+								     <td><input type="text" placeholder="Price" class="form-control" name="distance_price[]" value="{{ $row->distance_price}}" ></td>
+								     <td></td>
+								    
+								   </tr>
+								@endforeach	   
+								 <?php  } ?>
 								</table>
                                     
                                 </div>
@@ -115,6 +136,47 @@
                             </form>
                             <div class="clearfix"></div>
                         </div>
+						
+						
+					<!--	<div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover dataTables-example" >
+                    <thead>
+                    <tr>
+                        <th> Sr.No</th>
+                                  <th>Distance From</th>
+                                  <th>Distance To </th>
+                                  <th>Units </th>
+                                  <th>Distance Price </th>
+                                  <th>Action </th>
+                               
+                             
+                    </tr>
+                    </thead>
+                     <tbody>
+                            <?php $i=1; ?>
+                            @foreach($results['shippings_rate'] as $row)
+                                 <tr>
+                                  <td><?php echo $i; ?></td>
+                                  <td> {{ $row->distance_from}}</td>
+                                  <td> {{ $row->distance_to}}</td>
+                                  <td> {{ $row->shipping_units}}</td>
+                                  <td> {{ $row->distance_price}}</td>
+                                <td>
+							
+							   </td>
+                                 
+                             
+                                
+                             
+                             </tr> 
+                              <?php  $i++;?>
+                             @endforeach
+              
+                            </tbody>
+                   
+                    </table>
+                        </div>-->
+						
                         <div class="clearfix"></div>
                     </div>
                     <div class="clearfix"></div>
@@ -175,7 +237,7 @@ $(document).ready(function(){
 	var i=0;
 	$("#btnAdd").click(function(){
 		i = i+1;
-	      var div1 ='<tr id="tr_'+i+'"><td> <input type="text" placeholder="From" class="form-control"   name="distance_from"></td><td><input type="text" placeholder="To" class="form-control" name="distance_to"></td><td><input type="text" placeholder="Units" class="form-control" name="shipping_units"></td><td><input type="text" placeholder="Price" class="form-control" name="shipping_units"></td><td><a href="javascript:;" onClick="removeTr('+i+')" class="shipping-remove" data-id="1"><i class="fa fa-times"></i></a></td></tr>';
+	      var div1 ='<tr id="tr_'+i+'"><td> <input type="text" placeholder="From" class="form-control"   name="distance_from[]"></td><td><input type="text" placeholder="To" class="form-control" name="distance_to[]"></td><td><select class="form-control" name="shipping_units[]"  ><option value="km">Kilometeres</option></select></td><td><input type="text" placeholder="Price" class="form-control" name="distance_price[]"></td><td><a href="javascript:;" onClick="removeTr('+i+')" class="shipping-remove" data-id="1"><i class="fa fa-times"></i></a></td></tr>';
 		  
 		  $("#tr1").append(div1);
 	})

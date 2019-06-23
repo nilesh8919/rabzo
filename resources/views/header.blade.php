@@ -139,14 +139,14 @@
             <div class="form">
               <img src="uploads/rabzo_circle_logo.png" style="width: 60px;">
               <form class="register-form" id="main_register_form" method="post">
-                <input type="text" placeholder="Namme" name="name" required />
+                <input type="text" placeholder="Name" name="name" required />
                 <input type="text" placeholder="info@gmail.com" name="email_address" required />
                 <input type="password" placeholder="Password" name="password" required />
                 <button type="submit">create</button>
                 <p class="message">Already registered? <a href="#" style="color: #d22121;">Sign In</a></p>
               </form>
               <form class="login-form" id="main_login_form" method="post">
-                <input type="text" placeholder="info@gmail.com" name="email_address" required />
+                <input type="email" placeholder="info@gmail.com" name="email_address" required />
                 <input type="password" placeholder="Password" name="password" required />
                 <button type="submit">login</button>
                 <p class="message">Not registered? <a href="#" style="color: #d22121;">Create an account</a></p>
@@ -190,7 +190,7 @@
                              window.location ='{{url("/")}}' ;
                            }else 
                            {
-                             alert("Unable to add");
+                             alert(response.ResponseMessage);
                            }
             },
              });      

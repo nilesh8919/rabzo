@@ -72,7 +72,7 @@ input[type=radio]
                             <li class="" id="li2"><a data-toggle="tab" href="#tab-2"  >Login Information</a></li>
                      <!--       <li class="" id="li3"><a data-toggle="tab" href="#tab-3">Marchant Type</a></li>-->
                             <li class="" id="li4"><a data-toggle="tab" href="#tab-4">Featured</a></li>
-                            <li class="" id="li5"><a data-toggle="tab" href="#tab-5">Payment Setting</a></li>
+                            <li class="" id="li5"><a data-toggle="tab" href="#tab-5">Merchant Open/Close</a></li>
                             <li class="" id="li6"><a data-toggle="tab" href="#tab-6">Google Map</a></li>
                             <li class="" id="li7"><a data-toggle="tab" href="#tab-7">Photos</a></li>
                         </ul>
@@ -99,55 +99,55 @@ input[type=radio]
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Restaurant Phone</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="restaurant_phone" value="{{$merchant_data->restaurant_phone}}">
+                                                        <input type="text" maxlength="11" class="form-control" name="restaurant_phone" onkeypress="return isNumber(event)" value="{{$merchant_data->restaurant_phone}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Owner Name</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="owner_name" value="{{$merchant_data->owner_name}}">
+                                                        <input type="text" class="form-control" name="owner_name" value="{{$merchant_data->owner_name}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Contact Phone</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="contact_phone" value="{{$merchant_data->contact_phone}}" > 
+                                                        <input type="text" class="form-control" name="contact_phone" value="{{$merchant_data->contact_phone}}" required onkeypress="return isNumber(event)"  /> 
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Contact Mail</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="contact_email" value="{{$merchant_data->contact_email}}"> 
+                                                        <input type="email" class="form-control" name="contact_email" value="{{$merchant_data->contact_email}}" required /> 
                                                     </div>
                                                 </div>
 												<div class="form-group">
                                                     <label class="col-lg-4 control-label">GST Number </label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="merchant_gst_number" value="{{$merchant_data->merchant_gst_number}}"> 
+                                                        <input type="text" maxlength="15" class="form-control" name="merchant_gst_number" value="{{$merchant_data->merchant_gst_number}}" required /> 
                                                     </div>
                                                 </div>
 												<div class="form-group">
                                                     <label class="col-lg-4 control-label">Adhar Number</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="merchant_aadhar_number" value="{{$merchant_data->merchant_aadhar_number}}"> 
+                                                        <input type="text" maxlength="16" class="form-control" name="merchant_aadhar_number" value="{{$merchant_data->merchant_aadhar_number}}" onkeypress="return isNumber(event)" required  /> 
                                                     </div>
                                                 </div>
 												<div class="form-group">
                                                     <label class="col-lg-4 control-label">PAN Number</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="merchant_pan_number" value="{{$merchant_data->merchant_pan_number}}"> 
+                                                        <input type="text" maxlength="10" class="form-control" name="merchant_pan_number" value="{{$merchant_data->merchant_pan_number}}" required /> 
                                                     </div>
                                                 </div>
 													<div class="form-group">
                                                     <label class="col-lg-4 control-label">FSSI Number</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="merchant_fssi_number" value="{{$merchant_data->merchant_fssi_number}}"> 
+                                                        <input type="text" class="form-control" name="merchant_fssi_number" value="{{$merchant_data->merchant_fssi_number}}" required /> 
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Country</label>
                                                     <div class="col-lg-8">
-                                                        <select class="form-control" name="country_code" id="country_code"> 
+                                                        <select class="form-control" name="country_code" id="country_code" > 
 														 <option value="">-Select-</option>
 														@foreach($countries_data as $cd)
                                                             <option <?php if(isset($merchant_data->country_code)){ if( $merchant_data->country_code == $cd->shortcode ){ echo "selected=selected"; }}else{if($cd->shortcode == 'IN'){ echo "selected=selected"; } } ?> value="{{$cd->shortcode}}">{{$cd->country_name}}</option>
@@ -164,25 +164,25 @@ input[type=radio]
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Address</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="address" value="{{$merchant_data->address}}" >
+                                                        <input type="text" class="form-control" name="address" value="{{$merchant_data->address}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">City</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="city" id="city" value="{{$merchant_data->city}}">
+                                                        <input type="text" class="form-control" name="city" id="city" value="{{$merchant_data->city}}" required />
                                                     </div>
                                                 </div>
 												 <div class="form-group">
                                                     <label class="col-lg-4 control-label">State</label>
                                                     <div class="col-lg-8">
-                                                            <input type="text" class="form-control" name="state" id="state" value="{{$merchant_data->state}}">
+                                                            <input type="text" class="form-control" name="state" id="state" value="{{$merchant_data->state}}" required />
                                                     </div>
                                                 </div>
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Post Code / Zip Code</label>
                                                     <div class="col-lg-8">
-                                                        <input type="text" class="form-control" name="post_code" value="{{$merchant_data->post_code}}"> 
+                                                        <input type="text" maxlength="6" class="form-control" name="post_code" value="{{$merchant_data->post_code}}" required  onkeypress="return isNumber(event)" /> 
                                                     </div>
                                                 </div>
 												  <div class="form-group">
@@ -194,7 +194,7 @@ input[type=radio]
                                                    <div class="form-group">
                                                     <label class="col-lg-4 control-label">Categories</label>
                                                     <div class="col-lg-8">
-                                                        <select data-placeholder="Choose a Category..." class="chosen-select" multiple style="width:350px;" tabindex="4" name="categories" id="categories"  >
+                                                        <select data-placeholder="Choose a Category..." class="chosen-select" multiple style="width:350px;" tabindex="4" name="categories" id="categories"  required="true" >
                                                             <option value="">Select</option>
 															@foreach($categories_data as $cd)
                                                                <option  <?php if(in_array($cd->id,$merchant_categories_data)){ echo "selected=selected"; } ?> value="{{$cd->id}}">{{$cd->category_name}}</option>
@@ -206,7 +206,7 @@ input[type=radio]
                                                 <div class="form-group">
                                                     <label class="col-lg-4 control-label">Cuisine</label>
                                                     <div class="col-lg-8">
-                                                        <select data-placeholder="Choose a Cuisine..." class="chosen-select" multiple style="width:350px;" tabindex="4" name="cuisine" id="cuisine">
+                                                        <select data-placeholder="Choose a Cuisine..." class="chosen-select" multiple style="width:350px;" tabindex="4" name="cuisine" id="cuisine" required="true">
                                                             <option value="">Select</option>
 															@foreach($cuisine_data as $cd)
                                                                <option <?php if(in_array($cd->id,$merchant_cuisine_data)){ echo "selected=selected"; } ?> value="{{$cd->id}}">{{$cd->cuisine_name}}</option>
@@ -237,6 +237,12 @@ input[type=radio]
                                                         </select> 
                                                     </div>
                                                 </div>
+												 <div class="form-group">
+                                                    <label class="col-lg-4 control-label">Order Limit Per Order</label>
+                                                    <div class="col-lg-8">
+                                                        <input type="text" class="form-control" name="order_limit" value="{{$merchant_data->order_limit}}"> 
+                                                    </div>
+                                                </div>
                                                 <div class="form-group">
                                                     <div class="col-lg-offset-2 col-lg-10">
                                                         <button class="btn btn-sm btn-white" type="submit" style="background: #08a008bd;color: #fff;font-size: 16px;padding: 8px 27px;float: right;">Next</button>
@@ -258,13 +264,13 @@ input[type=radio]
                                             <div class="form-group">
                                                 <label class="col-lg-4 control-label">Username</label>
                                                 <div class="col-lg-8">
-                                                    <input type="text" class="form-control" name="username" value="{{$merchant_data->username}}"> 
+                                                    <input type="text" class="form-control" name="username" value="{{$merchant_data->username}}" required /> 
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-lg-4 control-label">Password</label>
                                                 <div class="col-lg-8">
-                                                    <input type="password" class="form-control" name="password" >
+                                                    <input type="password" class="form-control" name="password" required />
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -362,71 +368,123 @@ input[type=radio]
                                 <div class="panel-body">
 									<form id="tab5" >
                                     <div class="col-lg-12 col-md-12">
-                                        <h4>Disabled Payment Gateway</h4>
-                                        <div class="col-lg-6 col-md-6 form-horizontal">
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Cash on delivery</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" <?php if(in_array('Cash on delivery',$merchant_pp_data)){ echo "checked=checked"; } ?> name="payment_type" value="Cash on delivery" >
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Offline credit card payment</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" name="payment_type" value="Offline credit card payment" <?php if(in_array('Offline credit card payment',$merchant_pp_data)){ echo "checked=checked"; } ?>>
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Pay on delivery</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" <?php if(in_array('Pay on delivery',$merchant_pp_data)){ echo "checked=checked"; } ?> name="payment_type" value="Pay on delivery" >
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Paypal</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" <?php if(in_array('Paypal',$merchant_pp_data)){ echo "checked=checked"; } ?> name="payment_type" value="Paypal">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Payumoney</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" <?php if(in_array('Payumoney',$merchant_pp_data)){ echo "checked=checked"; } ?> name="payment_type" value="Payumoney">
-                                                </div>
-                                            </div>
-                                            
-                                        </div>
-                                        <div class="col-lg-6 col-md-6 form-horizontal">
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Rupay</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" <?php if(in_array('Rupay',$merchant_pp_data)){ echo "checked=checked"; } ?> name="payment_type" value="Rupay">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Paytm</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" <?php if(in_array('Paytm',$merchant_pp_data)){ echo "checked=checked"; } ?> name="payment_type" value="Paytm">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Phonepay</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" <?php if(in_array('Phonepay',$merchant_pp_data)){ echo "checked=checked"; } ?> name="payment_type" value="Phonepay">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="col-lg-6 control-label">Googlepay</label>
-                                                <div class="col-lg-6">
-                                                    <input type="checkbox" class="form-control" <?php if(in_array('Googlepay',$merchant_pp_data)){ echo "checked=checked"; } ?> name="payment_type" value="Googlepay">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
+                                        <h4>Store days(s) Open:</h4>
+                                      
+									  
+									  <div class="table-responsive">
+                    <table class="table table-striped table-bordered table-hover dataTables-example" >
+                   
+                     <tbody>
+                          
+                                 <tr>
+                                  <td><input type="checkbox" value="Monday" id="chk1" class="day" name="day" <?php if($merchant_open_close_data[0]->day == 'Monday'){ echo "checked=checked"; } ?> /></td>
+                                  <td> Monday</td>
+                                  <td> <input type="text" id="from_time1" name="from_time" value="{{$merchant_open_close_data[0]->start_time}}" placeholder="Start Time"/> </td>
+                                  <td>TO</td>
+                                  <td> <input type="text" id="to_time1" name="to_time" value="{{$merchant_open_close_data[0]->end_time}}" placeholder="end Time" /></td>
+                                
+                                  <td> 
+								  <input type="radio"  value="open" name="is_open_close1"  class="is_open_close" <?php if($merchant_open_close_data[0]->is_open_close == 'open'){ echo "checked=checked"; }else{ echo "checked"; } ?>   />open</br />
+									<input type="radio"  value="close" name="is_open_close1"  class="is_open_close" <?php if($merchant_open_close_data[0]->is_open_close == 'close'){ echo "checked=checked"; }  ?> />close </br />
+                                   
+								  
+								  </td>
+                                  <td> <input type="text" id="commnet1"  name="comment" placeholder="comment" value="{{$merchant_open_close_data[0]->comment}}"  /></td>
+                                     </tr> 
+                               <tr>
+                                  <td><input type="checkbox" value="Tuesday" id="chk2"  class="day" name="day" <?php if($merchant_open_close_data[1]->day == 'Tuesday'){ echo "checked=checked"; } ?> /></td>
+                                  <td> Tuesday</td>
+                                  <td> <input type="text" id="from_time2" name="from_time" value="{{$merchant_open_close_data[1]->start_time}}" /> </td>
+                                  <td>TO</td>
+                                  <td> <input type="text" id="to_time2" name="to_time" value="{{$merchant_open_close_data[1]->end_time}}"  /></td>
+                                  <td> 
+								  <input type="radio"  value="open" name="is_open_close2" class="is_open_close" <?php if($merchant_open_close_data[1]->is_open_close == 'open'){ echo "checked=checked"; }else{ echo "checked"; } ?>   />open</br />
+									<input type="radio"  value="close" name="is_open_close2" class="is_open_close" <?php if($merchant_open_close_data[1]->is_open_close == 'close'){ echo "checked=checked"; }  ?> />close </br />
+                                   
+								  
+								  </td>
+                                  <td> <input type="text" id="commnet2"  name="comment" value="{{$merchant_open_close_data[1]->comment}}" /></td>
+                                     </tr> 
+  <tr>
+                                  <td><input type="checkbox" value="Wednesday" id="chk3" class="day"  name="day" <?php if($merchant_open_close_data[2]->day == 'Wednesday'){ echo "checked=checked"; } ?> /></td>
+                                  <td> Wednesday</td>
+                                  <td> <input type="text" id="from_time3" name="from_time" value="{{$merchant_open_close_data[2]->start_time}}" /> </td>
+                                  <td>TO</td>
+                                  <td> <input type="text" id="to_time3" name="to_time"  value="{{$merchant_open_close_data[2]->end_time}}" /></td>
+                                  <td> 
+								  <input type="radio"  value="open" name="is_open_close3" class="is_open_close" <?php if($merchant_open_close_data[2]->is_open_close == 'open'){ echo "checked=checked"; }else{ echo "checked"; } ?>   />open</br />
+									<input type="radio"  value="close" name="is_open_close3" class="is_open_close" <?php if($merchant_open_close_data[2]->is_open_close == 'close'){ echo "checked=checked"; }  ?> />close </br />
+                                   
+								  
+								  </td>
+                                  <td> <input type="text" id="commnet3"  name="comment" value="{{$merchant_open_close_data[2]->comment}}" /></td>
+                                     </tr> 
+  <tr>
+                                  <td><input type="checkbox" value="Thursday" id="chk4" class="day" name="day" <?php if($merchant_open_close_data[3]->day == 'Thursday'){ echo "checked=checked"; } ?> /></td>
+                                  <td> Thursday</td>
+                                  <td> <input type="text" id="from_time4" name="from_time" value="{{$merchant_open_close_data[3]->start_time}}" /> </td>
+                                  <td>TO</td>
+                                  <td> <input type="text" id="to_time4" name="to_time" value="{{$merchant_open_close_data[3]->end_time}}" /></td>
+                                  <td> 
+								  <input type="radio"  value="open" name="is_open_close4" class="is_open_close" <?php if($merchant_open_close_data[3]->is_open_close == 'open'){ echo "checked=checked"; }else{ echo "checked"; } ?>   />open</br />
+									<input type="radio"  value="close" name="is_open_close4" class="is_open_close" <?php if($merchant_open_close_data[3]->is_open_close == 'close'){ echo "checked=checked"; }  ?> />close </br />
+                                   
+								  
+								  </td>
+                                  <td> <input type="text" id="commnet4" name="comment" value="{{$merchant_open_close_data[3]->comment}}" /></td>
+                                     </tr> 			
+ <tr>
+                                  <td><input type="checkbox" value="Friday" id="chk5" class="day" name="day" <?php if($merchant_open_close_data[4]->day == 'Friday'){ echo "checked=checked"; } ?>  /></td>
+                                  <td> Friday</td>
+                                  <td> <input type="text" id="from_time5" name="from_time" value="{{$merchant_open_close_data[4]->start_time}}" /> </td>
+                                  <td>TO</td>
+                                  <td> <input type="text" id="to_time5" name="to_time" value="{{$merchant_open_close_data[4]->end_time}}" /></td>
+                                  <td> 
+								  <input type="radio"  value="open" name="is_open_close5" class="is_open_close" <?php if($merchant_open_close_data[4]->is_open_close == 'open'){ echo "checked=checked"; }else{ echo "checked"; } ?>   />open</br />
+									<input type="radio"  value="close" name="is_open_close5"  class="is_open_close" class="is_open_close"<?php if($merchant_open_close_data[4]->is_open_close == 'close'){ echo "checked=checked"; }  ?> />close </br />
+                                   
+								  
+								  </td>
+                                  <td> <input type="text" id="commnet5"  name="comment" value="{{$merchant_open_close_data[4]->comment}}" /></td>
+                                     </tr> 			
+ <tr>
+                                  <td><input type="checkbox" value="Saturday" id="chk6" class="day" name="day" <?php if($merchant_open_close_data[5]->day == 'Saturday'){ echo "checked=checked"; } ?>  /></td>
+                                  <td> Saturday</td>
+                                  <td> <input type="text" id="from_time6" name="from_time"  value="{{$merchant_open_close_data[5]->start_time}}" /> </td>
+                                  <td>TO</td>
+                                  <td> <input type="text" id="to_time6" name="to_time" value="{{$merchant_open_close_data[5]->end_time}}" /></td>
+                                  <td> 
+								  <input type="radio"  value="open" name="is_open_close6" class="is_open_close" <?php if($merchant_open_close_data[5]->is_open_close == 'open'){ echo "checked=checked"; }else{ echo "checked"; } ?>   />open</br />
+									<input type="radio"  value="close" name="is_open_close6" class="is_open_close" <?php if($merchant_open_close_data[5]->is_open_close == 'close'){ echo "checked=checked"; }  ?> />close </br />
+                                   
+								  
+								  </td>
+                                  <td> <input type="text" id="commnet6" name="comment" value="{{$merchant_open_close_data[5]->comment}}" /></td>
+                                     </tr> 												 
+               <tr>
+                                  <td><input type="checkbox" value="Sunday" id="chk7" class="day" name="day" <?php if($merchant_open_close_data[6]->day == 'Sunday'){ echo "checked=checked"; } ?> /></td>
+                                  <td> Sunday</td>
+                                  <td> <input type="text" id="from_time7" name="from_time" value="{{$merchant_open_close_data[6]->start_time}}" /> </td>
+                                  <td>TO</td>
+                                  <td> <input type="text" id="to_time7" name="to_time" value="{{$merchant_open_close_data[6]->end_time}}" /></td>
+                                  <td> 
+								  <input type="radio"  value="open" class="is_open_close" name="is_open_close7" <?php if($merchant_open_close_data[6]->is_open_close == 'open'){ echo "checked=checked"; }else{ echo "checked"; } ?>   />open</br />
+									<input type="radio"  value="close" class="is_open_close" name="is_open_close7"  <?php if($merchant_open_close_data[6]->is_open_close == 'close'){ echo "checked=checked"; }  ?> />close </br />
+                                   
+								  
+								  </td>
+                                  <td> <input type="text" id="commnet7"  name="comment"  value="{{$merchant_open_close_data[6]->comment}}" /></td>
+                                     </tr> 			
+                            </tbody>
+                   
+                    </table>
+                        </div>
+									   <div class="form-group">
                                                 <div class="col-lg-offset-2 col-lg-10">
                                                     <button class="btn btn-sm btn-white" type="submit" style="background: #08a008bd;color: #fff;font-size: 16px;padding: 8px 27px;float: right;">Next</button>
                                                 </div>
-                                            </div>
-                                        </div>
+                                            </div>  
+									  
                                     </div>
 										</form>
                                 </div>
@@ -441,13 +499,13 @@ input[type=radio]
                                             <div class="form-group">
                                                 <label class="col-lg-4 control-label">Latitude</label>
                                                 <div class="col-lg-8">
-                                                    <input type="text" class="form-control" name="latitude" value="{{$merchant_data->latitude}}" > 
+                                                    <input type="text" class="form-control" name="latitude" value="{{$merchant_data->latitude}}" required /> 
                                                 </div>
                                             </div>
                                             <div class="form-group">
                                                 <label class="col-lg-4 control-label">Longitude</label>
                                                 <div class="col-lg-8">
-                                                    <input type="text" class="form-control" name="lontitude" value="{{$merchant_data->lontitude}}" >
+                                                    <input type="text" class="form-control" name="lontitude" value="{{$merchant_data->lontitude}}" required />
                                                 </div>
                                             </div>
                                             <div class="form-group">
@@ -744,7 +802,12 @@ $(document).ready(function(){
 			  fd.append('membership_expired', $("input[name=membership_expired]").val());
 			  fd.append('username', $("input[name=username]").val());
 			  fd.append('password', $("input[name=password]").val());
-			  fd.append('is_partners', $("input[name=is_partners]").val());
+			  if($("input[name='is_partners']").prop('checked') === true)
+			  {
+			    fd.append('is_partners', 'yes');
+			  }else{
+				   fd.append('is_partners','no');
+			  }
 			  fd.append('merchant_pan_number', $("input[name=merchant_pan_number]").val());
 			  fd.append('merchant_aadhar_number', $("input[name=merchant_aadhar_number]").val());
 			  fd.append('merchant_fssi_number', $("input[name=merchant_fssi_number]").val());
@@ -762,7 +825,41 @@ $(document).ready(function(){
 			});  
 			console.log(data2)
 			  fd.append('cuisine',data2);*/
+			  
+			  var day = new Array();
+			  $(".day:checked").each(function(i) {
+				day.push($(this).val());
+			});  
+			console.log(day);
+			 fd.append('day',day);
+			 
+			 var from_time = new Array();
+			  $("input[name='from_time']").each(function(i) {
+				from_time.push($(this).val());
+			});  
+			console.log(from_time);
+			  fd.append('start_time',from_time);
+			  
+			  
+			   var to_time = new Array();
+			  $("input[name='to_time']").each(function(i) {
+				to_time.push($(this).val());
+			});  
 			
+			  fd.append('end_time',to_time);
+			  
+			 var comment = new Array();
+			  $("input[name='comment']").each(function(i) {
+				comment.push($(this).val());
+			});  
+			  fd.append('comment',comment);
+			  
+			   var is_open_close = new Array();
+			  $(".is_open_close:checked").each(function(i) {
+				is_open_close.push($(this).val());
+			});  
+			  fd.append('is_open_close',is_open_close);
+			  
 				   $.ajax({
 					   url: '{{url("store_merchant")}}',
 					   data:fd,
@@ -909,8 +1006,26 @@ function delete_voucher($id){
         });
 }
 </script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
  <script>
-        
+        $(document).ready(function(){
+			for(var i=1;i<=7;i++){
+    $('#from_time'+i).timepicker({});
+    $('#to_time'+i).timepicker({});
+	
+			}
+});
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}	
     </script>
 </body>
 </html>

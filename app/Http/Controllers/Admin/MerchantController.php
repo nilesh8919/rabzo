@@ -16,6 +16,7 @@ use App\Categories;
 use App\MerchantCategories;
 use App\MerchantCuisine;
 use App\MerchantPaymentProvider;
+use App\MerchantOpenClose;
 use Illuminate\Support\Facades\Input;
 error_reporting(0);
 class MerchantController extends Controller
@@ -32,6 +33,13 @@ class MerchantController extends Controller
 		    $data =DB::table('mt_merchant')->leftjoin('mt_packages','mt_packages.id','=','mt_merchant.package_id')
 			->select('mt_merchant.*','mt_packages.title AS package_name')
 			->orderby('id','desc')->get();
+			foreach($data as $key=>$row){
+			 $data1 =DB::table('mt_merchant_meta')->where('merchant_key','merchant_login_status')->first();
+			
+			if(isset($data1->merchant_key)){
+			   $data[$key]->merchant_login_status = $data1->merchant_value;
+			}
+		}
 			//print_r($data);exit;
               return view('admin.merchant_listing',[
                 'results'=> $data,
@@ -195,13 +203,9 @@ class MerchantController extends Controller
                 
 
                 $files = $request->file('images');
-				
-               
-                foreach ($files as $key => $file) {
+				  foreach ($files as $key => $file) {
                     $filename = $file->getClientOriginalName();
-
-              
-                        $newFileName = time().'_'.$filename; 
+                          $newFileName = time().'_'.$filename; 
                         $destinationPath = 'uploads/';
                        $file->move($destinationPath, $filename);
                              $add_portfolio_image = new MerchantImages();
@@ -209,9 +213,6 @@ class MerchantController extends Controller
                         $add_portfolio_image->images = $filename;
                        
                         $add_portfolio_image->save();
-			  
-			  
-			  
 			  
 					}
 			  
@@ -256,12 +257,7 @@ class MerchantController extends Controller
 				  }
 			  }
 			   if(isset($request->is_partners)){
-					  $is_partners ='yes';
-				  }else{
-						$is_partners ='no';
-				  }
-				  if($is_partners){
-					 $this->add_merchant_values($last_id,'is_partners',$is_partners);
+					 $this->add_merchant_values($last_id,'is_partners',$request->is_partners);
 				  }
 				  // print_r($_POST);exit;
 			  if($request->merchant_pan_number){
@@ -279,8 +275,42 @@ class MerchantController extends Controller
 			  if($request->cost_for_two){
 			     $this->add_merchant_values($last_id,'cost_for_two',$request->cost_for_two);
 			  }
+			  if($request->order_limit){
+			     $this->add_merchant_values($last_id,'order_limit',$request->order_limit);
+			  }
+			  
+			  
+			   if(isset($request->day)){
+				  $day =explode(',',$request->day);
+				  $start_time =explode(',',$request->start_time);
+				  $end_time =explode(',',$request->end_time);
+				  $comment =explode(',',$request->comment);
+				  $is_open_close =explode(',',$request->is_open_close);
+				  MerchantOpenClose :: where('merchant_id',$last_id)->delete();
+				  foreach($day as $key=>$row)
+				  {
+					  $new3 = new MerchantOpenClose(); 
+					  $new3->merchant_id = $last_id;
+					  $new3->day = $row;
+					  $new3->start_time = $start_time[$key];
+					  $new3->end_time = $end_time[$key];
+					  $new3->end_time = $end_time[$key];
+					  $new3->comment = $comment[$key];
+					  $new3->is_open_close = $is_open_close[$key];
+					  $new3->save();
+				  }
+			  }
+			  
+			  
+			  
 			  $res =array('flag'=>true,'msg'=>'Data updated successfully');
 		  }else{
+			  
+			  
+			if( Merchant :: where('restaurant_name',$request->restaurant_name)->count() > 0)
+			{
+				$res =array('flag'=>true,'msg'=>'Name already available');
+			}else{
 			  
 			  if(Input::hasFile('logo')){
                 
@@ -401,15 +431,8 @@ class MerchantController extends Controller
 				  }
 			  }
 			  if(!empty($logo_file_name)){
-				   $add->logo= $logo_file_name;
-				 
-					 if(isset($request->is_partners)){
-					  $is_partners ='yes';
-				  }else{
-						$is_partners ='no';
-				  }
-				  if($is_partners){
-					 $this->add_merchant_values($last_id,'is_partners',$is_partners);
+				    if(isset($request->is_partners)){
+					 $this->add_merchant_values($last_id,'is_partners',$request->is_partners);
 				  }
 			  }
 			  
@@ -428,9 +451,35 @@ class MerchantController extends Controller
 			  if($request->cost_for_two){
 			     $this->add_merchant_values($last_id,'cost_for_two',$request->cost_for_two);
 			  }
+			  if($request->order_limit){
+			     $this->add_merchant_values($last_id,'order_limit',$request->order_limit);
+			  }
+			  if(isset($request->day)){
+				  $day =explode(',',$request->day);
+				  $start_time =explode(',',$request->start_time);
+				  $end_time =explode(',',$request->end_time);
+				  $comment =explode(',',$request->comment);
+				    $is_open_close =explode(',',$request->is_open_close);
+				
+				  foreach($day as $key=>$row)
+				  {
+					  $new3 = new MerchantOpenClose(); 
+					  $new3->merchant_id = $last_id;
+					  $new3->day = $row;
+					  $new3->start_time = $start_time[$key];
+					  $new3->end_time = $end_time[$key];
+					  $new3->comment = $comment[$key];
+					  $new3->is_open_close = $is_open_close[$key];
+						 
+							$new3->save();
+				  }
+			  }
+		  }  
+			  
+			  
 			  $res =array('flag'=>true,'msg'=>'Data inserted successfully');
-			
 		  }
+	  
 		    
            return response()->json($res);
        }
@@ -539,6 +588,7 @@ class MerchantController extends Controller
             $merchant_categories_data =DB::table('mt_merchant_categories')->where('merchant_id',$request->id)->get();
             $merchant_image_data =DB::table('mt_merchant_images')->where('merchant_id',$request->id)->get();
             $merchant_pp_data =MerchantPaymentProvider :: where('merchant_id',$request->id)->get();
+            $merchant_open_close_data =MerchantOpenClose :: where('merchant_id',$request->id)->get();
 			
 			$arr1=array();
 			$arr2=array();
@@ -560,7 +610,7 @@ class MerchantController extends Controller
 				$m_key = $row->merchant_key;
 				$merchant_data->$m_key = $row->merchant_value;
 			}
-			//print_r($merchant_data);exit;
+			//print_r($merchant_open_close_data);exit;
               return view('admin.merchant',[
                
                 'id'=>$request->id,
@@ -575,6 +625,7 @@ class MerchantController extends Controller
                 'merchant_categories_data'=> $arr2,
                 'merchant_image_data'=> $merchant_image_data,
                 'merchant_pp_data'=> $arr3,
+                'merchant_open_close_data'=> $merchant_open_close_data,
 				
                  ]);
       }

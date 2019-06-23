@@ -53,6 +53,7 @@
                                   <th>Country</th>
                                   <th>Contact</th>
                                   <th>Email</th>
+                                  <th>Login Status</th>
                                
                                 
                                   <th>Status</th>
@@ -70,6 +71,7 @@
                                   <td> {{ $row->country_code}}</td>
                                   <td> {{ $row->contact_phone}}</td>
                                   <td> {{ $row->contact_email}}</td>
+                                  <td> {{ $row->merchant_login_status}}</td>
                                  <!-- <td> 
 								<?php if($row->is_commission == 1)
 								{
