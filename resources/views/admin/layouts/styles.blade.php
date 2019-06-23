@@ -51,12 +51,14 @@
 
 
     <!--datepicker js-->
-    <script src="admintemplate/js/plugins/datapicker/bootstrap-datepicker.js"></script>
+  
     <script src="admintemplate/js/plugins/cropper/cropper.min.js"></script>
     <script src="admintemplate/js/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
 	<link href="admintemplate/css/plugins/chosen/bootstrap-chosen.css" rel="stylesheet">
+	  <script src="admintemplate/js/plugins/datapicker/bootstrap-datepicker.js"></script>
 	<link href="admintemplate/css/plugins/datapicker/datepicker3.css" rel="stylesheet">
-	
+	<link href="admintemplate/css/plugins/switchery/switchery.css"  rel="stylesheet">
+	 <script src="admintemplate/js/plugins/switchery/switchery.js"></script>
 
 			<link rel="stylesheet" href="admintemplate/plugins/bootstrap-fileupload/bootstrap-fileupload.min.css">
 			 <script src="admintemplate/plugins/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>

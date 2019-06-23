@@ -100,7 +100,14 @@ input[type=radio]
                                                         <input type="checkbox"  name="two_flavors" value="1">
                                                     </div>
                                                 </div>
-                                               
+                                                  <div class="form-group">
+                                                    <label class="col-lg-4 control-label">Is Veg Nonveg</label>
+                                                    <div class="col-lg-8">
+                                                      
+									<input type="radio"  value="veg" name="is_veg_nonveg" checked  />Veg</br />
+									<input type="radio"  value="nonveg" name="is_veg_nonveg"   />Non veg </br />
+                                                    </div>
+                                                </div>
                                                
                                               
                                             </div>
@@ -167,9 +174,9 @@ input[type=radio]
 												  <div class="col-lg-3">
 													      <input type="text"  name="price[]" value="" class="form-control">
 													</div>
-                                                      <div class="col-lg-2">
-													      <input type="button"  name="price" value="+" class="form-control">
-													</div>
+                                                   <!--   <div class="col-lg-2">
+													      <input type="button"  name="plus" value="+" class="form-control">
+													</div>-->
                                                 </div>
 												<?php } ?>
                                                    <div class="form-group">
@@ -190,12 +197,12 @@ input[type=radio]
                                                         </select>
                                                     </div>
                                                 </div>
-												 <div class="form-group">
+												<!-- <div class="form-group">
                                                     <label class="col-lg-4 control-label">Ingredients</label>
                                                     <div class="col-lg-8">
                                                         <input type="checkbox"  name="two_flavours" value="">
                                                     </div>
-                                                </div>
+                                                </div>-->
                                                 <div class="form-group">
                                                     <div class="col-lg-offset-2 col-lg-10">
                                                         <button class="btn btn-sm btn-white" type="submit" style="background: #08a008bd;color: #fff;font-size: 16px;padding: 8px 27px;float: right;">Submit</button>

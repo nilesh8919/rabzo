@@ -38,7 +38,7 @@
                             <div  class="col-lg-2 col-md-2 col-sm-2 col-xs-12"></div>
                      </div>  
                 <div class="col-lg-12">
-                <h3>PayUMoney</h3>
+                <h3>Razorpay</h3>
                     <div class="row">
   <?php if(Session::has('flash_message')): ?>
                                    <div id="flashmsg" class="alert alert-success" role="alert" style="">
@@ -50,8 +50,8 @@
 											<form method="post" action="{{ url('store_payumoney') }}" id="forms">
 							<input type="hidden" value="adminPayUMoney" name="action" id="action">
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-							  <label class="uk-form-label">Enabled PayUMoney?</label>
-							  <div class="icheckbox_minimal" style="position: relative;"><input value="{{$results['admin_payu_enabled']}}" class="icheck" checked="checked" type="checkbox" name="admin_payu_enabled" id="admin_payu_enabled" >
+							  <label class="uk-form-label">Enabled Razorpay?</label>
+							  <div class="icheckbox_minimal" style="position: relative;"><input value="{{$results['admin_razor_enabled']}}" class="icheck" checked="checked" type="checkbox" name="admin_razor_enabled" id="admin_razor_enabled" >
                 </div> 
 							</div>
 
@@ -60,19 +60,19 @@
 							  <div class="iradio_flat checked" style="position: relative;">
                   <input <?php if($results['admin_payu_mode'] == 'Sandbox'){ echo "checked=checked"; } ?> value="Sandbox" class="icheck" checked="checked" type="radio" name="admin_payu_mode" id="admin_payu_mode" ></div>  Sandbox  <div class="iradio_flat" style="position: relative;">
 
-                    <input  <?php if($results['admin_payu_mode'] == 'live'){ echo "checked=checked"; } ?> value="live"  type="radio" name="admin_payu_mode" id="admin_payu_mode" >Live</div>	
+                    <input  <?php if($results['admin_razor_mode'] == 'live'){ echo "checked=checked"; } ?> value="live"  type="radio" name="admin_razor_mode" id="admin_razor_mode" >Live</div>	
 							
 							</div>
 
 						<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							  <label class="uk-form-label">Merchant Key</label>
-							  <input class="uk-form-width-large" type="text" value="{{$results['admin_payu_key']}}" name="admin_payu_key" id="admin_payu_key" required />
+							  <input class="uk-form-width-large" type="text" value="{{$results['admin_razor_key']}}" name="admin_razor_key" id="admin_razor_key" required />
                   
               </div>
 
 							<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 							  <label class="uk-form-label">SALT</label>
-							  <input class="uk-form-width-large" type="text" value="{{$results['admin_payu_salt']}}" name="admin_payu_salt" id="admin_payu_salt" required />
+							  <input class="uk-form-width-large" type="text" value="{{$results['admin_razor_salt']}}" name="admin_razor_salt" id="admin_razor_salt" required />
               </div>
 
 

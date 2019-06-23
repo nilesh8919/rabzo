@@ -163,6 +163,9 @@ public function idExists($needle='',$size='', $haystack=array()){
 			'email_address'=>'required',
 			 
 		  ]);
+		 
+		  if( Client :: where('email_address',$request->email_address)->count() ==  0)
+		  {
 			$new = new Client();
 			$new->first_name = $request->name;
 			$new->email_address = $request->email_address;
@@ -170,20 +173,27 @@ public function idExists($needle='',$size='', $haystack=array()){
 			$new->date_created =date('Y-m-d H:i:s');
 			$new->save();
 			$last_id =$new->id;
-			$data_arr =array(
-			  "id" =>$last_id,
-			  "name" =>$request->name,
-			  "email_address" =>$request->email_address,
-			);
-			Session :: put('users', $data_arr);
 			
-			if(isset($last_id)){
-				 $data['ResponseCode'] = "200";
-		        $data['ResponseMessage'] = "Registered";
-		 	}else{
-			 $data['ResponseCode'] = "400";
-		   $data['ResponseMessage'] = "Unable to add";
-		}
+				 if(isset($last_id)){
+							 $data_arr =array(
+					  "id" =>$last_id,
+					  "name" =>$request->name,
+					  "email_address" =>$request->email_address,
+					);
+					Session :: put('users', $data_arr);
+					 $data['ResponseCode'] = "200";
+					$data['ResponseMessage'] = "Registered";
+				}else{
+				 $data['ResponseCode'] = "400";
+			   $data['ResponseMessage'] = "Unable to add";
+				}
+		  }else{
+			  
+			  $data['ResponseCode'] = "400";
+		        $data['ResponseMessage'] = "email address already available";
+		  }
+			
+		
 		return response()->json($data);
 	}
 	public function create_delivery_address(Request $request)

@@ -45,8 +45,8 @@ class ItemController extends Controller
 	public function add_item()
 	{
 		$categories_data =Categories :: where('status','publish')->get();
-		$cooking_ref_data =CookingReference :: where('status','publish')->get();
-		$size =Size :: where('status','published')->get();
+		$cooking_ref_data =CookingReference :: where('status','publish')->where('merchant_id',Auth::id())->get();
+		$size =Size :: where('status','Publish')->where('merchant_id',Auth::id())->get();
 		  return view('merchant.add_item',[
                 'categories_data'=> $categories_data,
                 'cooking_ref_data'=> $cooking_ref_data,
@@ -98,6 +98,36 @@ class ItemController extends Controller
           // $result1_details->save();
 		  if($request->id > 0)
 		  {
+			   if(Input::hasFile('gallery_images')){
+                
+                   $files = $request->file('photo');
+				 
+                    $filename = str_replace(' ','_',$files->getClientOriginalName());
+                       $newFileName = time().'_'.$filename; 
+                        $destinationPath = 'uploads/merchant_item_cat_images/';
+                       $files->move($destinationPath, $newFileName);
+                        $file_name  =$newFileName;
+			       
+			   }else{
+				    $file_name  ='';
+			       
+			   }
+			   
+			    if(isset($request->size))
+			  {
+				  $size_data =$request->size;
+				  $price_data =$request->price;
+				  // MerchantCategories :: where('merchant_id',$last_id)->delete();
+				  $price_data_arr=array();
+				  for($i=0;$i<count($size_data);$i++)
+				  {
+					  if($price_data[$i] > 0){
+					   $price_data_arr[$size_data[$i]]=$price_data[$i];
+					  }
+				  }
+				
+			  }
+			  
 			    $add = Item::find($request->id);
                $add->merchant_id= Auth::id();
                $add->item_name= $request->item_name;
@@ -106,7 +136,10 @@ class ItemController extends Controller
                $add->ingredients= $request->ingredients;
                $add->item_description= $request->item_description;
                $add->discount= $request->discount;
-               $add->photo= $request->cuisine_name;
+			    $add->price= serialize($price_data_arr);
+               $add->is_veg_nonveg= $request->is_veg_nonveg;
+              // $add->photo= $request->cuisine_name;
+			    $add->photo= $file_name;
               $add->date_modified= date('Y-m-d H:i:s');
               $add->save();
 			  $res =array('flag'=>true,'msg'=>'Data updated successfully');
@@ -152,6 +185,8 @@ class ItemController extends Controller
                $add->discount= $request->discount;
                $add->two_flavors= $request->two_flavors;
                $add->price= serialize($price_data_arr);
+			      $add->is_veg_nonveg= $request->is_veg_nonveg;
+            
                $add->photo= $file_name;
             
              $add->date_created= date('Y-m-d H:i:s');
@@ -204,6 +239,7 @@ class ItemController extends Controller
        }
 	     
 	     public function delete_item(Request $request){
+	   
 			  $data = ItemImages  :: where('item_id', '=', $request->id)->delete(); 
 			  $data = MerchantCategories  :: where('item_id', '=', $request->id)->delete(); 
 			
@@ -224,6 +260,15 @@ class ItemController extends Controller
 		     ItemImages  :: where('id', '=', $request->id)->delete(); 
 			return response()->json('images deleted');
 		 }
-	
+	  public function stock_item_status(Request $request){
+		  
+		 
+		    Item  :: where('id', '=', $request->id)->update([
+		     'status' =>$request->status
+		   ]); 
+              Session::flash('flash_message', $request->msg);
+            return response()->json('Status updated');
+		  
+	  }
 	 
 }

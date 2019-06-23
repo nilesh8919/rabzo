@@ -50,8 +50,10 @@
                                   <th>Item Name</th>
                                   <th>Item Desc</th>
                                   <th>Photo</th>
+                                  <th>Dish Type</th>
                                
                                   <th>Date Created</th>
+                                  <th>Status</th>
                                   <th>Action</th>
                     </tr>
                     </thead>
@@ -63,8 +65,25 @@
                                   <td> {{ $row->item_name}}</td>
                                   <td> {!! $row->item_description !!}</td>
                                   <td> <img src="uploads/merchant_item_cat_images/{{ $row->photo}}" style="width:80px" /></td>
-                                  
+                                     <td> {!! $row->is_veg_nonveg !!}</td>
 								    <td> {{ $row->date_created}}</td>
+								    <td> 
+									<?php if($row->status == 'publish') { 
+									
+									$in_status = 'checked';
+									$out_status = '';
+									}else{
+										$in_status = '';
+										$out_status = 'checked';
+									}
+									
+									
+									?>
+									
+									<input type="radio" onClick="radioChecked(<?php echo $row->id; ?>)" value="publish" name="status_<?php echo $row->id; ?>" <?php echo $in_status ?> />In Stock </br />
+									<input type="radio" onClick="radioChecked(<?php echo $row->id; ?>)" value="out of stock" name="status_<?php echo $row->id; ?>" <?php echo $out_status ?>  />Out of Stock </br />
+									
+									</td>
                                  
                              
                                 
@@ -95,6 +114,27 @@
 	   
         </div>
          <script>
+		function radioChecked($id)
+		{
+			var chk =$("input[name='status_"+$id+"']:checked").val();
+			//alert(chk)
+			
+			 $.ajax({
+         
+            url: '{{url("stock_item_status")}}',
+            type:'get',
+           // dataType:'json',
+            data:{
+				status:chk,
+				id:$id
+				},
+            success: function(response)
+                        {
+                           alert('status update')
+                   }
+              
+          });
+		}
         $(document).ready(function(){
             $('.dataTables-example').DataTable({
                 pageLength: 25,
@@ -195,7 +235,8 @@ $(document).ready(function(){
 
  }
  </script>
-
+<link href="admintemplate/css/plugins/switchery/switchery.css"  rel="stylesheet">
+	 <script src="admintemplate/js/plugins/switchery/switchery.js"></script>
 <script>
 
 
@@ -256,6 +297,19 @@ function delete_voucher($id){
             },
          });
  }
+   var elem = document.querySelector('.js-switch');
+            var switchery = new Switchery(elem, { color: '#1AB394' });
+
+            var elem_2 = document.querySelector('.js-switch_2');
+            var switchery_2 = new Switchery(elem_2, { color: '#ED5565' });
+
+            var elem_3 = document.querySelector('.js-switch_3');
+            var switchery_3 = new Switchery(elem_3, { color: '#1AB394' });
+
+            var elem_4 = document.querySelector('.js-switch_4');
+            var switchery_4 = new Switchery(elem_4, { color: '#f8ac59' });
+                switchery_4.disable();
+
 </script>
 </body>
 </html>

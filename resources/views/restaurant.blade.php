@@ -210,7 +210,14 @@ function getMerchant($id='')
 				  else{
 					  var offfer_per ='';
 				  }
-				 div1 +='</div> <img src="uploads/'+val.images+'" class="image" style="height: 160px;width: 100%;"> '+offfer_per+'<span class ="details_star_span">'+val.avg_rating+'</span><a href="{{url('restaurant_details')}}/'+val.restaurant_name+'?location='+location+'&category='+category+'"><div style="background:#fff;padding: 0px 10px 10px 9px;"><h3 class="restaurant_details_div_title" style="top: 0px;color: #000;">'+val.restaurant_name+'</h3><p style="color: #000;">'+val.address+'</p><p style="color: #000;">Distance - 30 Min</p></div></a> </div> </div> </div>';
+				  
+				  if(val.avg_rating > 0){
+				  var rating ='<span class ="details_star_span">'+val.avg_rating+'</span>';
+				  }
+				  else{
+					  var rating ='';
+				  }
+				 div1 +='</div> <img src="uploads/'+val.images+'" class="image" style="height: 160px;width: 100%;"> '+offfer_per+rating+'<a href="{{url('restaurant_details')}}/'+val.restaurant_name+'?location='+location+'&category='+category+'"><div style="background:#fff;padding: 0px 10px 10px 9px;"><h3 class="restaurant_details_div_title" style="top: 0px;color: #000;">'+val.restaurant_name+'</h3><p style="color: #000;">'+val.address+'</p><p style="color: #000;">Distance - 30 Min</p></div></a> </div> </div> </div>';
 				  });
 				  //alert(div1)
 				   $("#contents").html(div1);

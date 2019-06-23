@@ -134,21 +134,12 @@
     </script>
 	
 
-
 <script>
  
 
 $(document).ready(function(){
 	
-	$.datepicker.setDefaults({
-          dateFormat: 'yy-mm-dd',
- });
-   $('#expiration').datepicker({
-   changeMonth: true,
-   changeYear: true,
-   yearRange: '2000:2040' ,
-     
-   });
+
 	
 	$("#voucher_type").val('Fixed Amount');
 	
@@ -185,20 +176,13 @@ $(document).ready(function(){
  });
 });
 </script>
-<script>
 
-</script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/redmond/jquery-ui.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.js"></script>
 
 
 
-<script>
- function cleardata()
- {
-  $("input,textarea,select").val('');
-  $('#imageerror').text('');
-
- }
- </script>
 
 <script>
 
@@ -261,6 +245,19 @@ function delete_voucher($id){
             },
          });
  }
+ $(document).ready(function(){
+	
+	$.datepicker.setDefaults({
+          //dateFormat: 'yy-mm-dd',
+ });
+  
+     $('#expiration').datepicker({
+ //  changeMonth: true,
+  // changeYear: true,
+   yearRange: '2000:2040' ,
+     
+   });
+ });
 </script>
 </body>
 </html>

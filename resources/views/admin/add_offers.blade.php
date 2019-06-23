@@ -17,6 +17,7 @@
 </style>
 </head>
 
+
 <body>
     <div id="wrapper">
 	@include('admin.layouts.leftpanel')
@@ -79,25 +80,31 @@
                                     <div class="form-group">
                                         <label class="col-lg-4 control-label">Offer Percentage</label>
                                         <div class="col-lg-8">
-                                            <input type="text" placeholder="Offer Percentage" class="form-control" name="offer_percentage" > 
+                                            <input type="text" placeholder="Offer Percentage" class="form-control" name="offer_percentage" required > 
+                                        </div>
+                                    </div>
+									 <div class="form-group">
+                                        <label class="col-lg-4 control-label">Discount Upto</label>
+                                        <div class="col-lg-8">
+                                            <input type="text" placeholder="Discount Upto" class="form-control" name="discount_upto" required > 
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-4 control-label">Orders Over</label>
+                                        <label class="col-lg-4 control-label">Orders Over (In amt)</label>
                                         <div class="col-lg-8">
-                                            <input type="text" placeholder="Orders Over" class="form-control" name="order_over" /> 
+                                            <input type="text" placeholder="Orders Over" class="form-control" name="offer_price"  required /> 
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-4 control-label">Valid From</label>
                                         <div class="col-lg-8">
-                                            <input type="text" placeholder="Valid From" class="form-control" name="valid_from" id="valid_from" autocomplete="off"> 
+                                            <input type="text" placeholder="Valid From" class="form-control" name="valid_from" id="valid_from" autocomplete="off" required > 
                                         </div>
                                     </div>
                                     <div class="form-group">
                                         <label class="col-lg-4 control-label">Valid To</label>
                                         <div class="col-lg-8">
-                                            <input type="text" placeholder="Valid To" class="form-control" name="valid_to" id="valid_to" autocomplete="off" > 
+                                            <input type="text" placeholder="Valid To" class="form-control" name="valid_to" id="valid_to" autocomplete="off" required > 
                                         </div>
                                     </div>
                                   <!--  <div class="form-group">
@@ -180,6 +187,8 @@
 	
 
 
+<link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/redmond/jquery-ui.css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.js"></script>
 <script>
  
 
@@ -188,13 +197,7 @@ $(document).ready(function(){
 	$.datepicker.setDefaults({
          // dateFormat: 'yy-mm-dd',
  });
-   $('#expiration').datepicker({
-   changeMonth: true,
-   changeYear: true,
-   yearRange: '2000:2040' ,
-     
-   });
-	
+  
 
   $("#upload_form").submit(function(e){
 
@@ -308,14 +311,18 @@ function delete_data($id){
           //dateFormat: 'yy-mm-dd',
  });
    $('#valid_from').datepicker({
-   changeMonth: true,
-   changeYear: true,
-   yearRange: '2000:2040' ,
+	  // changeMonth: true,
+	 //  changeYear: true,
+	   yearRange: '2000:2040' ,
+	    minDate: 0,
+	  onSelect: function(date) {
+		$("#valid_to").datepicker('option', 'minDate', date);
+	  }
      
    });
      $('#valid_to').datepicker({
-   changeMonth: true,
-   changeYear: true,
+ //  changeMonth: true,
+  // changeYear: true,
    yearRange: '2000:2040' ,
      
    });

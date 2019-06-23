@@ -101,6 +101,14 @@ input[type=radio]
                                                         <input type="checkbox"  name="two_flavors" <?php if($items->two_flavors == 1){ echo "checked=checked"; } ?> value="1">
                                                     </div>
                                                 </div>
+                                                <div class="form-group">
+                                                    <label class="col-lg-4 control-label">Is Veg Nonveg</label>
+                                                    <div class="col-lg-8">
+                                                      
+									<input type="radio"  value="veg" name="is_veg_nonveg" <?php if($items->is_veg_nonveg == 'veg'){ echo "checked=checked"; } ?>  />Veg</br />
+									<input type="radio"  value="nonveg" name="is_veg_nonveg"  <?php if($items->is_veg_nonveg == 'nonveg'){ echo "checked=checked"; } ?>  />Non veg </br />
+                                                    </div>
+                                                </div>
                                                
                                                
                                               
@@ -365,7 +373,7 @@ function delete_voucher($id){
                         {
                            if(response.flag== true)
                            {
-                                  window.location ='{{url("delete_voucher_succeess")}}'
+                                  window.location ='{{url("store_item_success")}}'
                            }else 
                            {
                             

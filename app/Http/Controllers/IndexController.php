@@ -229,7 +229,7 @@ error_reporting(0);
 			 ->leftjoin('mt_merchant_categories','mt_merchant_categories.merchant_id','=','mt_merchant.id')
 			 ->leftjoin('mt_category','mt_category.id','=','mt_merchant_categories.category_id')
 			 ->leftjoin('mt_merchant_cuisine','mt_merchant_cuisine.merchant_id','=','mt_merchant.id')
-			   ->select(DB::raw('SUM(rating) as rating'),'mt_review.merchant_id',DB::raw('count(mt_review.merchant_id) as cnt'),'mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city')
+			   ->select('mt_review.merchant_id','mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city',DB::raw('(SUM(rating) / count(mt_review.merchant_id)) AS avg_rating'))
 			     ->where('mt_review.status','=','Publish');
 			  $qry->where('mt_merchant.status','active');
 			  if(!empty($request->location)){
@@ -247,10 +247,13 @@ error_reporting(0);
 					//print_r($request->food_categories);exit;
 				 $qry->whereIn('mt_merchant_cuisine.cuisine_id',$request->food_categories);
 			   }
-			   $qry->groupBy('mt_review.merchant_id')->orderBy('rating','desc');
+			   $qry->groupBy('mt_review.merchant_id')->orderBy('avg_rating','desc');
 		// $qry->groupBy('mt_merchant_images.merchant_id');
 		 
 		 $data=$qry->get();
+		// print_r($data);exit;
+		 $data_arr=array();
+		 
 		  foreach( $data as $key=>$value)
 		  {
 			  
@@ -261,8 +264,8 @@ error_reporting(0);
 				$data[$key]->images =$d1->images;
 				}
 				$data[$key]->cost_for_two =$d2->merchant_value;
-				if($value->rating > 0){
-				$data[$key]->avg_rating =round($value->rating / $value->cnt,1); }
+				if($value->avg_rating > 0){
+				$data[$key]->avg_rating =round($value->avg_rating,1); }
 					  
 			  
 			  $current_date = date('Y-m-d');
@@ -277,8 +280,63 @@ error_reporting(0);
 						  $data[$key]->offers =$offers;
 				  }
 			  }
+			  $data_arr[] = $value;
 		  }
-		return response()->json($data);
+		  // all merchant
+		  $qry2 = DB::table("mt_merchant")->select('*')
+            ->whereNOTIn('id',function($query){
+               $query->select('merchant_id')->from('mt_review');
+            });
+			   $qry2->select('mt_merchant.id AS merchant_id',DB::raw('count(mt_merchant.id) as cnt'),'mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city');
+			 $qry2->where('mt_merchant.status','active');
+			  if(!empty($request->location)){
+			     $qry2->where('mt_merchant.city', 'LIKE', '%' . $request->location . '%');
+			     //$qry->where('city',$request->location);
+			  }
+			   if(!empty($request->category)){
+			     $qry2->where('mt_category.category_name', 'LIKE', '%' . $request->category . '%');
+				 $qry2->orWhere('mt_merchant.restaurant_name', 'LIKE', '%' . $request->category . '%');
+			  }
+			  if(!empty($request->cuisine)){
+			     $qry2->where('mt_merchant_cuisine.cuisine_id',$request->cuisine);
+			   }
+			    if(!empty($request->food_categories)){
+					//print_r($request->food_categories);exit;
+				 $qry2->whereIn('mt_merchant_cuisine.cuisine_id',$request->food_categories);
+			   }
+			   $qry2->groupBy('id');
+            $data1 =$qry2->get();
+			//print_r($data1);exit;
+		   foreach( $data1 as $key=>$value)
+		  {
+			  
+			  $d1 = DB :: table('mt_merchant_images')->where('merchant_id',$value->merchant_id)->first();
+	//	print_r($d1);exit;
+				$d2 = DB :: table('mt_merchant_meta')->where('merchant_id',$value->merchant_id)->select('mt_merchant_meta.merchant_value')->where('mt_merchant_meta.merchant_key','=','cost_for_two')->first();
+				if(isset($d1)){
+				$data1[$key]->images =$d1->images;
+				}
+				$data1[$key]->cost_for_two =$d2->merchant_value;
+				$data1[$key]->rating =0;
+				$data1[$key]->avg_rating =0;
+				
+			  $current_date = date('Y-m-d');
+			  $offers =Offer :: where('status','Publish')
+			  ->where('merchant_id','=',$value->merchant_id)
+			  ->first();
+			  
+			  if(isset($offers)){
+				  if($offers->valid_from >= $current_date ){
+								  $data1[$key]->offers =$offers;
+				  }else if($offers->valid_to <= $current_date){
+						  $data1[$key]->offers =$offers;
+				  }
+			  }
+			   $data_arr[] = $value;
+		  }
+		//  $data3 =array_merge($data,$data1);
+		//$data3 = (object) array_merge((array) $data, (array) $data1);
+		return response()->json($data_arr);
 	}
 	public function get_merchant_available_location(Request $request)
 	{

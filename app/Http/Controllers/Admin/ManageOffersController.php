@@ -61,6 +61,8 @@ class ManageOffersController extends Controller
 		      $add->status= $request->status;
              
 			  $add->merchant_id= $request->merchant_id;
+			  $add->discount_upto= $request->discount_upto;
+			  $add->offer_price= $request->offer_price;
 			  if(isset($request->applicable_to)){
 			    $add->applicable_to= $request->applicable_to; }
 			   $add->status= $request->status;
@@ -81,6 +83,8 @@ class ManageOffersController extends Controller
 		      $add->status= $request->status;
              
 			  $add->merchant_id= $request->merchant_id;
+			  $add->discount_upto= $request->discount_upto;
+			  $add->offer_price= $request->offer_price;
 			 if(isset($request->applicable_to)){
 			    $add->applicable_to= $request->applicable_to; }
 			   $add->status= $request->status;

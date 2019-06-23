@@ -21,7 +21,10 @@ class ShippingController extends Controller
 	 }
    public function index()
    {
-	   $data['order_value'] =Option :: where(['option_name'=>'free_delivery_above_price','merchant_id'=>Auth::id()])->first();
+	   $data2 =Option :: where(['option_name'=>'free_delivery_above_price','merchant_id'=>Auth::id()])->first();
+	  // print_r($data2 );exit;
+	   $data['option_value'] =$data2['option_value'];
+	 //  echo $data['option_value'];exit;
 	   $data['shippings_rate'] =ShippingRate :: join('mt_merchant','mt_merchant.id','=','mt_shipping_rate.merchant_id')
 				->select('mt_shipping_rate.*','mt_merchant.restaurant_name')
 				->where('mt_shipping_rate.merchant_id',Auth::id())
