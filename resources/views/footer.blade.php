@@ -1,6 +1,9 @@
-  <footer>
-    <div class="newsletter-block">
-      <div class="">
+  <style type="text/css">
+    .clear{clear: both;}
+  </style>
+  <footer style="clear: both;">
+    <div class="newsletter-block" style="clear: both;display: none;">
+      
         <div class="newsletter-wrap">
           <h4>Sign up for emails</h4>
           <form id="newsletter-validate-detail" method="post" action="#">
@@ -12,7 +15,8 @@
             </div>
           </form>
         </div>
-      </div>
+      
+      <div class="clear"></div>
     </div>
     <div class="footer-inner">
       <div class="container">
@@ -67,71 +71,28 @@
                 </div>
               </div>
             </div>
-            <!-- <div class="footer-column-last">
-              
-              <div class="social">
-                <h4>Follow Us</h4>
-                <div class="footer-column pull-left ">
-                  <h4>Legal</h4>
-                  <ul class="link">
-                    <li class="fb pull-left"> <a href="#"></a> </li>
-                    <li class="instagram pull-left"> <a href="#"></a> </li>
-                    
-                    <li class="linkedin pull-left"> <a href="#"></a> </li>
-                  </ul>
-                </div>
-                <div class="footer-column pull-left ">
-                  <h4>Legal</h4>
-                  <div>
-                    <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-1.png" alt="payment1"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-2.png" alt="payment2"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-3.png" alt="payment3"> <img src="http://htmldemo.themessoft.com/freshia/version1/images/payment-4.png" alt="payment4"> 
-                  </div>
-                </div>
-              </div>
-              <div class="android_app" style="position: relative;top: 11px;">
-                <img src="uploads/android-app.png" style="width: 160px;">
-              </div>
-              
-            </div> -->
-          <!-- </div> -->
+          </div>
         </div>
       </div>
-    </div>
-    <!-- <div class="footer-middle">
-      <div class="container">
-        <div class="row">
-          <div style="text-align:center"> 
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-5 col-xs-12 coppyright">&copy; 2019 Rabzo. All Rights Reserved.</div>
            
-           </div>
-          <address>
-          <i class="fa fa-map-marker"></i> ABC Town Luton Street, New York 226688 <i class="fa fa-mobile"></i><span> +0800 567 345</span> <i class="fa fa-envelope"></i><span> support@themessoft.com</span>
-          </address>
+          </div>
         </div>
       </div>
-    </div> -->
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-5 col-xs-12 coppyright">&copy; 2019 Rabzo. All Rights Reserved.</div>
-          <!-- <div class="col-sm-7 col-xs-12 company-links">
-            <ul class="links">
-              <li><a href="#" title="Magento Themes">Magento Themes</a> </li>
-              <li><a href="#" title="Opencart Themes">Opencart Themes</a> </li>
-              <li><a href="#" title="Woocommerce Themes">Woocommerce Themes</a> </li>
-              <li class="last"><a href="#" title="Shopify Themes">Shopify Themes</a> </li>
-            </ul>
-          </div> -->
-        </div>
-      </div>
+      <div class="clear"></div>
     </div>
   </footer>
-  </div>
+  
 <!-- End Footer --> 
 
 <!-- mobile menu -->
 <div id="mobile-menu">
   <ul>
     <li style="background: orange;"><a href=""><img src="public/uploadimages/rabzo_new_logo.png" style="    width: 200px;"></a></li>
-    <li><a href="#">Restaurant</a></li>
+    <li><a href="{{url('restaurant')}}">Restaurant</a></li>
     <li><a href="#">Login & Signup</a></li>
     
   </ul>

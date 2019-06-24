@@ -6782,7 +6782,7 @@ button.button.submit:before {
 /*  17.  Global Messages   */
 
 #toTop {
-	display: none;
+	display: none!important;
 	color: #fff;
 	text-align: center;
 	bottom: 60px;
@@ -6821,7 +6821,7 @@ button.button.submit:before {
 	background:#fbeb20;
 	overflow:hidden;
 	padding:6px 75px;
-	margin-top:-150px;
+	/*margin-top:-150px;*/
 	text-align:center;
 	/*border-bottom: 4px #887e06 solid;*/
 }
@@ -6903,7 +6903,7 @@ letter-spacing:normal
 footer {
 	padding: 0px 0 0;
 	color: #333;
-	padding-top: 100px;
+	/*padding-top: 100px;*/
 	background: #000 url(../images/footer-bg.jpg) no-repeat bottom left;
 margin-top:80px;
 letter-spacing:normal;
@@ -12304,7 +12304,7 @@ nav .container {
 	.slider_a_tag{width: 100%;}
 	/*.slick-initialized .slick-slide{width: 100%!important;}*/
 	.slick-next:before, .slick-prev:before {font-size: 40px!important;color: #0c0c0c!important;}
-	.slick-prev {left: 4px!important;z-index: 99;}
+	.slick-prev {left: -5px!important;z-index: 99;}
 	.slick-next {right: 14px!important;}
 	.slick-slide img {display: block;width: 100%!important;height: 250px!important;}
 	.restro_slider_div {width: 100%!important;margin: 0px!important;}
@@ -12313,4 +12313,10 @@ nav .container {
 	.slick_slider_restro_address{text-align: left;padding-left: 17px;font-size: 15px;}
 	.distance_class{text-align: left;padding-left: 17px;}
 	.slick-slider {margin-bottom: 0px!important;}
+	.restaurant_page_cuisine_title{display: none;}
+	.restaurant_page_cuisine_div{display: none;}
+	.restaurant_search_location_div{width: 33.333333%;padding: 0px;}
+	.restaurant_search_dishesh_div{width: 47%;padding: 0px;}
+	.restaurant_search_button_div{width: 19.666667%;}
+	.search{}
 }
