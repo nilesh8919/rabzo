@@ -37,12 +37,12 @@
           <div class="col-lg-12 col-md-12" style="padding: 0px;">
             <div class="col-lg-6 col-md-6" style="padding: 0;padding-right: 10px;">
               <div class="form-group">
-                <input type="text" class="form-control" name="contact_phone" placeholder="Phone No" style="height: 46px;border-radius: 0;" required>
+                <input type="text" class="form-control" name="contact_phone" placeholder="Phone No" style="height: 46px;border-radius: 0;" onkeypress="return isNumber(event)" required>
               </div>
             </div>
             <div class="col-lg-6 col-md-6" style="padding: 0;padding-left: 10px;">
               <div class="form-group">
-                <input type="text" class="form-control" name="contact_email" placeholder="Email Id" style="height: 46px;border-radius: 0;"  required>
+                <input type="email" class="form-control" name="contact_email" placeholder="Email Id" style="height: 46px;border-radius: 0;"  required>
               </div>
             </div>
           </div>
@@ -74,7 +74,7 @@
             </div>
             <div class="col-lg-6 col-md-6" style="padding: 0;padding-left: 10px;">
               <div class="form-group">
-                <input type="text" class="form-control" name="post_code" placeholder="Zipcode" style="height: 46px;border-radius: 0;" required>
+                <input type="text" class="form-control" name="post_code" placeholder="Zipcode" style="height: 46px;border-radius: 0;" onkeypress="return isNumber(event)" required >
               </div>
             </div>
           </div>
@@ -171,4 +171,13 @@ $("#frm1").submit(function(e){
  $('#flashmsg').fadeOut();
  $('#flashmsg').val('')
 }, 1000 );
+
+function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}	
 		</script>

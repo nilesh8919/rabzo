@@ -61,6 +61,7 @@ error_reporting(0);
 		 $review =Review :: join('mt_merchant','mt_merchant.id','=','mt_review.merchant_id')
 		  ->select(DB::raw('SUM(rating) as rating'),'merchant_id',DB::raw('count(merchant_id) as cnt'),'mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city')
 		  ->where('mt_review.status','=','Publish')
+		  ->where('mt_merchant.status','=','Active')
 		 ->groupBy('mt_review.merchant_id')->orderBy('rating','desc')->limit('8')->get();
 	foreach($review as $key=>$r_data)
 	{
@@ -231,7 +232,7 @@ error_reporting(0);
 			 ->leftjoin('mt_merchant_cuisine','mt_merchant_cuisine.merchant_id','=','mt_merchant.id')
 			   ->select('mt_review.merchant_id','mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city',DB::raw('(SUM(rating) / count(mt_review.merchant_id)) AS avg_rating'))
 			     ->where('mt_review.status','=','Publish');
-			  $qry->where('mt_merchant.status','active');
+			  $qry->where('mt_merchant.status','Active');
 			  if(!empty($request->location)){
 			     $qry->where('mt_merchant.city', 'LIKE', '%' . $request->location . '%');
 			     //$qry->where('city',$request->location);
@@ -288,7 +289,7 @@ error_reporting(0);
                $query->select('merchant_id')->from('mt_review');
             });
 			   $qry2->select('mt_merchant.id AS merchant_id',DB::raw('count(mt_merchant.id) as cnt'),'mt_merchant.restaurant_name','mt_merchant.address','mt_merchant.city');
-			 $qry2->where('mt_merchant.status','active');
+			 $qry2->where('mt_merchant.status','Active');
 			  if(!empty($request->location)){
 			     $qry2->where('mt_merchant.city', 'LIKE', '%' . $request->location . '%');
 			     //$qry->where('city',$request->location);

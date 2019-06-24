@@ -472,8 +472,7 @@ input[type=radio]
 									<input type="radio"  value="close" class="is_open_close" name="is_open_close7"  <?php if($merchant_open_close_data[6]->is_open_close == 'close'){ echo "checked=checked"; }  ?> />close </br />
                                    
 								  
-								  </td>
-                                  <td> <input type="text" id="commnet7"  name="comment"  value="{{$merchant_open_close_data[6]->comment}}" /></td>
+								  <td> <input type="text" id="commnet7"  name="comment"  value="{{$merchant_open_close_data[6]->comment}}" /></td>
                                      </tr> 			
                             </tbody>
                    
@@ -555,10 +554,13 @@ input[type=radio]
                                             <div class="form-group">
                                                 <div class="col-lg-offset-2 col-lg-10">
 												@if($merchant_data->id > 0 && isset($merchant_data->id))
-													 <button class="btn btn-sm btn-white" type="submit" style="background: #08a008bd;color: #fff;font-size: 16px;padding: 8px 27px;float: right;">Update</button>
+													 <button id="btnupdate" class="btn btn-sm btn-white" type="submit" style="background: #08a008bd;color: #fff;font-size: 16px;padding: 8px 27px;float: right;">Update</button>
 												@else
-                                                    <button class="btn btn-sm btn-white" type="submit" style="background: #08a008bd;color: #fff;font-size: 16px;padding: 8px 27px;float: right;">Save</button>
+                                                    <button id="btnsave" class="btn btn-sm btn-white" type="submit" style="background: #08a008bd;color: #fff;font-size: 16px;padding: 8px 27px;float: right;">Save</button>
                                                    @endif
+												   <button  id="btnloading" class="btn btn-sm btn-white" style="background: #08a008bd;color: #fff;font-size: 16px;padding: 8px 27px;float: right;display:none">
+  <i class="fa fa-refresh fa-spin"></i>Loading
+</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -771,7 +773,16 @@ $(document).ready(function(){
 			  
 		   })
 		   $("#tab7").submit(function(e){
+			   
+			   if($("input[name=hidden_id]").val() > 0)
+			   {
+				    $("#btnsave").hide();
+			   }else{
+				   $("#btnupdate").hide();
+			   }
 			   e.preventDefault();
+			   
+			   $("#btnloading").show();
 			 
 			   var form=$("#tab7")[0];
               fd =new FormData(form);

@@ -92,7 +92,7 @@
 							  <i class="clip-remove"></i>Delete</a> 
 							  |
 							  <?php if($row->status == 'Active'){ ?>
-							  <a onclick="merchant_login({{ $row->id }})" style="text-decoration:none; cursor: pointer; cursor: hand;">
+							  <a onclick="merchant_login({{ $row->id }})" style="text-decoration:none; cursor: pointer; cursor: hand;" target="page">
 							  <i class="clip-remove"></i>Merchant Autologin</a> 
 							  <?php } ?>
 							   </td>
